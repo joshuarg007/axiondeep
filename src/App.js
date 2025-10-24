@@ -5,6 +5,7 @@ import Mission from "./pages/Mission";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
+import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
 
 const NavItem = ({ to, children }) => (
@@ -74,6 +75,7 @@ export default function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route
             path="*"
             element={
