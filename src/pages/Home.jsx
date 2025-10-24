@@ -33,8 +33,7 @@ export default function Home() {
         animate={prefersReduced ? {} : { opacity: 1 }}
         transition={prefersReduced ? {} : { delay: 0.6, duration: 0.9 }}
       >
-        Welcome to <span className="text-white font-semibold">Axion Deep&nbsp;</span> — a research and
-        development organization advancing the frontiers of intelligent systems, quantum-inspired
+        Welcome to <span className="text-white font-semibold">Axion Deep&nbsp;</span> Advancing the frontiers of intelligent systems, quantum-inspired
         computation, and data sciences. Our focus is inquiry and discovery: exploring, prototyping, and
         validating new architectures that bridge scientific depth with engineering rigor.
       </motion.p>
