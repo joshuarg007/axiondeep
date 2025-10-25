@@ -60,6 +60,7 @@ export default function App() {
             style={{ justifyContent: "center" }}
           >
             <NavItem to="/mission">Mission</NavItem>
+            <NavItem to="/solutions">Solutions</NavItem>
             <NavItem to="/careers">Careers</NavItem>
             <NavItem to="/contact">Contact</NavItem>
           </nav>
