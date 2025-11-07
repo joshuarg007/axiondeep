@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Mission from "./pages/Mission";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
-import Legal from "./pages/Legal";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
 
@@ -21,17 +20,7 @@ const NavItem = ({ to, children }) => (
 );
 
 export default function App() {
-  const [scrollY, setScrollY] = React.useState(0);
-
-  React.useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // fade and scale calculations
-  const fadeOpacity = Math.max(0.75, 1 - scrollY / 400);
-  const scale = Math.max(0.9, 1 - scrollY / 1200);
+  ;
 
   return (
     <GradientBackground>
@@ -73,10 +62,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/solutions" element={<Solutions />} />
+          {/* <Route path="/legal" element={<Legal />} /> */}          
           <Route
             path="*"
             element={
