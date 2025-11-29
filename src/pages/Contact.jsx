@@ -63,7 +63,7 @@ const Panel = ({ children }) => (
 
 // Site2CRM configuration
 const SITE2CRM_API = "https://api.site2crm.io/api/public/leads";
-const SITE2CRM_ORG_KEY = "YOUR_ORG_KEY"; // Replace with your Site2CRM org key
+const SITE2CRM_ORG_KEY = "a57c3429880841438e2e767e8151b4a6";
 
 export default function Contact() {
   const [step, setStep] = useState(0);
