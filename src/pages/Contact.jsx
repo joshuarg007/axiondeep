@@ -1,11 +1,12 @@
-import React, { useMemo, useState, useCallback, useEffect } from "react";
+import React, { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const stepsDef = [
-  { id: "name", label: "Your name", type: "text", placeholder: "Ada Lovelace" },
+  { id: "email", label: "Email", type: "email", placeholder: "you@domain.com", required: true },
+  { id: "name", label: "Your name (optional)", type: "text", placeholder: "Ada Lovelace" },
   {
     id: "interests",
-    label: "Focus area(s)",
+    label: "Focus area(s) (optional)",
     type: "multi",
     options: [
       "AI Research",
@@ -18,12 +19,10 @@ const stepsDef = [
       "Other",
     ],
   },
-  { id: "email", label: "Email", type: "email", placeholder: "you@domain.com" },
-  { id: "phone", label: "Phone (optional)", type: "tel", placeholder: "+1 415 555 0123" },
-  { id: "org", label: "Organization", type: "text", placeholder: "Institute / Company" },
+  { id: "org", label: "Organization (optional)", type: "text", placeholder: "Institute / Company" },
   {
     id: "budget",
-    label: "Budget range",
+    label: "Budget range (optional)",
     type: "select",
     options: [
       "Exploratory (≤ $10k)",
@@ -34,20 +33,8 @@ const stepsDef = [
     ],
   },
   {
-    id: "timeline",
-    label: "Desired timeline",
-    type: "select",
-    options: [
-      "Exploration (open)",
-      "0–3 months",
-      "3–6 months",
-      "6–12 months",
-      "12+ months",
-    ],
-  },
-  {
     id: "context",
-    label: "Context / problem statement",
+    label: "Context / problem statement (optional)",
     type: "textarea",
     placeholder: "What question are you trying to answer?",
   },
@@ -68,19 +55,19 @@ const SITE2CRM_ORG_KEY = "a57c3429880841438e2e767e8151b4a6";
 export default function Contact() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
+    email: "",
     name: "",
     interests: [],
-    email: "",
-    phone: "",
     org: "",
     budget: "",
-    timeline: "",
     context: "",
   });
   const [otherInterest, setOtherInterest] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [autoSaved, setAutoSaved] = useState(false);
+  const lastSavedData = useRef({ email: "", step: -1 });
 
   // --- Persistence ---
   useEffect(() => {
@@ -119,21 +106,62 @@ export default function Contact() {
   const canContinue = useCallback(() => {
     const v = data[current?.id];
     if (!current) return true;
-    if (current.type === "multi")
-      return data.interests.length > 0 || otherInterest.trim().length > 0;
-    if (["text", "email", "tel", "select"].includes(current.type))
-      return current.id === "phone"
-        ? true
-        : String(v || "").trim().length > 0;
-    if (current.type === "textarea") return true;
+    // Only email is required
+    if (current.required) {
+      return String(v || "").trim().length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+    // All other fields are optional
     return true;
-  }, [data, current, otherInterest]);
+  }, [data, current]);
 
   const finalizeInterests = useCallback(() => {
     const list = new Set(data.interests);
     if (otherInterest.trim()) list.add(otherInterest.trim());
     return Array.from(list);
   }, [data.interests, otherInterest]);
+
+  // Auto-save to Site2CRM when moving past email step
+  const autoSave = useCallback(async () => {
+    if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return;
+    if (data.email === lastSavedData.current.email && step <= lastSavedData.current.step) return;
+
+    const interests = finalizeInterests();
+    const notes = [
+      interests.length ? `Focus areas: ${interests.join(", ")}` : "",
+      data.org ? `Organization: ${data.org}` : "",
+      data.budget ? `Budget: ${data.budget}` : "",
+      data.context ? `Context: ${data.context}` : "",
+      "[Auto-captured - wizard in progress]",
+    ].filter(Boolean).join("\n");
+
+    try {
+      await fetch(SITE2CRM_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Org-Key": SITE2CRM_ORG_KEY,
+        },
+        body: JSON.stringify({
+          name: data.name || "(not provided)",
+          email: data.email,
+          company: data.org || undefined,
+          notes: notes,
+          source: "axiondeep.com/contact (auto)",
+        }),
+      });
+      lastSavedData.current = { email: data.email, step };
+      setAutoSaved(true);
+    } catch (err) {
+      // Silent fail
+    }
+  }, [data, step, finalizeInterests]);
+
+  // Auto-save when step changes (after email is captured)
+  useEffect(() => {
+    if (step > 0 && data.email) {
+      autoSave();
+    }
+  }, [step, autoSave, data.email]);
 
   const handleSubmit = async () => {
     setSubmitting(true);
@@ -142,12 +170,11 @@ export default function Contact() {
     try {
       const interests = finalizeInterests();
       const notes = [
-        `Focus areas: ${interests.join(", ")}`,
-        `Organization: ${data.org}`,
-        `Budget: ${data.budget}`,
-        `Timeline: ${data.timeline}`,
+        interests.length ? `Focus areas: ${interests.join(", ")}` : "",
+        data.org ? `Organization: ${data.org}` : "",
+        data.budget ? `Budget: ${data.budget}` : "",
         data.context ? `Context: ${data.context}` : "",
-      ].filter(Boolean).join("\n");
+      ].filter(Boolean).join("\n") || "(no additional info)";
 
       const response = await fetch(SITE2CRM_API, {
         method: "POST",
@@ -156,10 +183,9 @@ export default function Contact() {
           "X-Org-Key": SITE2CRM_ORG_KEY,
         },
         body: JSON.stringify({
-          name: data.name,
+          name: data.name || "(not provided)",
           email: data.email,
-          phone: data.phone || undefined,
-          company: data.org,
+          company: data.org || undefined,
           notes: notes,
           source: "axiondeep.com/contact",
         }),
@@ -168,6 +194,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
         localStorage.removeItem("axiondeep_contact_draft");
+        lastSavedData.current = { email: "", step: -1 };
       } else {
         const result = await response.json().catch(() => ({}));
         setError(result.detail || "Failed to send. Please try again.");
@@ -351,15 +378,22 @@ export default function Contact() {
               </div>
 
               <div className="space-y-3 text-sm">
-                <Row k="Name" v={data.name} />
-                <Row k="Focus area(s)" v={finalizeInterests().join(", ")} />
                 <Row k="Email" v={data.email} />
-                <Row k="Phone" v={data.phone || "—"} />
-                <Row k="Organization" v={data.org} />
-                <Row k="Budget" v={data.budget} />
-                <Row k="Timeline" v={data.timeline} />
+                <Row k="Name" v={data.name || "—"} />
+                <Row k="Focus area(s)" v={finalizeInterests().join(", ") || "—"} />
+                <Row k="Organization" v={data.org || "—"} />
+                <Row k="Budget" v={data.budget || "—"} />
                 <Row k="Context" v={data.context || "—"} />
               </div>
+
+              {autoSaved && (
+                <p className="text-xs text-gray-500 flex items-center gap-1">
+                  <svg className="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Progress auto-saved
+                </p>
+              )}
 
               {error && (
                 <div className="text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-2">
