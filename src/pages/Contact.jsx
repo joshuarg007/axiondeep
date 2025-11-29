@@ -61,6 +61,10 @@ const Panel = ({ children }) => (
   <div className="border border-white/10 bg-white/5 rounded-2xl p-6">{children}</div>
 );
 
+// Site2CRM configuration
+const SITE2CRM_API = "https://api.site2crm.io/api/public/leads";
+const SITE2CRM_ORG_KEY = "YOUR_ORG_KEY"; // Replace with your Site2CRM org key
+
 export default function Contact() {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
@@ -74,6 +78,9 @@ export default function Contact() {
     context: "",
   });
   const [otherInterest, setOtherInterest] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   // --- Persistence ---
   useEffect(() => {
@@ -128,6 +135,50 @@ export default function Contact() {
     return Array.from(list);
   }, [data.interests, otherInterest]);
 
+  const handleSubmit = async () => {
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const interests = finalizeInterests();
+      const notes = [
+        `Focus areas: ${interests.join(", ")}`,
+        `Organization: ${data.org}`,
+        `Budget: ${data.budget}`,
+        `Timeline: ${data.timeline}`,
+        data.context ? `Context: ${data.context}` : "",
+      ].filter(Boolean).join("\n");
+
+      const response = await fetch(SITE2CRM_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Org-Key": SITE2CRM_ORG_KEY,
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || undefined,
+          company: data.org,
+          notes: notes,
+          source: "axiondeep.com/contact",
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        localStorage.removeItem("axiondeep_contact_draft");
+      } else {
+        const result = await response.json().catch(() => ({}));
+        setError(result.detail || "Failed to send. Please try again.");
+      }
+    } catch (err) {
+      setError("Network error. Please check your connection.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   // --- Enter key support ---
   useEffect(() => {
     function handleKey(e) {
@@ -160,7 +211,7 @@ export default function Contact() {
         </p>
         <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden mt-3">
           <div
-            className="h-full bg-gradient-to-r from-cyan-400 to-blue-600"
+            className="h-full bg-gradient-to-r from-cyan-400 to-violet-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -272,11 +323,24 @@ export default function Contact() {
                   type="button"
                   onClick={next}
                   disabled={!canContinue()}
-                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-cyan-500 to-blue-700 hover:opacity-90 disabled:opacity-50"
+                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-cyan-500 to-violet-600 hover:opacity-90 disabled:opacity-50"
                 >
                   Continue
                 </button>
               </div>
+            </motion.div>
+          ) : submitted ? (
+            // Success state
+            <motion.div key="success" {...variants} className="space-y-6 text-center py-8">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-semibold text-white">Request sent!</h2>
+              <p className="text-gray-400">
+                We'll review your inquiry and get back to you shortly.
+              </p>
             </motion.div>
           ) : (
             // Summary step
@@ -297,24 +361,38 @@ export default function Contact() {
                 <Row k="Context" v={data.context || "—"} />
               </div>
 
+              {error && (
+                <div className="text-red-400 text-sm bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-2">
+                  {error}
+                </div>
+              )}
+
               <div className="flex items-center justify-between pt-2">
                 <button
                   type="button"
                   onClick={() => setStep(stepsDef.length - 1)}
-                  className="px-4 py-2 rounded-lg border border-white/10 text-gray-300 hover:border-white/20"
+                  disabled={submitting}
+                  className="px-4 py-2 rounded-lg border border-white/10 text-gray-300 hover:border-white/20 disabled:opacity-50"
                 >
                   Edit previous
                 </button>
                 <button
                   type="button"
-                  onClick={() =>
-                    alert(
-                      "This is a demo — wire to your API or CRM integration next."
-                    )
-                  }
-                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-emerald-500 to-cyan-600 hover:opacity-90"
+                  onClick={handleSubmit}
+                  disabled={submitting}
+                  className="px-5 py-2.5 rounded-lg font-semibold bg-gradient-to-r from-cyan-500 to-violet-600 hover:opacity-90 disabled:opacity-50 flex items-center gap-2"
                 >
-                  Send request
+                  {submitting ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    "Send request"
+                  )}
                 </button>
               </div>
             </motion.div>

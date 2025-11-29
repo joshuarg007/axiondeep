@@ -4,7 +4,7 @@
 
 /* Chrome-safe gradient text */
 .gradient-text {
-    background: linear-gradient(90deg, #22d3ee 0%, #2563eb 100%);
+    background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; /* Firefox */

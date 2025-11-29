@@ -104,7 +104,7 @@ export default function Careers() {
               <ul className="space-y-2 text-sm text-gray-300">
                 {d.lines.map((l, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                     <span>{l}</span>
                   </li>
                 ))}
@@ -124,7 +124,7 @@ export default function Careers() {
         </p>
         <Link
           to="/contact"
-          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-700 font-semibold hover:opacity-90 transition"
+          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
         >
           Contact the Labs
         </Link>

@@ -14,14 +14,14 @@ function FocusTile({ title, lines }) {
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
       className="relative border border-white/10 rounded-2xl bg-white/5 p-6 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition"
-      whileHover={{ borderColor: "rgba(34,197,94,0.35)" }}
+      whileHover={{ borderColor: "rgba(6,182,212,0.4)" }}
     >
       <div className="flex items-center justify-between">
         <div className="font-semibold text-white">{title}</div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: hover ? 1 : 0 }}
-          className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30"
+          className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30"
         >
           focus
         </motion.div>
@@ -39,7 +39,7 @@ function FocusTile({ title, lines }) {
           >
             {lines.map((l, i) => (
               <li key={i} className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>{l}</span>
               </li>
             ))}
@@ -153,7 +153,7 @@ export default function Mission() {
         {/* Research Methodology */}
         <div className="grid md:grid-cols-3 gap-12 mt-20">
           <section className="space-y-4">
-            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-blue-600/60" />
+            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-violet-500/60" />
             <h3 className="text-xl font-semibold text-white tracking-wide">
               Investigate
             </h3>
@@ -177,7 +177,7 @@ export default function Mission() {
           </section>
 
           <section className="space-y-4">
-            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-blue-600/60" />
+            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-violet-500/60" />
             <h3 className="text-xl font-semibold text-white tracking-wide">
               Prototype
             </h3>
@@ -201,7 +201,7 @@ export default function Mission() {
           </section>
 
           <section className="space-y-4">
-            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-blue-600/60" />
+            <div className="h-px bg-gradient-to-r from-cyan-400/60 to-violet-500/60" />
             <h3 className="text-xl font-semibold text-white tracking-wide">
               Translate
             </h3>

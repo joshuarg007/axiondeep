@@ -90,7 +90,7 @@ export default function Projects() {
               <ul className="mt-4 space-y-2 text-sm text-gray-300">
                 {p.focus.map((f, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -99,7 +99,7 @@ export default function Projects() {
               <div className="mt-6">
                 <Link
                   to={p.cta.to}
-                  className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-700 font-semibold hover:opacity-90 transition"
+                  className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
                 >
                   {p.cta.label}
                 </Link>
@@ -123,15 +123,15 @@ export default function Projects() {
             <div className="font-semibold text-white mb-3">QUANTA</div>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>Q4 2025: Prototype meta‑layer over existing quantum control stacks.</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>H1 2026: Noise‑aware resource estimator and routing experiments.</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>H2 2026: Early access for research partners; benchmark releases.</span>
               </li>
             </ul>
@@ -147,15 +147,15 @@ export default function Projects() {
             <div className="font-semibold text-white mb-3">Site2CRM</div>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>Q4 2025: Private beta with initial integrations (HubSpot, Pipedrive).</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>H1 2026: Attribution reporting and scoring improvements.</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400/70" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
                 <span>H2 2026: Public launch and pricing tiers.</span>
               </li>
             </ul>
@@ -173,7 +173,7 @@ export default function Projects() {
         </p>
         <Link
           to="/contact"
-          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-700 font-semibold hover:opacity-90 transition"
+          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
         >
           Contact the Labs
         </Link>

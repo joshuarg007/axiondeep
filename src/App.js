@@ -6,13 +6,19 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
+import { LogoMark } from "./components/Logo";
+import Legal from "./pages/Legal";
+import Quanta from "./pages/projects/Quanta";
+import Site2CRM from "./pages/projects/Site2CRM";
 
 const NavItem = ({ to, children }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      "px-3 py-2 rounded-full text-sm transition-colors duration-200 " +
-      (isActive ? "bg-white/10 text-white" : "text-gray-300 hover:text-white")
+      "px-4 py-2 text-[13px] font-medium tracking-wide uppercase transition-all duration-300 " +
+      (isActive
+        ? "text-white"
+        : "text-gray-400 hover:text-white")
     }
   >
     {children}
@@ -20,52 +26,68 @@ const NavItem = ({ to, children }) => (
 );
 
 export default function App() {
-  ;
-
   return (
     <GradientBackground>
-      {/* Floating minimalist navbar */}
-      <header className="relative z-20">
-        {/* Fixed logo at top-left (Chrome-safe) */}
-        <Link
-          to="/"
-          className="fixed top-4 right-6 flex items-center gap-4 text-sm text-gray-300 backdrop-blur-sm bg-black/20 rounded-full px-4 py-2 shadow-[0_0_12px_rgba(0,0,0,0.25)] transition-all duration-500"
-          style={{ pointerEvents: "auto" }}
-        >
-          Axion Deep Labs
-        </Link>
-
-
-        {/* Keep your floating, centered nav */}
-        <div
-          className="fixed top-4 left-1/2 -translate-x-1/2 flex items-center justify-center w-[90%] max-w-6xl px-4 py-2 transition-all duration-500 select-none pointer-events-none"
-          style={{
-            opacity: Math.max(0.75, 1 - window.scrollY / 400),
-            zIndex: 5,
-          }}
-        >
-          <nav
-            className="flex items-center gap-4 text-sm text-gray-300 pointer-events-auto filter drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]"
-            style={{ justifyContent: "center" }}
+      {/* Professional fixed navbar */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            className="flex items-center justify-between h-16 border-b border-white/[0.06]"
+            style={{
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+            }}
           >
-            <NavItem to="/mission">Mission</NavItem>
-            <NavItem to="/solutions">Solutions</NavItem>
-            <NavItem to="/careers">Careers</NavItem>
-            <NavItem to="/contact">Contact</NavItem>
-          </nav>
+            {/* Logo */}
+            <Link
+              to="/"
+              className="flex items-center gap-3 group"
+            >
+              <LogoMark size={36} />
+              <div className="flex flex-col">
+                <span className="text-white font-semibold text-[15px] tracking-tight leading-none">
+                  Axion Deep
+                </span>
+                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
+                  Labs
+                </span>
+              </div>
+            </Link>
+
+            {/* Navigation */}
+            <nav className="hidden md:flex items-center gap-1">
+              <NavItem to="/mission">Mission</NavItem>
+              <NavItem to="/solutions">Solutions</NavItem>
+              <NavItem to="/careers">Careers</NavItem>
+            </nav>
+
+            {/* CTA */}
+            <Link
+              to="/contact"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[13px] font-medium text-white bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.1] rounded-lg transition-all duration-300"
+            >
+              Contact
+              <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </header>
 
 
       {/* Routes */}
-      <main className="max-w-6xl mx-auto px-4 py-12 relative z-10">
+      <main className="max-w-6xl mx-auto px-4 pt-24 pb-12 relative z-10">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/legal" element={<Legal />} /> */}          
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/projects/quanta" element={<Quanta />} />
+          <Route path="/projects/site2crm" element={<Site2CRM />} />          
           <Route
             path="*"
             element={
