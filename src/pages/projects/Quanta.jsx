@@ -2,21 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-// Placeholder image component
-const ImagePlaceholder = ({ label, aspectRatio = "16/9" }) => (
-  <div
-    className="w-full rounded-xl bg-gradient-to-br from-cyan-900/30 to-violet-900/30 border border-white/10 flex items-center justify-center overflow-hidden"
-    style={{ aspectRatio }}
-  >
-    <div className="text-center p-8">
-      <div className="text-4xl mb-2">🖼️</div>
-      <p className="text-sm text-gray-400">{label}</p>
-    </div>
-  </div>
-);
+// Import media
+import quantaSandbox from "../../assets/quanta-sandbox.png";
+import quantaSandboxVideo from "../../assets/quanta-sandbox.webm";
 
 export default function Quanta() {
-  const appUrl = "http://localhost:5175";
+  const appUrl = "https://quanta.axiondeep.com";
 
   return (
     <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
@@ -51,8 +42,20 @@ export default function Quanta() {
           </p>
         </div>
 
-        {/* Hero Image */}
-        <ImagePlaceholder label="QUANTA Dashboard - Circuit Builder & Bloch Sphere" />
+        {/* Hero Video */}
+        <div className="rounded-xl overflow-hidden border border-white/10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={quantaSandbox}
+            className="w-full"
+          >
+            <source src={quantaSandboxVideo} type="video/webm" />
+            <img src={quantaSandbox} alt="QUANTA Sandbox Mode" />
+          </video>
+        </div>
 
         {/* Overview */}
         <section className="space-y-6">
@@ -130,23 +133,17 @@ export default function Quanta() {
 
         {/* Screenshots */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Screenshots</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-2xl font-semibold text-white">In Action</h2>
+          <div className="space-y-6">
             <div className="space-y-3">
-              <ImagePlaceholder label="Circuit Builder with Multi-Qubit System" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Build circuits with up to 4 qubits using drag-and-drop gates</p>
-            </div>
-            <div className="space-y-3">
-              <ImagePlaceholder label="Bloch Sphere Visualization" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Watch quantum states evolve in real-time on the Bloch sphere</p>
-            </div>
-            <div className="space-y-3">
-              <ImagePlaceholder label="Interactive Lesson View" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Learn through structured lessons with embedded exercises</p>
-            </div>
-            <div className="space-y-3">
-              <ImagePlaceholder label="Measurement Results" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">See probability distributions and run simulated measurements</p>
+              <img
+                src={quantaSandbox}
+                alt="QUANTA Sandbox Mode"
+                className="w-full rounded-xl border border-white/10"
+              />
+              <p className="text-sm text-gray-400">
+                Sandbox mode: Build circuits with up to 16 qubits, apply gates, and see real-time probability distributions
+              </p>
             </div>
           </div>
         </section>

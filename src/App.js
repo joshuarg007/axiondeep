@@ -10,6 +10,7 @@ import { LogoMark } from "./components/Logo";
 import Legal from "./pages/Legal";
 import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
+import Forma from "./pages/projects/Forma";
 
 const NavItem = ({ to, children }) => (
   <NavLink
@@ -87,7 +88,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/projects/quanta" element={<Quanta />} />
-          <Route path="/projects/site2crm" element={<Site2CRM />} />          
+          <Route path="/projects/site2crm" element={<Site2CRM />} />
+          <Route path="/projects/forma" element={<Forma />} />          
           <Route
             path="*"
             element={

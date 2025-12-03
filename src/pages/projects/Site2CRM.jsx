@@ -2,22 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-// Placeholder image component
-const ImagePlaceholder = ({ label, aspectRatio = "16/9" }) => (
-  <div
-    className="w-full rounded-xl bg-gradient-to-br from-violet-900/30 to-cyan-900/30 border border-white/10 flex items-center justify-center overflow-hidden"
-    style={{ aspectRatio }}
-  >
-    <div className="text-center p-8">
-      <div className="text-4xl mb-2">🖼️</div>
-      <p className="text-sm text-gray-400">{label}</p>
-    </div>
-  </div>
-);
+// Import media
+import features1 from "../../assets/features1.png";
+import features2 from "../../assets/features2.png";
+import features3 from "../../assets/features3.png";
+import features4 from "../../assets/features4.png";
+import features1Video from "../../assets/features1.webm";
+import features2Video from "../../assets/features2.webm";
+import features3Video from "../../assets/features3.webm";
 
 export default function Site2CRM() {
-  const appUrl = "http://localhost:3001";
-  const docsUrl = "http://localhost:3001/docs";
+  const appUrl = "https://site2crm.io";
+  const docsUrl = "https://site2crm.io/docs";
 
   return (
     <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
@@ -43,30 +39,42 @@ export default function Site2CRM() {
             <h1 className="text-4xl md:text-5xl font-semibold text-white">
               Site2CRM
             </h1>
-            <span className="text-xs px-3 py-1.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-400/20">
-              Private beta
+            <span className="text-xs px-3 py-1.5 rounded-full bg-green-500/10 text-green-300 border border-green-400/20">
+              Live
             </span>
           </div>
           <p className="text-xl text-gray-300 mt-4">
-            Intelligent Lead Capture & Enrichment
+            AI-Powered Lead Analytics for SaaS
           </p>
         </div>
 
-        {/* Hero Image */}
-        <ImagePlaceholder label="Site2CRM Dashboard - Lead Pipeline & Analytics" />
+        {/* Hero Video */}
+        <div className="rounded-xl overflow-hidden border border-white/10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={features1}
+            className="w-full"
+          >
+            <source src={features1Video} type="video/webm" />
+            <img src={features1} alt="Site2CRM Dashboard" />
+          </video>
+        </div>
 
         {/* Overview */}
         <section className="space-y-6">
           <h2 className="text-2xl font-semibold text-white">Overview</h2>
           <p className="text-gray-300 leading-relaxed">
-            Site2CRM transforms anonymous website traffic into actionable CRM intelligence.
-            It captures visitor events, enriches company and contact data, scores intent signals,
-            and syncs qualified leads directly into your CRM with full attribution.
+            Site2CRM is an AI-powered lead analytics platform built specifically for SaaS companies.
+            Capture leads with embeddable forms, score them with AI-powered win probability prediction,
+            track salesperson performance with detailed activity metrics, and sync everything to HubSpot.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            Unlike traditional lead capture tools that operate as black boxes, Site2CRM provides
-            transparent attribution you can audit. Know exactly where leads come from, what actions
-            they've taken, and why they were scored the way they were.
+            Unlike generic CRM tools, Site2CRM focuses on what SaaS teams actually need: lead source
+            attribution, AI-driven scoring, salesperson analytics, and team gamification with leaderboards
+            and achievements to keep your team motivated.
           </p>
 
           <a
@@ -88,34 +96,34 @@ export default function Site2CRM() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: "🔍",
-                title: "Identity Resolution",
-                description: "Match anonymous visitors to companies and contacts using multiple data signals including IP, cookies, and behavioral patterns."
+                icon: "🤖",
+                title: "AI Lead Scoring",
+                description: "Win probability prediction powered by machine learning. Score leads automatically based on engagement signals and historical patterns."
               },
               {
                 icon: "📊",
-                title: "Data Enrichment",
-                description: "Automatically enrich leads with firmographic data—company size, industry, tech stack, and decision-maker contacts."
+                title: "Salesperson Analytics",
+                description: "Track calls, emails, meetings, and deals per salesperson. Detailed activity metrics and performance trends."
               },
               {
-                icon: "🎯",
-                title: "Intent Scoring",
-                description: "Score leads based on behavior patterns: pages visited, time on site, return visits, and content engagement."
+                icon: "🏆",
+                title: "Team Gamification",
+                description: "Leaderboards, badges, and achievements. Underdog celebrations and sales scoreboard to motivate your team."
               },
               {
-                icon: "✅",
-                title: "Auditable Attribution",
-                description: "Full transparency into lead sources. See exactly which campaign, content, or referrer brought each lead."
+                icon: "📈",
+                title: "Lead Analytics Dashboard",
+                description: "Visual breakdown by source, trendlines over time, export to CSV. See what's working and optimize."
               },
               {
                 icon: "🔗",
-                title: "Native CRM Sync",
-                description: "Direct integration with HubSpot, Pipedrive, Salesforce, and other major CRM platforms. No manual exports."
+                title: "HubSpot Integration",
+                description: "Native sync with HubSpot CRM. Pipedrive and Salesforce coming soon. No manual data entry."
               },
               {
-                icon: "🔒",
-                title: "Privacy Compliant",
-                description: "Built with GDPR and CCPA compliance from day one. Consent management and data handling built in."
+                icon: "📝",
+                title: "Embeddable Forms",
+                description: "Customizable lead capture forms you can embed anywhere. Spam-aware with source tagging built in."
               }
             ].map((feature, i) => (
               <div key={i} className="border border-white/10 rounded-xl bg-white/5 p-5">
@@ -129,23 +137,33 @@ export default function Site2CRM() {
 
         {/* Screenshots */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Screenshots</h2>
+          <h2 className="text-2xl font-semibold text-white">In Action</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-3">
-              <ImagePlaceholder label="Lead Pipeline View" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">See all captured leads with enrichment status and intent scores</p>
+              <div className="rounded-xl overflow-hidden border border-white/10">
+                <video autoPlay loop muted playsInline poster={features2} className="w-full">
+                  <source src={features2Video} type="video/webm" />
+                  <img src={features2} alt="Lead Analytics" />
+                </video>
+              </div>
+              <p className="text-sm text-gray-400">Lead analytics with source breakdown and trendlines</p>
             </div>
             <div className="space-y-3">
-              <ImagePlaceholder label="Company Profile" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Detailed company insights with firmographic data and visit history</p>
+              <div className="rounded-xl overflow-hidden border border-white/10">
+                <video autoPlay loop muted playsInline poster={features3} className="w-full">
+                  <source src={features3Video} type="video/webm" />
+                  <img src={features3} alt="Salesperson Dashboard" />
+                </video>
+              </div>
+              <p className="text-sm text-gray-400">Salesperson dashboard with activity metrics</p>
             </div>
-            <div className="space-y-3">
-              <ImagePlaceholder label="Attribution Report" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Track lead sources and campaign performance with full transparency</p>
-            </div>
-            <div className="space-y-3">
-              <ImagePlaceholder label="CRM Integration Settings" aspectRatio="4/3" />
-              <p className="text-sm text-gray-400">Configure sync rules and field mappings for your CRM</p>
+            <div className="space-y-3 md:col-span-2">
+              <img
+                src={features4}
+                alt="Team Leaderboard"
+                className="w-full rounded-xl border border-white/10"
+              />
+              <p className="text-sm text-gray-400">Team leaderboard with gamification and achievements</p>
             </div>
           </div>
         </section>
@@ -341,20 +359,20 @@ export default function Site2CRM() {
           <h2 className="text-2xl font-semibold text-white">Roadmap</h2>
           <div className="space-y-4">
             {[
-              { phase: "Q4 2025", milestone: "Private beta with HubSpot and Pipedrive integrations", status: "current" },
-              { phase: "Q1 2026", milestone: "Salesforce integration and advanced scoring models" },
-              { phase: "Q2 2026", milestone: "Attribution reporting dashboard and Zapier integration" },
-              { phase: "H2 2026", milestone: "Public launch with self-serve signup and pricing tiers" }
+              { phase: "Now", milestone: "Live with AI scoring, gamification, and HubSpot integration", status: "current" },
+              { phase: "Q1 2026", milestone: "Pipedrive and Salesforce integrations" },
+              { phase: "Q2 2026", milestone: "Enhanced attribution dashboard and API v2" },
+              { phase: "H2 2026", milestone: "Enterprise features and white-label options" }
             ].map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
                 <span className={`text-sm font-medium w-20 shrink-0 ${
-                  item.status === "current" ? "text-violet-400" : "text-cyan-400"
+                  item.status === "current" ? "text-green-400" : "text-cyan-400"
                 }`}>
                   {item.phase}
                 </span>
                 <div className="flex gap-3 items-start">
                   <span className={`mt-2 h-2 w-2 rounded-full shrink-0 ${
-                    item.status === "current" ? "bg-violet-400" : "bg-violet-400/70"
+                    item.status === "current" ? "bg-green-400" : "bg-green-400/70"
                   }`} />
                   <span className="text-gray-300">{item.milestone}</span>
                 </div>
@@ -365,30 +383,29 @@ export default function Site2CRM() {
 
         {/* CTA */}
         <section className="border-t border-white/10 pt-12">
-          <h2 className="text-2xl font-semibold text-white mb-4">Request Beta Access</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Get Started with Site2CRM</h2>
           <p className="text-gray-400 mb-6">
-            We're currently in private beta and selectively onboarding companies.
-            If you're interested in turning your website traffic into qualified leads,
-            let's talk.
+            Site2CRM is live and ready for your SaaS team. Sign up for free to start
+            capturing leads and tracking salesperson performance today.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
-              to="/contact"
-              className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
-            >
-              Request Access
-            </Link>
             <a
-              href={docsUrl}
+              href={appUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 font-semibold hover:bg-white/5 transition"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
             >
-              View Docs
+              Launch Site2CRM
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
+            <Link
+              to="/contact"
+              className="inline-block px-6 py-3 rounded-full border border-white/20 font-semibold hover:bg-white/5 transition"
+            >
+              Contact Us
+            </Link>
           </div>
         </section>
       </motion.div>
