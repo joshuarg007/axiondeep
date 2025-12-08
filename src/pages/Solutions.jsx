@@ -143,9 +143,9 @@ export default function Projects() {
               transition={{ duration: 0.45, delay: idx * 0.05 }}
               className="relative border border-white/10 rounded-lg bg-white/5 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition group"
             >
-              <div className={`grid md:grid-cols-2 gap-0 ${idx % 2 === 1 ? 'md:flex md:flex-row-reverse' : ''}`}>
+              <div className="flex flex-col md:flex-row">
                 {/* Video/Image */}
-                <div className="p-6 md:flex-1">
+                <div className={`p-6 md:w-1/2 ${idx % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
                   {p.video ? (
                     <video
                       autoPlay
@@ -175,7 +175,7 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col justify-center md:flex-1">
+                <div className={`p-6 flex flex-col justify-center md:w-1/2 ${idx % 2 === 1 ? 'md:order-1' : 'md:order-2'}`}>
                   {/* Header */}
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
