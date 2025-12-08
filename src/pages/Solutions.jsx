@@ -105,6 +105,28 @@ const projects = [
     cta: { label: "Learn more", to: "/projects/vesper" },
     externalLink: null,
   },
+  {
+    key: "founderos",
+    title: "FounderOS",
+    subtitle: "Command Center for Startup Founders",
+    tagline: "Everything you need to run your startup, in one place.",
+    blurb:
+      "A comprehensive startup management platform that centralizes daily operations, business resources, and team collaboration. From daily briefs to credential vaults, FounderOS keeps founders organized and focused on what matters.",
+    focus: [
+      "Daily Brief dashboard with actionable insights",
+      "Business Library for documents and resources",
+      "Credential Vault with encrypted storage",
+      "Role-based access: admin, editor, viewer",
+    ],
+    tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Docker"],
+    status: "Live",
+    statusColor: "green",
+    image: null,
+    video: null,
+    imageAlt: "FounderOS Dashboard",
+    cta: { label: "Learn more", to: "/projects/founderos" },
+    externalLink: "https://founders.axiondeep.com",
+  },
 ];
 
 export default function Projects() {
@@ -126,7 +148,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           We build where rigor meets traction. Our portfolio spans frontier research and applied
-          systems—the same engineering bar, different time horizons. Below are four initiatives we
+          systems—the same engineering bar, different time horizons. Below are five initiatives we
           are advancing in parallel.
         </motion.p>
       </motion.div>
@@ -167,7 +189,7 @@ export default function Projects() {
                   ) : (
                     <div className="w-full h-56 rounded-lg bg-gradient-to-br from-cyan-900/30 to-violet-900/30 border border-white/10 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : p.key === "vesper" ? "🛡️" : "🖼️"}</div>
+                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : p.key === "vesper" ? "🛡️" : p.key === "founderos" ? "🚀" : "🖼️"}</div>
                         <p className="text-sm text-gray-500">{p.imageAlt}</p>
                       </div>
                     </div>
@@ -250,7 +272,7 @@ export default function Projects() {
       {/* Roadmap */}
       <div className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Roadmap Snapshot</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {/* QUANTA timeline */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -366,18 +388,48 @@ export default function Projects() {
               </li>
             </ul>
           </motion.div>
+
+          {/* FounderOS timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.2 }}
+            className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center">
+                <span className="text-green-400 text-sm">🚀</span>
+              </div>
+              <div className="font-semibold text-white text-sm">FounderOS</div>
+            </div>
+            <ul className="space-y-2 text-xs text-gray-300">
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
+                <span><strong className="text-green-400">Live:</strong> Dashboard, vault, team roles</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span>Q1 2026: Metrics dashboard, integrations</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span>Q2 2026: AI insights and automation</span>
+              </li>
+            </ul>
+          </motion.div>
         </div>
       </div>
 
       {/* Quick Links */}
       <div className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Quick Links</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
           {[
             { label: "QUANTA", href: "https://quanta.axiondeep.com", icon: "⚛", desc: "Learn quantum computing" },
             { label: "Site2CRM", href: "https://site2crm.io", icon: "📊", desc: "Lead analytics for SaaS" },
             { label: "Forma", href: "/projects/forma", icon: "🎨", desc: "Visual page builder", internal: true },
-            { label: "Vesper", href: "/projects/vesper", icon: "🛡️", desc: "Autonomous AI security agent", internal: true },
+            { label: "Vesper", href: "/projects/vesper", icon: "🛡️", desc: "AI security agent", internal: true },
+            { label: "FounderOS", href: "https://founders.axiondeep.com", icon: "🚀", desc: "Startup command center" },
           ].map((link, i) => (
             link.internal ? (
               <Link
