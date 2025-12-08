@@ -81,7 +81,29 @@ const projects = [
     video: formaBuilderVideo,
     imageAlt: "Forma Builder",
     cta: { label: "Learn more", to: "/projects/forma" },
-    externalLink: "http://localhost:3000",
+    externalLink: null,
+  },
+  {
+    key: "vesper",
+    title: "Vesper",
+    subtitle: "Autonomous AI Penetration Testing Agent",
+    tagline: "AI that thinks like a hacker, remembers like an expert.",
+    blurb:
+      "An autonomous AI security agent powered by Claude that conducts intelligent penetration testing. Features persistent neural memory (NLMN) that learns from every engagement, enabling context-aware vulnerability discovery and attack chain reasoning that improves over time.",
+    focus: [
+      "Autonomous Claude AI agent with multi-step attack reasoning",
+      "NLMN: Persistent neural memory with cross-session learning",
+      "AI-driven vulnerability correlation and exploit chaining",
+      "Intelligent OOB detection: Blind XSS, SSRF, XXE, Log4Shell",
+    ],
+    tech: ["Claude AI", "FAISS-GPU", "Python", "Flask", "PyQt5", "Docker"],
+    status: "In development",
+    statusColor: "violet",
+    image: null,
+    video: null,
+    imageAlt: "Vesper Security Platform",
+    cta: { label: "Learn more", to: "/projects/vesper" },
+    externalLink: null,
   },
 ];
 
@@ -104,7 +126,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           We build where rigor meets traction. Our portfolio spans frontier research and applied
-          systems—the same engineering bar, different time horizons. Below are three initiatives we
+          systems—the same engineering bar, different time horizons. Below are four initiatives we
           are advancing in parallel.
         </motion.p>
       </motion.div>
@@ -121,9 +143,9 @@ export default function Projects() {
               transition={{ duration: 0.45, delay: idx * 0.05 }}
               className="relative border border-white/10 rounded-lg bg-white/5 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition group"
             >
-              <div className="grid md:grid-cols-2 gap-0">
+              <div className={`grid md:grid-cols-2 gap-0 ${idx % 2 === 1 ? 'md:flex md:flex-row-reverse' : ''}`}>
                 {/* Video/Image */}
-                <div className="p-6">
+                <div className="p-6 md:flex-1">
                   {p.video ? (
                     <video
                       autoPlay
@@ -145,7 +167,7 @@ export default function Projects() {
                   ) : (
                     <div className="w-full h-56 rounded-lg bg-gradient-to-br from-cyan-900/30 to-violet-900/30 border border-white/10 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : "🖼️"}</div>
+                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : p.key === "vesper" ? "🛡️" : "🖼️"}</div>
                         <p className="text-sm text-gray-500">{p.imageAlt}</p>
                       </div>
                     </div>
@@ -153,14 +175,20 @@ export default function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col justify-center">
+                <div className="p-6 flex flex-col justify-center md:flex-1">
                   {/* Header */}
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
                       <h3 className="text-white font-semibold text-2xl">{p.title}</h3>
                       <p className="text-gray-400 text-sm mt-1">{p.subtitle}</p>
                     </div>
-                    <span className={`shrink-0 text-xs px-3 py-1 rounded bg-${p.statusColor}-500/10 text-${p.statusColor}-300 border border-${p.statusColor}-400/20`}>
+                    <span className={`shrink-0 text-xs px-3 py-1 rounded ${
+                      p.statusColor === 'green' ? 'bg-green-500/10 text-green-300 border border-green-400/20' :
+                      p.statusColor === 'cyan' ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-400/20' :
+                      p.statusColor === 'amber' ? 'bg-amber-500/10 text-amber-300 border border-amber-400/20' :
+                      p.statusColor === 'violet' ? 'bg-violet-500/10 text-violet-300 border border-violet-400/20' :
+                      'bg-gray-500/10 text-gray-300 border border-gray-400/20'
+                    }`}>
                       {p.status}
                     </span>
                   </div>
@@ -222,7 +250,7 @@ export default function Projects() {
       {/* Roadmap */}
       <div className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Roadmap Snapshot</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* QUANTA timeline */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -309,17 +337,47 @@ export default function Projects() {
               </li>
             </ul>
           </motion.div>
+
+          {/* Vesper timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.15 }}
+            className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
+          >
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-7 h-7 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                <span className="text-violet-400 text-sm">🛡️</span>
+              </div>
+              <div className="font-semibold text-white text-sm">Vesper</div>
+            </div>
+            <ul className="space-y-2 text-xs text-gray-300">
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400" />
+                <span><strong className="text-violet-400">Now:</strong> Autonomous AI agent, neural memory</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span>Q1 2026: AI attack chain reasoning engine</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span>Q2 2026: Multi-agent collaborative testing</span>
+              </li>
+            </ul>
+          </motion.div>
         </div>
       </div>
 
       {/* Quick Links */}
       <div className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Quick Links</h2>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: "QUANTA", href: "https://quanta.axiondeep.com", icon: "⚛", desc: "Learn quantum computing" },
             { label: "Site2CRM", href: "https://site2crm.io", icon: "📊", desc: "Lead analytics for SaaS" },
             { label: "Forma", href: "/projects/forma", icon: "🎨", desc: "Visual page builder", internal: true },
+            { label: "Vesper", href: "/projects/vesper", icon: "🛡️", desc: "Autonomous AI security agent", internal: true },
           ].map((link, i) => (
             link.internal ? (
               <Link
