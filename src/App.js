@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from "./pages/Home";
 import Mission from "./pages/Mission";
@@ -6,11 +6,13 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
-import { LogoMark } from "./components/Logo";
+import axionLogo from "./assets/axiondeep_logo.png";
 import Legal from "./pages/Legal";
 import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
 import Forma from "./pages/projects/Forma";
+import Vesper from "./pages/projects/Vesper";
+import FounderOS from "./pages/projects/FounderOS";
 
 const NavItem = ({ to, children }) => (
   <NavLink
@@ -27,6 +29,8 @@ const NavItem = ({ to, children }) => (
 );
 
 export default function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <GradientBackground>
       {/* Professional fixed navbar */}
@@ -45,15 +49,11 @@ export default function App() {
               to="/"
               className="flex items-center gap-3 group"
             >
-              <LogoMark size={36} />
-              <div className="flex flex-col">
-                <span className="text-white font-semibold text-[15px] tracking-tight leading-none">
-                  Axion Deep
-                </span>
-                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
-                  Labs
-                </span>
-              </div>
+              <img
+                src={axionLogo}
+                alt="Axion Deep Labs"
+                className="h-9 w-auto"
+              />
             </Link>
 
             {/* Navigation */}
@@ -63,17 +63,91 @@ export default function App() {
               <NavItem to="/careers">Careers</NavItem>
             </nav>
 
-            {/* CTA */}
-            <Link
-              to="/contact"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[13px] font-medium text-white bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.1] rounded-lg transition-all duration-300"
-            >
-              Contact
-              <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            {/* CTA + Mobile Menu Button */}
+            <div className="flex items-center gap-3">
+              <Link
+                to="/contact"
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-[13px] font-medium text-white bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.1] rounded-lg transition-all duration-300"
+              >
+                Contact
+                <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 text-gray-400 hover:text-white transition"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
+
+          {/* Mobile menu dropdown */}
+          {mobileMenuOpen && (
+            <div
+              className="md:hidden border-b border-white/[0.06] py-4"
+              style={{
+                background: "rgba(0,0,0,0.8)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+              }}
+            >
+              <nav className="flex flex-col space-y-1">
+                <NavLink
+                  to="/mission"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Mission
+                </NavLink>
+                <NavLink
+                  to="/solutions"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Solutions
+                </NavLink>
+                <NavLink
+                  to="/careers"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Careers
+                </NavLink>
+                <NavLink
+                  to="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Contact
+                </NavLink>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
@@ -89,7 +163,9 @@ export default function App() {
           <Route path="/legal" element={<Legal />} />
           <Route path="/projects/quanta" element={<Quanta />} />
           <Route path="/projects/site2crm" element={<Site2CRM />} />
-          <Route path="/projects/forma" element={<Forma />} />          
+          <Route path="/projects/forma" element={<Forma />} />
+          <Route path="/projects/vesper" element={<Vesper />} />
+          <Route path="/projects/founderos" element={<FounderOS />} />
           <Route
             path="*"
             element={
