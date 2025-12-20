@@ -6,7 +6,7 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
-import axionLogo from "./assets/axiondeep_logo.png";
+import { LogoMark } from "./components/Logo";
 import Legal from "./pages/Legal";
 import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
@@ -49,11 +49,15 @@ export default function App() {
               to="/"
               className="flex items-center gap-3 group"
             >
-              <img
-                src={axionLogo}
-                alt="Axion Deep Labs"
-                className="h-9 w-auto"
-              />
+              <LogoMark size={36} />
+              <div className="flex flex-col">
+                <span className="text-white font-semibold text-[15px] tracking-tight leading-none">
+                  Axion Deep
+                </span>
+                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
+                  Labs
+                </span>
+              </div>
             </Link>
 
             {/* Navigation */}
