@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import vesperDashboard from "../../assets/vesper-dashboard.png";
+import vesperDemo from "../../assets/vesper-demo.webm";
 
 export default function Vesper() {
   return (
@@ -36,12 +38,19 @@ export default function Vesper() {
           </p>
         </div>
 
-        {/* Hero Placeholder */}
-        <div className="rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-violet-900/30 to-cyan-900/30 h-64 flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-6xl mb-4">🛡️</div>
-            <p className="text-gray-400">Preview coming soon</p>
-          </div>
+        {/* Hero Video/Image */}
+        <div className="rounded-xl overflow-hidden border border-white/10">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={vesperDashboard}
+            className="w-full object-cover"
+          >
+            <source src={vesperDemo} type="video/webm" />
+            <img src={vesperDashboard} alt="Vesper Security Platform" />
+          </video>
         </div>
 
         {/* Overview */}

@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import formaHero from "../../assets/forma-hero.png";
+import formaDemo from "../../assets/forma-demo.webm";
 
 export default function Forma() {
   const appUrl = "http://localhost:3000";
@@ -38,12 +40,19 @@ export default function Forma() {
           </p>
         </div>
 
-        {/* Hero Image Placeholder */}
-        <div className="w-full rounded-xl bg-gradient-to-br from-amber-900/30 to-violet-900/30 border border-white/10 flex items-center justify-center overflow-hidden" style={{ aspectRatio: "16/9" }}>
-          <div className="text-center p-8">
-            <div className="text-4xl mb-2">🎨</div>
-            <p className="text-sm text-gray-400">Forma Builder Interface</p>
-          </div>
+        {/* Hero Video/Image */}
+        <div className="w-full rounded-xl border border-white/10 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={formaHero}
+            className="w-full object-cover"
+          >
+            <source src={formaDemo} type="video/webm" />
+            <img src={formaHero} alt="Forma Builder Interface" />
+          </video>
         </div>
 
         {/* Overview */}

@@ -9,6 +9,12 @@ import site2crmDashboard from "../assets/features4.png";
 import site2crmVideo from "../assets/features2.webm";
 import formaBuilder from "../assets/forma-builder.png";
 import formaBuilderVideo from "../assets/forma-builder.webm";
+import formaHero from "../assets/forma-hero.png";
+import formaDemo from "../assets/forma-demo.webm";
+import vesperDashboard from "../assets/vesper-dashboard.png";
+import vesperDemo from "../assets/vesper-demo.webm";
+import founderosDashboard from "../assets/founderos-dashboard.png";
+import founderosDemo from "../assets/founderos-demo.webm";
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
@@ -77,8 +83,8 @@ const projects = [
     tech: ["Next.js 14", "TypeScript", "FastAPI", "Claude AI", "Tailwind"],
     status: "In development",
     statusColor: "amber",
-    image: formaBuilder,
-    video: formaBuilderVideo,
+    image: formaHero,
+    video: formaDemo,
     imageAlt: "Forma Builder",
     cta: { label: "Learn more", to: "/projects/forma" },
     externalLink: null,
@@ -99,8 +105,8 @@ const projects = [
     tech: ["Claude AI", "FAISS-GPU", "Python", "Flask", "PyQt5", "Docker"],
     status: "In development",
     statusColor: "violet",
-    image: null,
-    video: null,
+    image: vesperDashboard,
+    video: vesperDemo,
     imageAlt: "Vesper Security Platform",
     cta: { label: "Learn more", to: "/projects/vesper" },
     externalLink: null,
@@ -121,8 +127,8 @@ const projects = [
     tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Docker"],
     status: "Live",
     statusColor: "green",
-    image: null,
-    video: null,
+    image: founderosDashboard,
+    video: founderosDemo,
     imageAlt: "FounderOS Dashboard",
     cta: { label: "Learn more", to: "/projects/founderos" },
     externalLink: "https://founders.axiondeep.com",
