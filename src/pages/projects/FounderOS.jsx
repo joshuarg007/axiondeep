@@ -47,8 +47,10 @@ export default function FounderOS() {
             loop
             muted
             playsInline
+            preload="auto"
             poster={founderosDashboard}
             className="w-full object-cover"
+            onCanPlay={(e) => e.target.play().catch(() => {})}
           >
             <source src={founderosDemo} type="video/webm" />
             <img src={founderosDashboard} alt="FounderOS Dashboard" />

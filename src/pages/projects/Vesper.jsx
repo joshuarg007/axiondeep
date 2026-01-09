@@ -45,8 +45,10 @@ export default function Vesper() {
             loop
             muted
             playsInline
+            preload="auto"
             poster={vesperDashboard}
             className="w-full object-cover"
+            onCanPlay={(e) => e.target.play().catch(() => {})}
           >
             <source src={vesperDemo} type="video/webm" />
             <img src={vesperDashboard} alt="Vesper Security Platform" />

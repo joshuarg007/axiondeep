@@ -188,8 +188,10 @@ export default function Projects() {
                       loop
                       muted
                       playsInline
+                      preload="auto"
                       poster={p.image}
                       className="w-full h-56 object-cover rounded-lg border border-white/10"
+                      onCanPlay={(e) => e.target.play().catch(() => {})}
                     >
                       <source src={p.video} type="video/webm" />
                       <img src={p.image} alt={p.imageAlt} />

@@ -268,34 +268,6 @@ export default function Development() {
         </div>
       </motion.section>
 
-      {/* Stats/Trust Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/[0.08] p-12"
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10" />
-
-        <div className="relative z-10 grid md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "5+", label: "Products Shipped" },
-            { value: "10K+", label: "Lines of Code" },
-            { value: "99%", label: "Client Satisfaction" },
-            { value: "24/7", label: "Support Available" },
-          ].map((stat, idx) => (
-            <div key={idx} className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.section>
-
       {/* Portfolio Preview */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -339,6 +311,18 @@ export default function Development() {
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="text-center pt-4">
+          <Link
+            to="/solutions"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+          >
+            See all projects
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
         </div>
       </motion.section>
 

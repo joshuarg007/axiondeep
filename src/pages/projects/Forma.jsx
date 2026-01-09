@@ -47,8 +47,10 @@ export default function Forma() {
             loop
             muted
             playsInline
+            preload="auto"
             poster={formaHero}
             className="w-full object-cover"
+            onCanPlay={(e) => e.target.play().catch(() => {})}
           >
             <source src={formaDemo} type="video/webm" />
             <img src={formaHero} alt="Forma Builder Interface" />
