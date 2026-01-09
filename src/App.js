@@ -6,13 +6,14 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
-import { LogoMark } from "./components/Logo";
+import logo from "./assets/logo.png";
 import Legal from "./pages/Legal";
 import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
 import Forma from "./pages/projects/Forma";
 import Vesper from "./pages/projects/Vesper";
 import FounderOS from "./pages/projects/FounderOS";
+import Development from "./pages/Development";
 
 const NavItem = ({ to, children }) => (
   <NavLink
@@ -37,11 +38,13 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div
-            className="flex items-center justify-between h-16 border-b border-white/[0.06]"
+            className="flex items-center justify-between h-16"
             style={{
-              background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+              maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
             }}
           >
             {/* Logo */}
@@ -49,21 +52,14 @@ export default function App() {
               to="/"
               className="flex items-center gap-3 group"
             >
-              <LogoMark size={36} />
-              <div className="flex flex-col">
-                <span className="text-white font-semibold text-[15px] tracking-tight leading-none">
-                  Axion Deep
-                </span>
-                <span className="text-gray-500 text-[10px] tracking-widest uppercase">
-                  Labs
-                </span>
-              </div>
+              <img src={logo} alt="Axion Deep Labs" className="h-10 w-auto" />
             </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center gap-1">
               <NavItem to="/mission">Mission</NavItem>
               <NavItem to="/solutions">Solutions</NavItem>
+              <NavItem to="/development">Development</NavItem>
               <NavItem to="/careers">Careers</NavItem>
             </nav>
 
@@ -130,6 +126,16 @@ export default function App() {
                   Solutions
                 </NavLink>
                 <NavLink
+                  to="/development"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Development
+                </NavLink>
+                <NavLink
                   to="/careers"
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
@@ -162,6 +168,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/development" element={<Development />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
