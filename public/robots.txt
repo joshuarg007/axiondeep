@@ -1,3 +1,21 @@
-# https://www.robotstxt.org/robotstxt.html
+# Axion Deep Labs - robots.txt
+# https://www.axiondeep.com
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.axiondeep.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block common bot traps
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /static/js/*.map
+
+# Allow important resources
+Allow: /static/
+Allow: /assets/

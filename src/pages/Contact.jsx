@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SEO from "../components/SEO";
 
 const stepsDef = [
   { id: "email", label: "Email", type: "email", placeholder: "you@domain.com", required: true },
@@ -228,6 +229,12 @@ export default function Contact() {
 
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+      <SEO
+        title="Contact Us - Start Your Software Project"
+        description="Get in touch with Axion Deep Labs for custom software development. Request a quote for web applications, mobile apps, AI solutions, VR/AR development, and enterprise software."
+        keywords="contact software developers, hire developers, software development quote, custom software consultation, web development agency contact"
+        canonical="/contact"
+      />
       <header className="space-y-2">
         <h1 className="text-3xl md:text-4xl font-semibold">
           Start a Research Conversation

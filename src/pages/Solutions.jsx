@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 // Import media
 import quantaSandbox from "../assets/quanta-sandbox.png";
@@ -138,6 +139,13 @@ const projects = [
 export default function Projects() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+      <SEO
+        title="Our Solutions - Software Products & Case Studies"
+        description="Explore Axion Deep Labs' software products and solutions: QUANTA quantum computing platform, Site2CRM lead analytics, Forma page builder, Vesper security testing, and FounderOS."
+        keywords="software products, SaaS products, web applications portfolio, software case studies, quantum computing platform, AI lead scoring, visual page builder, security testing software"
+        canonical="/solutions"
+      />
+
       {/* Intro */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

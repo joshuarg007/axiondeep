@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const prefersReduced =
   typeof window !== "undefined" &&
@@ -94,6 +95,12 @@ export default function Home() {
 
   return (
     <div className="text-center">
+      <SEO
+        title="Custom Software Development Company"
+        description="Axion Deep Labs builds custom web applications, mobile apps, AI-powered software, and enterprise solutions. Full-stack development with React, Python, and modern cloud technologies."
+        keywords="software development company, custom software development, web application development, mobile app development, AI development, full-stack developers, React developers, Python developers"
+        canonical="/"
+      />
       <motion.h1
         className="text-5xl md:text-7xl font-bold mb-4 gradient-text"
         initial={{ opacity: 0, y: -16 }}
@@ -109,7 +116,7 @@ export default function Home() {
         animate={prefersReduced ? {} : { opacity: 1 }}
         transition={prefersReduced ? {} : { delay: 0.3, duration: 0.9 }}
       >
-        From Thought to Precision
+        Custom Software Development & Digital Innovation
       </motion.h2>
 
       <motion.p
@@ -118,9 +125,9 @@ export default function Home() {
         animate={prefersReduced ? {} : { opacity: 1 }}
         transition={prefersReduced ? {} : { delay: 0.6, duration: 0.9 }}
       >
-        Advancing the frontiers of intelligent systems, quantum-inspired
-        computation, and data sciences. Our focus is inquiry and discovery: exploring, prototyping, and
-        validating new architectures that bridge scientific depth with engineering rigor.
+        We build custom web applications, mobile apps, and AI-powered software solutions.
+        From MVPs to enterprise platforms—our full-stack development team transforms ideas
+        into production-ready products with modern technologies like React, Python, and cloud infrastructure.
       </motion.p>
 
       <div className="flex flex-col sm:flex-row gap-3 justify-center mb-20">
@@ -141,7 +148,7 @@ export default function Home() {
       </div>
 
       <div className="text-xs tracking-widest text-gray-500 mb-24">
-        AI • DATA SYSTEMS • INTEGRATION • SECURITY • RELIABILITY
+        WEB APPS • MOBILE • AI • VR/AR • SAAS • ENTERPRISE SOFTWARE
       </div>
 
       {/* How It Works Section */}

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const platforms = [
   {
@@ -104,6 +105,13 @@ const process = [
 export default function Development() {
   return (
     <div className="relative z-10 text-gray-300 space-y-24 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+      <SEO
+        title="Application Development Services - Web, Mobile, VR, AR, AI"
+        description="Custom application development services: web apps, mobile apps, VR/AR experiences, AI-powered software, and enterprise solutions. React, Python, Unity, and modern tech stack."
+        keywords="application development, web app development, mobile app development, VR development, AR development, AI app development, custom software development, React development, enterprise software development"
+        canonical="/development"
+      />
+
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

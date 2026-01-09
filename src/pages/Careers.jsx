@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
@@ -54,6 +55,12 @@ const domains = [
 export default function Careers() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+      <SEO
+        title="Careers - Join Our Software Development Team"
+        description="Join Axion Deep Labs as a software developer, AI engineer, or VR/AR specialist. We're hiring talented developers passionate about building innovative software products."
+        keywords="software developer jobs, web developer careers, AI engineer jobs, VR developer jobs, React developer positions, Python developer jobs, tech startup careers"
+        canonical="/careers"
+      />
       {/* Intro */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
