@@ -5,27 +5,77 @@
 ---
 
 ## SESSION STATE (Update before ending each session)
-**Last Updated:** 2026-01-09
+**Last Updated:** 2026-01-10
 
 ### Where We Left Off:
-- Created Sales Portal & CMS infrastructure
-- Frontend components complete, backend Amplify config ready
-- Needs: Amplify initialization + password setup
+- Sales Portal & CMS fully deployed and functional
+- Research page created with Project DRIFT
+- QUANTA crosslinked with research
+- Video autoplay fix pushed
 
-### Immediate Next Steps:
-1. Run `npm create amplify@latest` to initialize Amplify Gen 2
-2. Deploy backend to AWS
-3. Run `node scripts/setup-passwords.js` to generate password hashes
-4. Add password hashes to DynamoDB AppConfig table
-5. Test portal login flows
+### Completed This Session:
+- Deployed Amplify backend (Lambda functions, DynamoDB, S3)
+- Fixed CORS issues with Lambda Function URLs
+- Set up passwords in DynamoDB (Contractor: SoftwareSales7$, Admin: Porange333!!!)
+- Created `/research` page with Project DRIFT
+- Added Research to navigation
+- Fixed video autoplay on Solutions page
+
+### Roadmap / Future Enhancements:
+- [ ] Upload actual training content via admin CMS
+- [ ] Style tweaks to portal/admin UI
+- [ ] Add more content categories if needed
+- [ ] QUANTA subscription tiers (planned)
 
 ### Current Blockers:
-- Amplify backend not yet deployed (requires user to run init command)
+- None
+
+### Environment Variables (Amplify Hosting):
+- `REACT_APP_AUTH_API_URL` = Lambda auth function URL
+- `REACT_APP_CONTENT_API_URL` = Lambda content function URL
 
 ---
 
 ## Project Overview
 Modern React landing page for Axion Deep Labs.
+
+---
+
+## QUANTA & PROJECT DRIFT (Dual-Use Governance)
+
+### Critical Context
+This website presents TWO distinct offerings that must NEVER be conflated:
+
+| Route | Offering | Plane | Language |
+|-------|----------|-------|----------|
+| `/quanta` | QUANTA Education Platform | Education (Commercial) | "Learn," "practice," "curriculum" |
+| `/research` | Project DRIFT | Research (R&D) | "Investigate," "characterize," "findings" |
+
+### Governance Documentation
+Full governance framework (33 documents) at:
+```
+~/Corporate/AxionDeepLabs/Quanta_Dual_Use_Governance/
+```
+
+### Project DRIFT
+**Full Name:** Degradation Regimes In Iterated Field Transformations
+
+Research investigating behavioral uncertainty in quantum system state evolution under repeated manipulation.
+
+### QUANTA Education
+Educational SaaS platform delivering structured curriculum and interactive simulation of established quantum computing concepts.
+
+### Language Rules
+See full guide: `Quanta_Dual_Use_Governance/02_Policies/06_Language_And_Labeling_Guide.md`
+
+Quick rules:
+1. QUANTA pages: Never claim "research" or "experimental"
+2. Research pages: Never use marketing language or call it a "product"
+3. Cross-links OK with correct framing:
+   - QUANTA: "Built on insights from our research program"
+   - Research: "Using QUANTA as our research instrument"
+
+---
 
 ## Tech Stack
 - React + JavaScript
@@ -47,9 +97,18 @@ npm run start  # Runs on port 3000
 - `/careers` - Careers page
 - `/contact` - Contact form
 - `/legal` - Privacy & Terms
-- `/projects/quanta` - Quanta project page
 - `/projects/site2crm` - Site2CRM project page
 - `/projects/forma` - Forma project page
+
+### QUANTA Education (Commercial)
+- `/quanta` - QUANTA Education Platform overview
+- `/quanta/pricing` - Subscription tiers (planned)
+- `/quanta/demo` - Interactive demo (planned)
+
+### Project DRIFT (Research)
+- `/research` - Project DRIFT overview
+- `/research/publications` - Papers and findings (planned)
+- `/research/methodology` - Research approach (planned)
 
 ### Sales Portal (password protected)
 - `/portal/login` - Contractor login
