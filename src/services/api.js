@@ -1,15 +1,11 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || '';
+const CONTENT_API_URL = process.env.REACT_APP_CONTENT_API_URL || '';
 
 class ApiClient {
-  constructor() {
-    this.baseUrl = API_BASE_URL;
-  }
-
   getToken() {
     return sessionStorage.getItem('axiondeep_portal_token');
   }
 
-  async request(endpoint, options = {}) {
+  async request(url, options = {}) {
     const token = this.getToken();
     const headers = {
       'Content-Type': 'application/json',
@@ -20,13 +16,12 @@ class ApiClient {
       headers['Authorization'] = `Bearer ${token}`;
     }
 
-    const response = await fetch(`${this.baseUrl}${endpoint}`, {
+    const response = await fetch(url, {
       ...options,
       headers,
     });
 
     if (response.status === 401) {
-      // Token expired or invalid - clear session
       sessionStorage.removeItem('axiondeep_portal_token');
       sessionStorage.removeItem('axiondeep_portal_role');
       window.location.href = '/portal/login';
@@ -45,44 +40,45 @@ class ApiClient {
     return response.json();
   }
 
-  // Content endpoints
+  // Content endpoints - all go to the content Lambda
   async getContent(category = null, limit = 50) {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams({ action: 'list' });
     if (category) params.append('category', category);
     if (limit) params.append('limit', limit);
-    const query = params.toString() ? `?${params.toString()}` : '';
-    return this.request(`/api/content${query}`);
+    return this.request(`${CONTENT_API_URL}?${params.toString()}`);
   }
 
   async getContentItem(id) {
-    return this.request(`/api/content/${id}`);
+    const params = new URLSearchParams({ action: 'get', id });
+    return this.request(`${CONTENT_API_URL}?${params.toString()}`);
   }
 
   async createContent(data) {
-    return this.request('/api/content', {
+    return this.request(CONTENT_API_URL, {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify({ action: 'create', ...data }),
     });
   }
 
   async updateContent(id, data) {
-    return this.request(`/api/content/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify(data),
+    return this.request(CONTENT_API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'update', id, ...data }),
     });
   }
 
   async deleteContent(id) {
-    return this.request(`/api/content/${id}`, {
-      method: 'DELETE',
+    return this.request(CONTENT_API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'delete', id }),
     });
   }
 
   // Upload endpoint
   async getUploadUrl(contentId, fileName, fileType, fileSize) {
-    return this.request('/api/upload', {
+    return this.request(CONTENT_API_URL, {
       method: 'POST',
-      body: JSON.stringify({ contentId, fileName, fileType, fileSize }),
+      body: JSON.stringify({ action: 'getUploadUrl', contentId, fileName, fileType, fileSize }),
     });
   }
 }
