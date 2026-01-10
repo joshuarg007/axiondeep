@@ -15,7 +15,7 @@ import Vesper from "./pages/projects/Vesper";
 import FounderOS from "./pages/projects/FounderOS";
 import Development from "./pages/Development";
 
-// Sales Portal & Admin imports
+// Sales Portal & Admin imports (v1.0)
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PortalLogin from "./pages/portal/Login";
