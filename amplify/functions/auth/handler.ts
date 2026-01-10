@@ -1,4 +1,4 @@
-import { APIGatewayProxyHandler } from 'aws-lambda';
+import { Handler } from 'aws-lambda';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, GetCommand } from '@aws-sdk/lib-dynamodb';
 import * as bcrypt from 'bcryptjs';
@@ -8,9 +8,8 @@ const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
 const JWT_SECRET = process.env.JWT_SECRET || 'change-this-in-production';
-const APP_CONFIG_TABLE = process.env.APP_CONFIG_TABLE || 'AppConfig';
+const APP_CONFIG_TABLE = process.env.APP_CONFIG_TABLE || 'axiondeep-config';
 
-// Token expiration times
 const CONTRACTOR_TOKEN_EXPIRY = '8h';
 const ADMIN_TOKEN_EXPIRY = '2h';
 
@@ -19,20 +18,22 @@ interface VerifyRequest {
   role: 'contractor' | 'admin';
 }
 
-export const handler: APIGatewayProxyHandler = async (event) => {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type,Authorization',
-    'Access-Control-Allow-Methods': 'POST,OPTIONS',
-  };
+const headers = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+  'Access-Control-Allow-Methods': 'POST,OPTIONS',
+};
 
-  // Handle CORS preflight
-  if (event.httpMethod === 'OPTIONS') {
+export const handler: Handler = async (event) => {
+  // Lambda Function URLs use requestContext.http.method
+  const method = event.requestContext?.http?.method || event.httpMethod || 'GET';
+
+  if (method === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
 
-  if (event.httpMethod !== 'POST') {
+  if (method !== 'POST') {
     return {
       statusCode: 405,
       headers,
@@ -60,7 +61,6 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       };
     }
 
-    // Get password hash from DynamoDB
     const configKey = role === 'admin' ? 'ADMIN_PASSWORD_HASH' : 'CONTRACTOR_PASSWORD_HASH';
 
     const result = await docClient.send(
@@ -80,8 +80,6 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     }
 
     const storedHash = result.Item.value;
-
-    // Verify password
     const isValid = await bcrypt.compare(password, storedHash);
 
     if (!isValid) {
@@ -92,11 +90,9 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       };
     }
 
-    // Generate JWT
     const expiresIn = role === 'admin' ? ADMIN_TOKEN_EXPIRY : CONTRACTOR_TOKEN_EXPIRY;
     const token = jwt.sign({ role }, JWT_SECRET, { expiresIn });
 
-    // Calculate expiry timestamp
     const expiresAt = new Date();
     expiresAt.setHours(expiresAt.getHours() + (role === 'admin' ? 2 : 8));
 

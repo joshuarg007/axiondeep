@@ -4,6 +4,8 @@ import { content } from './functions/content/resource';
 import { upload } from './functions/upload/resource';
 import { storage } from './storage/resource';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import { CfnOutput } from 'aws-cdk-lib';
 
 /**
  * Axion Deep Labs Sales Portal Backend
@@ -68,5 +70,39 @@ backend.upload.addEnvironment('BUCKET_NAME', backend.storage.resources.bucket.bu
 // Grant S3 access to content and upload functions
 backend.storage.resources.bucket.grantReadWrite(backend.content.resources.lambda);
 backend.storage.resources.bucket.grantReadWrite(backend.upload.resources.lambda);
+
+// Add Lambda Function URLs for public API access
+const authFnUrl = backend.auth.resources.lambda.addFunctionUrl({
+  authType: lambda.FunctionUrlAuthType.NONE,
+  cors: {
+    allowedOrigins: ['*'],
+    allowedMethods: [lambda.HttpMethod.ALL],
+    allowedHeaders: ['*'],
+  },
+});
+
+const contentFnUrl = backend.content.resources.lambda.addFunctionUrl({
+  authType: lambda.FunctionUrlAuthType.NONE,
+  cors: {
+    allowedOrigins: ['*'],
+    allowedMethods: [lambda.HttpMethod.ALL],
+    allowedHeaders: ['*'],
+  },
+});
+
+const uploadFnUrl = backend.upload.resources.lambda.addFunctionUrl({
+  authType: lambda.FunctionUrlAuthType.NONE,
+  cors: {
+    allowedOrigins: ['*'],
+    allowedMethods: [lambda.HttpMethod.ALL],
+    allowedHeaders: ['*'],
+  },
+});
+
+// Output the function URLs
+const stack = backend.createStack('ApiOutputs');
+new CfnOutput(stack, 'AuthApiUrl', { value: authFnUrl.url });
+new CfnOutput(stack, 'ContentApiUrl', { value: contentFnUrl.url });
+new CfnOutput(stack, 'UploadApiUrl', { value: uploadFnUrl.url });
 
 export { backend };
