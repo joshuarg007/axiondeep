@@ -1,7 +1,7 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || '';
+const AUTH_API_URL = process.env.REACT_APP_AUTH_API_URL || '';
 
 export async function verifyPassword(password, role) {
-  const response = await fetch(`${API_BASE_URL}/api/auth/verify`, {
+  const response = await fetch(AUTH_API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
