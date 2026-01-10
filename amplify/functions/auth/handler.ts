@@ -18,25 +18,13 @@ interface VerifyRequest {
   role: 'contractor' | 'admin';
 }
 
-const headers = {
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type,Authorization',
-  'Access-Control-Allow-Methods': 'POST,OPTIONS',
-};
-
 export const handler: Handler = async (event) => {
-  // Lambda Function URLs use requestContext.http.method
   const method = event.requestContext?.http?.method || event.httpMethod || 'GET';
 
-  if (method === 'OPTIONS') {
-    return { statusCode: 200, headers, body: '' };
-  }
-
+  // Lambda Function URL handles CORS preflight automatically
   if (method !== 'POST') {
     return {
       statusCode: 405,
-      headers,
       body: JSON.stringify({ message: 'Method not allowed' }),
     };
   }
@@ -48,7 +36,6 @@ export const handler: Handler = async (event) => {
     if (!password || !role) {
       return {
         statusCode: 400,
-        headers,
         body: JSON.stringify({ message: 'Password and role are required' }),
       };
     }
@@ -56,7 +43,6 @@ export const handler: Handler = async (event) => {
     if (role !== 'contractor' && role !== 'admin') {
       return {
         statusCode: 400,
-        headers,
         body: JSON.stringify({ message: 'Invalid role' }),
       };
     }
@@ -74,7 +60,6 @@ export const handler: Handler = async (event) => {
       console.error(`No password hash found for ${role}`);
       return {
         statusCode: 401,
-        headers,
         body: JSON.stringify({ message: 'Invalid password' }),
       };
     }
@@ -85,7 +70,6 @@ export const handler: Handler = async (event) => {
     if (!isValid) {
       return {
         statusCode: 401,
-        headers,
         body: JSON.stringify({ message: 'Invalid password' }),
       };
     }
@@ -98,7 +82,6 @@ export const handler: Handler = async (event) => {
 
     return {
       statusCode: 200,
-      headers,
       body: JSON.stringify({
         token,
         expiresAt: expiresAt.toISOString(),
@@ -108,7 +91,6 @@ export const handler: Handler = async (event) => {
     console.error('Auth error:', error);
     return {
       statusCode: 500,
-      headers,
       body: JSON.stringify({ message: 'Internal server error' }),
     };
   }
