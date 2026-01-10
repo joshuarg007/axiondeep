@@ -1,18 +1,11 @@
 version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - npm ci
-        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
   phases:
     preBuild:
       commands:
-        - npm ci || npm install
+        - npm install
     build:
       commands:
-        - echo "Disabling CI mode to prevent warnings from breaking build"
         - unset CI
         - npm run build
   artifacts:
