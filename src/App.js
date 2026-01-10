@@ -14,6 +14,7 @@ import Forma from "./pages/projects/Forma";
 import Vesper from "./pages/projects/Vesper";
 import FounderOS from "./pages/projects/FounderOS";
 import Development from "./pages/Development";
+import Research from "./pages/Research";
 
 // Sales Portal & Admin imports (v1.0)
 import { AuthProvider } from "./contexts/AuthContext";
@@ -70,6 +71,7 @@ function MainLayout({ children }) {
               <NavItem to="/mission">Mission</NavItem>
               <NavItem to="/solutions">Solutions</NavItem>
               <NavItem to="/development">Development</NavItem>
+              <NavItem to="/research">Research</NavItem>
               <NavItem to="/careers">Careers</NavItem>
             </nav>
 
@@ -144,6 +146,16 @@ function MainLayout({ children }) {
                   }
                 >
                   Development
+                </NavLink>
+                <NavLink
+                  to="/research"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={({ isActive }) =>
+                    "px-4 py-3 text-sm font-medium transition-colors " +
+                    (isActive ? "text-white bg-white/10" : "text-gray-400 hover:text-white hover:bg-white/5")
+                  }
+                >
+                  Research
                 </NavLink>
                 <NavLink
                   to="/careers"
@@ -238,6 +250,7 @@ function AppContent() {
             <Route path="/mission" element={<Mission />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/development" element={<Development />} />
+            <Route path="/research" element={<Research />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/legal" element={<Legal />} />

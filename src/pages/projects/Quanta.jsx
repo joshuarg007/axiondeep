@@ -66,6 +66,13 @@ export default function Quanta() {
             watch qubits evolve on the Bloch sphere in real-time, and progress through structured
             lessons from fundamentals to advanced algorithms.
           </p>
+          <p className="text-sm text-gray-500 italic">
+            Built on insights from our{" "}
+            <Link to="/research" className="text-violet-400 hover:text-violet-300 not-italic">
+              research work
+            </Link>{" "}
+            in quantum systems and interactive learning.
+          </p>
           <p className="text-gray-300 leading-relaxed">
             Unlike traditional quantum computing resources that rely heavily on abstract mathematics,
             QUANTA emphasizes visual intuition and immediate feedback. Every gate operation updates
