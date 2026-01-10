@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Mission from "./pages/Mission";
 import Careers from "./pages/Careers";
@@ -15,6 +15,16 @@ import Vesper from "./pages/projects/Vesper";
 import FounderOS from "./pages/projects/FounderOS";
 import Development from "./pages/Development";
 
+// Sales Portal & Admin imports
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import PortalLogin from "./pages/portal/Login";
+import PortalDashboard from "./pages/portal/Dashboard";
+import AdminLogin from "./pages/admin/Login";
+import AdminDashboard from "./pages/admin/Dashboard";
+import ContentManager from "./pages/admin/ContentManager";
+import ContentForm from "./pages/admin/ContentForm";
+
 const NavItem = ({ to, children }) => (
   <NavLink
     to={to}
@@ -29,11 +39,11 @@ const NavItem = ({ to, children }) => (
   </NavLink>
 );
 
-export default function App() {
+function MainLayout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <GradientBackground>
+    <>
       {/* Professional fixed navbar */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -161,37 +171,9 @@ export default function App() {
         </div>
       </header>
 
-
-      {/* Routes */}
+      {/* Main content */}
       <main className="max-w-6xl mx-auto px-4 pt-24 pb-12 relative z-10">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/development" element={<Development />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/legal" element={<Legal />} />
-          <Route path="/projects/quanta" element={<Quanta />} />
-          <Route path="/projects/site2crm" element={<Site2CRM />} />
-          <Route path="/projects/forma" element={<Forma />} />
-          <Route path="/projects/vesper" element={<Vesper />} />
-          <Route path="/projects/founderos" element={<FounderOS />} />
-          <Route
-            path="*"
-            element={
-              <div className="text-center text-gray-400">
-                <h1 className="text-3xl font-semibold mb-2">Page not found</h1>
-                <p className="mb-6">
-                  The page you’re looking for doesn’t exist.
-                </p>
-                <Link to="/" className="underline">
-                  Go home
-                </Link>
-              </div>
-            }
-          />
-        </Routes>
+        {children}
       </main>
 
       {/* Footer */}
@@ -207,6 +189,88 @@ export default function App() {
           </div>
         </div>
       </footer>
+    </>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const isPortalRoute = location.pathname.startsWith('/portal') || location.pathname.startsWith('/admin');
+
+  return (
+    <GradientBackground>
+      {isPortalRoute ? (
+        /* Portal/Admin routes - no main navbar */
+        <main className="max-w-6xl mx-auto px-4 pt-8 pb-12 relative z-10">
+          <Routes>
+            {/* Sales Portal Routes */}
+            <Route path="/portal/login" element={<PortalLogin />} />
+            <Route
+              path="/portal"
+              element={
+                <ProtectedRoute roles={["contractor", "admin"]}>
+                  <PortalDashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute roles={["admin"]}>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            >
+              <Route path="content" element={<ContentManager />} />
+              <Route path="content/new" element={<ContentForm />} />
+              <Route path="content/:id/edit" element={<ContentForm />} />
+            </Route>
+          </Routes>
+        </main>
+      ) : (
+        /* Main site with navbar */
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mission" element={<Mission />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/development" element={<Development />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/legal" element={<Legal />} />
+            <Route path="/projects/quanta" element={<Quanta />} />
+            <Route path="/projects/site2crm" element={<Site2CRM />} />
+            <Route path="/projects/forma" element={<Forma />} />
+            <Route path="/projects/vesper" element={<Vesper />} />
+            <Route path="/projects/founderos" element={<FounderOS />} />
+            <Route
+              path="*"
+              element={
+                <div className="text-center text-gray-400">
+                  <h1 className="text-3xl font-semibold mb-2">Page not found</h1>
+                  <p className="mb-6">
+                    The page you're looking for doesn't exist.
+                  </p>
+                  <Link to="/" className="underline">
+                    Go home
+                  </Link>
+                </div>
+              }
+            />
+          </Routes>
+        </MainLayout>
+      )}
     </GradientBackground>
+  );
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }

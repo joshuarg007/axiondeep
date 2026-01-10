@@ -48,5 +48,33 @@ jobs:
           path: build/
           retention-days: 7
 
-  # Amplify handles the actual deployment
-  # This workflow ensures code quality before Amplify deploys
+  # Deploy Amplify backend (only on main branch push, only if secrets are configured)
+  deploy-backend:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && vars.AMPLIFY_BACKEND_ENABLED == 'true'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy Amplify backend
+        run: npx ampx pipeline-deploy --branch main --app-id ${{ secrets.AMPLIFY_APP_ID }}
+        env:
+          CI: true
