@@ -190,14 +190,26 @@ function MainLayout({ children }) {
 
       {/* Footer */}
       <footer className="border-t border-white/10 mt-16 relative z-10">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500 flex items-center justify-between">
-          <span>
-            © {new Date().getFullYear()} Axion Deep. All Rights Reserved.
-          </span>
-          <div className="flex gap-4">
-            <Link to="/legal" className="hover:text-gray-300">
-              Privacy & Terms
-            </Link>
+        <div className="max-w-6xl mx-auto px-4 py-6 text-xs text-gray-500">
+          <div className="flex items-center justify-between mb-4">
+            <span>
+              © {new Date().getFullYear()} Axion Deep. All Rights Reserved.
+            </span>
+            <div className="flex gap-4">
+              <Link to="/legal" className="hover:text-gray-300">
+                Privacy & Terms
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center justify-center gap-4 pt-4 border-t border-white/5">
+            <span className="text-gray-600">Our Products:</span>
+            <a href="https://made4founders.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+              Made4Founders
+            </a>
+            <span className="text-gray-700">•</span>
+            <a href="https://site2crm.io" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+              Site2CRM
+            </a>
           </div>
         </div>
       </footer>
