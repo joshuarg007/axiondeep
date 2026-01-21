@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll snap container - desktop only */
+@media (min-width: 768px) {
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
+    overflow-y: scroll;
+    height: 100vh;
+  }
+  .snap-container > main {
+    display: contents; /* Allow snap-sections to be effective children */
+  }
+  .snap-container > main > * {
+    display: contents; /* Page wrapper divs become transparent */
+  }
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal; /* Allow fast scrolling past sections */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+}
+
 /* Chrome-safe gradient text */
 .gradient-text {
     background: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 100%);

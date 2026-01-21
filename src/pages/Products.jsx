@@ -50,7 +50,7 @@ const products = [
 
 export default function Products() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-12 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+    <div className="relative z-10 text-gray-300 space-y-12 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
       <SEO
         title="Products - Software Applications by Axion Deep"
         description="Software products built by Axion Deep Labs. Custom web applications, SaaS platforms, and AI-powered tools including QUANTA, Site2CRM, Vesper Hydra, and Parsonic."

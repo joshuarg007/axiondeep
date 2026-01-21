@@ -1,6 +1,6 @@
 # Axion Deep Labs - SEO Documentation
 
-> **Last Updated:** 2026-01-20  
+> **Last Updated:** 2026-01-21  
 > **Domain:** https://www.axiondeep.com  
 > **Google Analytics:** G-XWF39KFMS2
 
@@ -136,6 +136,49 @@ Keywords: contact software development company, custom software consultation, so
 - [x] robots.txt
 - [x] sitemap.xml
 - [ ] og-image.png (1200x630px recommended)
+
+---
+
+## Image Optimization Guidelines
+
+### Standards
+- **Format:** WebP (85% quality) for all images
+- **Metadata:** Strip all EXIF, add copyright: `© 2026 Axion Deep Labs. All rights reserved.`
+- **Alt Text:** Descriptive, keyword-rich alt text for all images
+- **Loading:** Use `loading="lazy"` for below-fold images
+
+### Current Images (public/images/)
+
+| File | Dimensions | Size | Usage | Alt Text |
+|------|------------|------|-------|----------|
+| webapps.webp | 400×318 | 53KB | Bento grid - Web Apps | Web application development - React, Next.js, TypeScript |
+| mobileapps.webp | 300×265 | 40KB | Bento grid - Mobile | Mobile app development - iOS and Android |
+| ai-ml.webp | 300×228 | 40KB | Bento grid - AI/ML | Artificial intelligence and machine learning neural network |
+| backend-apis.webp | 300×237 | 30KB | Bento grid - Backend | Backend server and API infrastructure |
+| cloud-devops.webp | 300×244 | 35KB | Bento grid - Cloud | Cloud computing and DevOps infrastructure |
+| process.webp | 1200×755 | 388KB | Process section | Software development process cycle |
+
+### Image Processing Commands
+```bash
+# Crop to content
+convert input.png -fuzz 5% -trim +repage trimmed.png
+
+# Resize (maintain aspect ratio)
+convert trimmed.png -resize 400x resized.png
+
+# Convert to WebP
+cwebp -q 85 resized.png -o output.webp
+
+# Strip metadata and add copyright
+exiftool -all= -overwrite_original output.webp
+exiftool -Artist="Axion Deep Labs" -Copyright="© 2026 Axion Deep Labs. All rights reserved." -overwrite_original output.webp
+```
+
+### Size Guidelines by Usage
+- **Icons/small images:** 300px width, <50KB
+- **Feature images:** 400-600px width, <100KB
+- **Hero/section images:** 1200px width, <400KB
+- **OG images:** 1200×630px exactly
 
 ---
 

@@ -229,7 +229,7 @@ export default function Contact() {
       };
 
   return (
-    <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+    <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24">
       <SEO
         title="Contact Us - Start Your Custom Software Project"
         description="Get in touch with Axion Deep Labs for custom software solutions. Request a quote for web applications, mobile apps, AI-powered software, SaaS platforms, and enterprise software development."

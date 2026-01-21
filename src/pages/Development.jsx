@@ -98,7 +98,7 @@ const processSteps = [
 
 export default function Development() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-24 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+    <div className="relative z-10 text-gray-300 space-y-24 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
       <SEO
         title="Web Development & Custom Software Services"
         description="Web development and custom software services for every platform: web applications, mobile apps, AI-powered software, VR/AR experiences, and enterprise solutions. Full-stack web development with React, Python, Unity, and modern cloud technologies."
@@ -133,6 +133,7 @@ export default function Development() {
       />
 
       {/* Hero Section */}
+      <div className="snap-section min-h-screen flex items-center justify-center pt-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -161,7 +162,7 @@ export default function Development() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          From concept to reality—we craft next-generation applications across every platform imaginable.
+          Imagination at the core.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -182,20 +183,21 @@ export default function Development() {
           </Link>
         </div>
       </motion.div>
+      </div>
 
       {/* Platforms Grid */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="space-y-12"
+        className="snap-section min-h-screen flex items-center space-y-12 py-16"
       >
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
             Every Platform. One Team.
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Whether you're building for the web, mobile, or the next frontier of spatial computing—we've got you covered.
+            Building for web, mobile, or the next frontier of spatial computing.
           </p>
         </div>
 
@@ -252,7 +254,7 @@ export default function Development() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="space-y-12"
+        className="snap-section min-h-screen flex items-center py-16"
       >
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
@@ -304,7 +306,7 @@ export default function Development() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="text-center space-y-8 py-12"
+        className="snap-section min-h-screen flex flex-col items-center justify-center text-center space-y-8 py-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-white">
           Ready to Build Something{" "}
@@ -314,7 +316,7 @@ export default function Development() {
           ?
         </h2>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          Let's turn your vision into reality. Whether it's a web app, mobile experience, or immersive VR world—we're here to make it happen.
+          Web app, mobile experience, or immersive VR world. Let's build it.
         </p>
         <Link
           to="/contact"
@@ -332,14 +334,14 @@ export default function Development() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.7 }}
-        className="space-y-12"
+        className="snap-section min-h-screen flex items-center py-16"
       >
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
             Built by Us
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A glimpse at what we've created—each project a testament to our commitment to excellence.
+            A glimpse at what we've built.
           </p>
         </div>
 

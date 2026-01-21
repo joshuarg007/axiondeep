@@ -8,7 +8,7 @@ import formaHeroNew from "../../assets/images/project-forma-hero.webp";
 
 export default function Forma() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
       <SEO
         title="Forma - Custom Visual Page Builder Software | Axion Deep Labs"
         description="Custom software for visual website building with AI-powered component generation. 100+ React components, drag-and-drop builder, Figma import, and export to Next.js or Vite. Built by Axion Deep Labs."

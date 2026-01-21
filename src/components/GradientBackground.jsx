@@ -1,4 +1,5 @@
 import React from "react";
+import InteractiveHero from "./InteractiveHero";
 
 export default function GradientBackground({ children }) {
   return (
@@ -35,6 +36,11 @@ export default function GradientBackground({ children }) {
           zIndex: 0,
         }}
       />
+
+      {/* Interactive particles and cubes */}
+      <div aria-hidden className="fixed inset-0 overflow-hidden" style={{ zIndex: 1 }}>
+        <InteractiveHero />
+      </div>
 
       {/* Content */}
       <div className="relative z-10">{children}</div>

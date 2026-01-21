@@ -13,7 +13,7 @@ export default function Quanta() {
   const appUrl = "https://quanta.axiondeep.com";
 
   return (
-    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
       <SEO
         title="QUANTA - Custom Education Software for Quantum Computing | Axion Deep Labs"
         description="Custom educational software for learning quantum computing through interactive simulations. Structured curriculum with visual Bloch sphere and circuit builder. Built by Axion Deep Labs."

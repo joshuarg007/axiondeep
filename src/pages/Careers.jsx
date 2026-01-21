@@ -2,17 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import careersTeam from "../assets/images/careers-team.webp";
 
-const SectionTitle = ({ children }) => (
-  <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
-    {children}
-  </h1>
-);
+const prefersReduced =
+  typeof window !== "undefined" &&
+  window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
 const domains = [
   {
     title: "AI Foundations",
+    icon: "⚡",
+    color: "from-cyan-500/20 to-blue-500/10",
+    border: "border-cyan-500/20 hover:border-cyan-500/40",
     lines: [
       "Reasoning systems and cognitive architectures",
       "Evaluation and alignment frameworks",
@@ -21,6 +21,9 @@ const domains = [
   },
   {
     title: "Quantum Algorithms",
+    icon: "◈",
+    color: "from-violet-500/20 to-purple-500/10",
+    border: "border-violet-500/20 hover:border-violet-500/40",
     lines: [
       "Quantum-inspired optimization and simulation",
       "Hybrid Q-classical workflows",
@@ -28,7 +31,10 @@ const domains = [
     ],
   },
   {
-    title: "Simulations & XR Systems",
+    title: "Simulations & XR",
+    icon: "◉",
+    color: "from-fuchsia-500/20 to-pink-500/10",
+    border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
     lines: [
       "Spatial computing environments",
       "Haptic and embodied interfaces",
@@ -36,7 +42,10 @@ const domains = [
     ],
   },
   {
-    title: "Advanced Systems & Web Technologies",
+    title: "Distributed Systems",
+    icon: "⬡",
+    color: "from-emerald-500/20 to-teal-500/10",
+    border: "border-emerald-500/20 hover:border-emerald-500/40",
     lines: [
       "Autonomous distributed systems",
       "Next-gen internet protocols",
@@ -44,7 +53,10 @@ const domains = [
     ],
   },
   {
-    title: "Research Infrastructure",
+    title: "Research Infra",
+    icon: "◇",
+    color: "from-orange-500/20 to-red-500/10",
+    border: "border-orange-500/20 hover:border-orange-500/40",
     lines: [
       "Continuous experimentation frameworks",
       "Data observability and provenance",
@@ -55,7 +67,7 @@ const domains = [
 
 export default function Careers() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+    <div className="relative text-gray-300">
       <SEO
         title="Careers - Join Our Custom Software Development Team"
         description="Join Axion Deep Labs: We're hiring software developers, AI engineers, and full-stack developers passionate about building custom software solutions. Remote-first, cutting-edge projects."
@@ -66,96 +78,139 @@ export default function Careers() {
           { name: "Careers", url: "/careers" }
         ]}
       />
-      {/* Intro */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="space-y-6"
-      >
-        <SectionTitle>Careers at Axion Deep Labs</SectionTitle>
 
-        <motion.p
-          className="max-w-3xl leading-relaxed text-lg"
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          We are a collective of researchers, engineers, and experimentalists exploring the next
-          layer of intelligence, computation, and human–machine interaction. We don’t hire to fill
-          roles — we assemble people who want to redefine the limits of what’s computationally
-          possible.
-        </motion.p>
-
-        <motion.p
-          className="max-w-2xl text-gray-400"
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-        >
-          Axion Deep Labs operates as a hybrid research network. Our members span AI theory, quantum
-          computation, systems architecture, and applied mathematics — working remotely,
-          asynchronously, and experimentally. If you prototype at 3 AM to test a hypothesis, you'll
-          fit right in.
-        </motion.p>
-
-        {/* Team Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-8"
-        >
-          <img
-            src={careersTeam}
-            alt="Software engineering team collaboration at Axion Deep Labs"
-            className="w-full rounded-2xl border border-white/10 shadow-xl"
-            loading="lazy"
-          />
-        </motion.div>
-      </motion.div>
-
-      {/* Research Domains (same card style as Mission focus tiles) */}
-      <div className="space-y-8">
-        <h2 className="text-2xl font-semibold mb-4 text-white">Research Domains</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {domains.map((d) => (
-            <motion.div
-              key={d.title}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="relative border border-white/10 rounded-2xl bg-white/5 p-6 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition"
-            >
-              <div className="font-semibold text-white mb-3">{d.title}</div>
-              <ul className="space-y-2 text-sm text-gray-300">
-                {d.lines.map((l, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                    <span>{l}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+      {/* Hero */}
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.p
+            initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-bold tracking-widest uppercase text-lg md:text-xl mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+          >
+            JOIN THE LABS
+          </motion.p>
+          <motion.h1
+            initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
+          >
+            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">BUILD</span>
+            <span className="text-white" style={{ textShadow: '0 0 40px rgba(255,255,255,0.4)' }}>WHAT'S</span>
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">NEXT</span>
+          </motion.h1>
+          <motion.p
+            initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-base md:text-lg text-gray-400 max-w-xl mx-auto"
+          >
+            We assemble people who redefine computational limits.
+          </motion.p>
         </div>
-      </div>
+      </section>
 
-      {/* CTA (matches Mission typography/colors) */}
-      <div className="space-y-4 pt-4">
-        <h2 className="text-2xl font-semibold text-white">Join Us</h2>
-        <p className="text-gray-400 max-w-2xl">
-          We collaborate with curious minds — researchers, builders, and dreamers who want to
-          advance computational science. Tell us what you’re working on, or the question you can’t
-          stop thinking about.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold hover:opacity-90 transition"
+      {/* Philosophy + Research Domains */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-6xl mx-auto w-full">
+          {/* Philosophy Grid */}
+          <motion.div
+            initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-12 mb-16"
+          >
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">How We Work</h2>
+              <p className="text-gray-400 leading-relaxed">
+                Hybrid research network. Remote-first. Asynchronous. If you prototype at 3 AM to test a hypothesis, you'll fit right in.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Who We Are</h2>
+              <p className="text-gray-400 leading-relaxed">
+                Researchers, engineers, experimentalists. AI theory, quantum computation, systems architecture, applied mathematics.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Research Domains */}
+          <motion.h2
+            initial={prefersReduced ? {} : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-2xl font-bold text-white mb-8"
+          >
+            Research Domains
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {domains.map((d, i) => (
+              <motion.div
+                key={d.title}
+                initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className={`relative rounded-2xl bg-gradient-to-br ${d.color} border ${d.border} p-6 transition-all`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl opacity-60">{d.icon}</span>
+                  <h3 className="font-semibold text-white">{d.title}</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  {d.lines.map((l, j) => (
+                    <li key={j} className="flex gap-2">
+                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
+                      <span>{l}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+
+            {/* Hidden hint card */}
+            <motion.div
+              initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className="relative rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent border border-dashed border-white/10 p-6 flex items-center justify-center"
+            >
+              <div className="text-center">
+                <span className="text-2xl opacity-30">◌</span>
+                <p className="text-sm text-gray-600 mt-2">More for contractors</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-20">
+        <motion.div
+          initial={prefersReduced ? {} : { opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center"
         >
-          Contact the Labs
-        </Link>
-      </div>
+          <div className="relative p-12 md:p-16 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08]">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Tell us what you're building
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+              Or the question you can't stop thinking about.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition"
+            >
+              Contact the Labs
+            </Link>
+          </div>
+        </motion.div>
+      </section>
     </div>
   );
 }

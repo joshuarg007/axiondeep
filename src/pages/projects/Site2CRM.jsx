@@ -17,7 +17,7 @@ export default function Site2CRM() {
   const appUrl = "https://site2crm.io";
 
   return (
-    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
       <SEO
         title="Site2CRM - Custom Lead Analytics Software | Axion Deep Labs"
         description="Custom software solution for lead capture and CRM integration. Embeddable forms with AI lead scoring sync to HubSpot, Salesforce, Pipedrive, or Zoho. Built by Axion Deep Labs."

@@ -10,7 +10,7 @@ const SectionTitle = ({ children }) => (
 
 export default function Legal() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+    <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24">
       <SEO
         title="Privacy Policy & Terms of Service"
         description="Axion Deep Labs privacy policy and terms of service. Learn how we collect, use, and protect your information when you use our custom software development services."
