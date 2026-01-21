@@ -22,7 +22,7 @@ const prefersReduced =
 
 export default function Solutions() {
   return (
-    <div className="relative text-gray-300">
+    <div className="snap-page relative text-gray-300">
       <SEO
         title="Web Development & Software Solutions Portfolio"
         description="Explore our web development and custom software solutions: QUANTA quantum computing platform, Site2CRM AI-powered lead analytics, Forma visual page builder, Vesper security testing, and Made4Founders startup management."
@@ -50,11 +50,10 @@ export default function Solutions() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
           >
-            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">BUILT</span>
-            <span className="text-white" style={{ textShadow: '0 0 40px rgba(255,255,255,0.4)' }}>SHIPPED</span>
+            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">LIVE</span>
+            <span className="text-white" style={{ textShadow: '0 0 40px rgba(255,255,255,0.4)' }}>IN</span>
             <br />
-            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">&</span>
-            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">SCALING</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">PRODUCTION</span>
           </motion.h1>
           <motion.p
             initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
@@ -214,62 +213,9 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Products Grid - Expanded Cards */}
+      {/* Site2CRM + Forma */}
       <section className="snap-section min-h-screen flex items-center px-6 py-16">
-        <div className="max-w-6xl mx-auto space-y-6">
-
-          {/* Vesper - Expanded */}
-          <motion.div
-            initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-violet-500/15 to-purple-500/5 border border-violet-500/20 hover:border-violet-500/40 transition-all"
-          >
-            <div className="grid lg:grid-cols-2">
-              <div className="p-8 lg:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-4">
-                  <img src={vesperLogo} alt="Vesper" className="w-12 h-12 rounded-xl" />
-                  <span className="text-xs px-2 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30">Live</span>
-                </div>
-                <h3 className="text-3xl font-bold text-white mb-2">Vesper</h3>
-                <p className="text-violet-400 font-medium mb-3">AI-Powered Penetration Testing</p>
-                <p className="text-gray-400 mb-4">
-                  Dual AI agents work in tandem: one attacks, one analyzes. 11,697 vulnerability templates covering OWASP Top 10,
-                  CVEs, and custom exploit chains. Learns from every engagement to get smarter over time.
-                </p>
-                <div className="flex flex-wrap gap-4 mb-6 text-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-violet-400"></span>
-                    <span className="text-gray-400">11,697 Vuln Templates</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-violet-400"></span>
-                    <span className="text-gray-400">Dual AI Agents</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-violet-400"></span>
-                    <span className="text-gray-400">Auto-Reporting</span>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {["Python", "FastAPI", "Claude AI", "Nuclei", "PostgreSQL"].map(t => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">{t}</span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <Link to="/projects/vesper" className="px-5 py-2 rounded-full bg-violet-500/20 text-violet-300 font-medium hover:bg-violet-500/30 transition">Learn more</Link>
-                </div>
-              </div>
-              <div className="relative h-64 lg:h-auto min-h-[300px]">
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-70" onLoadedMetadata={(e) => e.target.playbackRate = 2.2}>
-                  <source src={vesperDemo} type="video/webm" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Two column: Site2CRM + Forma */}
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Site2CRM */}
             <motion.div
@@ -347,7 +293,66 @@ export default function Solutions() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
 
+      {/* Vesper - Own Section */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={prefersReduced ? {} : { opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-transparent border border-violet-500/20"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-transparent" />
+            <div className="relative grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+              <div className="flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-6">
+                  <img src={vesperLogo} alt="Vesper" className="w-12 h-12 rounded-xl" />
+                  <div>
+                    <h2 className="text-3xl font-bold text-white">Vesper</h2>
+                    <span className="text-xs px-2 py-0.5 rounded bg-green-500/20 text-green-300 border border-green-400/30">Live</span>
+                  </div>
+                </div>
+                <p className="text-violet-400 font-medium mb-4">AI-Powered Penetration Testing</p>
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  Dual AI agents work in tandem: one attacks, one analyzes. 11,697 vulnerability templates covering OWASP Top 10,
+                  CVEs, and custom exploit chains. Learns from every engagement to get smarter over time.
+                </p>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="text-center p-3 rounded-xl bg-white/5">
+                    <p className="text-2xl font-bold text-violet-400">11.7K</p>
+                    <p className="text-xs text-gray-500">Vuln Templates</p>
+                  </div>
+                  <div className="text-center p-3 rounded-xl bg-white/5">
+                    <p className="text-2xl font-bold text-violet-400">2</p>
+                    <p className="text-xs text-gray-500">AI Agents</p>
+                  </div>
+                  <div className="text-center p-3 rounded-xl bg-white/5">
+                    <p className="text-2xl font-bold text-violet-400">Auto</p>
+                    <p className="text-xs text-gray-500">Reporting</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {["Python", "FastAPI", "Claude AI", "Nuclei", "PostgreSQL"].map(t => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">{t}</span>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <Link to="/projects/vesper" className="px-6 py-3 rounded-full bg-gradient-to-r from-violet-500 to-purple-600 font-semibold hover:opacity-90 transition">
+                    Learn More
+                  </Link>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden min-h-[300px]">
+                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-80" onLoadedMetadata={(e) => e.target.playbackRate = 2.2}>
+                  <source src={vesperDemo} type="video/webm" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

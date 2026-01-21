@@ -94,7 +94,7 @@ function ProcessStep({ number, title, description, isLast, gradient, lineColor, 
 
 export default function Mission() {
   return (
-    <div className="relative text-gray-300">
+    <div className="snap-page relative text-gray-300">
       <SEO
         title="Our Mission - Custom Software Development Process"
         description="Axion Deep Labs transforms complex ideas into production-ready software. Our agile development process delivers custom web applications, mobile apps, AI solutions, and enterprise software."

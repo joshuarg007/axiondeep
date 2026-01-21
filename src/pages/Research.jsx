@@ -6,7 +6,7 @@ import researchQuantum from "../assets/images/research-quantum.webp";
 
 export default function Research() {
   return (
-    <div className="relative text-gray-300">
+    <div className="snap-page relative text-gray-300">
       <SEO
         title="Research & Innovation | Custom Software R&D"
         description="Axion Deep Labs research program: Project DRIFT investigates quantum system behavior. Our R&D drives innovation in custom software solutions, AI development, and emerging technologies."
@@ -64,18 +64,16 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Project DRIFT - with integrated research image */}
-      <section className="snap-section min-h-screen flex flex-col">
-        {/* Research Image - fades into content */}
-        <div className="relative">
+      {/* Project DRIFT - with background research image */}
+      <section className="snap-section min-h-screen flex flex-col relative overflow-hidden">
+        {/* Research Image - positioned behind content */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <img
             src={researchQuantum}
-            alt="Quantum computing and AI research at Axion Deep Labs"
-            className="w-full opacity-40"
+            alt=""
+            className="w-2/3 max-w-2xl opacity-15"
             loading="lazy"
           />
-          {/* Gradient overlay to blend into content below */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90" />
         </div>
 
         {/* Project DRIFT Content */}
@@ -83,7 +81,7 @@ export default function Research() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex-1 flex items-center justify-center px-6 py-16 -mt-32 relative z-10"
+          className="flex-1 flex items-center justify-center px-6 py-16 relative z-10"
         >
           <div className="w-full max-w-5xl mx-auto">
             <div className="text-center mb-12">
@@ -180,69 +178,6 @@ export default function Research() {
         </motion.div>
       </section>
 
-      {/* Research Instrument: QUANTA */}
-      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
-        <div className="w-full max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12 items-center"
-          >
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">Research Instrument</h2>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                QUANTA serves as the systematic experimentation environment for DRIFT research.
-                Configuration of operator sequences, behavioral data collection, and documentation
-                of experimental procedures and observations.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400">Quantum State Simulation</span>
-                <span className="text-xs px-3 py-1 rounded-full bg-violet-500/10 text-violet-400">Gate Sequences</span>
-                <span className="text-xs px-3 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-400">Data Collection</span>
-              </div>
-            </div>
-            <div className="relative rounded-2xl bg-gradient-to-br from-cyan-500/10 to-violet-500/10 p-8 text-center">
-              <span className="text-6xl font-bold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">Q</span>
-              <h3 className="text-xl font-semibold text-white mt-4">QUANTA Platform</h3>
-              <p className="text-sm text-gray-500 mt-2">Primary research instrument</p>
-              <Link to="/projects/quanta" className="inline-block mt-4 text-sm text-violet-400 hover:text-violet-300">
-                View education offering →
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Research Approach */}
-      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
-        <div className="w-full max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-white mb-4">Research Approach</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4">
-          {[
-            { icon: "◇", title: "Hypothesis-Driven", desc: "Specific, falsifiable hypotheses about system behavior.", color: "from-emerald-500/20 to-teal-500/10" },
-            { icon: "◈", title: "Systematic Observation", desc: "Controlled variation of parameters. Rigorous data collection.", color: "from-orange-500/20 to-red-500/10" },
-            { icon: "⬡", title: "Knowledge Creation", desc: "Documented for transferability. Contributing to broader understanding.", color: "from-blue-500/20 to-indigo-500/10" }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`relative rounded-2xl bg-gradient-to-br ${item.color} p-6`}
-            >
-              <span className="text-2xl opacity-60 mb-3 block">{item.icon}</span>
-              <h3 className="text-white font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-400">{item.desc}</p>
-            </motion.div>
-          ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-20">

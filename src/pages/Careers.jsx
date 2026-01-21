@@ -67,7 +67,7 @@ const domains = [
 
 export default function Careers() {
   return (
-    <div className="relative text-gray-300">
+    <div className="snap-page relative text-gray-300">
       <SEO
         title="Careers - Join Our Custom Software Development Team"
         description="Join Axion Deep Labs: We're hiring software developers, AI engineers, and full-stack developers passionate about building custom software solutions. Remote-first, cutting-edge projects."

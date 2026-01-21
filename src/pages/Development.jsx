@@ -98,7 +98,7 @@ const processSteps = [
 
 export default function Development() {
   return (
-    <div className="relative z-10 text-gray-300 space-y-24 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 pt-20 md:pt-24 pb-20">
+    <div className="snap-page relative z-10 text-gray-300">
       <SEO
         title="Web Development & Custom Software Services"
         description="Web development and custom software services for every platform: web applications, mobile apps, AI-powered software, VR/AR experiences, and enterprise solutions. Full-stack web development with React, Python, Unity, and modern cloud technologies."
@@ -133,13 +133,13 @@ export default function Development() {
       />
 
       {/* Hero Section */}
-      <div className="snap-section min-h-screen flex items-center justify-center pt-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center space-y-6 max-w-4xl mx-auto"
-      >
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 pt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center space-y-6 max-w-4xl mx-auto"
+        >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -180,212 +180,121 @@ export default function Development() {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 font-semibold text-white hover:bg-white/10 transition-all duration-300"
           >
             View Our Work
-          </Link>
+            </Link>
         </div>
       </motion.div>
-      </div>
+      </section>
 
       {/* Platforms Grid */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="snap-section min-h-screen flex items-center space-y-12 py-16"
-      >
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            Every Platform. One Team.
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Building for web, mobile, or the next frontier of spatial computing.
-          </p>
-        </div>
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
+        <div className="max-w-6xl mx-auto space-y-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center space-y-3"
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">
+              Full-Stack Across Every Platform
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Web, mobile, spatial computing, and beyond.
+            </p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {platforms.map((platform, idx) => (
-            <motion.div
-              key={platform.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * idx }}
-              className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
-            >
-              {/* Gradient glow on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`} />
-
-              {/* Platform Image */}
-              <div className="relative h-40 overflow-hidden">
-                <img
-                  src={platformImages[platform.id]}
-                  alt={platform.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent`} />
-              </div>
-
-              <div className="relative z-10 p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
-                  {platform.title}
-                </h3>
-
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {platform.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {platform.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-white/5 text-gray-500 border border-white/5"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {platforms.map((platform, idx) => (
+              <motion.div
+                key={platform.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.05 * idx }}
+                className="group relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`} />
+                <div className="relative h-28 overflow-hidden">
+                  <img src={platformImages[platform.id]} alt={platform.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="relative z-10 p-4 space-y-2">
+                  <h3 className="text-lg font-semibold text-white">{platform.title}</h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{platform.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {platform.tech.slice(0, 3).map((tech) => (
+                      <span key={tech} className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-500">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Process Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="snap-section min-h-screen flex items-center py-16"
-      >
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            Our Process
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A proven methodology that transforms ideas into exceptional products.
-          </p>
-        </div>
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center space-y-4"
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Our Process</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">A proven methodology that transforms ideas into exceptional products.</p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {processSteps.map((item, idx) => (
-            <motion.div
-              key={item.step}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * idx }}
-              className="relative group"
-            >
-              {/* Process Image */}
-              <div className="relative h-48 mb-6 rounded-xl overflow-hidden border border-white/10">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 text-4xl font-bold bg-gradient-to-br from-cyan-400 to-violet-500 bg-clip-text text-transparent">
-                  {item.step}
-                </span>
-              </div>
-
-              <div className="relative z-10 space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            {processSteps.map((item, idx) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * idx }}
+                className="relative group"
+              >
+                <div className="relative h-48 mb-6 rounded-xl overflow-hidden border border-white/10">
+                  <img src={item.image} alt={item.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-4xl font-bold bg-gradient-to-br from-cyan-400 to-violet-500 bg-clip-text text-transparent">{item.step}</span>
+                </div>
+                <div className="relative z-10 space-y-3">
+                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* CTA Section */}
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="snap-section min-h-screen flex flex-col items-center justify-center text-center space-y-8 py-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
-          Ready to Build Something{" "}
-          <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-            Extraordinary
-          </span>
-          ?
-        </h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          Web app, mobile experience, or immersive VR world. Let's build it.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-violet-500 to-pink-500 font-semibold text-lg text-white hover:opacity-90 transition-all duration-300 shadow-2xl shadow-violet-500/25"
+      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-8 max-w-4xl mx-auto"
         >
-          Start the Conversation
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
-        </Link>
-      </motion.section>
-
-      {/* Portfolio Preview */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.7 }}
-        className="snap-section min-h-screen flex items-center py-16"
-      >
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            Built by Us
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Ready to Build Something{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">Extraordinary</span>?
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A glimpse at what we've built.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { name: "QUANTA", desc: "Quantum computing learning platform", to: "/projects/quanta", color: "cyan" },
-            { name: "Site2CRM", desc: "AI-powered lead analytics", to: "/projects/site2crm", color: "green" },
-            { name: "Forma", desc: "Visual page builder with AI", to: "/projects/forma", color: "amber" },
-          ].map((project, idx) => (
-            <Link
-              key={project.name}
-              to={project.to}
-              className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300"
-            >
-              <div className="space-y-3">
-                <h3 className={`text-xl font-semibold text-${project.color}-400`}>
-                  {project.name}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {project.desc}
-                </p>
-                <div className="flex items-center gap-2 text-sm text-gray-500 group-hover:text-white transition-colors">
-                  View project
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center pt-4">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">Web app, mobile experience, or immersive VR world. Let's build it.</p>
           <Link
-            to="/solutions"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            to="/contact"
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-violet-500 to-pink-500 font-semibold text-lg text-white hover:opacity-90 transition-all duration-300 shadow-2xl shadow-violet-500/25"
           >
-            See all projects
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            Start the Conversation
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </Link>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
+
     </div>
   );
 }

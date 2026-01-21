@@ -79,7 +79,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="snap-page">
       <SEO
         title="Custom Software & Web Development Company"
         description="Custom software and web development company building web applications, mobile apps, AI-powered software, and SaaS platforms. Full-stack web development with React, Python, and modern cloud technologies."
@@ -90,7 +90,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════
           HERO - Full viewport, dramatic
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="snap-section min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
+      <section className="snap-section min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 relative">
         <motion.div
           initial={prefersReduced ? {} : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ export default function Home() {
             </motion.div>
 
             {/* Right: Steps */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               {[
                 {
                   num: "01",
@@ -195,7 +195,7 @@ export default function Home() {
                 {
                   num: "03",
                   title: "Build",
-                  desc: "Agile sprints with weekly demos. You see progress, not excuses.",
+                  desc: "Agile sprints with weekly demos. Clean code, tested thoroughly. You see progress, not excuses.",
                   color: "from-fuchsia-500 to-pink-500"
                 },
                 {
@@ -219,7 +219,7 @@ export default function Home() {
                   </div>
                   {/* Connecting line */}
                   {i < 3 && (
-                    <div className="absolute left-7 top-14 w-px h-[calc(100%+2rem)] bg-gradient-to-b from-white/20 to-transparent" />
+                    <div className="absolute left-7 top-14 w-px h-[calc(100%+2.5rem)] bg-gradient-to-b from-white/20 to-transparent" />
                   )}
                   <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{step.desc}</p>

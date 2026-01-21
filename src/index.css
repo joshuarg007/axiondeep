@@ -19,15 +19,16 @@
     overflow-y: scroll;
     height: 100vh;
   }
+  /* Pages with snap-page class pass through for snap behavior */
   .snap-container > main {
-    display: contents; /* Allow snap-sections to be effective children */
+    display: contents;
   }
-  .snap-container > main > * {
-    display: contents; /* Page wrapper divs become transparent */
+  .snap-page {
+    display: contents;
   }
   .snap-section {
     scroll-snap-align: start;
-    scroll-snap-stop: normal; /* Allow fast scrolling past sections */
+    scroll-snap-stop: normal;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,6 +36,12 @@
   }
   .snap-start {
     scroll-snap-align: start;
+  }
+  /* Non-snap pages keep their layout but are themselves a snap point */
+  .no-snap {
+    display: block !important;
+    scroll-snap-align: start;
+    min-height: 100vh;
   }
 }
 
