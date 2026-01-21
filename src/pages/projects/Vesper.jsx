@@ -17,6 +17,18 @@ export default function Vesper() {
         description="Custom security software with autonomous AI agents for penetration testing. Dual-phase architecture with 11,697 Nuclei templates and 3-factor authentication. Built by Axion Deep Labs."
         keywords="custom security software, AI penetration testing software, vulnerability scanning software, custom software solutions, security automation platform, AI security agent"
         canonical="/projects/vesper"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Solutions", url: "/solutions" },
+          { name: "Vesper", url: "/projects/vesper" }
+        ]}
+        software={{
+          name: "Vesper Hydra",
+          description: "Autonomous AI penetration testing platform with dual-phase architecture, 11,697 Nuclei templates, and intelligent vulnerability discovery.",
+          category: "SecurityApplication",
+          url: "/projects/vesper",
+          features: ["Dual AI Agents", "11,697 Nuclei Templates", "Learning Pipeline", "3-Factor Authentication", "Attack Chain Discovery", "Real-time Dashboard"]
+        }}
       />
 
       <motion.div

@@ -19,6 +19,19 @@ export default function Quanta() {
         description="Custom educational software for learning quantum computing through interactive simulations. Structured curriculum with visual Bloch sphere and circuit builder. Built by Axion Deep Labs."
         keywords="custom education software, quantum computing education platform, interactive learning software, custom software solutions, quantum simulation software, educational technology"
         canonical="/projects/quanta"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Solutions", url: "/solutions" },
+          { name: "QUANTA", url: "/projects/quanta" }
+        ]}
+        software={{
+          name: "QUANTA",
+          description: "Interactive quantum computing education platform with circuit builder, Bloch sphere visualization, and structured curriculum from fundamentals to algorithms.",
+          category: "EducationalApplication",
+          url: "/projects/quanta",
+          price: "0",
+          features: ["Interactive Circuit Builder", "Real-time Bloch Sphere", "Structured Curriculum", "Progress Tracking", "16-Qubit Simulation"]
+        }}
       />
 
       <motion.div

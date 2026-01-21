@@ -61,6 +61,10 @@ export default function Careers() {
         description="Join Axion Deep Labs: We're hiring software developers, AI engineers, and full-stack developers passionate about building custom software solutions. Remote-first, cutting-edge projects."
         keywords="software developer jobs, custom software development careers, AI engineer positions, full-stack developer jobs, React developer careers, Python developer jobs, remote software jobs, software development company careers"
         canonical="/careers"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Careers", url: "/careers" }
+        ]}
       />
       {/* Intro */}
       <motion.div

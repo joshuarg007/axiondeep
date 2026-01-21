@@ -14,6 +14,18 @@ export default function Forma() {
         description="Custom software for visual website building with AI-powered component generation. 100+ React components, drag-and-drop builder, Figma import, and export to Next.js or Vite. Built by Axion Deep Labs."
         keywords="custom page builder software, AI website builder, React visual builder, custom software solutions, no-code website builder, drag drop builder software"
         canonical="/projects/forma"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Solutions", url: "/solutions" },
+          { name: "Forma", url: "/projects/forma" }
+        ]}
+        software={{
+          name: "Forma",
+          description: "AI-powered visual React builder with 100+ components, drag-and-drop canvas, team collaboration, and export to production-ready Next.js or Vite code.",
+          category: "DeveloperApplication",
+          url: "/projects/forma",
+          features: ["Visual Canvas", "100+ Components", "AI Generation", "Team Collaboration", "Figma Import", "Code Export"]
+        }}
       />
 
       <motion.div

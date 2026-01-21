@@ -12,6 +12,24 @@ export default function Research() {
         description="Axion Deep Labs research program: Project DRIFT investigates quantum system behavior. Our R&D drives innovation in custom software solutions, AI development, and emerging technologies."
         keywords="software research and development, quantum computing research, AI research, custom software innovation, technology R&D, software development research, emerging technology development"
         canonical="/research"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Research", url: "/research" }
+        ]}
+        faq={[
+          {
+            question: "What is Project DRIFT?",
+            answer: "Project DRIFT (Degradation Regimes In Iterated Field Transformations) investigates behavioral uncertainty in quantum system state evolution under repeated manipulation. We study stability degradation under variation in operator ordering and diversity."
+          },
+          {
+            question: "How does research relate to your software products?",
+            answer: "Our QUANTA platform serves as the primary research instrument for Project DRIFT. Research findings inform the platform's educational capabilities, and the platform enables systematic experimentation for our quantum computing research."
+          },
+          {
+            question: "Do you collaborate with academic institutions?",
+            answer: "Yes, we welcome inquiries from academic institutions and researchers working on related questions in quantum system behavior, simulation methods, or educational technology for quantum computing."
+          }
+        ]}
       />
 
       {/* Header */}

@@ -23,6 +23,19 @@ export default function Site2CRM() {
         description="Custom software solution for lead capture and CRM integration. Embeddable forms with AI lead scoring sync to HubSpot, Salesforce, Pipedrive, or Zoho. Built by Axion Deep Labs."
         keywords="custom lead management software, CRM integration software, AI lead scoring software, custom software solutions, SaaS lead capture, HubSpot integration, Salesforce sync"
         canonical="/projects/site2crm"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Solutions", url: "/solutions" },
+          { name: "Site2CRM", url: "/projects/site2crm" }
+        ]}
+        software={{
+          name: "Site2CRM",
+          description: "Lead capture forms with AI-powered scoring that sync directly to HubSpot, Salesforce, Pipedrive, or Zoho CRM in real-time.",
+          category: "BusinessApplication",
+          url: "/projects/site2crm",
+          price: "29",
+          features: ["AI Lead Scoring", "CRM Integration", "Embeddable Forms", "A/B Testing", "Salesperson Analytics", "Team Leaderboards"]
+        }}
       />
 
       <motion.div

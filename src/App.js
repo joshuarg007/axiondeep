@@ -14,6 +14,7 @@ import Forma from "./pages/projects/Forma";
 import Vesper from "./pages/projects/Vesper";
 import Development from "./pages/Development";
 import Research from "./pages/Research";
+import NotFound from "./pages/NotFound";
 
 // Sales Portal & Admin imports (v1.0)
 import { AuthProvider } from "./contexts/AuthContext";
@@ -269,20 +270,7 @@ function AppContent() {
             <Route path="/projects/site2crm" element={<Site2CRM />} />
             <Route path="/projects/forma" element={<Forma />} />
             <Route path="/projects/vesper" element={<Vesper />} />
-            <Route
-              path="*"
-              element={
-                <div className="text-center text-gray-400">
-                  <h1 className="text-3xl font-semibold mb-2">Page not found</h1>
-                  <p className="mb-6">
-                    The page you're looking for doesn't exist.
-                  </p>
-                  <Link to="/" className="underline">
-                    Go home
-                  </Link>
-                </div>
-              }
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
       )}

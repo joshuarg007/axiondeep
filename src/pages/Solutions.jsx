@@ -150,6 +150,30 @@ export default function Projects() {
         description="Explore our web development and custom software solutions: QUANTA quantum computing platform, Site2CRM AI-powered lead analytics, Forma visual page builder, Vesper security testing, and Made4Founders startup management. Real-world web applications built with React, Python, and modern technology."
         keywords="web development portfolio, custom software solutions portfolio, software products, SaaS applications, web application examples, custom software case studies, AI-powered software, enterprise software products, web development company portfolio, React projects"
         canonical="/solutions"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Solutions", url: "/solutions" }
+        ]}
+        faq={[
+          {
+            question: "What software products has Axion Deep Labs built?",
+            answer: "We've built QUANTA (quantum computing education platform), Site2CRM (AI-powered lead analytics), Forma (visual page builder), Vesper (AI security testing), and Made4Founders (startup management platform). Each demonstrates our expertise in different domains."
+          },
+          {
+            question: "Can I try your software products?",
+            answer: "Yes! QUANTA is available at quanta.axiondeep.com with a free tier. Site2CRM is live at site2crm.io. Made4Founders is available at made4founders.com. Forma and Vesper are in development with early access available."
+          },
+          {
+            question: "Do you build custom software similar to your portfolio?",
+            answer: "Absolutely. Our portfolio demonstrates capabilities we apply to client projects. Whether you need an education platform, SaaS product, AI integration, or security tools, we can build custom solutions tailored to your needs."
+          }
+        ]}
+        videos={[
+          { name: "QUANTA Sandbox Demo", description: "Interactive quantum circuit builder with real-time Bloch sphere visualization", thumbnailUrl: "/quanta-sandbox.png" },
+          { name: "Site2CRM Dashboard", description: "AI-powered lead analytics dashboard with CRM integration", thumbnailUrl: "/features4.png" },
+          { name: "Forma Builder Demo", description: "Visual React page builder with drag-and-drop components", thumbnailUrl: "/forma-hero.png" },
+          { name: "Vesper Security Platform", description: "Autonomous AI penetration testing with dual-agent architecture", thumbnailUrl: "/vesper-dashboard.png" }
+        ]}
       />
 
       {/* Intro */}

@@ -104,6 +104,32 @@ export default function Development() {
         description="Web development and custom software services for every platform: web applications, mobile apps, AI-powered software, VR/AR experiences, and enterprise solutions. Full-stack web development with React, Python, Unity, and modern cloud technologies."
         keywords="web development services, web development company, custom software development services, web application development, mobile app development company, AI software development, VR AR development, enterprise software development, React development, Python development, full-stack web development, SaaS development, hire web developers, website development services"
         canonical="/development"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Development", url: "/development" }
+        ]}
+        faq={[
+          {
+            question: "What types of custom software do you build?",
+            answer: "We build web applications, mobile apps (iOS & Android), AI-powered software, VR/AR experiences, desktop applications, and enterprise SaaS platforms. Our tech stack includes React, Next.js, Python, FastAPI, Unity, and modern cloud technologies."
+          },
+          {
+            question: "How long does a typical software project take?",
+            answer: "Project timelines vary based on complexity. MVPs typically take 6-12 weeks, while full-featured platforms may take 3-6 months. We provide detailed estimates after our discovery phase."
+          },
+          {
+            question: "Do you offer ongoing support after launch?",
+            answer: "Yes, we provide ongoing maintenance, support, and feature development. Our team monitors performance, handles bug fixes, and helps scale your application as your business grows."
+          },
+          {
+            question: "What is your development process?",
+            answer: "Our process has three phases: Discover (understanding your vision and requirements), Design (architecture and UI/UX design), and Deliver (agile development, testing, and deployment with ongoing support)."
+          },
+          {
+            question: "Can you integrate AI into existing applications?",
+            answer: "Yes, we specialize in AI integration including LLM-powered features (Claude, GPT-4), machine learning pipelines, autonomous agents, and intelligent automation for both new and existing applications."
+          }
+        ]}
       />
 
       {/* Hero Section */}

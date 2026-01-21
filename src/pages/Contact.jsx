@@ -235,6 +235,10 @@ export default function Contact() {
         description="Get in touch with Axion Deep Labs for custom software solutions. Request a quote for web applications, mobile apps, AI-powered software, SaaS platforms, and enterprise software development."
         keywords="contact custom software company, hire software developers, custom software quote, software development consultation, custom software development services, web application development quote"
         canonical="/contact"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Contact", url: "/contact" }
+        ]}
       />
       <header className="space-y-4">
         <img

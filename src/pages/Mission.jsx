@@ -63,6 +63,10 @@ export default function Mission() {
         description="Axion Deep Labs transforms complex ideas into elegant, production-ready software. Our agile development process delivers custom web applications, mobile apps, AI solutions, and enterprise software."
         keywords="custom software development process, agile software development, software development methodology, web application development company, mobile app development services, AI software development company, enterprise software solutions, software development agency"
         canonical="/mission"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Mission", url: "/mission" }
+        ]}
       />
 
       <motion.div
