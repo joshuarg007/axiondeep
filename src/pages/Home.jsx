@@ -105,34 +105,20 @@ export default function Home() {
         keywords="custom software solutions, web development company, web development services, custom software development company, software development services, web application development, mobile app development, AI software development, SaaS development, enterprise software solutions, React developers, Python developers, full-stack web development, MVP development, hire web developers"
         canonical="/"
       />
-      <motion.h1
-        className="text-5xl md:text-7xl font-bold mb-4 gradient-text"
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-      >
+      {/* Hero text - no animation delays to improve LCP */}
+      <h1 className="text-5xl md:text-7xl font-bold mb-4 gradient-text animate-fade-in">
         Axion Deep
-      </motion.h1>
+      </h1>
 
-      <motion.h2
-        className="text-xl md:text-2xl text-gray-300 mb-8"
-        initial={prefersReduced ? false : { opacity: 0 }}
-        animate={prefersReduced ? {} : { opacity: 1 }}
-        transition={prefersReduced ? {} : { delay: 0.3, duration: 0.9 }}
-      >
+      <h2 className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in animation-delay-100">
         Custom Software Development & Digital Innovation
-      </motion.h2>
+      </h2>
 
-      <motion.p
-        className="max-w-2xl mx-auto text-gray-400 mb-10"
-        initial={prefersReduced ? false : { opacity: 0 }}
-        animate={prefersReduced ? {} : { opacity: 1 }}
-        transition={prefersReduced ? {} : { delay: 0.6, duration: 0.9 }}
-      >
+      <p className="max-w-2xl mx-auto text-gray-400 mb-10 animate-fade-in animation-delay-200">
         We build custom web applications, mobile apps, and AI-powered software solutions.
         From MVPs to enterprise platforms—our full-stack development team transforms ideas
         into production-ready products with modern technologies like React, Python, and cloud infrastructure.
-      </motion.p>
+      </p>
 
       <div className="flex flex-col sm:flex-row gap-3 justify-center mb-20">
         <Link
@@ -166,9 +152,9 @@ export default function Home() {
           src={heroInnovation}
           alt="Custom software development innovation concept"
           className="w-full rounded-2xl border border-white/10 shadow-2xl shadow-cyan-500/10"
-          loading="lazy"
           width={1200}
           height={800}
+          fetchPriority="high"
         />
       </motion.div>
 
