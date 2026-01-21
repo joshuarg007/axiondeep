@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-white">
@@ -10,6 +11,12 @@ const SectionTitle = ({ children }) => (
 export default function Legal() {
   return (
     <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
+      <SEO
+        title="Privacy Policy & Terms of Service"
+        description="Axion Deep Labs privacy policy and terms of service. Learn how we collect, use, and protect your information when you use our custom software development services."
+        keywords="privacy policy, terms of service, data protection, software development company legal, Axion Deep Labs terms"
+        canonical="/legal"
+      />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

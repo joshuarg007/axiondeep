@@ -96,9 +96,9 @@ export default function Home() {
   return (
     <div className="text-center">
       <SEO
-        title="Custom Software Development Company"
-        description="Axion Deep Labs builds custom web applications, mobile apps, AI-powered software, and enterprise solutions. Full-stack development with React, Python, and modern cloud technologies."
-        keywords="software development company, custom software development, web application development, mobile app development, AI development, full-stack developers, React developers, Python developers"
+        title="Custom Software & Web Development Company"
+        description="Custom software and web development company building web applications, mobile apps, AI-powered software, and SaaS platforms. Full-stack web development with React, Python, and modern cloud technologies. From MVP to enterprise scale."
+        keywords="custom software solutions, web development company, web development services, custom software development company, software development services, web application development, mobile app development, AI software development, SaaS development, enterprise software solutions, React developers, Python developers, full-stack web development, MVP development, hire web developers"
         canonical="/"
       />
       <motion.h1

@@ -13,9 +13,9 @@ export default function Quanta() {
   return (
     <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
       <SEO
-        title="QUANTA - Quantum Computing Education Platform | Axion Deep Labs"
-        description="Learn quantum computing through interactive simulations and structured curriculum. QUANTA makes quantum concepts accessible for students, educators, and institutions."
-        keywords="quantum computing education, learn quantum computing, quantum computing course, quantum simulation, interactive quantum learning, quantum computing curriculum"
+        title="QUANTA - Custom Education Software for Quantum Computing | Axion Deep Labs"
+        description="Custom educational software for learning quantum computing through interactive simulations. Structured curriculum with visual Bloch sphere and circuit builder. Built by Axion Deep Labs."
+        keywords="custom education software, quantum computing education platform, interactive learning software, custom software solutions, quantum simulation software, educational technology"
         canonical="/projects/quanta"
       />
 
@@ -74,7 +74,7 @@ export default function Quanta() {
             className="w-full"
           >
             <source src={quantaSandboxVideo} type="video/webm" />
-            <img src={quantaSandbox} alt="QUANTA Sandbox Mode" />
+            <img src={quantaSandbox} alt="QUANTA Sandbox Mode" loading="lazy" />
           </video>
         </div>
 
@@ -250,6 +250,7 @@ export default function Quanta() {
               <img
                 src={quantaSandbox}
                 alt="QUANTA Sandbox Mode"
+                loading="lazy"
                 className="w-full rounded-xl border border-white/10"
               />
               <p className="text-sm text-gray-400">

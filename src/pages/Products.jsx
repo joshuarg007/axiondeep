@@ -1,8 +1,15 @@
 import React from "react";
+import SEO from "../components/SEO";
 
 export default function Products() {
   return (
     <div className="space-y-6">
+      <SEO
+        title="Products - Software Applications by Axion Deep"
+        description="Software products built by Axion Deep Labs. Custom web applications, SaaS platforms, and AI-powered tools including Site2CRM lead analytics and more."
+        keywords="software products, SaaS applications, web applications, custom software products, Axion Deep products, Site2CRM"
+        canonical="/products"
+      />
       <h1 className="text-3xl md:text-4xl font-semibold">Products</h1>
       <p className="text-gray-300">
         Applications created by Axion Deep are branded independently and operate under our umbrella.

@@ -7,9 +7,9 @@ export default function Research() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
       <SEO
-        title="Research | Axion Deep Labs"
-        description="Project DRIFT: Investigating behavioral uncertainty in quantum system state evolution. Research program exploring degradation regimes under repeated manipulation."
-        keywords="quantum computing research, quantum simulation, operator ordering, state evolution, DRIFT research program"
+        title="Research & Innovation | Custom Software R&D"
+        description="Axion Deep Labs research program: Project DRIFT investigates quantum system behavior. Our R&D drives innovation in custom software solutions, AI development, and emerging technologies."
+        keywords="software research and development, quantum computing research, AI research, custom software innovation, technology R&D, software development research, emerging technology development"
         canonical="/research"
       />
 

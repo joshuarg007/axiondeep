@@ -1,5 +1,5 @@
-# Axion Deep Labs - robots.txt
-# https://www.axiondeep.com
+# Robots.txt for axiondeep.com
+# Custom Software Development Company
 
 User-agent: *
 Allow: /
@@ -7,15 +7,19 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.axiondeep.com/sitemap.xml
 
-# Crawl-delay for respectful crawling
+# Crawl-delay for polite crawling
 Crawl-delay: 1
 
-# Block common bot traps
-Disallow: /api/
-Disallow: /admin/
-Disallow: /*.json$
-Disallow: /static/js/*.map
+# Block admin/portal routes
+Disallow: /admin
+Disallow: /portal
 
-# Allow important resources
-Allow: /static/
-Allow: /assets/
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

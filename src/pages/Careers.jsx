@@ -56,9 +56,9 @@ export default function Careers() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
       <SEO
-        title="Careers - Join Our Software Development Team"
-        description="Join Axion Deep Labs as a software developer, AI engineer, or VR/AR specialist. We're hiring talented developers passionate about building innovative software products."
-        keywords="software developer jobs, web developer careers, AI engineer jobs, VR developer jobs, React developer positions, Python developer jobs, tech startup careers"
+        title="Careers - Join Our Custom Software Development Team"
+        description="Join Axion Deep Labs: We're hiring software developers, AI engineers, and full-stack developers passionate about building custom software solutions. Remote-first, cutting-edge projects."
+        keywords="software developer jobs, custom software development careers, AI engineer positions, full-stack developer jobs, React developer careers, Python developer jobs, remote software jobs, software development company careers"
         canonical="/careers"
       />
       {/* Intro */}

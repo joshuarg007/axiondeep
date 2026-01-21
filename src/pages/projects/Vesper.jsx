@@ -1,12 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
 import vesperDashboard from "../../assets/vesper-dashboard.png";
 import vesperDemo from "../../assets/vesper-demo.webm";
 
 export default function Vesper() {
+  const saasUrl = "https://api.vespertester.xyz";
+
   return (
     <div className="relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
+      <SEO
+        title="Vesper - Custom AI Security Software | Axion Deep Labs"
+        description="Custom security software with autonomous AI agents for penetration testing. Dual-phase architecture with 11,697 Nuclei templates and 3-factor authentication. Built by Axion Deep Labs."
+        keywords="custom security software, AI penetration testing software, vulnerability scanning software, custom software solutions, security automation platform, AI security agent"
+        canonical="/projects/vesper"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -26,15 +36,25 @@ export default function Vesper() {
           </Link>
 
           <div className="flex items-start justify-between gap-4 flex-wrap">
-            <h1 className="text-4xl md:text-5xl font-semibold text-white">
-              Vesper
-            </h1>
-            <span className="text-xs px-3 py-1.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-400/20">
-              In development
-            </span>
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-sm text-violet-300 mb-4">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                </span>
+                Active Development
+              </div>
+              <h1 className="text-4xl md:text-5xl font-semibold text-white">
+                Vesper
+              </h1>
+            </div>
           </div>
           <p className="text-xl text-gray-300 mt-4">
-            Autonomous AI Penetration Testing Agent
+            Autonomous AI Penetration Testing Platform
+          </p>
+          <p className="text-gray-400 mt-3 max-w-2xl">
+            A dual-phase security platform with desktop scanner and cloud backend, powered by
+            dual AI agents for intelligent vulnerability discovery and analysis.
           </p>
         </div>
 
@@ -51,61 +71,176 @@ export default function Vesper() {
             onCanPlay={(e) => e.target.play().catch(() => {})}
           >
             <source src={vesperDemo} type="video/webm" />
-            <img src={vesperDashboard} alt="Vesper Security Platform" />
+            <img src={vesperDashboard} alt="Vesper Security Platform" loading="lazy" />
           </video>
         </div>
+
+        {/* Stats */}
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { stat: "71K+", label: "Lines of Code" },
+            { stat: "50+", label: "Modules" },
+            { stat: "11,697", label: "Nuclei Templates" },
+            { stat: "3FA", label: "Authentication" },
+          ].map((item, i) => (
+            <div key={i} className="border border-white/10 rounded-xl bg-white/5 p-4 text-center">
+              <div className="text-2xl font-bold text-white">{item.stat}</div>
+              <div className="text-xs text-gray-500 mt-1">{item.label}</div>
+            </div>
+          ))}
+        </section>
 
         {/* Overview */}
         <section className="space-y-6">
           <h2 className="text-2xl font-semibold text-white">Overview</h2>
           <p className="text-gray-300 leading-relaxed">
-            Vesper is an autonomous AI security agent powered by Claude that conducts intelligent
-            penetration testing. Unlike traditional scanners that follow rigid rule sets, Vesper
-            thinks like a human security researcher—analyzing context, correlating findings, and
-            adapting its approach based on what it discovers.
+            Vesper is an autonomous AI security platform with dual-phase architecture. The desktop
+            application handles reconnaissance and scanning with 11,697 Nuclei templates, while
+            the SaaS backend provides secure authentication, user management, and subscription
+            handling. Unlike traditional scanners, Vesper's AI agents think like security researchers.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            At its core is NLMN (Neural Long-term Memory Network), a persistent memory system that
-            learns from every engagement. This enables Vesper to recognize patterns across targets,
-            recall successful attack chains, and continuously improve its vulnerability discovery
-            capabilities over time.
+            The platform features two specialized AI agents: the Hunter Agent for active scanning
+            and attack chain reasoning, and the Analyst Agent for finding correlation, prioritizing
+            findings, and generating actionable reports. A learning pipeline captures patterns
+            across engagements for continuous improvement.
           </p>
+        </section>
+
+        {/* Dual Architecture */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-white">Dual-Phase Architecture</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-violet-500/20 rounded-xl bg-gradient-to-br from-violet-900/10 to-indigo-900/10 p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                  <span className="text-violet-400 text-lg">🖥️</span>
+                </div>
+                <h3 className="font-semibold text-white">Desktop Application</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="text-violet-400">→</span>
+                  PyQt6 UI with real-time scan visualization
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">→</span>
+                  11,697 Nuclei vulnerability templates
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">→</span>
+                  AI-powered target reconnaissance
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">→</span>
+                  Learning pipeline for pattern memory
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-violet-400">→</span>
+                  SQLite local database with encryption
+                </li>
+              </ul>
+            </div>
+            <div className="border border-cyan-500/20 rounded-xl bg-gradient-to-br from-cyan-900/10 to-blue-900/10 p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+                  <span className="text-cyan-400 text-lg">☁️</span>
+                </div>
+                <h3 className="font-semibold text-white">SaaS Backend</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="text-cyan-400">→</span>
+                  FastAPI with async endpoints
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-cyan-400">→</span>
+                  3-Factor Authentication (password + email + puzzle)
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-cyan-400">→</span>
+                  Stripe subscription management
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-cyan-400">→</span>
+                  Admin dashboard with user management
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-cyan-400">→</span>
+                  Deployed on VPS with Nginx/SSL
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Agents */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-white">Dual AI Agent System</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-white/10 rounded-xl bg-white/5 p-5">
+              <div className="text-2xl mb-2">🎯</div>
+              <h3 className="font-semibold text-white mb-2">Hunter Agent</h3>
+              <p className="text-sm text-gray-400 mb-3">
+                Active scanning agent that executes reconnaissance, identifies attack surfaces,
+                and runs vulnerability tests with adaptive strategy based on target behavior.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Reconnaissance</span>
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Scanning</span>
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Attack Chains</span>
+              </div>
+            </div>
+            <div className="border border-white/10 rounded-xl bg-white/5 p-5">
+              <div className="text-2xl mb-2">🔬</div>
+              <h3 className="font-semibold text-white mb-2">Analyst Agent</h3>
+              <p className="text-sm text-gray-400 mb-3">
+                Analysis agent that correlates findings, assesses severity with context,
+                identifies false positives, and generates prioritized remediation reports.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Correlation</span>
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Prioritization</span>
+                <span className="text-xs px-2 py-1 rounded bg-white/5 text-gray-400">Reporting</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Key Features */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Key Features</h2>
+          <h2 className="text-2xl font-semibold text-white">Platform Features</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 icon: "🤖",
-                title: "Autonomous AI Agent",
-                description: "Claude-powered reasoning engine that plans, executes, and adapts multi-step attack strategies without manual intervention."
+                title: "Claude-Powered Reasoning",
+                description: "Both agents use Claude for intelligent decision-making, context analysis, and adaptive testing strategies that evolve during engagements."
               },
               {
-                icon: "🧠",
-                title: "Neural Memory (NLMN)",
-                description: "Persistent memory with FAISS-GPU that learns from every engagement. Vesper remembers successful techniques and applies them to new targets."
+                icon: "📚",
+                title: "Learning Pipeline",
+                description: "Error→Solution linking, project DNA analysis, and semantic search via FAISS. Knowledge persists across sessions for continuous improvement."
               },
               {
                 icon: "🔗",
-                title: "Attack Chain Reasoning",
-                description: "AI-driven vulnerability correlation that identifies how individual findings can be chained together for maximum impact."
+                title: "Attack Chain Discovery",
+                description: "AI-driven vulnerability correlation identifies how individual findings can be chained together for maximum real-world impact."
               },
               {
                 icon: "📡",
-                title: "Intelligent OOB Detection",
-                description: "Built-in out-of-band detection for blind vulnerabilities: XSS, SSRF, XXE, Log4Shell, and more."
+                title: "Out-of-Band Detection",
+                description: "Built-in OOB infrastructure for blind vulnerabilities: XSS, SSRF, XXE, Log4Shell, DNS exfiltration, and more."
+              },
+              {
+                icon: "🔐",
+                title: "3-Factor Authentication",
+                description: "SaaS backend secured with password + email verification + Fibonacci puzzle challenge. Includes honeypot detection for automated attacks."
               },
               {
                 icon: "📊",
-                title: "Real-time Reporting",
-                description: "Live findings dashboard with severity scoring, evidence collection, and remediation recommendations."
-              },
-              {
-                icon: "🔒",
-                title: "Authorized Testing Only",
-                description: "Strict scope enforcement and audit logging. Vesper only tests what you explicitly authorize."
+                title: "Real-time Dashboard",
+                description: "Live findings visualization with severity scoring, evidence collection, and exportable PDF reports."
               }
             ].map((feature, i) => (
               <div key={i} className="border border-white/10 rounded-xl bg-white/5 p-5">
@@ -117,72 +252,84 @@ export default function Vesper() {
           </div>
         </section>
 
-        {/* How It Works */}
+        {/* Vulnerability Coverage */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">How It Works</h2>
-          <div className="space-y-6">
+          <h2 className="text-2xl font-semibold text-white">Vulnerability Coverage</h2>
+          <p className="text-gray-400 mb-4">
+            11,697 Nuclei templates covering OWASP Top 10 and beyond.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              {
-                step: "1",
-                title: "Define Scope",
-                description: "Specify your target domains, IP ranges, and any exclusions. Vesper enforces strict boundaries and logs all activity."
-              },
-              {
-                step: "2",
-                title: "Reconnaissance",
-                description: "Vesper maps the attack surface—discovering subdomains, ports, technologies, and potential entry points using AI-guided enumeration."
-              },
-              {
-                step: "3",
-                title: "Intelligent Testing",
-                description: "The AI agent plans and executes tests based on context. It adapts its approach as it learns about your application's behavior."
-              },
-              {
-                step: "4",
-                title: "Vulnerability Correlation",
-                description: "Findings are analyzed for attack chain potential. Vesper identifies how vulnerabilities can be combined for real-world impact."
-              },
-              {
-                step: "5",
-                title: "Actionable Reports",
-                description: "Receive detailed findings with evidence, severity ratings, and clear remediation steps. Export to PDF or integrate with your ticketing system."
-              }
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4">
-                <div className="shrink-0 w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 font-semibold text-sm">
-                  {item.step}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
-                </div>
+              "SQL Injection",
+              "XSS (All Types)",
+              "SSRF",
+              "XXE",
+              "IDOR",
+              "Auth Bypass",
+              "Access Control",
+              "Log4Shell",
+              "SSTI",
+              "Command Injection",
+              "Path Traversal",
+              "Deserialization",
+              "CORS Misconfig",
+              "Open Redirect",
+              "Info Disclosure",
+              "CVE Database"
+            ].map((vuln, i) => (
+              <div key={i} className="border border-white/10 rounded-lg bg-white/5 p-3 text-sm text-gray-300 text-center">
+                {vuln}
               </div>
             ))}
           </div>
         </section>
 
-        {/* Supported Tests */}
+        {/* Security */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Vulnerability Coverage</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              "SQL Injection",
-              "XSS (Reflected/Stored/DOM)",
-              "SSRF",
-              "XXE",
-              "IDOR",
-              "Authentication Bypass",
-              "Broken Access Control",
-              "Log4Shell",
-              "SSTI",
-              "Command Injection",
-              "Path Traversal",
-              "Insecure Deserialization"
-            ].map((vuln, i) => (
-              <div key={i} className="border border-white/10 rounded-lg bg-white/5 p-3 text-sm text-gray-300">
-                {vuln}
-              </div>
-            ))}
+          <h2 className="text-2xl font-semibold text-white">Security & Compliance</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-white/10 rounded-xl bg-white/5 p-6 space-y-4">
+              <h3 className="font-semibold text-white">Authentication Security</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  3FA: Password + Email code + Fibonacci puzzle
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  JWT tokens with HS512 signing
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  BCrypt password hashing
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  Honeypot detection for automated attacks
+                </li>
+              </ul>
+            </div>
+            <div className="border border-white/10 rounded-xl bg-white/5 p-6 space-y-4">
+              <h3 className="font-semibold text-white">Testing Safeguards</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  Strict scope enforcement
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  Comprehensive audit logging
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  Rate limiting per target
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-400">✓</span>
+                  Authorization verification before testing
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
@@ -192,13 +339,13 @@ export default function Vesper() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { name: "Claude AI", desc: "Reasoning" },
-              { name: "FAISS-GPU", desc: "Memory" },
+              { name: "FAISS", desc: "Semantic Search" },
               { name: "Python", desc: "Backend" },
-              { name: "Flask", desc: "API" },
-              { name: "PyQt5", desc: "Desktop UI" },
-              { name: "Docker", desc: "Deployment" },
-              { name: "PostgreSQL", desc: "Storage" },
-              { name: "Redis", desc: "Queue" },
+              { name: "FastAPI", desc: "SaaS API" },
+              { name: "PyQt6", desc: "Desktop UI" },
+              { name: "Nuclei", desc: "Scanner" },
+              { name: "SQLite", desc: "Local DB" },
+              { name: "Nginx", desc: "Proxy" },
             ].map((tech, i) => (
               <div key={i} className="border border-white/10 rounded-lg bg-white/5 p-3 text-center">
                 <div className="font-medium text-white text-sm">{tech.name}</div>
@@ -210,22 +357,22 @@ export default function Vesper() {
 
         {/* Roadmap */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Roadmap</h2>
+          <h2 className="text-2xl font-semibold text-white">Status & Roadmap</h2>
           <div className="space-y-4">
             {[
               {
+                milestone: "Complete",
+                items: ["Dual AI agent architecture", "11,697 Nuclei templates", "Learning pipeline", "SaaS backend with 3FA", "Desktop scanner UI"],
+                status: "Done"
+              },
+              {
                 milestone: "Current",
-                items: ["Autonomous Claude agent", "NLMN neural memory", "Core vulnerability scanning", "OOB detection"],
+                items: ["OOB infrastructure refinement", "Attack chain visualization", "Report export formats"],
                 status: "In Progress"
               },
               {
-                milestone: "Q1 2026",
-                items: ["Advanced attack chain reasoning", "API security testing", "Compliance reporting (PCI-DSS, SOC2)"],
-                status: "Planned"
-              },
-              {
-                milestone: "Q2 2026",
-                items: ["Multi-agent collaborative testing", "CI/CD integration", "Enterprise deployment options"],
+                milestone: "Planned",
+                items: ["Public beta launch", "CI/CD integration", "Multi-target campaigns", "Enterprise deployment"],
                 status: "Planned"
               }
             ].map((phase, i) => (
@@ -233,17 +380,21 @@ export default function Vesper() {
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-semibold text-white">{phase.milestone}</h3>
                   <span className={`text-xs px-2 py-1 rounded-full ${
-                    phase.status === "In Progress"
+                    phase.status === "Done"
+                      ? "bg-green-500/10 text-green-300 border border-green-400/20"
+                      : phase.status === "In Progress"
                       ? "bg-violet-500/10 text-violet-300 border border-violet-400/20"
                       : "bg-gray-500/10 text-gray-300 border border-gray-400/20"
                   }`}>
                     {phase.status}
                   </span>
                 </div>
-                <ul className="space-y-1">
+                <ul className="grid md:grid-cols-2 gap-1">
                   {phase.items.map((item, j) => (
                     <li key={j} className="text-sm text-gray-400 flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-violet-400/70" />
+                      <span className={`h-1 w-1 rounded-full ${
+                        phase.status === "Done" ? "bg-green-400/70" : "bg-violet-400/70"
+                      }`} />
                       {item}
                     </li>
                   ))}
@@ -257,9 +408,9 @@ export default function Vesper() {
         <section className="border-t border-white/10 pt-12">
           <h2 className="text-2xl font-semibold text-white mb-4">Interested in Vesper?</h2>
           <p className="text-gray-400 mb-6">
-            Vesper is currently in development. Contact us to learn more about early access
-            opportunities or to discuss how AI-powered penetration testing could benefit your
-            security program.
+            Vesper is in active development with core features complete. Contact us to learn
+            about early access or discuss how AI-powered penetration testing could enhance
+            your security program.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

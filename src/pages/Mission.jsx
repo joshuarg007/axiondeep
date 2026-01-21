@@ -55,9 +55,9 @@ export default function Mission() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
       <SEO
-        title="Our Mission - Software Development Process"
-        description="Learn about Axion Deep Labs' mission and software development process. We build web applications, mobile apps, AI solutions, VR/AR experiences with agile methodology."
-        keywords="software development process, agile development, web development company, mobile app developers, AI development company, VR AR development"
+        title="Our Mission - Custom Software Development Process"
+        description="Axion Deep Labs transforms complex ideas into elegant, production-ready software. Our agile development process delivers custom web applications, mobile apps, AI solutions, and enterprise software."
+        keywords="custom software development process, agile software development, software development methodology, web application development company, mobile app development services, AI software development company, enterprise software solutions, software development agency"
         canonical="/mission"
       />
 

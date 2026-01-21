@@ -12,7 +12,6 @@ import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
 import Forma from "./pages/projects/Forma";
 import Vesper from "./pages/projects/Vesper";
-import FounderOS from "./pages/projects/FounderOS";
 import Development from "./pages/Development";
 import Research from "./pages/Research";
 
@@ -270,7 +269,6 @@ function AppContent() {
             <Route path="/projects/site2crm" element={<Site2CRM />} />
             <Route path="/projects/forma" element={<Forma />} />
             <Route path="/projects/vesper" element={<Vesper />} />
-            <Route path="/projects/founderos" element={<FounderOS />} />
             <Route
               path="*"
               element={

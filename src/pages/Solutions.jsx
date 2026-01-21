@@ -14,8 +14,7 @@ import formaHero from "../assets/forma-hero.png";
 import formaDemo from "../assets/forma-demo.webm";
 import vesperDashboard from "../assets/vesper-dashboard.png";
 import vesperDemo from "../assets/vesper-demo.webm";
-import founderosDashboard from "../assets/founderos-dashboard.png";
-import founderosDemo from "../assets/founderos-demo.webm";
+// Made4Founders is external - no local assets needed
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
@@ -27,7 +26,7 @@ const projects = [
   {
     key: "quanta",
     title: "QUANTA",
-    subtitle: "Interactive Quantum Computing Learning Platform",
+    subtitle: "Interactive Quantum Computing Education Platform",
     tagline: "Build circuits, visualize qubits, master quantum concepts.",
     blurb:
       "A hands-on quantum computing education platform with an interactive circuit builder, real-time Bloch sphere visualization, and structured lessons from qubits to Grover's algorithm. Powered by Qiskit simulation supporting up to 16 qubits.",
@@ -35,10 +34,10 @@ const projects = [
       "Drag-and-drop circuit builder with bidirectional code sync",
       "Real-time Bloch sphere and probability visualization",
       "Structured curriculum: Fundamentals to Quantum Algorithms",
-      "Sandbox mode for free experimentation",
+      "Free tier with Pro ($15/mo) and Institutional licensing",
     ],
     tech: ["React", "TypeScript", "FastAPI", "Qiskit", "Three.js"],
-    status: "In active development",
+    status: "Education Platform",
     statusColor: "cyan",
     image: quantaSandbox,
     video: quantaSandboxVideo,
@@ -52,14 +51,14 @@ const projects = [
     subtitle: "AI-Powered Lead Analytics for SaaS",
     tagline: "Turn website visitors into CRM leads with AI intelligence.",
     blurb:
-      "Transform website traffic into actionable pipeline data. Capture leads with embeddable forms, score with AI-powered win probability, track salesperson performance, and sync directly to HubSpot with full attribution transparency.",
+      "Transform website traffic into actionable pipeline data. Capture leads with embeddable forms, score with AI-powered win probability, track salesperson performance, and sync directly to HubSpot, Salesforce, Pipedrive, or Zoho.",
     focus: [
       "AI lead scoring with win probability prediction",
       "Salesperson analytics: calls, emails, meetings, deals",
       "Team leaderboards and gamification",
-      "Native HubSpot sync with Pipedrive & Salesforce coming",
+      "Live integrations: HubSpot, Salesforce, Pipedrive, Zoho",
     ],
-    tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Tailwind"],
+    tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Stripe"],
     status: "Live",
     statusColor: "green",
     image: site2crmDashboard,
@@ -74,15 +73,15 @@ const projects = [
     subtitle: "AI-Powered Visual Page Builder",
     tagline: "Drag, drop, generate—build pages without code.",
     blurb:
-      "Create stunning web pages through drag-and-drop with 100+ pre-built components. Describe what you need and our Claude-powered AI generates custom components that match your vision instantly.",
+      "A full-stack visual website builder with 100+ pre-built components, AI-powered generation via Claude, and export to production-ready Next.js or Vite code. Includes real-time team collaboration and component marketplace.",
     focus: [
       "100+ pre-built components (heroes, pricing, testimonials, etc.)",
       "AI-powered component generation with Claude",
-      "Real-time preview with desktop/tablet/mobile views",
-      "Undo/redo history and component toolbar",
+      "Real-time team collaboration via WebSocket",
+      "Export to Next.js or Vite production code",
     ],
-    tech: ["Next.js 14", "TypeScript", "FastAPI", "Claude AI", "Tailwind"],
-    status: "In development",
+    tech: ["Next.js 14", "TypeScript", "FastAPI", "Claude AI", "WebSocket"],
+    status: "Beta",
     statusColor: "amber",
     image: formaHero,
     video: formaDemo,
@@ -93,18 +92,18 @@ const projects = [
   {
     key: "vesper",
     title: "Vesper",
-    subtitle: "Autonomous AI Penetration Testing Agent",
-    tagline: "AI that thinks like a hacker, remembers like an expert.",
+    subtitle: "Autonomous AI Penetration Testing Platform",
+    tagline: "AI that thinks like a hacker, adapts like an expert.",
     blurb:
-      "An autonomous AI security agent powered by Claude that conducts intelligent penetration testing. Features persistent neural memory (NLMN) that learns from every engagement, enabling context-aware vulnerability discovery and attack chain reasoning that improves over time.",
+      "A dual-phase AI security platform with desktop scanner and cloud backend. Features 11,697 Nuclei templates, dual AI agents (Hunter + Analyst), and a learning pipeline that improves vulnerability discovery across engagements.",
     focus: [
-      "Autonomous Claude AI agent with multi-step attack reasoning",
-      "NLMN: Persistent neural memory with cross-session learning",
-      "AI-driven vulnerability correlation and exploit chaining",
-      "Intelligent OOB detection: Blind XSS, SSRF, XXE, Log4Shell",
+      "Dual AI agents: Hunter for scanning, Analyst for correlation",
+      "11,697 Nuclei vulnerability templates",
+      "Learning pipeline with FAISS semantic search",
+      "3-Factor Authentication on SaaS backend",
     ],
-    tech: ["Claude AI", "FAISS-GPU", "Python", "Flask", "PyQt5", "Docker"],
-    status: "In development",
+    tech: ["Claude AI", "FAISS", "Python", "FastAPI", "PyQt6", "Nuclei"],
+    status: "Active Development",
     statusColor: "violet",
     image: vesperDashboard,
     video: vesperDemo,
@@ -113,26 +112,26 @@ const projects = [
     externalLink: null,
   },
   {
-    key: "founderos",
-    title: "FounderOS",
+    key: "made4founders",
+    title: "Made4Founders",
     subtitle: "Command Center for Startup Founders",
     tagline: "Everything you need to run your startup, in one place.",
     blurb:
-      "A comprehensive startup management platform that centralizes daily operations, business resources, and team collaboration. From daily briefs to credential vaults, FounderOS keeps founders organized and focused on what matters.",
+      "A comprehensive startup management platform with daily briefs, encrypted credential vault, compliance checklists, Kanban task boards, and accounting integrations. Built for founders who want to focus on building, not admin.",
     focus: [
-      "Daily Brief dashboard with actionable insights",
-      "Business Library for documents and resources",
-      "Credential Vault with encrypted storage",
-      "Role-based access: admin, editor, viewer",
+      "Daily Brief with urgency stickers and deadlines",
+      "98-item compliance checklist across 11 categories",
+      "AES-256 encrypted credential vault",
+      "QuickBooks, Xero, FreshBooks integrations",
     ],
-    tech: ["React", "TypeScript", "FastAPI", "SQLAlchemy", "Docker"],
+    tech: ["React 19", "TypeScript", "FastAPI", "SQLite", "Docker"],
     status: "Live",
     statusColor: "green",
-    image: founderosDashboard,
-    video: founderosDemo,
-    imageAlt: "FounderOS Dashboard",
-    cta: { label: "Learn more", to: "/projects/founderos" },
-    externalLink: "https://founders.axiondeep.com",
+    image: null,
+    video: null,
+    imageAlt: "Made4Founders Dashboard",
+    cta: { label: "Visit Made4Founders", href: "https://made4founders.com" },
+    externalLink: "https://made4founders.com",
   },
 ];
 
@@ -140,9 +139,9 @@ export default function Projects() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40 pb-20">
       <SEO
-        title="Our Solutions - Software Products & Case Studies"
-        description="Explore Axion Deep Labs' software products and solutions: QUANTA quantum computing platform, Site2CRM lead analytics, Forma page builder, Vesper security testing, and FounderOS."
-        keywords="software products, SaaS products, web applications portfolio, software case studies, quantum computing platform, AI lead scoring, visual page builder, security testing software"
+        title="Web Development & Software Solutions Portfolio"
+        description="Explore our web development and custom software solutions: QUANTA quantum computing platform, Site2CRM AI-powered lead analytics, Forma visual page builder, Vesper security testing, and Made4Founders startup management. Real-world web applications built with React, Python, and modern technology."
+        keywords="web development portfolio, custom software solutions portfolio, software products, SaaS applications, web application examples, custom software case studies, AI-powered software, enterprise software products, web development company portfolio, React projects"
         canonical="/solutions"
       />
 
@@ -202,7 +201,7 @@ export default function Projects() {
                   ) : (
                     <div className="w-full h-56 rounded-lg bg-gradient-to-br from-cyan-900/30 to-violet-900/30 border border-white/10 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : p.key === "vesper" ? "🛡️" : p.key === "founderos" ? "🚀" : "🖼️"}</div>
+                        <div className="text-4xl mb-2">{p.key === "forma" ? "🎨" : p.key === "vesper" ? "🛡️" : p.key === "made4founders" ? "🚀" : "🖼️"}</div>
                         <p className="text-sm text-gray-500">{p.imageAlt}</p>
                       </div>
                     </div>
@@ -255,13 +254,27 @@ export default function Projects() {
 
                   {/* Actions */}
                   <div className="flex items-center gap-3">
-                    <Link
-                      to={p.cta.to}
-                      className="inline-block px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-sm hover:opacity-90 transition"
-                    >
-                      {p.cta.label}
-                    </Link>
-                    {p.externalLink && !p.externalLink.includes("localhost") && (
+                    {p.cta.to ? (
+                      <Link
+                        to={p.cta.to}
+                        className="inline-block px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-sm hover:opacity-90 transition"
+                      >
+                        {p.cta.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={p.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-sm hover:opacity-90 transition"
+                      >
+                        {p.cta.label}
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                    {p.cta.to && p.externalLink && !p.externalLink.includes("localhost") && (
                       <a
                         href={p.externalLink}
                         target="_blank"
@@ -331,15 +344,15 @@ export default function Projects() {
             <ul className="space-y-2 text-xs text-gray-300">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span><strong className="text-green-400">Live:</strong> AI scoring, gamification, HubSpot</span>
+                <span><strong className="text-green-400">Live:</strong> All 4 CRM integrations, AI scoring</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q1 2026: Pipedrive and Salesforce integration</span>
+                <span>Q1 2026: Attribution dashboard enhancements</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q2 2026: Attribution dashboard, API v2</span>
+                <span>Q2 2026: API v2, additional CRM connectors</span>
               </li>
             </ul>
           </motion.div>
@@ -360,15 +373,15 @@ export default function Projects() {
             <ul className="space-y-2 text-xs text-gray-300">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400" />
-                <span><strong className="text-amber-400">Now:</strong> 100+ components, AI generation</span>
+                <span><strong className="text-amber-400">Beta:</strong> 100+ components, team collab, export</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q1 2026: Style editor and customization</span>
+                <span>Q1 2026: Data model designer, dynamic components</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q2 2026: Export and CMS integration</span>
+                <span>Q2 2026: Public launch, marketplace polish</span>
               </li>
             </ul>
           </motion.div>
@@ -389,20 +402,20 @@ export default function Projects() {
             <ul className="space-y-2 text-xs text-gray-300">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span><strong className="text-violet-400">Now:</strong> Autonomous AI agent, neural memory</span>
+                <span><strong className="text-violet-400">Done:</strong> Dual AI agents, 11K+ templates, 3FA</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q1 2026: AI attack chain reasoning engine</span>
+                <span>Q1 2026: OOB refinement, attack chain viz</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q2 2026: Multi-agent collaborative testing</span>
+                <span>Q2 2026: Public beta, CI/CD integration</span>
               </li>
             </ul>
           </motion.div>
 
-          {/* FounderOS timeline */}
+          {/* Made4Founders timeline */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -413,20 +426,20 @@ export default function Projects() {
               <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center">
                 <span className="text-green-400 text-sm">🚀</span>
               </div>
-              <div className="font-semibold text-white text-sm">FounderOS</div>
+              <div className="font-semibold text-white text-sm">Made4Founders</div>
             </div>
             <ul className="space-y-2 text-xs text-gray-300">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span><strong className="text-green-400">Live:</strong> Dashboard, vault, team roles</span>
+                <span><strong className="text-green-400">Live:</strong> Daily briefs, AES vault, 98 compliance items</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
+                <span><strong className="text-green-400">Live:</strong> QuickBooks, Xero, FreshBooks integrations</span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q1 2026: Metrics dashboard, integrations</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
-                <span>Q2 2026: AI insights and automation</span>
+                <span>Q1 2026: AI insights and task automation</span>
               </li>
             </ul>
           </motion.div>
@@ -442,7 +455,7 @@ export default function Projects() {
             { label: "Site2CRM", href: "https://site2crm.io", icon: "📊", desc: "Lead analytics for SaaS" },
             { label: "Forma", href: "/projects/forma", icon: "🎨", desc: "Visual page builder", internal: true },
             { label: "Vesper", href: "/projects/vesper", icon: "🛡️", desc: "AI security agent", internal: true },
-            { label: "FounderOS", href: "https://founders.axiondeep.com", icon: "🚀", desc: "Startup command center" },
+            { label: "Made4Founders", href: "https://made4founders.com", icon: "🚀", desc: "Startup command center" },
           ].map((link, i) => (
             link.internal ? (
               <Link

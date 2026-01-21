@@ -12,10 +12,10 @@ export default function SEO({
   type = "website"
 }) {
   const siteName = "Axion Deep Labs";
-  const defaultDescription = "Custom software development company specializing in web applications, mobile apps, AI integration, VR/AR experiences, and enterprise solutions.";
+  const defaultDescription = "Custom software solutions for startups and enterprises. We build web applications, mobile apps, AI-powered software, and SaaS platforms with React, Python, and modern cloud technologies.";
   const baseUrl = "https://www.axiondeep.com";
 
-  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Custom Software Development & Web Applications`;
+  const fullTitle = title ? `${title} | ${siteName}` : `Custom Software Development Company | ${siteName}`;
   const metaDescription = description || defaultDescription;
   const canonicalUrl = canonical ? `${baseUrl}${canonical}` : baseUrl;
 

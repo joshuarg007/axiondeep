@@ -230,9 +230,9 @@ export default function Contact() {
   return (
     <div className="relative z-10 text-gray-300 space-y-20 max-w-5xl mx-auto px-6 md:px-8 lg:px-12 pt-32 md:pt-40">
       <SEO
-        title="Contact Us - Start Your Software Project"
-        description="Get in touch with Axion Deep Labs for custom software development. Request a quote for web applications, mobile apps, AI solutions, VR/AR development, and enterprise software."
-        keywords="contact software developers, hire developers, software development quote, custom software consultation, web development agency contact"
+        title="Contact Us - Start Your Custom Software Project"
+        description="Get in touch with Axion Deep Labs for custom software solutions. Request a quote for web applications, mobile apps, AI-powered software, SaaS platforms, and enterprise software development."
+        keywords="contact custom software company, hire software developers, custom software quote, software development consultation, custom software development services, web application development quote"
         canonical="/contact"
       />
       <header className="space-y-2">
