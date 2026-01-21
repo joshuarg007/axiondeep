@@ -6,7 +6,7 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Solutions from "./pages/Solutions";
 import GradientBackground from "./components/GradientBackground";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.webp";
 import Legal from "./pages/Legal";
 import Quanta from "./pages/projects/Quanta";
 import Site2CRM from "./pages/projects/Site2CRM";
@@ -62,7 +62,7 @@ function MainLayout({ children }) {
               to="/"
               className="flex items-center gap-3 group"
             >
-              <img src={logo} alt="Axion Deep Labs" className="h-10 w-auto" />
+              <img src={logo} alt="Axion Deep Labs" className="h-10 w-auto" width={374} height={94} />
             </Link>
 
             {/* Navigation */}

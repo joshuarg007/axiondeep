@@ -167,6 +167,8 @@ export default function Home() {
           alt="Custom software development innovation concept"
           className="w-full rounded-2xl border border-white/10 shadow-2xl shadow-cyan-500/10"
           loading="lazy"
+          width={1200}
+          height={800}
         />
       </motion.div>
 
