@@ -224,8 +224,8 @@ export default function Vesper() {
             {[
               {
                 icon: "🤖",
-                title: "Claude-Powered Reasoning",
-                description: "Both agents use Claude for intelligent decision-making, context analysis, and adaptive testing strategies that evolve during engagements."
+                title: "Local AI with Smart Routing",
+                description: "Both agents use local Ollama models (Mistral-7B, CodeLlama) for fast, private reasoning with intelligent routing to cloud APIs only when needed."
               },
               {
                 icon: "📚",
@@ -348,7 +348,7 @@ export default function Vesper() {
           <h2 className="text-2xl font-semibold text-white">Technology</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "Claude AI", desc: "Reasoning" },
+              { name: "Ollama", desc: "Local LLMs" },
               { name: "FAISS", desc: "Semantic Search" },
               { name: "Python", desc: "Backend" },
               { name: "FastAPI", desc: "SaaS API" },

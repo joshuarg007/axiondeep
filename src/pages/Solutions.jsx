@@ -109,7 +109,7 @@ const projects = [
       "Learning pipeline with FAISS semantic search",
       "3-Factor Authentication on SaaS backend",
     ],
-    tech: ["Claude AI", "FAISS", "Python", "FastAPI", "PyQt6", "Nuclei"],
+    tech: ["Ollama", "FAISS", "Python", "FastAPI", "PyQt6", "Nuclei"],
     status: "Active Development",
     statusColor: "violet",
     image: vesperDashboard,

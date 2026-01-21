@@ -49,7 +49,7 @@ export default function Research() {
           <img
             src={researchQuantum}
             alt="Quantum computing and AI research at Axion Deep Labs"
-            className="w-full rounded-2xl border border-violet-500/20 shadow-xl"
+            className="w-full rounded-2xl shadow-xl"
             loading="lazy"
           />
         </motion.div>

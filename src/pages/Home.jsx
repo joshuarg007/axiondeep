@@ -174,11 +174,11 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-8 text-left">
           {/* Step 1 */}
-          <div className="relative">
+          <div className="relative overflow-visible">
             <img
               src={processDiscover}
               alt="Discovery phase - understanding software requirements"
-              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              className="w-full h-40 object-contain mb-4"
               loading="lazy"
             />
             <div className="flex items-center gap-4 mb-4">
@@ -194,11 +194,11 @@ export default function Home() {
           </div>
 
           {/* Step 2 */}
-          <div className="relative">
+          <div className="relative overflow-visible">
             <img
               src={processDesign}
               alt="Design phase - architecting custom software solutions"
-              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              className="w-full h-40 object-contain mb-4"
               loading="lazy"
             />
             <div className="flex items-center gap-4 mb-4">
@@ -214,11 +214,11 @@ export default function Home() {
           </div>
 
           {/* Step 3 */}
-          <div className="relative">
+          <div className="relative overflow-visible">
             <img
               src={processDeliver}
               alt="Delivery phase - deploying production-ready software"
-              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              className="w-full h-40 object-contain mb-4"
               loading="lazy"
             />
             <div className="flex items-center gap-4 mb-4">
