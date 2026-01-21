@@ -16,6 +16,13 @@ import vesperDashboard from "../assets/vesper-dashboard.png";
 import vesperDemo from "../assets/vesper-demo.webm";
 // Made4Founders is external - no local assets needed
 
+// Roadmap logos
+import quantaLogo from "../assets/icons/icon-solutions-quanta.png";
+import site2crmLogo from "../assets/icons/icon-solutions-site2crm.png";
+import formaLogo from "../assets/icons/icon-solutions-forma.png";
+import vesperLogo from "../assets/icons/icon-solutions-vesper.png";
+import founderosLogo from "../assets/icons/icon-solutions-founderos.png";
+
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
     {children}
@@ -298,7 +305,7 @@ export default function Projects() {
       {/* Roadmap */}
       <div className="space-y-6">
         <h2 className="text-2xl font-semibold text-white">Roadmap Snapshot</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {/* QUANTA timeline */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -306,23 +313,24 @@ export default function Projects() {
             transition={{ duration: 0.45 }}
             className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-                <span className="text-cyan-400 text-sm">⚛</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={quantaLogo} alt="QUANTA" className="w-10 h-10 rounded-lg" />
+              <div>
+                <div className="font-semibold text-white">QUANTA</div>
+                <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-300 border border-green-400/20">Live</span>
               </div>
-              <div className="font-semibold text-white text-sm">QUANTA</div>
             </div>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                <span><strong className="text-cyan-400">Now:</strong> Full curriculum through quantum gates</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-400 shrink-0" />
+                <span>Full curriculum through quantum gates</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q1 2026: Quantum algorithms (Grover's, Deutsch-Jozsa)</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q2 2026: User accounts and progress sync</span>
               </li>
             </ul>
@@ -335,23 +343,24 @@ export default function Projects() {
             transition={{ duration: 0.45, delay: 0.05 }}
             className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center">
-                <span className="text-green-400 text-sm">📊</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={site2crmLogo} alt="Site2CRM" className="w-10 h-10 rounded-lg" />
+              <div>
+                <div className="font-semibold text-white">Site2CRM</div>
+                <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-300 border border-green-400/20">Live</span>
               </div>
-              <div className="font-semibold text-white text-sm">Site2CRM</div>
             </div>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span><strong className="text-green-400">Live:</strong> All 4 CRM integrations, AI scoring</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-400 shrink-0" />
+                <span>All 4 CRM integrations, AI scoring</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q1 2026: Attribution dashboard enhancements</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q2 2026: API v2, additional CRM connectors</span>
               </li>
             </ul>
@@ -364,23 +373,24 @@ export default function Projects() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                <span className="text-amber-400 text-sm">🎨</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={formaLogo} alt="Forma" className="w-10 h-10 rounded-lg" />
+              <div>
+                <div className="font-semibold text-white">Forma</div>
+                <span className="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-400/20">Beta</span>
               </div>
-              <div className="font-semibold text-white text-sm">Forma</div>
             </div>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-400" />
-                <span><strong className="text-amber-400">Beta:</strong> 100+ components, team collab, export</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-400 shrink-0" />
+                <span>100+ components, team collab, export</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q1 2026: Data model designer, dynamic components</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q2 2026: Public launch, marketplace polish</span>
               </li>
             </ul>
@@ -393,23 +403,24 @@ export default function Projects() {
             transition={{ duration: 0.45, delay: 0.15 }}
             className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                <span className="text-violet-400 text-sm">🛡️</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={vesperLogo} alt="Vesper" className="w-10 h-10 rounded-lg" />
+              <div>
+                <div className="font-semibold text-white">Vesper</div>
+                <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-300 border border-green-400/20">Live</span>
               </div>
-              <div className="font-semibold text-white text-sm">Vesper</div>
             </div>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400" />
-                <span><strong className="text-violet-400">Done:</strong> Dual AI agents, 11K+ templates, 3FA</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-400 shrink-0" />
+                <span>Dual AI agents, 11K+ templates, 3FA</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q1 2026: OOB refinement, attack chain viz</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q2 2026: Public beta, CI/CD integration</span>
               </li>
             </ul>
@@ -420,25 +431,26 @@ export default function Projects() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.2 }}
-            className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm"
+            className="relative border border-white/10 rounded-2xl bg-white/5 p-5 overflow-hidden backdrop-blur-sm md:col-span-2 lg:col-span-1"
           >
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center">
-                <span className="text-green-400 text-sm">🚀</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={founderosLogo} alt="Made4Founders" className="w-10 h-10 rounded-lg" />
+              <div>
+                <div className="font-semibold text-white">Made4Founders</div>
+                <span className="text-xs px-2 py-0.5 rounded bg-green-500/10 text-green-300 border border-green-400/20">Live</span>
               </div>
-              <div className="font-semibold text-white text-sm">Made4Founders</div>
             </div>
-            <ul className="space-y-2 text-xs text-gray-300">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span><strong className="text-green-400">Live:</strong> Daily briefs, AES vault, 98 compliance items</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-400 shrink-0" />
+                <span>Daily briefs, AES vault, 98 compliance items</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span><strong className="text-green-400">Live:</strong> QuickBooks, Xero, FreshBooks integrations</span>
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-green-400 shrink-0" />
+                <span>QuickBooks, Xero, FreshBooks integrations</span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-violet-400/70" />
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/70 shrink-0" />
                 <span>Q1 2026: AI insights and task automation</span>
               </li>
             </ul>

@@ -240,7 +240,7 @@ export default function Contact() {
         <img
           src={contactConnect}
           alt="Connect with Axion Deep Labs for custom software solutions"
-          className="w-full h-48 object-cover rounded-2xl border border-white/10 mb-4"
+          className="w-full h-48 object-cover rounded-2xl mb-4"
           loading="lazy"
         />
         <h1 className="text-3xl md:text-4xl font-semibold">

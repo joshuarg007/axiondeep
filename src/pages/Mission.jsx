@@ -13,31 +13,34 @@ function FocusTile({ title, lines }) {
   const [hover, setHover] = useState(false);
   return (
     <motion.div
+      layout
       onHoverStart={() => setHover(true)}
       onHoverEnd={() => setHover(false)}
-      className="relative border border-white/10 rounded-2xl bg-white/5 p-6 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition"
+      className="relative border border-white/10 rounded-2xl bg-white/5 p-6 overflow-hidden backdrop-blur-sm hover:bg-white/10 transition-colors"
       whileHover={{ borderColor: "rgba(6,182,212,0.4)" }}
+      transition={{ layout: { duration: 0.25, ease: "easeOut" } }}
     >
-      <div className="flex items-center justify-between">
+      <motion.div layout="position" className="flex items-center justify-between">
         <div className="font-semibold text-white">{title}</div>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: hover ? 1 : 0 }}
+          transition={{ duration: 0.15 }}
           className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30"
         >
           focus
         </motion.div>
-      </div>
+      </motion.div>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {hover && (
           <motion.ul
             key="lines"
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
-            transition={{ duration: 0.18 }}
-            className="mt-3 text-sm text-gray-300 space-y-1.5"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="mt-3 text-sm text-gray-300 space-y-1.5 overflow-hidden"
           >
             {lines.map((l, i) => (
               <li key={i} className="flex gap-2">
@@ -107,7 +110,7 @@ export default function Mission() {
           <img
             src={missionVision}
             alt="Axion Deep Labs mission and vision for software development"
-            className="w-full rounded-2xl border border-white/10 shadow-xl"
+            className="w-full rounded-2xl shadow-xl"
             loading="lazy"
           />
         </motion.div>
