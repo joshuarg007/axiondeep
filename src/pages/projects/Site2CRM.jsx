@@ -11,6 +11,7 @@ import features4 from "../../assets/features4.png";
 import features1Video from "../../assets/features1.webm";
 import features2Video from "../../assets/features2.webm";
 import features3Video from "../../assets/features3.webm";
+import site2crmHero from "../../assets/images/project-site2crm-hero.webp";
 
 export default function Site2CRM() {
   const appUrl = "https://site2crm.io";

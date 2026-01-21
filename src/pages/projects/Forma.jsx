@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SEO from "../../components/SEO";
 import formaHero from "../../assets/forma-hero.png";
 import formaDemo from "../../assets/forma-demo.webm";
+import formaHeroNew from "../../assets/images/project-forma-hero.webp";
 
 export default function Forma() {
   return (

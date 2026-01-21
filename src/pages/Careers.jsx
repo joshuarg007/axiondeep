@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import careersTeam from "../assets/images/careers-team.webp";
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
@@ -90,9 +91,24 @@ export default function Careers() {
         >
           Axion Deep Labs operates as a hybrid research network. Our members span AI theory, quantum
           computation, systems architecture, and applied mathematics — working remotely,
-          asynchronously, and experimentally. If you prototype at 3 AM to test a hypothesis, you’ll
+          asynchronously, and experimentally. If you prototype at 3 AM to test a hypothesis, you'll
           fit right in.
         </motion.p>
+
+        {/* Team Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8"
+        >
+          <img
+            src={careersTeam}
+            alt="Software engineering team collaboration at Axion Deep Labs"
+            className="w-full rounded-2xl border border-white/10 shadow-xl"
+            loading="lazy"
+          />
+        </motion.div>
       </motion.div>
 
       {/* Research Domains (same card style as Mission focus tiles) */}

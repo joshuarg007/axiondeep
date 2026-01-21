@@ -6,6 +6,8 @@ import SEO from "../../components/SEO";
 // Import media
 import quantaSandbox from "../../assets/quanta-sandbox.png";
 import quantaSandboxVideo from "../../assets/quanta-sandbox.webm";
+import quantaHero from "../../assets/images/project-quanta-hero.webp";
+import quantaLogo from "../../assets/images/quanta-logo.webp";
 
 export default function Quanta() {
   const appUrl = "https://quanta.axiondeep.com";
@@ -38,17 +40,25 @@ export default function Quanta() {
           </Link>
 
           <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm text-cyan-300 mb-4">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-                </span>
-                Education Platform
+            <div className="flex items-center gap-6">
+              <img
+                src={quantaLogo}
+                alt="QUANTA logo - AI coding assistant"
+                className="w-20 h-20 rounded-xl border border-cyan-500/20 shadow-lg shadow-cyan-500/10"
+                loading="lazy"
+              />
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm text-cyan-300 mb-4">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                  </span>
+                  Education Platform
+                </div>
+                <h1 className="text-4xl md:text-5xl font-semibold text-white">
+                  QUANTA
+                </h1>
               </div>
-              <h1 className="text-4xl md:text-5xl font-semibold text-white">
-                QUANTA
-              </h1>
             </div>
             <span className="text-xs px-3 py-1.5 rounded-full bg-green-500/10 text-green-300 border border-green-400/20">
               Available Now

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import heroInnovation from "../assets/images/hero-innovation.webp";
+import processDiscover from "../assets/images/process-discover.webp";
+import processDesign from "../assets/images/process-design.webp";
+import processDeliver from "../assets/images/process-deliver.webp";
 
 const prefersReduced =
   typeof window !== "undefined" &&
@@ -147,9 +151,24 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="text-xs tracking-widest text-gray-500 mb-24">
+      <div className="text-xs tracking-widest text-gray-500 mb-16">
         WEB APPS • MOBILE • AI • VR/AR • SAAS • ENTERPRISE SOFTWARE
       </div>
+
+      {/* Hero Image */}
+      <motion.div
+        initial={prefersReduced ? false : { opacity: 0, y: 20 }}
+        animate={prefersReduced ? {} : { opacity: 1, y: 0 }}
+        transition={prefersReduced ? {} : { delay: 0.7, duration: 0.8 }}
+        className="mb-24 max-w-4xl mx-auto"
+      >
+        <img
+          src={heroInnovation}
+          alt="Custom software development innovation concept"
+          className="w-full rounded-2xl border border-white/10 shadow-2xl shadow-cyan-500/10"
+          loading="lazy"
+        />
+      </motion.div>
 
       {/* How It Works Section */}
       <motion.div
@@ -168,6 +187,12 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8 text-left">
           {/* Step 1 */}
           <div className="relative">
+            <img
+              src={processDiscover}
+              alt="Discovery phase - understanding software requirements"
+              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              loading="lazy"
+            />
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center text-white font-bold text-sm">
                 1
@@ -182,6 +207,12 @@ export default function Home() {
 
           {/* Step 2 */}
           <div className="relative">
+            <img
+              src={processDesign}
+              alt="Design phase - architecting custom software solutions"
+              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              loading="lazy"
+            />
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center text-white font-bold text-sm">
                 2
@@ -196,6 +227,12 @@ export default function Home() {
 
           {/* Step 3 */}
           <div className="relative">
+            <img
+              src={processDeliver}
+              alt="Delivery phase - deploying production-ready software"
+              className="w-full h-32 object-cover rounded-xl mb-4 border border-white/10"
+              loading="lazy"
+            />
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center text-white font-bold text-sm">
                 3

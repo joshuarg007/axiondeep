@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import SEO from "../../components/SEO";
 import vesperDashboard from "../../assets/vesper-dashboard.png";
 import vesperDemo from "../../assets/vesper-demo.webm";
+import vesperHero from "../../assets/images/project-vesper-hero.webp";
+import vesperLogo from "../../assets/images/vesper-hydra-logo.webp";
 
 export default function Vesper() {
   const saasUrl = "https://api.vespertester.xyz";
@@ -36,17 +38,25 @@ export default function Vesper() {
           </Link>
 
           <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-sm text-violet-300 mb-4">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
-                </span>
-                Active Development
+            <div className="flex items-center gap-6">
+              <img
+                src={vesperLogo}
+                alt="Vesper Hydra logo - cybersecurity platform"
+                className="w-20 h-20 rounded-xl border border-violet-500/20 shadow-lg shadow-violet-500/10"
+                loading="lazy"
+              />
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-sm text-violet-300 mb-4">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                  </span>
+                  Active Development
+                </div>
+                <h1 className="text-4xl md:text-5xl font-semibold text-white">
+                  Vesper Hydra
+                </h1>
               </div>
-              <h1 className="text-4xl md:text-5xl font-semibold text-white">
-                Vesper
-              </h1>
             </div>
           </div>
           <p className="text-xl text-gray-300 mt-4">

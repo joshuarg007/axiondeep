@@ -2,103 +2,97 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import platformWeb from "../assets/images/platform-web.webp";
+import platformMobile from "../assets/images/platform-mobile.webp";
+import platformVr from "../assets/images/platform-vr.webp";
+import platformAr from "../assets/images/platform-ar.webp";
+import platformDesktop from "../assets/images/platform-desktop.webp";
+import platformAi from "../assets/images/platform-ai.webp";
+import processDiscover from "../assets/images/process-discover.webp";
+import processDesign from "../assets/images/process-design.webp";
+import processDeliver from "../assets/images/process-deliver.webp";
+
+const platformImages = {
+  web: platformWeb,
+  mobile: platformMobile,
+  vr: platformVr,
+  ar: platformAr,
+  desktop: platformDesktop,
+  ai: platformAi,
+};
 
 const platforms = [
   {
     id: "web",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-      </svg>
-    ),
     title: "Web Applications",
     description: "Full-stack platforms, SaaS products, and progressive web apps built with React, Next.js, and modern frameworks.",
     gradient: "from-cyan-500 to-blue-600",
     tech: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
+    alt: "Web application development services",
   },
   {
     id: "mobile",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-      </svg>
-    ),
     title: "Mobile Apps",
     description: "Native and cross-platform mobile experiences for iOS and Android with seamless performance and intuitive UX.",
     gradient: "from-violet-500 to-purple-600",
     tech: ["React Native", "Swift", "Kotlin", "Flutter"],
+    alt: "Mobile app development for iOS and Android",
   },
   {
     id: "vr",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
-      </svg>
-    ),
     title: "Virtual Reality",
     description: "Immersive VR experiences for training, simulation, gaming, and virtual collaboration environments.",
     gradient: "from-pink-500 to-rose-600",
     tech: ["Unity", "Unreal Engine", "WebXR", "Three.js"],
+    alt: "Virtual reality software development",
   },
   {
     id: "ar",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
-      </svg>
-    ),
     title: "Augmented Reality",
     description: "Spatial computing and real-world overlays that blend digital content with physical environments.",
     gradient: "from-amber-500 to-orange-600",
     tech: ["ARKit", "ARCore", "WebAR", "Spark AR"],
+    alt: "Augmented reality application development",
   },
   {
     id: "desktop",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-      </svg>
-    ),
     title: "Desktop Applications",
     description: "High-performance native desktop apps and cross-platform tools for Windows, macOS, and Linux.",
     gradient: "from-emerald-500 to-teal-600",
     tech: ["Electron", "Tauri", "PyQt", "Swift"],
+    alt: "Desktop software development services",
   },
   {
     id: "ai",
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-      </svg>
-    ),
     title: "AI-Powered Apps",
     description: "Intelligent applications with LLM integration, autonomous agents, and machine learning pipelines.",
     gradient: "from-indigo-500 to-violet-600",
     tech: ["Claude AI", "GPT-4", "LangChain", "PyTorch"],
+    alt: "AI and machine learning software development",
   },
 ];
 
-const process = [
+const processSteps = [
   {
     step: "01",
     title: "Discover",
     description: "Deep dive into your vision, users, and business goals to define the perfect solution.",
+    image: processDiscover,
+    alt: "Discovery phase - understanding software requirements",
   },
   {
     step: "02",
-    title: "Architect",
+    title: "Design",
     description: "Design scalable systems and intuitive interfaces that set the foundation for success.",
+    image: processDesign,
+    alt: "Design phase - architecting custom software solutions",
   },
   {
     step: "03",
-    title: "Build",
-    description: "Agile development with continuous feedback loops and transparent progress updates.",
-  },
-  {
-    step: "04",
-    title: "Ship",
-    description: "Rigorous testing, seamless deployment, and ongoing support to ensure lasting impact.",
+    title: "Deliver",
+    description: "Agile development, rigorous testing, seamless deployment, and ongoing support.",
+    image: processDeliver,
+    alt: "Delivery phase - deploying production-ready software",
   },
 ];
 
@@ -186,18 +180,23 @@ export default function Development() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * idx }}
-              className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
+              className="group relative overflow-hidden rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
             >
               {/* Gradient glow on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`} />
 
-              <div className="relative z-10 space-y-4">
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${platform.gradient} bg-opacity-20`}>
-                  <div className="text-white">
-                    {platform.icon}
-                  </div>
-                </div>
+              {/* Platform Image */}
+              <div className="relative h-40 overflow-hidden">
+                <img
+                  src={platformImages[platform.id]}
+                  alt={platform.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent`} />
+              </div>
 
+              <div className="relative z-10 p-6 space-y-4">
                 <h3 className="text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                   {platform.title}
                 </h3>
@@ -238,24 +237,30 @@ export default function Development() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          {process.map((item, idx) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {processSteps.map((item, idx) => (
             <motion.div
               key={item.step}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * idx }}
-              className="relative"
+              className="relative group"
             >
-              {/* Connector line */}
-              {idx < process.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[60%] w-full h-px bg-gradient-to-r from-white/20 to-transparent" />
-              )}
-
-              <div className="relative z-10 space-y-4">
-                <span className="text-5xl font-bold bg-gradient-to-br from-cyan-400 to-violet-500 bg-clip-text text-transparent">
+              {/* Process Image */}
+              <div className="relative h-48 mb-6 rounded-xl overflow-hidden border border-white/10">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 text-4xl font-bold bg-gradient-to-br from-cyan-400 to-violet-500 bg-clip-text text-transparent">
                   {item.step}
                 </span>
+              </div>
+
+              <div className="relative z-10 space-y-3">
                 <h3 className="text-xl font-semibold text-white">
                   {item.title}
                 </h3>

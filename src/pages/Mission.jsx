@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SEO from "../components/SEO";
+import missionVision from "../assets/images/mission-vision.webp";
 
 const SectionTitle = ({ children }) => (
   <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-center md:text-left text-white">
@@ -94,6 +95,21 @@ export default function Mission() {
             </span>{" "}
             Axion Deep Labs delivers custom software development with precision and care.
           </p>
+        </motion.div>
+
+        {/* Mission Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12"
+        >
+          <img
+            src={missionVision}
+            alt="Axion Deep Labs mission and vision for software development"
+            className="w-full rounded-2xl border border-white/10 shadow-xl"
+            loading="lazy"
+          />
         </motion.div>
 
         {/* Focus Areas */}

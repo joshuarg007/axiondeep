@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import researchQuantum from "../assets/images/research-quantum.webp";
 
 export default function Research() {
   return (
@@ -37,6 +38,21 @@ export default function Research() {
           that lack closed-form analytical solutions. We conduct hypothesis-driven experimentation
           to characterize phenomena that must be observed empirically.
         </p>
+
+        {/* Research Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8"
+        >
+          <img
+            src={researchQuantum}
+            alt="Quantum computing and AI research at Axion Deep Labs"
+            className="w-full rounded-2xl border border-violet-500/20 shadow-xl"
+            loading="lazy"
+          />
+        </motion.div>
       </motion.div>
 
       {/* Project DRIFT */}

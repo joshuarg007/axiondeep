@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SEO from "../components/SEO";
+import contactConnect from "../assets/images/contact-connect.webp";
 
 const stepsDef = [
   { id: "email", label: "Email", type: "email", placeholder: "you@domain.com", required: true },
@@ -235,7 +236,13 @@ export default function Contact() {
         keywords="contact custom software company, hire software developers, custom software quote, software development consultation, custom software development services, web application development quote"
         canonical="/contact"
       />
-      <header className="space-y-2">
+      <header className="space-y-4">
+        <img
+          src={contactConnect}
+          alt="Connect with Axion Deep Labs for custom software solutions"
+          className="w-full h-48 object-cover rounded-2xl border border-white/10 mb-4"
+          loading="lazy"
+        />
         <h1 className="text-3xl md:text-4xl font-semibold">
           Start a Research Conversation
         </h1>
