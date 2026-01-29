@@ -1,8 +1,23 @@
 "use client";
 
-import InteractiveHero from "./InteractiveHero";
+import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
+
+// Lazy load the heavy canvas animation after initial paint
+const InteractiveHero = dynamic(() => import("./InteractiveHero"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function GradientBackground({ children }: { children: React.ReactNode }) {
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  // Delay animation load to prioritize content
+  useEffect(() => {
+    const timer = setTimeout(() => setShowAnimation(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
       {/* Static radial fallback for instant paint */}
@@ -29,10 +44,12 @@ export default function GradientBackground({ children }: { children: React.React
         }}
       />
 
-      {/* Interactive particles and cubes */}
-      <div aria-hidden className="fixed inset-0 overflow-hidden" style={{ zIndex: 1 }}>
-        <InteractiveHero />
-      </div>
+      {/* Interactive particles and cubes - lazy loaded */}
+      {showAnimation && (
+        <div aria-hidden className="fixed inset-0 overflow-hidden" style={{ zIndex: 1 }}>
+          <InteractiveHero />
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10">{children}</div>

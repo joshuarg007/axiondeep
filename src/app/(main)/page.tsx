@@ -36,8 +36,8 @@ export default function HomePage() {
             <span className="text-gray-500">From idea to launch, done right.</span>
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Axion Deep Labs is a research-driven software development company specializing in custom web applications,
-            mobile apps, AI-powered solutions, and enterprise software. We partner with startups and established
+            <strong className="text-gray-400">Axion Deep Labs</strong> is a research-driven software development company specializing in custom web applications,
+            mobile apps, AI-powered solutions, and enterprise software. The Axion Deep team partners with startups and established
             businesses to build scalable, production-ready software that solves real problems.
           </p>
         </div>

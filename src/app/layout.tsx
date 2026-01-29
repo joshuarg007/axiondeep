@@ -81,9 +81,11 @@ const jsonLd = {
         url: "https://www.axiondeep.com/images/logo.webp",
       },
       sameAs: [
-        "https://linkedin.com/company/axiondeep",
-        "https://github.com/axiondeep",
-        "https://twitter.com/axiondeep",
+        "https://www.linkedin.com/company/111213915",
+        "https://x.com/axiondeeplabs",
+        "https://www.facebook.com/people/Axion-Deep-Labs/61587313467089/",
+        "https://www.youtube.com/@AxionDeepLabs",
+        "https://www.instagram.com/axion_deep_labs/",
       ],
       contactPoint: {
         "@type": "ContactPoint",
@@ -126,6 +128,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* DNS Prefetch for performance */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
