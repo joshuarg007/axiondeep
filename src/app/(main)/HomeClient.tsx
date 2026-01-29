@@ -2,19 +2,24 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const prefersReduced =
-  typeof window !== "undefined" &&
-  window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function HomeClient() {
+  const isMobile = useIsMobile();
+
+  const prefersReduced =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  const shouldAnimate = !isMobile && !prefersReduced;
+
   return (
     <>
-      {/* Animated CTA buttons */}
+      {/* Animated CTA buttons - skip animations on mobile */}
       <motion.div
-        initial={prefersReduced ? {} : { opacity: 0, y: 20 }}
+        initial={shouldAnimate ? { opacity: 0, y: 20 } : {}}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        transition={shouldAnimate ? { duration: 0.8, delay: 0.3 } : { duration: 0 }}
         className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
       >
         <Link
@@ -39,21 +44,23 @@ export default function HomeClient() {
         </Link>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1.5 h-1.5 rounded-full bg-white/40"
-          />
-        </div>
-      </motion.div>
+      {/* Scroll indicator - hidden on mobile */}
+      {!isMobile && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        >
+          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+              className="w-1.5 h-1.5 rounded-full bg-white/40"
+            />
+          </div>
+        </motion.div>
+      )}
     </>
   );
 }

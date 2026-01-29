@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SolutionsClient from "./SolutionsClient";
+import ResponsiveVideo from "@/components/ResponsiveVideo";
 
 export const metadata: Metadata = {
   title: "Software Solutions & Portfolio",
@@ -111,7 +112,11 @@ export default function SolutionsPage() {
                 </div>
               </div>
               {/* Video */}
-              <SolutionsClient videoSrc="/videos/quanta-sandbox.webm" playbackRate={1.7} />
+              <SolutionsClient
+                videoSrc="/videos/quanta-sandbox.webm"
+                posterSrc="/images/video-posters/quanta-sandbox.webp"
+                playbackRate={1.7}
+              />
             </div>
           </div>
         </div>
@@ -290,15 +295,11 @@ export default function SolutionsPage() {
             {/* Site2CRM */}
             <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/15 to-teal-500/5 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
               <div className="relative h-48 overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <ResponsiveVideo
+                  videoSrc="/videos/features2.webm"
+                  posterSrc="/images/video-posters/features2.webp"
                   className="w-full h-full object-cover opacity-70"
-                >
-                  <source src="/videos/features2.webm" type="video/webm" />
-                </video>
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">
                   <div className="flex items-center gap-3">
@@ -355,15 +356,11 @@ export default function SolutionsPage() {
             {/* Forma */}
             <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-fuchsia-500/15 to-pink-500/5 border border-fuchsia-500/20 hover:border-fuchsia-500/40 transition-all">
               <div className="relative h-48 overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <ResponsiveVideo
+                  videoSrc="/videos/forma-demo.webm"
+                  posterSrc="/images/video-posters/forma-demo.webp"
                   className="w-full h-full object-cover opacity-70"
-                >
-                  <source src="/videos/forma-demo.webm" type="video/webm" />
-                </video>
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">
                   <div className="flex items-center gap-3">
@@ -473,16 +470,12 @@ export default function SolutionsPage() {
                 </div>
               </div>
               <div className="relative rounded-2xl overflow-hidden min-h-[300px]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <ResponsiveVideo
+                  videoSrc="/videos/vesper-demo.webm"
+                  posterSrc="/images/video-posters/vesper-demo.webp"
                   className="absolute inset-0 w-full h-full object-cover opacity-80"
-                >
-                  <source src="/videos/vesper-demo.webm" type="video/webm" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+                  overlayGradient="linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 50%, transparent 100%)"
+                />
               </div>
             </div>
           </div>

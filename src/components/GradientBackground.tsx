@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 // Lazy load the heavy canvas animation after initial paint
 const InteractiveHero = dynamic(() => import("./InteractiveHero"), {
@@ -11,12 +12,14 @@ const InteractiveHero = dynamic(() => import("./InteractiveHero"), {
 
 export default function GradientBackground({ children }: { children: React.ReactNode }) {
   const [showAnimation, setShowAnimation] = useState(false);
+  const isMobile = useIsMobile();
 
-  // Delay animation load to prioritize content
+  // Delay animation load to prioritize content (skip on mobile entirely)
   useEffect(() => {
+    if (isMobile) return;
     const timer = setTimeout(() => setShowAnimation(true), 100);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
@@ -31,10 +34,10 @@ export default function GradientBackground({ children }: { children: React.React
         }}
       />
 
-      {/* Animated linear gradient layer */}
+      {/* Animated linear gradient layer - paused on mobile via CSS */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-25"
+        className="absolute inset-0 opacity-25 aurora-gradient"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(6,182,212,0.5), rgba(139,92,246,0.45), rgba(236,72,153,0.4))",
@@ -44,8 +47,8 @@ export default function GradientBackground({ children }: { children: React.React
         }}
       />
 
-      {/* Interactive particles and cubes - lazy loaded */}
-      {showAnimation && (
+      {/* Interactive particles and cubes - lazy loaded, disabled on mobile */}
+      {!isMobile && showAnimation && (
         <div aria-hidden className="fixed inset-0 overflow-hidden" style={{ zIndex: 1 }}>
           <InteractiveHero />
         </div>

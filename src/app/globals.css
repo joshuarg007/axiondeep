@@ -102,3 +102,11 @@ body {
     opacity: 1;
   }
 }
+
+/* Mobile performance: pause aurora animation */
+@media (max-width: 768px) {
+  .aurora-gradient {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}
