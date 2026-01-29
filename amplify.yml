@@ -3,24 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm ci
     build:
       commands:
-        - unset CI
         - npm run build
   artifacts:
-    baseDirectory: build
+    baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
       - node_modules/**/*
-customHeaders:
-  - pattern: '/sitemap.xml'
-    headers:
-      - key: Content-Type
-        value: application/xml
-  - pattern: '/robots.txt'
-    headers:
-      - key: Content-Type
-        value: text/plain
+      - .next/cache/**/*
