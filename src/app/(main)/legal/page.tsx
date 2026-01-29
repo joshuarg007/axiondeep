@@ -17,7 +17,7 @@ export default function LegalPage() {
         <p className="text-gray-400 mb-12">Last updated: January 2026</p>
 
         {/* Privacy Policy */}
-        <section className="space-y-6 mb-16">
+        <section id="privacy" className="space-y-6 mb-16 scroll-mt-32">
           <h2 className="text-2xl font-semibold text-white">Privacy Policy</h2>
 
           <div className="space-y-4 text-gray-300 leading-relaxed">
@@ -56,7 +56,7 @@ export default function LegalPage() {
         </section>
 
         {/* Terms of Service */}
-        <section className="space-y-6 mb-16">
+        <section id="terms" className="space-y-6 mb-16 scroll-mt-32">
           <h2 className="text-2xl font-semibold text-white">Terms of Service</h2>
 
           <div className="space-y-4 text-gray-300 leading-relaxed">
