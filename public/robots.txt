@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.axiondeep.com/sitemap.xml
+
+# LLM context file
+# See https://llmstxt.org for specification
+LLMs: https://www.axiondeep.com/llms.txt

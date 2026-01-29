@@ -1,0 +1,48 @@
+# Axion Deep Labs
+
+> Custom software development company specializing in web applications, mobile apps, AI-powered solutions, and enterprise software.
+
+Axion Deep Labs is a research-driven software development company that partners with startups and enterprises to build scalable, production-ready software. We combine deep technical expertise with innovative thinking to deliver solutions that drive growth.
+
+## Services
+
+- Custom Software Development
+- Web Application Development (React, Next.js, TypeScript)
+- Mobile App Development (iOS, Android, React Native)
+- AI & Machine Learning Integration
+- Backend & API Development (Python, FastAPI, Node.js)
+- Cloud & DevOps (AWS, GCP, CI/CD)
+- Enterprise Software Solutions
+- SaaS Platform Development
+
+## Our Process
+
+1. **Discovery** - Deep dive into business goals, users, and requirements
+2. **Strategy** - Architecture design, tech stack selection, roadmap planning
+3. **Build** - Agile development with weekly demos and continuous delivery
+4. **Launch & Scale** - Deployment, monitoring, and ongoing iteration
+
+## Products
+
+- [QUANTA](https://quanta.axiondeep.com): Quantum computing education platform
+- [Site2CRM](https://site2crm.io): AI-powered lead capture and analytics
+- [Forma](https://axiondeep.com/projects/forma): Visual page builder
+- [Vesper](https://axiondeep.com/projects/vesper): Security testing platform
+- [Made4Founders](https://made4founders.com): Startup management platform
+
+## Research
+
+Project DRIFT: Investigating quantum system behavior and emergent properties in complex computational systems.
+
+## Contact
+
+- Website: https://www.axiondeep.com
+- Email: hello@axiondeep.com
+
+## Social
+
+- LinkedIn: https://www.linkedin.com/company/111213915
+- X/Twitter: https://x.com/axiondeeplabs
+- Facebook: https://www.facebook.com/people/Axion-Deep-Labs/61587313467089/
+- YouTube: https://www.youtube.com/@AxionDeepLabs
+- Instagram: https://www.instagram.com/axion_deep_labs/
