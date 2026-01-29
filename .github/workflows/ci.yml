@@ -37,9 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-build
-          path: |
-            .next/
-            public/
+          path: out/
           retention-days: 7
 
   # Deploy to AWS Amplify (only on main branch push)
@@ -73,13 +71,35 @@ jobs:
 
       - name: Deploy to Amplify
         run: |
-          # Install AWS CLI if needed
-          aws --version
+          # Check for pending/running jobs and wait if needed
+          MAX_WAIT=300  # 5 minutes max wait
+          WAITED=0
 
-          # Start deployment
-          aws amplify start-job \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-            --branch-name main \
-            --job-type RELEASE
+          while [ $WAITED -lt $MAX_WAIT ]; do
+            STATUS=$(aws amplify list-jobs \
+              --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+              --branch-name main \
+              --max-results 1 \
+              --query 'jobSummaries[0].status' \
+              --output text 2>/dev/null || echo "UNKNOWN")
+
+            if [ "$STATUS" = "PENDING" ] || [ "$STATUS" = "RUNNING" ]; then
+              echo "Job is $STATUS, waiting 30s... ($WAITED/$MAX_WAIT)"
+              sleep 30
+              WAITED=$((WAITED + 30))
+            else
+              break
+            fi
+          done
+
+          # Start deployment (or skip if still busy)
+          if [ $WAITED -ge $MAX_WAIT ]; then
+            echo "::warning::Amplify job still running after ${MAX_WAIT}s - Amplify webhook will handle deploy"
+          else
+            aws amplify start-job \
+              --app-id ${{ secrets.AMPLIFY_APP_ID }} \
+              --branch-name main \
+              --job-type RELEASE || echo "::warning::Deploy trigger skipped - Amplify webhook will handle it"
+          fi
         env:
           CI: true
