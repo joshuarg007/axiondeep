@@ -35,10 +35,15 @@ export default function HomePage() {
             <br />
             <span className="text-gray-500">From idea to launch, done right.</span>
           </p>
-          <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-gray-400">Axion Deep Labs</strong> is a research-driven software development company specializing in custom web applications,
-            mobile apps, AI-powered solutions, and enterprise software. The Axion Deep team partners with startups and established
+          <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
+            <strong className="text-gray-400">Axion Deep Labs</strong> is a research-driven custom software development company specializing in web applications,
+            mobile apps, AI-powered solutions, and enterprise software. The Axion Deep Labs team partners with startups and established
             businesses to build scalable, production-ready software that solves real problems.
+          </p>
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-sm">
+            As a leading custom software development company, Axion Deep Labs combines deep technical expertise with innovative
+            thinking. Our software development process emphasizes quality, security, and long-term maintainability. Whether you need
+            custom web development, mobile app development, or AI integration, the Axion Deep Labs team delivers solutions that drive growth.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -72,10 +77,15 @@ export default function HomePage() {
                 A battle-tested process refined over hundreds of projects. Clear milestones, constant
                 communication, and no surprises.
               </p>
-              <p className="text-gray-400 leading-relaxed">
-                Our development methodology combines agile practices with deep technical expertise. Every project
+              <p className="text-gray-400 leading-relaxed mb-4">
+                Our custom software development methodology combines agile practices with deep technical expertise. Every project
                 begins with thorough discovery, moves through strategic planning, and delivers working software
                 in iterative sprints. We believe in transparency, collaboration, and delivering measurable results.
+              </p>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                At Axion Deep Labs, custom software development means more than writing code. It means understanding your
+                business, designing elegant solutions, and building software that scales. Our development team brings
+                years of experience across industries to every project.
               </p>
             </div>
 
@@ -129,9 +139,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-violet-400 font-medium tracking-wide uppercase text-sm mb-4">
-              What We Build
+              What Axion Deep Labs Builds
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Full-stack expertise</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Full-stack expertise</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Axion Deep Labs specializes in custom software development across the entire technology stack.
+              From frontend interfaces to backend systems, our development team delivers complete solutions.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4">
@@ -214,12 +228,17 @@ export default function HomePage() {
             </span>
             .
           </blockquote>
-          <p className="text-gray-500 mb-6">— The Axion Deep Philosophy</p>
-          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            We approach every project with curiosity, rigor, and a commitment to excellence. Our team combines
-            deep technical expertise with creative problem-solving to deliver software that exceeds expectations.
+          <p className="text-gray-500 mb-6">— The Axion Deep Labs Philosophy</p>
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed mb-4">
+            At Axion Deep Labs, we approach every custom software development project with curiosity, rigor, and a commitment to excellence.
+            Our team combines deep technical expertise with creative problem-solving to deliver software that exceeds expectations.
             Whether you need a simple web application or a complex distributed system, we bring the same level
             of dedication and attention to detail.
+          </p>
+          <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed text-sm">
+            This philosophy drives everything we do at Axion Deep Labs. Our custom software development services are built on a foundation
+            of quality, transparency, and partnership. When you work with Axion Deep Labs, you get more than code—you get a team that
+            cares about your success as much as you do.
           </p>
         </div>
       </section>

@@ -16,21 +16,31 @@ frontend:
       - node_modules/**/*
       - .next/cache/**/*
 customHeaders:
-  - pattern: '**/*'
+  - pattern: '**'
     headers:
-      - key: Content-Type
-        value: text/html; charset=utf-8
       - key: X-Content-Type-Options
         value: nosniff
-  - pattern: '**/*.html'
+      - key: X-Frame-Options
+        value: DENY
+      - key: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+  - pattern: /
     headers:
       - key: Content-Type
         value: text/html; charset=utf-8
-  - pattern: '**/*.js'
+  - pattern: /*.html
     headers:
       - key: Content-Type
-        value: application/javascript; charset=utf-8
-  - pattern: '**/*.css'
+        value: text/html; charset=utf-8
+  - pattern: /index.html
     headers:
       - key: Content-Type
-        value: text/css; charset=utf-8
+        value: text/html; charset=utf-8
+  - pattern: '/<*>'
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: '/<*>/'
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
