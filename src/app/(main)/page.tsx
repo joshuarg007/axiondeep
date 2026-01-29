@@ -18,7 +18,7 @@ export default function HomePage() {
       {/* Hero Section - Server rendered for SEO */}
       <section className="snap-section min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 relative">
         <div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
               AXION
             </span>
@@ -26,11 +26,19 @@ export default function HomePage() {
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
               DEEP LABS
             </span>
+            <span className="block text-lg md:text-xl font-normal text-gray-500 mt-4 tracking-wide">
+              Custom Software Development
+            </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
             We transform how technology is understood.
             <br />
             <span className="text-gray-500">From idea to launch, done right.</span>
+          </p>
+          <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
+            Axion Deep Labs is a research-driven software development company specializing in custom web applications,
+            mobile apps, AI-powered solutions, and enterprise software. We partner with startups and established
+            businesses to build scalable, production-ready software that solves real problems.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -60,9 +68,14 @@ export default function HomePage() {
                   REALITY
                 </span>
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              <p className="text-gray-300 text-lg leading-relaxed mb-4">
                 A battle-tested process refined over hundreds of projects. Clear milestones, constant
                 communication, and no surprises.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                Our development methodology combines agile practices with deep technical expertise. Every project
+                begins with thorough discovery, moves through strategic planning, and delivers working software
+                in iterative sprints. We believe in transparency, collaboration, and delivering measurable results.
               </p>
             </div>
 
@@ -127,9 +140,14 @@ export default function HomePage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative flex flex-col h-full">
                 <h3 className="text-2xl font-bold text-white mb-3">Web Applications</h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-400 leading-relaxed mb-4">
                   React, Next.js, TypeScript. Full-stack SaaS platforms, dashboards, and complex web apps
                   built to scale.
+                </p>
+                <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                  We build performant, accessible web applications using modern frameworks and best practices.
+                  From MVP prototypes to enterprise-grade platforms, our web development team delivers
+                  solutions that are secure, maintainable, and optimized for search engines and user experience.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {["React", "Next.js", "TypeScript", "Node.js"].map((tag) => (
@@ -196,7 +214,13 @@ export default function HomePage() {
             </span>
             .
           </blockquote>
-          <p className="text-gray-500">— The Axion Deep Philosophy</p>
+          <p className="text-gray-500 mb-6">— The Axion Deep Philosophy</p>
+          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            We approach every project with curiosity, rigor, and a commitment to excellence. Our team combines
+            deep technical expertise with creative problem-solving to deliver software that exceeds expectations.
+            Whether you need a simple web application or a complex distributed system, we bring the same level
+            of dedication and attention to detail.
+          </p>
         </div>
       </section>
 
@@ -211,9 +235,14 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to build something great?
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              <p className="text-gray-400 text-lg leading-relaxed mb-4">
                 Whether you have a clear vision or just a spark of an idea, we&apos;d love to hear about
                 it. No pressure, just a conversation.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                Tell us about your project goals, timeline, and technical requirements. Our team will review
+                your inquiry and respond within one business day. We work with clients across industries including
+                fintech, healthcare, education, e-commerce, and enterprise software.
               </p>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-center gap-3">

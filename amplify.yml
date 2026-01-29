@@ -15,3 +15,22 @@ frontend:
     paths:
       - node_modules/**/*
       - .next/cache/**/*
+customHeaders:
+  - pattern: '**/*'
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+      - key: X-Content-Type-Options
+        value: nosniff
+  - pattern: '**/*.html'
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: '**/*.js'
+    headers:
+      - key: Content-Type
+        value: application/javascript; charset=utf-8
+  - pattern: '**/*.css'
+    headers:
+      - key: Content-Type
+        value: text/css; charset=utf-8
