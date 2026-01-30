@@ -19,14 +19,10 @@ export default function HomePage() {
       <section className="snap-section min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16 relative">
         <div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              Axion
+            <span className="block text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
+              Axion Deep Labs
             </span>
-            <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Deep Labs
-            </span>
-            <span className="block text-lg md:text-xl font-normal text-gray-500 mt-4 tracking-wide">
+            <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
               Custom Software Development Company
             </span>
           </h1>
