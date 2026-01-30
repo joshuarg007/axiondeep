@@ -87,22 +87,22 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/mission" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Mission
+                  Our Mission
                 </Link>
               </li>
               <li>
                 <Link href="/solutions" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Solutions
+                  Our Solutions
                 </Link>
               </li>
               <li>
                 <Link href="/careers" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Careers
+                  Join Our Team
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Get in Touch
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -114,12 +114,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link href="/development" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Development
+                  Software Development
                 </Link>
               </li>
               <li>
                 <Link href="/research" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Research
+                  R&D Programs
                 </Link>
               </li>
               <li>

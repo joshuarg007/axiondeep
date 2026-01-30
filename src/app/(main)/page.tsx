@@ -20,14 +20,14 @@ export default function HomePage() {
         <div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              AXION
+              Axion
             </span>
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              DEEP LABS
+              Deep Labs
             </span>
             <span className="block text-lg md:text-xl font-normal text-gray-500 mt-4 tracking-wide">
-              Custom Software Development
+              Custom Software Development Company
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
