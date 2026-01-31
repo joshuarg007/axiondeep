@@ -30,11 +30,10 @@ const platforms: Platform[] = [
     image: "/images/platform-web.webp",
     alt: "Web application development services",
     seoContent: {
-      headline: "Enterprise-Grade Web Application Development",
+      headline: "Custom Web Application Development Services",
       paragraphs: [
-        "Transform your business with custom web applications designed for scale, security, and exceptional user experience. Our full-stack development team builds everything from customer-facing SaaS platforms to internal enterprise tools that streamline operations and drive growth.",
-        "We specialize in creating progressive web applications (PWAs) that deliver native-like experiences across all devices. Our solutions feature offline functionality, push notifications, and lightning-fast load times that keep users engaged and conversion rates high.",
-        "Every web application we build follows industry best practices for accessibility (WCAG compliance), search engine optimization, and performance optimization. We implement robust authentication, data encryption, and security protocols to protect your users and your business.",
+        "Full-stack web application development for SaaS platforms, enterprise portals, and progressive web apps. React, Next.js, Node.js, and Python backends with PostgreSQL and cloud deployment on AWS.",
+        "SEO-optimized, WCAG-compliant web applications with real-time features, third-party API integrations, and scalable architecture built for high-traffic production environments.",
       ],
       benefits: [
         "Scalable architecture that grows with your business",
@@ -62,11 +61,10 @@ const platforms: Platform[] = [
     image: "/images/platform-mobile.webp",
     alt: "Mobile app development for iOS and Android",
     seoContent: {
-      headline: "Native & Cross-Platform Mobile App Development",
+      headline: "iOS & Android Mobile App Development",
       paragraphs: [
-        "Reach millions of users with professionally crafted mobile applications for iOS and Android. Our mobile development team creates intuitive, high-performance apps that users love to use and recommend to others.",
-        "We offer both native development for maximum platform-specific performance and cross-platform solutions for faster time-to-market and reduced development costs. Our apps leverage device capabilities like cameras, GPS, biometrics, and push notifications to create engaging experiences.",
-        "From concept to App Store and Google Play deployment, we handle the entire mobile development lifecycle. Our rigorous testing process ensures your app performs flawlessly across thousands of device configurations.",
+        "Native iOS development with Swift and Android development with Kotlin, plus cross-platform mobile apps using React Native and Flutter. App Store and Google Play deployment included.",
+        "Mobile apps with offline-first architecture, push notifications, biometric authentication, GPS integration, and camera functionality. App Store Optimization (ASO) for maximum discoverability.",
       ],
       benefits: [
         "Native performance with platform-specific optimizations",
@@ -94,11 +92,10 @@ const platforms: Platform[] = [
     image: "/images/platform-vr.webp",
     alt: "Virtual reality software development",
     seoContent: {
-      headline: "Immersive Virtual Reality Solutions",
+      headline: "VR Development for Meta Quest & Enterprise",
       paragraphs: [
-        "Step into the future with custom virtual reality experiences that transform how people learn, work, and play. Our VR development team creates immersive environments for enterprise training, architectural visualization, healthcare simulation, and entertainment.",
-        "We develop for all major VR platforms including Meta Quest, HTC Vive, PlayStation VR, and WebXR for browser-based experiences. Our solutions range from standalone applications to fully networked multi-user environments.",
-        "Virtual reality offers unprecedented opportunities for experiential learning, remote collaboration, and customer engagement. We help organizations leverage this technology to reduce training costs, improve safety outcomes, and create memorable brand experiences.",
+        "Virtual reality development for Meta Quest, HTC Vive, and WebXR. Enterprise VR training simulations, architectural visualization, healthcare VR, and immersive gaming experiences.",
+        "Multi-user VR environments with real-time networking, 3D spatial audio, hand tracking, and photorealistic rendering using Unity and Unreal Engine.",
       ],
       benefits: [
         "Immersive training that improves knowledge retention",
@@ -126,11 +123,10 @@ const platforms: Platform[] = [
     image: "/images/platform-ar.webp",
     alt: "Augmented reality application development",
     seoContent: {
-      headline: "Augmented Reality & Spatial Computing",
+      headline: "AR Development with ARKit & ARCore",
       paragraphs: [
-        "Bridge the digital and physical worlds with augmented reality applications that overlay information, 3D models, and interactive content onto real-world environments. Our AR solutions enhance customer experiences, streamline industrial workflows, and enable innovative marketing campaigns.",
-        "We develop AR experiences for smartphones, tablets, smart glasses, and web browsers. From product visualization that lets customers see furniture in their homes to industrial AR that guides technicians through complex repairs, we create practical solutions that deliver measurable ROI.",
-        "Augmented reality is revolutionizing retail, manufacturing, healthcare, and education. Our team stays at the forefront of spatial computing technology, including Apple Vision Pro development, to help forward-thinking organizations gain competitive advantages.",
+        "Augmented reality development for iOS (ARKit), Android (ARCore), and WebAR. Product visualization, AR marketing campaigns, industrial AR guidance, and Apple Vision Pro spatial computing.",
+        "Location-based AR, markerless tracking, 3D object recognition, and real-time occlusion. Browser-based WebAR experiences requiring no app download.",
       ],
       benefits: [
         "Product visualization that increases purchase confidence",
@@ -158,11 +154,10 @@ const platforms: Platform[] = [
     image: "/images/platform-desktop.webp",
     alt: "Desktop software development services",
     seoContent: {
-      headline: "Professional Desktop Application Development",
+      headline: "Cross-Platform Desktop App Development",
       paragraphs: [
-        "Build powerful desktop applications that leverage the full capabilities of Windows, macOS, and Linux systems. Our desktop development expertise spans from lightweight utilities to complex enterprise software with advanced graphics, hardware integration, and offline functionality.",
-        "We create both native applications for maximum performance and cross-platform solutions that reduce development time while maintaining a consistent user experience across operating systems. Our applications integrate seamlessly with system features, file systems, and peripheral devices.",
-        "Desktop applications remain essential for professional workflows requiring offline access, intensive computation, sensitive data handling, and deep system integration. We help businesses modernize legacy desktop software and build new tools that boost productivity.",
+        "Desktop application development for Windows, macOS, and Linux. Electron and Tauri for cross-platform apps, native Swift for macOS, and .NET/WPF for Windows enterprise software.",
+        "Offline-capable desktop apps with local data storage, hardware integration, system tray functionality, auto-updates, and deep OS integration for professional workflows.",
       ],
       benefits: [
         "Full access to system resources and hardware",
@@ -190,11 +185,10 @@ const platforms: Platform[] = [
     image: "/images/platform-ai.webp",
     alt: "AI and machine learning software development",
     seoContent: {
-      headline: "AI-Powered Application Development",
+      headline: "AI & LLM Application Development",
       paragraphs: [
-        "Harness the transformative power of artificial intelligence with custom applications that automate complex tasks, generate insights from data, and deliver personalized user experiences. Our AI development team integrates cutting-edge language models, computer vision, and machine learning into practical business solutions.",
-        "We specialize in building AI agents that can reason, plan, and execute multi-step workflows autonomously. From intelligent customer service chatbots to automated document processing systems, we create AI solutions that reduce operational costs and improve outcomes.",
-        "Our approach to AI development emphasizes responsible implementation with appropriate guardrails, transparency, and human oversight. We help organizations navigate the rapidly evolving AI landscape to identify high-impact opportunities and avoid common pitfalls.",
+        "AI application development with Claude, GPT-4, and open-source LLMs. Custom AI agents, RAG pipelines, chatbots, document processing, and machine learning model deployment.",
+        "LangChain integration, vector databases, fine-tuning, computer vision with PyTorch, and production AI infrastructure with monitoring and guardrails.",
       ],
       benefits: [
         "Natural language interfaces for intuitive interaction",
