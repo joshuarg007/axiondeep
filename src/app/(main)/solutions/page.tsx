@@ -178,21 +178,19 @@ export default function SolutionsPage() {
                   ))}
                 </div>
                 <div className="flex gap-4">
+                  <Link
+                    href="/projects/made4founders"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-600 font-semibold hover:opacity-90 transition"
+                  >
+                    Learn More
+                  </Link>
                   <a
                     href="https://made4founders.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-600 font-semibold hover:opacity-90 transition"
-                  >
-                    Try It Free
-                  </a>
-                  <a
-                    href="https://made4founders.com/features"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="px-6 py-3 rounded-full border border-white/20 font-medium hover:bg-white/5 transition flex items-center gap-2"
                   >
-                    See Features
+                    Try It Free
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path
                         strokeLinecap="round"
