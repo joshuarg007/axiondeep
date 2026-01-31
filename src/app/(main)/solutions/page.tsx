@@ -291,116 +291,100 @@ export default function SolutionsPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Site2CRM */}
-            <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/15 to-teal-500/5 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
-              <div className="relative h-48 overflow-hidden rounded-t-3xl">
-                <ResponsiveVideo
-                  videoSrc="/videos/features2.webm"
-                  posterSrc="/images/video-posters/features2.webp"
-                  className="w-full h-full object-cover object-top opacity-70"
+            <div className="group relative rounded-3xl bg-gradient-to-br from-emerald-500/15 to-teal-500/5 border border-emerald-500/20 hover:border-emerald-500/40 transition-all p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <Image
+                  src="/icons/icon-solutions-site2crm.png"
+                  alt="Site2CRM"
+                  width={56}
+                  height={56}
+                  className="rounded-xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-6 right-6">
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src="/icons/icon-solutions-site2crm.png"
-                      alt="Site2CRM"
-                      width={40}
-                      height={40}
-                      className="rounded-lg"
-                    />
-                    <span className="text-xs px-2 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-2xl font-bold text-white">Site2CRM</h3>
+                    <span className="text-xs px-2 py-0.5 rounded bg-green-500/20 text-green-300 border border-green-500/30">
                       Live
                     </span>
                   </div>
+                  <p className="text-emerald-400 text-sm font-medium">AI-Powered Lead Analytics</p>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-1">Site2CRM</h3>
-                <p className="text-emerald-400 text-sm font-medium mb-3">AI-Powered Lead Analytics</p>
-                <p className="text-gray-400 text-sm mb-4">
-                  Turn anonymous visitors into qualified leads. AI scoring predicts purchase intent,
-                  auto-syncs to your CRM, and gamified leaderboards keep your sales team hungry.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">
-                    Lead Scoring
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">
-                    CRM Sync
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">
-                    Leaderboards
-                  </span>
-                </div>
-                <div className="flex gap-3">
-                  <Link
-                    href="/projects/site2crm"
-                    className="text-emerald-400 hover:text-emerald-300 font-medium text-sm"
-                  >
-                    Explore →
-                  </Link>
-                  <a
-                    href="https://site2crm.io"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white text-sm flex items-center gap-1"
-                  >
-                    Visit site ↗
-                  </a>
-                </div>
+              <p className="text-gray-400 text-sm mb-5 leading-relaxed">
+                Turn anonymous visitors into qualified leads. AI scoring predicts purchase intent,
+                auto-syncs to your CRM, and gamified leaderboards keep your sales team hungry.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="text-xs px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Lead Scoring
+                </span>
+                <span className="text-xs px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  CRM Sync
+                </span>
+                <span className="text-xs px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Leaderboards
+                </span>
+              </div>
+              <div className="flex gap-4">
+                <Link
+                  href="/projects/site2crm"
+                  className="px-5 py-2.5 rounded-full bg-emerald-500/20 text-emerald-300 font-medium text-sm hover:bg-emerald-500/30 transition"
+                >
+                  Explore →
+                </Link>
+                <a
+                  href="https://site2crm.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-white/20 text-sm transition flex items-center gap-1"
+                >
+                  Visit site ↗
+                </a>
               </div>
             </div>
 
             {/* Forma */}
-            <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-fuchsia-500/15 to-pink-500/5 border border-fuchsia-500/20 hover:border-fuchsia-500/40 transition-all">
-              <div className="relative h-48 overflow-hidden rounded-t-3xl">
-                <ResponsiveVideo
-                  videoSrc="/videos/forma-demo.webm"
-                  posterSrc="/images/video-posters/forma-demo.webp"
-                  className="w-full h-full object-cover object-top opacity-70"
+            <div className="group relative rounded-3xl bg-gradient-to-br from-fuchsia-500/15 to-pink-500/5 border border-fuchsia-500/20 hover:border-fuchsia-500/40 transition-all p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <Image
+                  src="/icons/icon-solutions-forma.png"
+                  alt="Forma"
+                  width={56}
+                  height={56}
+                  className="rounded-xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-6 right-6">
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src="/icons/icon-solutions-forma.png"
-                      alt="Forma"
-                      width={40}
-                      height={40}
-                      className="rounded-lg"
-                    />
-                    <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-2xl font-bold text-white">Forma</h3>
+                    <span className="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
                       Beta
                     </span>
                   </div>
+                  <p className="text-fuchsia-400 text-sm font-medium">AI Visual Page Builder</p>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-white mb-1">Forma</h3>
-                <p className="text-fuchsia-400 text-sm font-medium mb-3">AI Visual Page Builder</p>
-                <p className="text-gray-400 text-sm mb-4">
-                  Design at the speed of thought. 100+ production-ready components, Claude AI
-                  generates layouts from prompts, real-time multiplayer editing, and one-click
-                  export to Next.js.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs px-2 py-1 rounded bg-fuchsia-500/10 text-fuchsia-400">
-                    100+ Components
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded bg-fuchsia-500/10 text-fuchsia-400">
-                    AI Generation
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded bg-fuchsia-500/10 text-fuchsia-400">
-                    Next.js Export
-                  </span>
-                </div>
-                <Link
-                  href="/projects/forma"
-                  className="text-fuchsia-400 hover:text-fuchsia-300 font-medium text-sm"
-                >
-                  Explore →
-                </Link>
+              <p className="text-gray-400 text-sm mb-5 leading-relaxed">
+                Design at the speed of thought. 100+ production-ready components, Claude AI
+                generates layouts from prompts, real-time multiplayer editing, and one-click
+                export to Next.js.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="text-xs px-3 py-1.5 rounded-full bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                  100+ Components
+                </span>
+                <span className="text-xs px-3 py-1.5 rounded-full bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                  AI Generation
+                </span>
+                <span className="text-xs px-3 py-1.5 rounded-full bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20">
+                  Next.js Export
+                </span>
               </div>
+              <Link
+                href="/projects/forma"
+                className="px-5 py-2.5 rounded-full bg-fuchsia-500/20 text-fuchsia-300 font-medium text-sm hover:bg-fuchsia-500/30 transition"
+              >
+                Explore →
+              </Link>
             </div>
           </div>
         </div>
