@@ -184,19 +184,19 @@ export default function Footer() {
             © {new Date().getFullYear()} Axion Deep Labs. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Image
-              src="/images/qr-code.png"
-              alt="Scan to visit Axion Deep"
-              width={64}
-              height={64}
-              className="rounded"
-            />
             <Link href="/legal#privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <Link href="/legal#terms" className="text-sm text-gray-500 hover:text-white transition-colors">
               Terms of Service
             </Link>
+            <Image
+              src="/images/qr-code.png"
+              alt="Scan to visit Axion Deep"
+              width={48}
+              height={48}
+              className="rounded"
+            />
           </div>
         </div>
       </div>
