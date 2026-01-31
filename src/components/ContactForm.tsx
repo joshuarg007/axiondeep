@@ -7,7 +7,7 @@ const SITE2CRM_API = "https://api.site2crm.io/api/public/leads";
 const SITE2CRM_ORG_KEY = "org_jUITQNG0ZcPF_KJ0vplRQV8rwWk0pvR9";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ export default function ContactForm() {
 
   const autoSave = useCallback(async (formData: typeof form) => {
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return;
-    if (formData.email === lastSavedEmail.current && !formData.name && !formData.message) return;
+    if (formData.email === lastSavedEmail.current && !formData.name && !formData.message && !formData.phone) return;
     try {
       await fetch(SITE2CRM_API, {
         method: "POST",
@@ -25,6 +25,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: formData.name || "(not provided)",
           email: formData.email,
+          phone: formData.phone || undefined,
           notes: formData.message ? `[Auto-captured] ${formData.message}` : "[Auto-captured - form not submitted]",
           source: "axiondeep.com (auto)",
         }),
@@ -57,13 +58,14 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: form.name || "(not provided)",
           email: form.email,
+          phone: form.phone || undefined,
           notes: form.message || "(no message)",
           source: "axiondeep.com",
         }),
       });
       if (response.ok) {
         setSubmitted(true);
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", email: "", phone: "", message: "" });
         lastSavedEmail.current = "";
         setAutoSaved(false);
         setTimeout(() => setSubmitted(false), 4000);
@@ -100,7 +102,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label htmlFor="email" className="block text-sm text-gray-400 mb-2">
-          Email *
+          Email <span className="text-cyan-400">*</span>
         </label>
         <input
           id="email"
@@ -125,6 +127,20 @@ export default function ContactForm() {
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-cyan-500/50 transition"
           placeholder="Your name"
+        />
+      </div>
+      <div>
+        <label htmlFor="phone" className="block text-sm text-gray-400 mb-2">
+          Phone
+        </label>
+        <input
+          id="phone"
+          type="tel"
+          disabled={submitting}
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          className="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-cyan-500/50 transition"
+          placeholder="+1 (555) 123-4567"
         />
       </div>
       <div>
