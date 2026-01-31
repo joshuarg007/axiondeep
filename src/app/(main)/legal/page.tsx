@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy & Terms",
+  title: "Legal",
   description:
     "Privacy policy and terms of service. How we collect, use, and protect your information when using our services.",
   keywords: ["privacy policy", "terms of service", "data protection", "Axion Deep Labs terms"],

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Join Our Team",
   description:
     "Join our team: Hiring software developers, AI engineers, and full-stack devs. Remote-first culture, cutting-edge projects.",
   keywords: [

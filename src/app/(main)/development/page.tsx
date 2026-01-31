@@ -4,7 +4,7 @@ import Image from "next/image";
 import PlatformCards from "@/components/PlatformCards";
 
 export const metadata: Metadata = {
-  title: "Development Services",
+  title: "Services",
   description:
     "Custom software for every platform: web apps, mobile apps, AI software, VR/AR, and enterprise solutions. Full-stack with React, Python, and Unity.",
   keywords: [

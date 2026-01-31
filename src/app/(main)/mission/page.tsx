@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Our Mission & Process",
+  title: "Mission",
   description:
     "We transform complex ideas into production-ready software. Agile development delivering custom web apps, mobile apps, and AI solutions.",
   keywords: [

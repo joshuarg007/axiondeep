@@ -15,8 +15,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Custom Software Development Company | Axion Deep Labs",
-    template: "%s | Axion Deep Labs",
+    default: "Axion Deep Labs - Custom Software Development",
+    template: "Axion Deep - %s",
   },
   description:
     "Custom software solutions for startups and enterprises. We build web applications, mobile apps, AI-powered software, and SaaS platforms. Full-stack development with React, Python, and modern cloud technologies.",

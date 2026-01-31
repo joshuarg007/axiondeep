@@ -5,7 +5,7 @@ import SolutionsClient from "./SolutionsClient";
 import ResponsiveVideo from "@/components/ResponsiveVideo";
 
 export const metadata: Metadata = {
-  title: "Software Solutions & Portfolio",
+  title: "Portfolio",
   description:
     "Our software products: QUANTA quantum education, Site2CRM lead analytics, Forma page builder, Vesper security testing, Made4Founders startup tools.",
   keywords: [

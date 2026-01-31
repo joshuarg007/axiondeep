@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact",
   description: "Get in touch with Axion Deep Labs. Let's discuss your software project, get a quote, or just have a conversation about technology.",
   alternates: { canonical: "/contact" },
 };

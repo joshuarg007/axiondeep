@@ -3,7 +3,6 @@ import HomeClient from "./HomeClient";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development Company",
   description:
     "Custom software for startups and enterprises. Web apps, mobile apps, AI-powered software, and SaaS platforms built with React, Python, and cloud tech.",
   alternates: {

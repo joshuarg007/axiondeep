@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Research & Innovation",
+  title: "R&D Lab",
   description:
     "Project DRIFT investigates quantum system behavior. Our R&D drives innovation in AI, quantum computing, and emerging technologies.",
   keywords: [
