@@ -29,7 +29,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
-            <Site2CRMWidget orgKey="782ca4b3754f432fa5919d4767d901d2" />
+            <Site2CRMWidget orgKey="org_jUITQNG0ZcPF_KJ0vplRQV8rwWk0pvR9" />
           </div>
         </div>
       </div>
