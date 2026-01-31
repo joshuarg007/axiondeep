@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+import Site2CRMWidget from "@/components/Site2CRMWidget";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -29,7 +29,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
-            <ContactForm />
+            <Site2CRMWidget orgKey="782ca4b3754f432fa5919d4767d901d2" />
           </div>
         </div>
       </div>
