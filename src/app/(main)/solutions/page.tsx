@@ -292,11 +292,11 @@ export default function SolutionsPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Site2CRM */}
             <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500/15 to-teal-500/5 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden rounded-t-3xl">
                 <ResponsiveVideo
                   videoSrc="/videos/features2.webm"
                   posterSrc="/images/video-posters/features2.webp"
-                  className="w-full h-full object-cover opacity-70"
+                  className="w-full h-full object-cover object-top opacity-70"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">
@@ -353,11 +353,11 @@ export default function SolutionsPage() {
 
             {/* Forma */}
             <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-fuchsia-500/15 to-pink-500/5 border border-fuchsia-500/20 hover:border-fuchsia-500/40 transition-all">
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden rounded-t-3xl">
                 <ResponsiveVideo
                   videoSrc="/videos/forma-demo.webm"
                   posterSrc="/images/video-posters/forma-demo.webp"
-                  className="w-full h-full object-cover opacity-70"
+                  className="w-full h-full object-cover object-top opacity-70"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">

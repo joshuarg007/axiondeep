@@ -50,7 +50,7 @@ export default function ResponsiveVideo({
   // Mobile: show static poster image
   if (isMobile) {
     return (
-      <div ref={containerRef} className="relative w-full h-full">
+      <div ref={containerRef} className="absolute inset-0 overflow-hidden">
         <Image
           src={posterSrc}
           alt=""
@@ -70,7 +70,7 @@ export default function ResponsiveVideo({
 
   // Desktop: lazy-loaded video
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {isInView ? (
         <video
           ref={videoRef}
@@ -78,7 +78,7 @@ export default function ResponsiveVideo({
           loop
           muted
           playsInline
-          className={`absolute inset-0 ${className}`}
+          className={`absolute inset-0 min-w-full min-h-full ${className}`}
         >
           <source src={videoSrc} type="video/webm" />
         </video>
