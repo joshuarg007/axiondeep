@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import GradientBackground from "@/components/GradientBackground";
+import ScrollToTop from "@/components/ScrollToTop";
 
-const GA_MEASUREMENT_ID = "G-XWF39KFMS2";
 const GTM_ID = "GTM-W5RSDFR6";
 
 const inter = Inter({
@@ -152,21 +152,6 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','${GTM_ID}');
           `}
         </Script>
-        {/* Google Analytics (can be moved to GTM later) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
       </head>
       <body className={`${inter.className} antialiased`}>
         {/* Google Tag Manager (noscript) */}
@@ -178,6 +163,7 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <ScrollToTop />
         <GradientBackground>{children}</GradientBackground>
       </body>
     </html>
