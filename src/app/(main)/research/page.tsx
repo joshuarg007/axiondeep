@@ -45,14 +45,14 @@ export default function ResearchPage() {
 
       {/* Project DRIFT */}
       <section className="snap-section min-h-screen flex flex-col relative overflow-hidden">
-        {/* Research Image - positioned behind content */}
+        {/* Research Image - ghostlike background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
             src="/images/research-quantum.webp"
             alt="Quantum research visualization"
             width={600}
             height={600}
-            className="w-2/3 max-w-2xl opacity-15"
+            className="w-2/3 max-w-2xl opacity-[0.06] blur-[1px] saturate-50"
           />
         </div>
 
