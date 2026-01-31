@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PlatformCards from "@/components/PlatformCards";
 
 export const metadata: Metadata = {
   title: "Development Services",
@@ -21,69 +22,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/development" },
 };
-
-const platforms = [
-  {
-    id: "web",
-    title: "Web Applications",
-    description:
-      "Full-stack platforms, SaaS products, and progressive web apps built with React, Next.js, and modern frameworks.",
-    gradient: "from-cyan-500 to-blue-600",
-    tech: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
-    image: "/images/platform-web.webp",
-    alt: "Web application development services",
-  },
-  {
-    id: "mobile",
-    title: "Mobile Apps",
-    description:
-      "Native and cross-platform mobile experiences for iOS and Android with seamless performance and intuitive UX.",
-    gradient: "from-violet-500 to-purple-600",
-    tech: ["React Native", "Swift", "Kotlin", "Flutter"],
-    image: "/images/platform-mobile.webp",
-    alt: "Mobile app development for iOS and Android",
-  },
-  {
-    id: "vr",
-    title: "Virtual Reality",
-    description:
-      "Immersive VR experiences for training, simulation, gaming, and virtual collaboration environments.",
-    gradient: "from-pink-500 to-rose-600",
-    tech: ["Unity", "Unreal Engine", "WebXR", "Three.js"],
-    image: "/images/platform-vr.webp",
-    alt: "Virtual reality software development",
-  },
-  {
-    id: "ar",
-    title: "Augmented Reality",
-    description:
-      "Spatial computing and real-world overlays that blend digital content with physical environments.",
-    gradient: "from-amber-500 to-orange-600",
-    tech: ["ARKit", "ARCore", "WebAR", "Spark AR"],
-    image: "/images/platform-ar.webp",
-    alt: "Augmented reality application development",
-  },
-  {
-    id: "desktop",
-    title: "Desktop Applications",
-    description:
-      "High-performance native desktop apps and cross-platform tools for Windows, macOS, and Linux.",
-    gradient: "from-emerald-500 to-teal-600",
-    tech: ["Electron", "Tauri", "PyQt", "Swift"],
-    image: "/images/platform-desktop.webp",
-    alt: "Desktop software development services",
-  },
-  {
-    id: "ai",
-    title: "AI-Powered Apps",
-    description:
-      "Intelligent applications with LLM integration, autonomous agents, and machine learning pipelines.",
-    gradient: "from-indigo-500 to-violet-600",
-    tech: ["Claude AI", "GPT-4", "LangChain", "PyTorch"],
-    image: "/images/platform-ai.webp",
-    alt: "AI and machine learning software development",
-  },
-];
 
 const processSteps = [
   {
@@ -173,42 +111,7 @@ export default function DevelopmentPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {platforms.map((platform) => (
-              <div
-                key={platform.id}
-                className="group relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500`}
-                />
-                <div className="relative h-28 overflow-hidden">
-                  <Image
-                    src={platform.image}
-                    alt={platform.alt}
-                    width={400}
-                    height={200}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
-                </div>
-                <div className="relative z-10 p-4 space-y-2">
-                  <h3 className="text-lg font-semibold text-white">{platform.title}</h3>
-                  <p className="text-gray-400 text-xs leading-relaxed">{platform.description}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {platform.tech.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-500"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <PlatformCards />
         </div>
       </section>
 
