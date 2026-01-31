@@ -15,7 +15,12 @@ export default function ScrollToTop() {
 
   // Use layoutEffect for synchronous scroll before paint
   useLayoutEffect(() => {
+    // Scroll both window and snap-container (which has its own scroll on desktop)
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    const snapContainer = document.querySelector(".snap-container");
+    if (snapContainer) {
+      snapContainer.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
   }, [pathname]);
 
   return null;
