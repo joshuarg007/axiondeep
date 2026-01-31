@@ -70,7 +70,7 @@ export default function ResponsiveVideo({
 
   // Desktop: lazy-loaded video
   return (
-    <div ref={containerRef} className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
       {isInView ? (
         <video
           ref={videoRef}
@@ -78,7 +78,7 @@ export default function ResponsiveVideo({
           loop
           muted
           playsInline
-          className={className}
+          className={`absolute inset-0 ${className}`}
         >
           <source src={videoSrc} type="video/webm" />
         </video>
