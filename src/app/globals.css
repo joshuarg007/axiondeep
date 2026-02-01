@@ -110,3 +110,53 @@ body {
     background-position: 50% 50% !important;
   }
 }
+
+/* Shimmer sweep animation for CTA button - desktop only */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  15% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Only animate on desktop */
+@media (min-width: 640px) {
+  .shimmer-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 25%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.08) 75%,
+      transparent 100%
+    );
+    transform: translateX(-100%) skewX(-15deg);
+    animation: shimmer-sweep 4s ease-in-out infinite;
+    animation-delay: 1s;
+    pointer-events: none;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-button::before {
+    animation: none;
+    display: none;
+  }
+}
