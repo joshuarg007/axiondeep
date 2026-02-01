@@ -190,7 +190,7 @@ export default function RootLayout({
         {/* Site2CRM AI Chat Widget */}
         <Script
           src="https://api.site2crm.io/api/public/chat-widget/widget.js"
-          data-org-key="org_jUITQNG0ZcPF_KJ0vplRQV8rwWk0pvR9"
+          data-widget-key="widget_1"
           strategy="lazyOnload"
         />
       </body>
