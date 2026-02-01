@@ -187,6 +187,12 @@ export default function RootLayout({
         </noscript>
         <ScrollToTop />
         <GradientBackground>{children}</GradientBackground>
+        {/* Site2CRM AI Chat Widget */}
+        <Script
+          src="https://api.site2crm.io/api/public/chat-widget/widget.js"
+          data-org-key="gSGQRoDQVxU7PJ71CBp9R5eUxgUzzCyvgjGrnxhBEYc"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
