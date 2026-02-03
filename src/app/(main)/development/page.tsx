@@ -4,21 +4,15 @@ import Image from "next/image";
 import PlatformCards from "@/components/PlatformCards";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Development",
   description:
-    "Custom software for every platform: web apps, mobile apps, AI software, VR/AR, and enterprise solutions. Full-stack with React, Python, and Unity.",
+    "Applied research and development across web, mobile, AI, and spatial computing. From prototype to production.",
   keywords: [
-    "web development services",
-    "web development company",
-    "custom software development services",
-    "web application development",
-    "mobile app development company",
-    "AI software development",
-    "VR AR development",
-    "enterprise software development",
-    "React development",
-    "Python development",
-    "full-stack web development",
+    "applied AI research",
+    "software R&D",
+    "AI development",
+    "quantum computing applications",
+    "research-driven development",
   ],
   alternates: { canonical: "/development" },
 };
@@ -27,21 +21,21 @@ const processSteps = [
   {
     step: "01",
     title: "Discover",
-    description: "Deep dive into your vision, users, and business goals to define the perfect solution.",
+    description: "Deep investigation into the problem space, constraints, and technical landscape.",
     image: "/images/process-discover.webp",
     alt: "Discovery phase - understanding software requirements",
   },
   {
     step: "02",
     title: "Design",
-    description: "Design scalable systems and intuitive interfaces that set the foundation for success.",
+    description: "Architecture, prototyping, and validation. We prove the approach before committing to it.",
     image: "/images/process-design.webp",
     alt: "Design phase - architecting custom software solutions",
   },
   {
     step: "03",
     title: "Deliver",
-    description: "Agile development, rigorous testing, seamless deployment, and ongoing support.",
+    description: "Iterative development, rigorous testing, production deployment, and continuous support.",
     image: "/images/process-deliver.webp",
     alt: "Delivery phase - deploying production-ready software",
   },
@@ -58,19 +52,19 @@ export default function DevelopmentPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
             </span>
-            Now accepting new projects
+            From lab to production
           </div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-            Build{" "}
+            Applied{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-pink-400 bg-clip-text text-transparent">
-              Without
+              Research
             </span>{" "}
-            Boundaries
+            & Development
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Imagination at the core.
+            Where original research becomes production software.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -78,7 +72,7 @@ export default function DevelopmentPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-white hover:opacity-90 transition-all duration-300 shadow-lg shadow-cyan-500/25"
             >
-              Start Your Project
+              Discuss a Project
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -104,10 +98,10 @@ export default function DevelopmentPage() {
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="text-center space-y-3">
             <h2 className="text-3xl md:text-4xl font-semibold text-white">
-              Full-Stack Across Every Platform
+              Platforms & Technologies
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Web, mobile, spatial computing, and beyond.
+              Web, mobile, AI, spatial computing, and cloud infrastructure.
             </p>
           </div>
 
@@ -119,9 +113,9 @@ export default function DevelopmentPage() {
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white">Our Process</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Methodology</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              A proven methodology that transforms ideas into exceptional products.
+              Research-driven development from investigation to deployment.
             </p>
           </div>
 
@@ -155,20 +149,20 @@ export default function DevelopmentPage() {
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Ready to Build Something{" "}
+            Have a{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-              Extraordinary
-            </span>
-            ?
+              Project
+            </span>{" "}
+            in Mind?
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Web app, mobile experience, or immersive VR world. Let&apos;s build it.
+            Technical inquiries, research collaborations, or project discussions.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-gradient-to-r from-cyan-500 via-violet-500 to-pink-500 font-semibold text-lg text-white hover:opacity-90 transition-all duration-300 shadow-2xl shadow-violet-500/25"
           >
-            Start the Conversation
+            Contact the Lab
             <svg
               className="w-5 h-5"
               fill="none"

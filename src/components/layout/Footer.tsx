@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              Transforming how technology is understood. From idea to launch, done right.
+              Advancing AI implementation, quantum computing, and intelligent automation.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">

@@ -3,15 +3,15 @@ import Link from "next/link";
 import ProductGrid from "./ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Our Projects",
   description:
-    "Our software products: Made4Founders startup command center, Site2CRM AI lead capture, QUANTA quantum education, Vesper security testing, Forma page builder, AxionAIChat live chat.",
+    "Software built from original research: Site2CRM AI lead capture, Made4Founders startup command center, QUANTA quantum education, Vesper penetration testing, and more.",
   keywords: [
-    "web development portfolio",
-    "custom software solutions portfolio",
-    "software products",
-    "SaaS applications",
-    "web application examples",
+    "AI software products",
+    "quantum computing education",
+    "research-driven software",
+    "applied AI",
+    "R&D products",
   ],
   alternates: { canonical: "/solutions" },
 };
@@ -53,17 +53,16 @@ export default function SolutionsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative p-12 md:p-16 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08]">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Need something built?
+              What we&apos;re working on next
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              We build products like these for clients too. Let&apos;s talk
-              about your project.
+              Interested in our research or want to discuss a collaboration?
             </p>
             <Link
               href="/contact"
               className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition"
             >
-              Start a Conversation
+              Get in Touch
             </Link>
           </div>
         </div>

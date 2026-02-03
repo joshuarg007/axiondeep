@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Axion Deep Labs. Let's discuss your software project, get a quote, or just have a conversation about technology.",
+  description: "Contact Axion Deep Labs. Research collaborations, technical inquiries, and project discussions.",
   alternates: { canonical: "/contact" },
 };
 
@@ -20,14 +20,14 @@ export default function ContactPage() {
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-                Let&apos;s Build
+                Connect With
               </span>{" "}
               <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Together
+                the Lab
               </span>
             </h1>
             <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-              Whether you have a clear vision or just a spark of an idea, we&apos;d love to hear about it.
+              Research collaborations, technical inquiries, or project discussions.
             </p>
           </div>
 

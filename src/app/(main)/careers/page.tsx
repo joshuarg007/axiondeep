@@ -4,15 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Join Our Team",
   description:
-    "Join our team: Hiring software developers, AI engineers, and full-stack devs. Remote-first culture, cutting-edge projects.",
+    "Join Axion Deep Labs. We assemble researchers, engineers, and experimentalists working on AI, quantum computing, and distributed systems.",
   keywords: [
-    "software developer jobs",
-    "custom software development careers",
+    "AI research positions",
+    "quantum computing careers",
+    "R&D laboratory jobs",
     "AI engineer positions",
-    "full-stack developer jobs",
-    "React developer careers",
-    "Python developer jobs",
-    "remote software jobs",
+    "research engineer jobs",
+    "remote research positions",
   ],
   alternates: { canonical: "/careers" },
 };

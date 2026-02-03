@@ -5,13 +5,13 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "We transform complex ideas into production-ready software. Agile development delivering custom web apps, mobile apps, and AI solutions.",
+    "Axion Deep Labs advances the frontiers of AI implementation and quantum computing through rigorous research, production-grade software, and accessible education.",
   keywords: [
-    "custom software development process",
-    "agile software development",
-    "web application development company",
-    "mobile app development services",
-    "AI software development company",
+    "AI research laboratory",
+    "quantum computing R&D",
+    "applied AI research",
+    "intelligent automation",
+    "technology research company",
   ],
   alternates: { canonical: "/mission" },
 };
@@ -66,7 +66,7 @@ const processSteps = [
     number: 1,
     title: "Discover",
     description:
-      "We start by understanding your vision. Deep conversations, sharp questions, and mapping the problem space together.",
+      "Deep investigation into the problem space. We map constraints, identify unknowns, and define the research agenda.",
     gradient: "from-cyan-500 to-blue-500",
     stats: [
       { value: "40+", label: "discovery calls" },
@@ -77,7 +77,7 @@ const processSteps = [
     number: 2,
     title: "Design",
     description:
-      "Architecture and prototypes. We validate assumptions early and iterate until the solution feels right.",
+      "Architecture and prototyping. We validate hypotheses early and iterate until the solution is proven.",
     gradient: "from-violet-500 to-purple-500",
     stats: [
       { value: "3x", label: "iterations avg" },
@@ -87,7 +87,7 @@ const processSteps = [
   {
     number: 3,
     title: "Build",
-    description: "Agile sprints with continuous delivery. You see progress weekly, not monthly.",
+    description: "Iterative development with continuous delivery. Rigorous testing, clean code, measurable progress.",
     gradient: "from-fuchsia-500 to-pink-500",
     stats: [
       { value: "94%", label: "on-time delivery" },
@@ -97,7 +97,7 @@ const processSteps = [
   {
     number: 4,
     title: "Launch",
-    description: "Deploy with confidence. Monitoring, support, and iteration as your product grows.",
+    description: "Deploy with confidence. Full observability, ongoing support, and continuous iteration.",
     gradient: "from-orange-500 to-red-500",
     stats: [
       { value: "99.9%", label: "uptime SLA" },
@@ -118,20 +118,20 @@ export default function MissionPage() {
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
             <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">
-              TRANSFORMING
+              ADVANCING
             </span>
             <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              IDEAS
+              THE FRONTIERS
             </span>
             <br />
-            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">INTO</span>
+            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">OF</span>
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              REALITY
+              TECHNOLOGY
             </span>
           </h1>
 
           <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Precision-engineered solutions that scale with your vision.
+            Rigorous research. Production-grade software. Accessible education.
           </p>
         </div>
       </section>
@@ -140,9 +140,9 @@ export default function MissionPage() {
       <section className="snap-section min-h-screen flex items-center px-6 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What we build</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Technical Capabilities</h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Full-stack expertise across every layer of modern software development
+              Deep expertise across every layer of modern computing
             </p>
           </div>
 
@@ -171,9 +171,9 @@ export default function MissionPage() {
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-20">
         <div className="w-full max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">How we work</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Methodology</h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              A proven process that turns complexity into clarity
+              Research-driven development from hypothesis to production
             </p>
           </div>
 
@@ -221,10 +221,10 @@ export default function MissionPage() {
         <div className="max-w-4xl mx-auto text-center w-full">
           <div className="relative p-12 md:p-16 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08]">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to build something great?
+              Interested in our work?
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              Let&apos;s talk about your project. We&apos;d love to hear what you&apos;re working on.
+              Research collaborations, technical inquiries, or project discussions — we&apos;d like to hear from you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

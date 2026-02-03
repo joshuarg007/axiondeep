@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   description:
     "Project DRIFT investigates quantum system behavior. Our R&D drives innovation in AI, quantum computing, and emerging technologies.",
   keywords: [
-    "software research and development",
     "quantum computing research",
-    "AI research",
-    "custom software innovation",
-    "technology R&D",
+    "Project DRIFT",
+    "quantum system state evolution",
+    "AI research laboratory",
+    "applied quantum research",
   ],
   alternates: { canonical: "/research" },
 };

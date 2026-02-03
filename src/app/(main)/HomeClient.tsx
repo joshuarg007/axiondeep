@@ -26,7 +26,7 @@ export default function HomeClient() {
           href="/solutions"
           className="group px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-100 transition-all flex items-center gap-2"
         >
-          View Our Work
+          Explore Our Work
           <svg
             className="w-4 h-4 group-hover:translate-x-1 transition-transform"
             fill="none"
@@ -40,7 +40,7 @@ export default function HomeClient() {
           href="/contact"
           className="px-8 py-4 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-all"
         >
-          Start a Project
+          Get in Touch
         </Link>
       </motion.div>
 

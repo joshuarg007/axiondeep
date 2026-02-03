@@ -15,19 +15,19 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Axion Deep Labs - Custom Software Development",
-    template: "Axion Deep - %s",
+    default: "Axion Deep Labs — Research & Development",
+    template: "Axion Deep — %s",
   },
   description:
-    "Custom software solutions for startups and enterprises. We build web applications, mobile apps, AI-powered software, and SaaS platforms. Full-stack development with React, Python, and modern cloud technologies.",
+    "Axion Deep Labs is a research and development company advancing AI implementation, quantum computing, and intelligent automation. We build production-grade software from original research.",
   keywords: [
-    "custom software development",
-    "web application development",
-    "mobile app development",
-    "AI software development",
-    "SaaS development",
-    "React development",
-    "Python development",
+    "AI research and development",
+    "quantum computing research",
+    "intelligent automation",
+    "AI implementation",
+    "R&D laboratory",
+    "software research",
+    "applied AI",
   ],
   authors: [{ name: "Axion Deep Labs" }],
   creator: "Axion Deep Labs",
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.axiondeep.com",
     siteName: "Axion Deep Labs",
-    title: "Custom Software Development Company | Axion Deep Labs",
+    title: "Axion Deep Labs — AI & Quantum Computing R&D",
     description:
-      "Custom software solutions for startups and enterprises. We build web applications, mobile apps, AI-powered software, and SaaS platforms.",
+      "Research and development company advancing AI implementation, quantum computing, and intelligent automation.",
     images: [
       {
         url: "/og-image.png",
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Software Development Company | Axion Deep Labs",
+    title: "Axion Deep Labs — AI & Quantum Computing R&D",
     description:
-      "Custom software solutions for startups and enterprises. Web apps, mobile apps, AI software, and SaaS platforms.",
+      "Research and development company advancing AI implementation, quantum computing, and intelligent automation.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -115,7 +115,7 @@ const jsonLd = {
       ],
       contactPoint: {
         "@type": "ContactPoint",
-        contactType: "sales",
+        contactType: "customer service",
         email: "hello@axiondeep.com",
       },
     },
@@ -131,16 +131,16 @@ const jsonLd = {
       "@id": "https://www.axiondeep.com/#service",
       name: "Axion Deep Labs",
       description:
-        "Custom software development company specializing in web applications, mobile apps, AI-powered software, and SaaS platforms.",
+        "Research and development laboratory advancing AI implementation, quantum computing, and intelligent automation. Building production-grade software from original research.",
       url: "https://www.axiondeep.com",
       priceRange: "$$$$",
       areaServed: "Worldwide",
       serviceType: [
-        "Custom Software Development",
-        "Web Application Development",
-        "Mobile App Development",
-        "AI Software Development",
-        "SaaS Development",
+        "Research and Development",
+        "AI Implementation",
+        "Quantum Computing Research",
+        "Intelligent Automation",
+        "Software Engineering",
       ],
     },
   ],
