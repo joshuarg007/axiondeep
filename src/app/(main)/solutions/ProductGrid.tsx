@@ -114,28 +114,6 @@ const products = [
     url: null,
     href: "/projects/forma",
   },
-  {
-    name: "AxionAIChat",
-    slug: "axionchat",
-    tagline: "AI-first live chat with human takeover",
-    description:
-      "Embeddable chat widget with AI handling when your team is offline and seamless human takeover when online. Real-time WebSocket, push notifications, mobile app, and multi-site support.",
-    icon: null,
-    badge: "Beta" as const,
-    badgeColor: "amber" as const,
-    accentText: "text-emerald-400",
-    iconBg: "bg-emerald-500/20",
-    borderColor: "border-emerald-500/20",
-    borderHover: "hover:border-emerald-500/40",
-    gradientBg: "from-emerald-500/15 via-emerald-500/5 to-transparent",
-    tagBg: "bg-emerald-500/10",
-    tagText: "text-emerald-400",
-    tagBorder: "border-emerald-500/20",
-    tech: ["Cloudflare Workers", "React Native", "D1", "Durable Objects", "TypeScript"],
-    tags: ["AI + Human Routing", "Mobile App", "Real-Time", "Multi-Site"],
-    url: "https://chat.axiondeep.com",
-    href: "/contact",
-  },
 ];
 
 const badgeStyles: Record<string, string> = {
