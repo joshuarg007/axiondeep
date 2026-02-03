@@ -20,6 +20,29 @@ body {
   display: none;
 }
 
+/* Section frames — visual separation between sections */
+.snap-section {
+  position: relative;
+}
+
+/* Gradient divider line between adjacent sections */
+.snap-section + .snap-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(255, 255, 255, 0.07) 30%, rgba(255, 255, 255, 0.07) 70%, transparent 95%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Alternating subtle background tint for visual rhythm */
+.snap-section:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
 /* Scroll snap container - desktop only */
 @media (min-width: 768px) {
   .snap-container {
