@@ -2,7 +2,13 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Site2CRM",
-  description: "Site2CRM - Lead capture and CRM integration platform by Axion Deep Labs.",
+  description: "Site2CRM — AI-powered lead capture and real-time CRM sync. Autonomous chat agents that qualify and convert. Built by Axion Deep Labs.",
+  keywords: [
+    "AI lead capture",
+    "CRM integration",
+    "AI chat agents",
+    "lead conversion",
+  ],
   alternates: { canonical: "/projects/site2crm" },
 };
 

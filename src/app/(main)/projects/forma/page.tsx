@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Forma",
-  description: "Forma - Design system and UI framework by Axion Deep Labs.",
+  description: "Forma — Component-driven design system and UI framework. Consistent, accessible interfaces across Axion Deep Labs products.",
   alternates: { canonical: "/projects/forma" },
 };
 
