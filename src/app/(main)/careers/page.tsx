@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Join Axion Deep Labs. We assemble researchers, engineers, and experimentalists working on AI, quantum computing, and distributed systems.",
   keywords: [
-    "AI research positions",
+    "AI integration careers",
+    "AI integration engineer",
     "quantum computing careers",
     "R&D laboratory jobs",
     "AI engineer positions",
-    "research engineer jobs",
     "remote research positions",
   ],
   alternates: { canonical: "/careers" },

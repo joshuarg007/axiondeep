@@ -5,13 +5,14 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Axion Deep Labs advances the frontiers of AI implementation and quantum computing through rigorous research, production-grade software, and accessible education.",
+    "Axion Deep Labs advances AI integration and quantum computing through rigorous research, production-grade software, and accessible education.",
   keywords: [
-    "AI research laboratory",
+    "AI integration company",
+    "AI integration services",
     "quantum computing R&D",
-    "applied AI research",
+    "custom AI integration",
     "intelligent automation",
-    "technology research company",
+    "AI research laboratory",
   ],
   alternates: { canonical: "/mission" },
 };

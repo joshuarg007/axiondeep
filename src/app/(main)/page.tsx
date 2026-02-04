@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   description:
-    "Research and development laboratory advancing AI implementation, quantum computing, and intelligent automation. Building production-grade software from original research.",
+    "AI integration and R&D laboratory. Custom AI integration solutions, quantum computing research, and intelligent automation. Production-grade software from original research.",
   alternates: {
     canonical: "/",
   },
@@ -22,15 +22,15 @@ export default function HomePage() {
               Axion Deep Labs
             </span>
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Research & Development
+              AI Integration & R&D
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Advancing AI implementation, quantum computing, and intelligent automation.
+            Enterprise AI integration, quantum computing, and intelligent automation.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-            We conduct original research and build production-grade software from it. Our work spans autonomous AI systems,
-            quantum algorithm development, and the tools that bring both to market.
+            We build custom AI integration solutions and production-grade software from original research. Our work spans
+            autonomous AI systems, quantum algorithm development, and the platforms that bring both to market.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -124,7 +124,7 @@ export default function HomePage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Deep expertise</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI systems to cloud infrastructure, we operate across every layer of modern computing.
+              From AI integration to cloud infrastructure, we operate across every layer of modern computing.
             </p>
           </div>
 
@@ -159,8 +159,8 @@ export default function HomePage() {
                 border: "border-violet-500/20 hover:border-violet-500/40",
               },
               {
-                title: "AI & ML",
-                desc: "LLMs, Custom Models, Automation",
+                title: "AI Integration",
+                desc: "LLMs, Custom Models, AI Automation",
                 gradient: "from-fuchsia-500/10 to-pink-500/5",
                 border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
               },

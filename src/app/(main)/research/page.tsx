@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     "quantum computing research",
     "Project DRIFT",
     "quantum system state evolution",
+    "AI integration research",
     "AI research laboratory",
     "applied quantum research",
   ],

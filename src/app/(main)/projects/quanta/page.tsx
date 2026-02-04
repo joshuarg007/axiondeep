@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   keywords: [
     "quantum computing education",
     "quantum simulation",
-    "quantum curriculum",
+    "AI integration education",
     "learn quantum computing",
   ],
   alternates: { canonical: "/projects/quanta" },

@@ -15,18 +15,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Axion Deep Labs — Research & Development",
+    default: "Axion Deep Labs — AI Integration & R&D",
     template: "Axion Deep — %s",
   },
   description:
-    "Axion Deep Labs is a research and development company advancing AI implementation, quantum computing, and intelligent automation. We build production-grade software from original research.",
+    "Axion Deep Labs is an AI integration and R&D company. We build production-grade AI integration solutions, advance quantum computing research, and deliver intelligent automation from original research.",
   keywords: [
-    "AI research and development",
+    "AI integration",
+    "AI integration services",
+    "AI integration company",
+    "enterprise AI integration",
+    "custom AI integration",
+    "AI integration solutions",
     "quantum computing research",
     "intelligent automation",
-    "AI implementation",
     "R&D laboratory",
-    "software research",
     "applied AI",
   ],
   authors: [{ name: "Axion Deep Labs" }],
@@ -49,23 +52,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.axiondeep.com",
     siteName: "Axion Deep Labs",
-    title: "Axion Deep Labs — AI & Quantum Computing R&D",
+    title: "Axion Deep Labs — AI Integration & Quantum Computing R&D",
     description:
-      "Research and development company advancing AI implementation, quantum computing, and intelligent automation.",
+      "AI integration company advancing intelligent automation, quantum computing, and production-grade software from original research.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep Labs",
+        alt: "Axion Deep Labs — AI Integration & R&D",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axion Deep Labs — AI & Quantum Computing R&D",
+    title: "Axion Deep Labs — AI Integration & Quantum Computing R&D",
     description:
-      "Research and development company advancing AI implementation, quantum computing, and intelligent automation.",
+      "AI integration company advancing intelligent automation, quantum computing, and production-grade software from original research.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -131,13 +134,15 @@ const jsonLd = {
       "@id": "https://www.axiondeep.com/#service",
       name: "Axion Deep Labs",
       description:
-        "Research and development laboratory advancing AI implementation, quantum computing, and intelligent automation. Building production-grade software from original research.",
+        "AI integration and R&D laboratory. Custom AI integration solutions, quantum computing research, and intelligent automation. Building production-grade software from original research.",
       url: "https://www.axiondeep.com",
       priceRange: "$$$$",
       areaServed: "Worldwide",
       serviceType: [
+        "AI Integration",
+        "Custom AI Integration",
+        "AI Integration Services",
         "Research and Development",
-        "AI Implementation",
         "Quantum Computing Research",
         "Intelligent Automation",
         "Software Engineering",

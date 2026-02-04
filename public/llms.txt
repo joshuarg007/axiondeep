@@ -1,8 +1,12 @@
 # Axion Deep Labs
 
-> Research and development laboratory advancing AI implementation, quantum computing, and intelligent automation. Building production-grade software from original research.
+> AI integration company and R&D laboratory. Custom AI integration solutions, quantum computing research, and intelligent automation. Building production-grade software from original research.
 
-Axion Deep Labs is an R&D company that investigates applied AI, quantum computing, and distributed systems. Our research informs the products we build — production-grade software born from experimentation and rigorous engineering.
+Axion Deep Labs is an AI integration and R&D company. We build custom AI integration solutions for enterprises, conduct quantum computing research, and deliver intelligent automation systems. Every product is informed by original research and built for production.
+
+## AI Integration Services
+
+We specialize in enterprise AI integration — connecting LLMs, autonomous agents, and machine learning pipelines into existing business workflows. Our AI integration services span chatbots, document processing, predictive analytics, and custom AI agents.
 
 ## Research
 
@@ -10,12 +14,12 @@ Project DRIFT (Degradation Regimes In Iterated Field Transformations): Investiga
 
 ## Technical Domains
 
-- AI Implementation & Integration
+- AI Integration & Custom AI Solutions
+- Enterprise AI Integration Services
 - Quantum Computing Research
 - Intelligent Automation
 - Distributed Systems
 - Spatial Computing & XR
-- Applied Mathematics
 
 ## Products
 

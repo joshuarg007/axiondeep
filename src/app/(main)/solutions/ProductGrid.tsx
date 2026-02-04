@@ -9,7 +9,7 @@ const products = [
     slug: "made4founders",
     tagline: "Command center for solo founders",
     description:
-      "All-in-one platform for 1-5 person startups. 96-item compliance checklist, AES-256 encrypted credential vault, cap table management, real-time runway calculator via Plaid, AI business assistant, and investor updates.",
+      "All-in-one platform with AI integration for 1-5 person startups. 96-item compliance checklist, AES-256 encrypted credential vault, cap table management, real-time runway calculator via Plaid, and AI business assistant.",
     icon: "/icons/icon-solutions-founderos.png",
     badge: "Live" as const,
     badgeColor: "green" as const,
@@ -29,9 +29,9 @@ const products = [
   {
     name: "Site2CRM",
     slug: "site2crm",
-    tagline: "AI lead capture that never gives up",
+    tagline: "AI integration for lead capture and CRM sync",
     description:
-      "Persistent AI chat widget that handles objections with up to 10 rebuttals. Multi-step lead capture forms with real-time sync to HubSpot, Salesforce, Pipedrive, Zoho, and Nutshell in under 3 seconds.",
+      "AI integration that connects your website to your CRM in real-time. Persistent AI chat agents handle objections with up to 10 rebuttals. Multi-step forms sync to HubSpot, Salesforce, Pipedrive, Zoho, and Nutshell.",
     icon: "/icons/icon-solutions-site2crm.png",
     badge: "Live" as const,
     badgeColor: "green" as const,
@@ -44,16 +44,16 @@ const products = [
     tagText: "text-cyan-400",
     tagBorder: "border-cyan-500/20",
     tech: ["React", "FastAPI", "PostgreSQL", "DeepSeek", "Stripe", "AWS"],
-    tags: ["AI Chat Widget", "CRM Sync", "Lead Scoring", "Analytics"],
+    tags: ["AI Integration", "CRM Sync", "Lead Scoring", "Analytics"],
     url: "https://site2crm.io",
     href: "/projects/site2crm",
   },
   {
     name: "Vesper",
     slug: "vesper",
-    tagline: "AI-powered penetration testing",
+    tagline: "AI integration for penetration testing",
     description:
-      "Dual AI agents work in tandem: one attacks, one analyzes. 11,697 vulnerability templates covering OWASP Top 10, CVEs, and custom exploit chains. Automated reporting and continuous learning.",
+      "Dual AI agents integrated in tandem: one attacks, one analyzes. 11,697 vulnerability templates covering OWASP Top 10, CVEs, and custom exploit chains. AI-driven reporting and continuous learning.",
     icon: "/icons/icon-solutions-vesper.png",
     badge: "Live" as const,
     badgeColor: "green" as const,
@@ -66,7 +66,7 @@ const products = [
     tagText: "text-violet-400",
     tagBorder: "border-violet-500/20",
     tech: ["Python", "FastAPI", "Claude AI", "Nuclei", "PostgreSQL"],
-    tags: ["Dual AI Agents", "11.7K Templates", "OWASP Top 10", "Auto Reports"],
+    tags: ["AI Integration", "Dual AI Agents", "11.7K Templates", "OWASP Top 10"],
     url: null,
     href: "/projects/vesper",
   },
@@ -97,7 +97,7 @@ const products = [
     slug: "forma",
     tagline: "No-code platform that generates real code",
     description:
-      "Full-stack application builder combining drag-drop visual editor, schema-driven data modeler, and backend runtime. AI generates layouts from prompts. One-click export to Next.js you own.",
+      "Full-stack application builder with AI integration. Drag-drop visual editor, schema-driven data modeler, and backend runtime. AI generates layouts from prompts. One-click export to Next.js you own.",
     icon: "/icons/icon-solutions-forma.png",
     badge: "Beta" as const,
     badgeColor: "amber" as const,

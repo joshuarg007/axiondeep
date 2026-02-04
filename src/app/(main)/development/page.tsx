@@ -6,12 +6,13 @@ import PlatformCards from "@/components/PlatformCards";
 export const metadata: Metadata = {
   title: "Development",
   description:
-    "Applied research and development across web, mobile, AI, and spatial computing. From prototype to production.",
+    "AI integration services and applied R&D across web, mobile, and spatial computing. Custom AI integration from prototype to production.",
   keywords: [
-    "applied AI research",
+    "AI integration services",
+    "custom AI integration",
+    "AI integration development",
+    "enterprise AI integration",
     "software R&D",
-    "AI development",
-    "quantum computing applications",
     "research-driven development",
   ],
   alternates: { canonical: "/development" },
@@ -23,21 +24,21 @@ const processSteps = [
     title: "Discover",
     description: "Deep investigation into the problem space, constraints, and technical landscape.",
     image: "/images/process-discover.webp",
-    alt: "Discovery phase - understanding software requirements",
+    alt: "Discovery phase - scoping AI integration requirements",
   },
   {
     step: "02",
     title: "Design",
     description: "Architecture, prototyping, and validation. We prove the approach before committing to it.",
     image: "/images/process-design.webp",
-    alt: "Design phase - architecting custom software solutions",
+    alt: "Design phase - architecting AI integration solutions",
   },
   {
     step: "03",
     title: "Deliver",
     description: "Iterative development, rigorous testing, production deployment, and continuous support.",
     image: "/images/process-deliver.webp",
-    alt: "Delivery phase - deploying production-ready software",
+    alt: "Delivery phase - deploying production-ready AI integration",
   },
 ];
 

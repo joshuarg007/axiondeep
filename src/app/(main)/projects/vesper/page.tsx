@@ -2,11 +2,11 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Vesper AI",
-  description: "Vesper AI — Autonomous penetration testing and security research platform. AI-driven vulnerability assessment built by Axion Deep Labs.",
+  description: "Vesper AI — AI integration for autonomous penetration testing and security research. AI-driven vulnerability assessment built by Axion Deep Labs.",
   keywords: [
-    "penetration testing",
-    "security research",
-    "AI security testing",
+    "AI integration",
+    "AI penetration testing",
+    "AI security integration",
     "vulnerability assessment",
   ],
   alternates: { canonical: "/projects/vesper" },

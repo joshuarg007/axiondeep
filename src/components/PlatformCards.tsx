@@ -28,7 +28,7 @@ const platforms: Platform[] = [
     gradient: "from-cyan-500 to-blue-600",
     tech: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
     image: "/images/platform-web.webp",
-    alt: "Web application development services",
+    alt: "Web application development with AI integration",
     seoContent: {
       headline: "Custom Web Application Development Services",
       paragraphs: [
@@ -177,21 +177,21 @@ const platforms: Platform[] = [
   },
   {
     id: "ai",
-    title: "AI-Powered Apps",
+    title: "AI Integration",
     description:
-      "Intelligent applications with LLM integration, autonomous agents, and machine learning pipelines.",
+      "Custom AI integration services — LLMs, autonomous agents, machine learning pipelines, and enterprise AI automation.",
     gradient: "from-indigo-500 to-violet-600",
     tech: ["Claude AI", "GPT-4", "LangChain", "PyTorch"],
     image: "/images/platform-ai.webp",
-    alt: "AI and machine learning software development",
+    alt: "AI integration services and solutions",
     seoContent: {
-      headline: "AI & LLM Application Development",
+      headline: "Custom AI Integration Services",
       paragraphs: [
-        "AI application development with Claude, GPT-4, and open-source LLMs. Custom AI agents, RAG pipelines, chatbots, document processing, and machine learning model deployment.",
-        "LangChain integration, vector databases, fine-tuning, computer vision with PyTorch, and production AI infrastructure with monitoring and guardrails.",
+        "Enterprise AI integration with Claude, GPT-4, and open-source LLMs. Custom AI agents, RAG pipelines, intelligent chatbots, document processing, and production ML deployment.",
+        "End-to-end AI integration: LangChain pipelines, vector databases, model fine-tuning, computer vision with PyTorch, and production AI infrastructure with monitoring and guardrails.",
       ],
       benefits: [
-        "Natural language interfaces for intuitive interaction",
+        "Seamless AI integration into existing workflows",
         "Automated content generation and summarization",
         "Intelligent document processing and extraction",
         "Predictive analytics and recommendation systems",
@@ -199,10 +199,10 @@ const platforms: Platform[] = [
         "Custom AI agents for workflow automation",
       ],
       technologies: [
-        { name: "Claude & GPT-4", description: "State-of-the-art language models for natural language tasks" },
-        { name: "LangChain", description: "Framework for building LLM-powered applications" },
-        { name: "PyTorch & TensorFlow", description: "Deep learning frameworks for custom models" },
-        { name: "Hugging Face", description: "Open-source models and deployment infrastructure" },
+        { name: "Claude & GPT-4", description: "State-of-the-art language models for AI integration" },
+        { name: "LangChain", description: "Framework for building AI integration pipelines" },
+        { name: "PyTorch & TensorFlow", description: "Deep learning frameworks for custom AI models" },
+        { name: "Hugging Face", description: "Open-source models and AI deployment infrastructure" },
       ],
     },
   },

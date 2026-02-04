@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   description:
     "Software built from original research: Site2CRM AI lead capture, Made4Founders startup command center, QUANTA quantum education, Vesper penetration testing, and more.",
   keywords: [
-    "AI software products",
+    "AI integration products",
+    "AI integration platforms",
     "quantum computing education",
     "research-driven software",
-    "applied AI",
-    "R&D products",
+    "custom AI integration",
   ],
   alternates: { canonical: "/solutions" },
 };
