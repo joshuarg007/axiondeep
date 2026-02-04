@@ -1,5 +1,31 @@
 User-agent: *
-Allow: /
+Allow: /careers$
+Disallow: /careers/
+
+# Block AI/LLM crawlers from all careers pages
+User-agent: GPTBot
+Disallow: /careers
+
+User-agent: ChatGPT-User
+Disallow: /careers
+
+User-agent: CCBot
+Disallow: /careers
+
+User-agent: anthropic-ai
+Disallow: /careers
+
+User-agent: Claude-Web
+Disallow: /careers
+
+User-agent: Google-Extended
+Disallow: /careers
+
+User-agent: Bytespider
+Disallow: /careers
+
+User-agent: ClaudeBot
+Disallow: /careers
 
 Sitemap: https://www.axiondeep.com/sitemap.xml
 

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { jobs } from "@/data/jobs";
 
 export const metadata: Metadata = {
   title: "Join Our Team",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 const domains = [
   {
     title: "AI Foundations",
-    icon: "⚡",
+    icon: "\u26A1",
     color: "from-cyan-500/20 to-blue-500/10",
     border: "border-cyan-500/20 hover:border-cyan-500/40",
     lines: [
@@ -30,7 +31,7 @@ const domains = [
   },
   {
     title: "Quantum Algorithms",
-    icon: "◈",
+    icon: "\u25C8",
     color: "from-violet-500/20 to-purple-500/10",
     border: "border-violet-500/20 hover:border-violet-500/40",
     lines: [
@@ -41,7 +42,7 @@ const domains = [
   },
   {
     title: "Simulations & XR",
-    icon: "◉",
+    icon: "\u25C9",
     color: "from-fuchsia-500/20 to-pink-500/10",
     border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
     lines: [
@@ -52,7 +53,7 @@ const domains = [
   },
   {
     title: "Distributed Systems",
-    icon: "⬡",
+    icon: "\u2B21",
     color: "from-emerald-500/20 to-teal-500/10",
     border: "border-emerald-500/20 hover:border-emerald-500/40",
     lines: [
@@ -63,7 +64,7 @@ const domains = [
   },
   {
     title: "Research Infra",
-    icon: "◇",
+    icon: "\u25C7",
     color: "from-orange-500/20 to-red-500/10",
     border: "border-orange-500/20 hover:border-orange-500/40",
     lines: [
@@ -73,6 +74,12 @@ const domains = [
     ],
   },
 ];
+
+const typeColors = {
+  "1099": "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400",
+  W2: "from-emerald-500/20 to-green-500/10 border-emerald-500/30 text-emerald-400",
+  Contract: "from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400",
+};
 
 export default function CareersPage() {
   return (
@@ -98,6 +105,80 @@ export default function CareersPage() {
           <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto">
             We assemble people who redefine computational limits.
           </p>
+        </div>
+      </section>
+
+      {/* Open Positions */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Open Positions</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Current opportunities to join our team
+            </p>
+          </div>
+
+          {jobs.length > 0 ? (
+            <div className="grid gap-6">
+              {jobs.map((job) => (
+                <Link
+                  key={job.slug}
+                  href={`/careers/${job.slug}`}
+                  className="group relative rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] p-6 md:p-8 transition-all duration-300"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+                    {/* Left: Job Info */}
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${typeColors[job.type]} border`}
+                        >
+                          {job.type}
+                        </span>
+                        <span className="text-sm text-gray-500">{job.location}</span>
+                        <span className="text-gray-600">|</span>
+                        <span className="text-sm text-gray-500">{job.department}</span>
+                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                        {job.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm md:text-base">{job.shortDescription}</p>
+                    </div>
+
+                    {/* Right: Compensation + Arrow */}
+                    <div className="flex items-center gap-4 md:gap-6">
+                      <div className="hidden sm:block text-right">
+                        <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">
+                          Compensation
+                        </p>
+                        <p className="text-sm text-gray-300">{job.compensation.details}</p>
+                      </div>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 group-hover:bg-gradient-to-r group-hover:from-cyan-500/20 group-hover:to-violet-500/20 flex items-center justify-center transition-all">
+                        <svg
+                          className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.06]">
+              <p className="text-gray-500 text-lg">No open positions at this time.</p>
+              <p className="text-gray-600 text-sm mt-2">Check back soon or reach out directly.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -149,7 +230,7 @@ export default function CareersPage() {
             {/* Hidden hint card */}
             <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent border border-dashed border-white/10 p-6 flex items-center justify-center">
               <div className="text-center">
-                <span className="text-2xl opacity-30">◌</span>
+                <span className="text-2xl opacity-30">\u25CC</span>
                 <p className="text-sm text-gray-600 mt-2">More for contractors</p>
               </div>
             </div>
