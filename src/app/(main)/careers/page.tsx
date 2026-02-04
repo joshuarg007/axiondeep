@@ -108,6 +108,62 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Philosophy + Research Domains */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-6xl mx-auto w-full">
+          {/* Philosophy Grid */}
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">How We Work</h2>
+              <p className="text-gray-400 leading-relaxed">
+                Hybrid research network. Remote-first. Asynchronous. If you prototype at 3 AM to test
+                a hypothesis, you&apos;ll fit right in.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Who We Are</h2>
+              <p className="text-gray-400 leading-relaxed">
+                Researchers, engineers, experimentalists. AI theory, quantum computation, systems
+                architecture, applied mathematics.
+              </p>
+            </div>
+          </div>
+
+          {/* Research Domains */}
+          <h2 className="text-2xl font-bold text-white mb-8">Research Domains</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {domains.map((d) => (
+              <div
+                key={d.title}
+                className={`relative rounded-2xl bg-gradient-to-br ${d.color} border ${d.border} p-6 transition-all`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl opacity-60">{d.icon}</span>
+                  <h3 className="font-semibold text-white">{d.title}</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  {d.lines.map((l, j) => (
+                    <li key={j} className="flex gap-2">
+                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
+                      <span>{l}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* Hidden hint card */}
+            <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent border border-dashed border-white/10 p-6 flex items-center justify-center">
+              <div className="text-center">
+                <span className="text-2xl opacity-30">\u25CC</span>
+                <p className="text-sm text-gray-600 mt-2">More for contractors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Open Positions */}
       <section className="snap-section min-h-screen flex items-center px-6 py-16">
         <div className="max-w-6xl mx-auto w-full">
@@ -179,62 +235,6 @@ export default function CareersPage() {
               <p className="text-gray-600 text-sm mt-2">Check back soon or reach out directly.</p>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Philosophy + Research Domains */}
-      <section className="snap-section min-h-screen flex items-center px-6 py-16">
-        <div className="max-w-6xl mx-auto w-full">
-          {/* Philosophy Grid */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">How We Work</h2>
-              <p className="text-gray-400 leading-relaxed">
-                Hybrid research network. Remote-first. Asynchronous. If you prototype at 3 AM to test
-                a hypothesis, you&apos;ll fit right in.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-4">Who We Are</h2>
-              <p className="text-gray-400 leading-relaxed">
-                Researchers, engineers, experimentalists. AI theory, quantum computation, systems
-                architecture, applied mathematics.
-              </p>
-            </div>
-          </div>
-
-          {/* Research Domains */}
-          <h2 className="text-2xl font-bold text-white mb-8">Research Domains</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {domains.map((d) => (
-              <div
-                key={d.title}
-                className={`relative rounded-2xl bg-gradient-to-br ${d.color} border ${d.border} p-6 transition-all`}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">{d.icon}</span>
-                  <h3 className="font-semibold text-white">{d.title}</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  {d.lines.map((l, j) => (
-                    <li key={j} className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>{l}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            {/* Hidden hint card */}
-            <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.02] to-transparent border border-dashed border-white/10 p-6 flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-2xl opacity-30">\u25CC</span>
-                <p className="text-sm text-gray-600 mt-2">More for contractors</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
