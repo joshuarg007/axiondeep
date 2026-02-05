@@ -48,7 +48,7 @@ export default async function JobPage({ params }: Props) {
   };
 
   return (
-    <div className="relative text-gray-300 min-h-screen">
+    <div className="no-snap relative text-gray-300 min-h-screen">
       {/* Hero */}
       <section className="px-6 pt-32 pb-16">
         <div className="max-w-4xl mx-auto">
