@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getJobBySlug, getAllJobSlugs } from "@/data/jobs";
+import JobApplicationForm from "./JobApplicationForm";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,8 @@ export default async function JobPage({ params }: Props) {
     Contract: "from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400",
   };
 
+  const hasLegalCompliance = job.requiresAcknowledgement || job.riskDisclosures || job.legalDisclaimer;
+
   return (
     <div className="no-snap relative text-gray-300 min-h-screen">
       {/* Hero */}
@@ -72,30 +75,28 @@ export default async function JobPage({ params }: Props) {
             <span className="text-sm text-gray-400">{job.location}</span>
             <span className="text-gray-500">|</span>
             <span className="text-sm text-gray-400">{job.department}</span>
+            {job.jurisdiction && (
+              <>
+                <span className="text-gray-500">|</span>
+                <span className="text-sm text-gray-500">Governing Law: {job.jurisdiction}</span>
+              </>
+            )}
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">{job.title}</h1>
 
           <p className="text-lg text-gray-400 mb-8">{job.shortDescription}</p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`mailto:${job.applyEmail}?subject=Application: ${job.title}`}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition"
-            >
-              Apply Now
-            </a>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              {job.compensation.details}
-            </div>
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            {job.compensation.details}
           </div>
         </div>
       </section>
@@ -123,7 +124,36 @@ export default async function JobPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Apply CTA */}
+      {/* Risk Disclosures */}
+      {job.riskDisclosures && job.riskDisclosures.length > 0 && (
+        <section className="px-6 py-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-2xl bg-gradient-to-br from-red-500/10 to-orange-500/5 border border-red-500/20 p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  />
+                </svg>
+                <h2 className="text-xl font-bold text-white">Risk Disclosure</h2>
+              </div>
+              <ul className="space-y-4">
+                {job.riskDisclosures.map((disclosure, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-400/60 mt-2" />
+                    <span className="text-gray-400 text-sm leading-relaxed">{disclosure}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Apply Section */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
           <div className="relative p-12 md:p-16 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08]">
@@ -145,15 +175,32 @@ export default async function JobPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <a
-              href={`mailto:${job.applyEmail}?subject=Application: ${job.title}`}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition"
-            >
-              Send Application
-            </a>
+
+            {/* Acknowledgement Gate for Legal Compliance Jobs */}
+            {hasLegalCompliance ? (
+              <JobApplicationForm job={job} />
+            ) : (
+              <a
+                href={`mailto:${job.applyEmail}?subject=Application: ${job.title}`}
+                className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition"
+              >
+                Send Application
+              </a>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Legal Disclaimer */}
+      {job.legalDisclaimer && (
+        <section className="px-6 pb-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-xl bg-white/[0.02] border border-white/[0.06] p-6">
+              <p className="text-xs text-gray-500 leading-relaxed">{job.legalDisclaimer}</p>
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
