@@ -32,3 +32,13 @@ yarn-error.log*
 
 # Local
 .claude/
+
+# Large media (tracked via Git LFS or hosted externally)
+public/videos/*.mp4
+public/videos/BL_proxy/
+
+# Generated scripts
+scripts/generate_*.py
+
+# Build logs
+*.log
