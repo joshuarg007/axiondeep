@@ -28,19 +28,19 @@ const platforms: Platform[] = [
     gradient: "from-cyan-500 to-blue-600",
     tech: ["React", "Next.js", "TypeScript", "Node.js", "Python"],
     image: "/images/platform-web.webp",
-    alt: "Web application development with AI integration",
+    alt: "Web application research and development",
     seoContent: {
-      headline: "Custom Web Application Development Services",
+      headline: "Web Application R&D",
       paragraphs: [
-        "Full-stack web application development for SaaS platforms, enterprise portals, and progressive web apps. React, Next.js, Node.js, and Python backends with PostgreSQL and cloud deployment on AWS.",
-        "SEO-optimized, WCAG-compliant web applications with real-time features, third-party API integrations, and scalable architecture built for high-traffic production environments.",
+        "Full-stack web application R&D for SaaS platforms, research tools, and progressive web apps. React, Next.js, Node.js, and Python backends with PostgreSQL and cloud deployment on AWS.",
+        "SEO-optimized, WCAG-compliant web applications with real-time features, third-party API integrations, and scalable architecture built for production environments.",
       ],
       benefits: [
-        "Scalable architecture that grows with your business",
-        "SEO-optimized for maximum organic visibility",
+        "Scalable architecture for production workloads",
+        "SEO-optimized for organic discoverability",
         "Cross-browser and cross-device compatibility",
         "Real-time features and collaborative functionality",
-        "Integration with third-party APIs and services",
+        "Third-party API and data pipeline integration",
         "Comprehensive analytics and reporting dashboards",
       ],
       technologies: [
@@ -59,20 +59,20 @@ const platforms: Platform[] = [
     gradient: "from-violet-500 to-purple-600",
     tech: ["React Native", "Swift", "Kotlin", "Flutter"],
     image: "/images/platform-mobile.webp",
-    alt: "Mobile app development for iOS and Android",
+    alt: "Mobile application research and development",
     seoContent: {
-      headline: "iOS & Android Mobile App Development",
+      headline: "Mobile Application R&D",
       paragraphs: [
-        "Native iOS development with Swift and Android development with Kotlin, plus cross-platform mobile apps using React Native and Flutter. App Store and Google Play deployment included.",
-        "Mobile apps with offline-first architecture, push notifications, biometric authentication, GPS integration, and camera functionality. App Store Optimization (ASO) for maximum discoverability.",
+        "Native iOS development with Swift and Android development with Kotlin, plus cross-platform mobile apps using React Native and Flutter.",
+        "Mobile apps with offline-first architecture, push notifications, biometric authentication, GPS integration, and camera functionality.",
       ],
       benefits: [
         "Native performance with platform-specific optimizations",
         "Offline-first architecture for reliable functionality",
         "Seamless integration with device hardware features",
         "App Store Optimization (ASO) for discoverability",
-        "Push notification strategies for user retention",
-        "Analytics integration for user behavior insights",
+        "Push notifications for engagement",
+        "Analytics integration for behavioral insights",
       ],
       technologies: [
         { name: "React Native", description: "Cross-platform development with native performance" },
@@ -90,11 +90,11 @@ const platforms: Platform[] = [
     gradient: "from-pink-500 to-rose-600",
     tech: ["Unity", "Unreal Engine", "WebXR", "Three.js"],
     image: "/images/platform-vr.webp",
-    alt: "Virtual reality software development",
+    alt: "Virtual reality research and development",
     seoContent: {
-      headline: "VR Development for Meta Quest & Enterprise",
+      headline: "Virtual Reality R&D",
       paragraphs: [
-        "Virtual reality development for Meta Quest, HTC Vive, and WebXR. Enterprise VR training simulations, architectural visualization, healthcare VR, and immersive gaming experiences.",
+        "Virtual reality R&D for Meta Quest, HTC Vive, and WebXR. Training simulations, spatial visualization, healthcare VR, and immersive computing experiences.",
         "Multi-user VR environments with real-time networking, 3D spatial audio, hand tracking, and photorealistic rendering using Unity and Unreal Engine.",
       ],
       benefits: [
@@ -102,7 +102,7 @@ const platforms: Platform[] = [
         "Safe simulation of high-risk scenarios",
         "Virtual prototyping and design visualization",
         "Remote collaboration in shared virtual spaces",
-        "Engaging marketing and brand experiences",
+        "Spatial computing research applications",
         "Accessibility features for inclusive VR experiences",
       ],
       technologies: [
@@ -121,20 +121,20 @@ const platforms: Platform[] = [
     gradient: "from-amber-500 to-orange-600",
     tech: ["ARKit", "ARCore", "WebAR", "Spark AR"],
     image: "/images/platform-ar.webp",
-    alt: "Augmented reality application development",
+    alt: "Augmented reality research and development",
     seoContent: {
-      headline: "AR Development with ARKit & ARCore",
+      headline: "Augmented Reality R&D",
       paragraphs: [
-        "Augmented reality development for iOS (ARKit), Android (ARCore), and WebAR. Product visualization, AR marketing campaigns, industrial AR guidance, and Apple Vision Pro spatial computing.",
+        "Augmented reality R&D for iOS (ARKit), Android (ARCore), and WebAR. Spatial visualization, industrial AR guidance, and Apple Vision Pro spatial computing research.",
         "Location-based AR, markerless tracking, 3D object recognition, and real-time occlusion. Browser-based WebAR experiences requiring no app download.",
       ],
       benefits: [
-        "Product visualization that increases purchase confidence",
-        "Interactive print and packaging experiences",
+        "Spatial visualization for complex data",
+        "Interactive overlay experiences",
         "Step-by-step AR guidance for complex tasks",
-        "Location-based AR for tourism and navigation",
-        "Social AR filters for brand engagement",
+        "Location-based AR for spatial computing",
         "Measurement and spatial mapping tools",
+        "Cross-platform AR delivery",
       ],
       technologies: [
         { name: "ARKit", description: "Apple's framework for iOS augmented reality experiences" },
@@ -152,12 +152,12 @@ const platforms: Platform[] = [
     gradient: "from-emerald-500 to-teal-600",
     tech: ["Electron", "Tauri", "PyQt", "Swift"],
     image: "/images/platform-desktop.webp",
-    alt: "Desktop software development services",
+    alt: "Desktop application research and development",
     seoContent: {
-      headline: "Cross-Platform Desktop App Development",
+      headline: "Desktop Application R&D",
       paragraphs: [
-        "Desktop application development for Windows, macOS, and Linux. Electron and Tauri for cross-platform apps, native Swift for macOS, and .NET/WPF for Windows enterprise software.",
-        "Offline-capable desktop apps with local data storage, hardware integration, system tray functionality, auto-updates, and deep OS integration for professional workflows.",
+        "Desktop application R&D for Windows, macOS, and Linux. Electron and Tauri for cross-platform apps, native Swift for macOS, and .NET/WPF for Windows.",
+        "Offline-capable desktop apps with local data storage, hardware integration, system tray functionality, auto-updates, and deep OS integration for research workflows.",
       ],
       benefits: [
         "Full access to system resources and hardware",
@@ -179,30 +179,30 @@ const platforms: Platform[] = [
     id: "ai",
     title: "AI Integration",
     description:
-      "Custom AI integration services — LLMs, autonomous agents, machine learning pipelines, and enterprise AI automation.",
+      "AI research — LLMs, autonomous agents, machine learning pipelines, and intelligent automation systems.",
     gradient: "from-indigo-500 to-violet-600",
     tech: ["Claude AI", "GPT-4", "LangChain", "PyTorch"],
     image: "/images/platform-ai.webp",
-    alt: "AI integration services and solutions",
+    alt: "AI research and intelligent automation",
     seoContent: {
-      headline: "Custom AI Integration Services",
+      headline: "AI Research & Intelligent Automation",
       paragraphs: [
-        "Enterprise AI integration with Claude, GPT-4, and open-source LLMs. Custom AI agents, RAG pipelines, intelligent chatbots, document processing, and production ML deployment.",
-        "End-to-end AI integration: LangChain pipelines, vector databases, model fine-tuning, computer vision with PyTorch, and production AI infrastructure with monitoring and guardrails.",
+        "AI research with Claude, GPT-4, and open-source LLMs. Autonomous agents, RAG pipelines, intelligent automation, document processing, and production ML systems.",
+        "End-to-end AI R&D: LangChain pipelines, vector databases, model fine-tuning, computer vision with PyTorch, and production AI infrastructure with monitoring and guardrails.",
       ],
       benefits: [
-        "Seamless AI integration into existing workflows",
+        "Autonomous AI agent architectures",
         "Automated content generation and summarization",
         "Intelligent document processing and extraction",
         "Predictive analytics and recommendation systems",
         "Computer vision for image and video analysis",
-        "Custom AI agents for workflow automation",
+        "Workflow automation through AI",
       ],
       technologies: [
-        { name: "Claude & GPT-4", description: "State-of-the-art language models for AI integration" },
-        { name: "LangChain", description: "Framework for building AI integration pipelines" },
-        { name: "PyTorch & TensorFlow", description: "Deep learning frameworks for custom AI models" },
-        { name: "Hugging Face", description: "Open-source models and AI deployment infrastructure" },
+        { name: "Claude & GPT-4", description: "State-of-the-art language models for AI research" },
+        { name: "LangChain", description: "Framework for building AI pipelines" },
+        { name: "PyTorch & TensorFlow", description: "Deep learning frameworks for custom models" },
+        { name: "Hugging Face", description: "Open-source models and deployment infrastructure" },
       ],
     },
   },
@@ -318,7 +318,7 @@ export default function PlatformCards() {
 
               {/* Technologies */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-white mb-4">Technologies We Use</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">Technologies</h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {selectedPlatform.seoContent.technologies.map((tech, i) => (
                     <div key={i} className="p-3 rounded-lg bg-white/5 border border-white/5">
@@ -335,7 +335,7 @@ export default function PlatformCards() {
                   href="/contact"
                   className={`px-6 py-3 rounded-xl bg-gradient-to-r ${selectedPlatform.gradient} font-semibold text-white hover:opacity-90 transition`}
                 >
-                  Discuss Your Project
+                  Research Inquiries
                 </a>
                 <button
                   onClick={() => setSelectedPlatform(null)}

@@ -5,14 +5,14 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Axion Deep Labs advances AI integration and quantum computing through rigorous research, production-grade software, and accessible education.",
+    "Axion Deep Labs advances AI and quantum computing through rigorous research, production-grade technology, and accessible education.",
   keywords: [
-    "AI integration company",
-    "AI integration services",
-    "quantum computing R&D",
-    "custom AI integration",
-    "intelligent automation",
     "AI research laboratory",
+    "quantum computing R&D",
+    "deep tech research",
+    "intelligent automation research",
+    "applied AI research",
+    "technology innovation lab",
   ],
   alternates: { canonical: "/mission" },
 };
@@ -65,44 +65,44 @@ const capabilities = [
 const processSteps = [
   {
     number: 1,
-    title: "Discover",
+    title: "Investigate",
     description:
-      "Deep investigation into the problem space. We map constraints, identify unknowns, and define the research agenda.",
+      "Deep exploration of the problem space. We map constraints, identify unknowns, and define the research agenda.",
     gradient: "from-cyan-500 to-blue-500",
     stats: [
-      { value: "40+", label: "discovery calls" },
-      { value: "98%", label: "scope accuracy" },
+      { value: "Rigorous", label: "problem scoping" },
+      { value: "First", label: "principles approach" },
     ],
   },
   {
     number: 2,
-    title: "Design",
+    title: "Hypothesize",
     description:
-      "Architecture and prototyping. We validate hypotheses early and iterate until the solution is proven.",
+      "Architecture and prototyping. We validate hypotheses early and iterate until the approach is proven.",
     gradient: "from-violet-500 to-purple-500",
     stats: [
       { value: "3x", label: "iterations avg" },
-      { value: "100%", label: "client sign-off" },
+      { value: "Validated", label: "before committing" },
     ],
   },
   {
     number: 3,
     title: "Build",
-    description: "Iterative development with continuous delivery. Rigorous testing, clean code, measurable progress.",
+    description: "Iterative development with continuous validation. Rigorous testing, clean code, measurable progress.",
     gradient: "from-fuchsia-500 to-pink-500",
     stats: [
-      { value: "94%", label: "on-time delivery" },
-      { value: "Weekly", label: "demo cadence" },
+      { value: "Test-driven", label: "methodology" },
+      { value: "Weekly", label: "checkpoints" },
     ],
   },
   {
     number: 4,
-    title: "Launch",
-    description: "Deploy with confidence. Full observability, ongoing support, and continuous iteration.",
+    title: "Ship",
+    description: "Deploy to production. Full observability, continuous monitoring, and data-driven iteration.",
     gradient: "from-orange-500 to-red-500",
     stats: [
-      { value: "99.9%", label: "uptime SLA" },
-      { value: "<2hr", label: "response time" },
+      { value: "99.9%", label: "uptime target" },
+      { value: "Continuous", label: "improvement" },
     ],
   },
 ];

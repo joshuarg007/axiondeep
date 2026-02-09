@@ -145,7 +145,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className="block text-sm text-gray-400 mb-2">
-          Tell us about your project
+          How can we help?
         </label>
         <textarea
           id="message"

@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   description:
-    "AI integration and R&D laboratory. Custom AI integration solutions, quantum computing research, and intelligent automation. Production-grade software from original research.",
+    "R&D laboratory advancing AI, quantum computing, and intelligent automation. Original research powering next-generation technology products.",
   alternates: {
     canonical: "/",
   },
@@ -22,15 +22,15 @@ export default function HomePage() {
               Axion Deep Labs
             </span>
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              AI Integration & R&D
+              Research & Development
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Enterprise AI integration, quantum computing, and intelligent automation.
+            AI, quantum computing, and intelligent automation.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-            We build custom AI integration solutions and production-grade software from original research. Our work spans
-            autonomous AI systems, quantum algorithm development, and the platforms that bring both to market.
+            We conduct original research and build the technologies behind next-generation software. Our work spans
+            autonomous AI systems, quantum algorithm development, and the platforms that bring both to production.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -74,26 +74,26 @@ export default function HomePage() {
               {[
                 {
                   num: "01",
-                  title: "Discovery",
-                  desc: "We dive deep into your business, users, and goals. No assumptions—just clarity.",
+                  title: "Investigate",
+                  desc: "Deep exploration of the problem space. Map constraints, identify unknowns, define the research agenda.",
                   color: "from-cyan-500 to-blue-500",
                 },
                 {
                   num: "02",
-                  title: "Strategy",
-                  desc: "Architecture, tech stack, and roadmap. You'll know exactly what we're building and why.",
+                  title: "Hypothesize",
+                  desc: "Architecture and prototyping. Validate assumptions early, iterate until the approach is proven.",
                   color: "from-violet-500 to-purple-500",
                 },
                 {
                   num: "03",
                   title: "Build",
-                  desc: "Agile sprints with weekly demos. Clean code, tested thoroughly. You see progress, not excuses.",
+                  desc: "Rigorous development with continuous validation. Clean code, tested thoroughly, measurable progress.",
                   color: "from-fuchsia-500 to-pink-500",
                 },
                 {
                   num: "04",
-                  title: "Launch & Scale",
-                  desc: "Deploy with confidence. We stick around to iterate and grow with you.",
+                  title: "Ship & Iterate",
+                  desc: "Deploy to production. Monitor, learn, and continuously improve based on real-world data.",
                   color: "from-orange-500 to-red-500",
                 },
               ].map((step, i) => (
@@ -115,7 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section - Server rendered */}
+      {/* Technical Domains Section - Server rendered */}
       <section className="snap-section min-h-screen flex items-center px-6 py-16 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -124,7 +124,7 @@ export default function HomePage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Deep expertise</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI integration to cloud infrastructure, we operate across every layer of modern computing.
+              From AI to cloud infrastructure, our research spans every layer of modern computing.
             </p>
           </div>
 
@@ -213,13 +213,13 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <p className="text-fuchsia-400 font-medium tracking-wide uppercase text-sm mb-4">
-                Let&apos;s Talk
+                Connect
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to build something great?
+                Explore what we&apos;re building
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Research collaborations, technical inquiries, or project discussions — we respond within one business day.
+                Research collaborations, technical inquiries, or partnership discussions — we respond within one business day.
               </p>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-center gap-3">

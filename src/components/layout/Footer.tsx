@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              AI integration, quantum computing research, and intelligent automation.
+              R&D laboratory advancing AI, quantum computing, and intelligent automation.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -108,13 +108,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services Column */}
+          {/* Research Column */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Services</h4>
+            <h4 className="text-white font-semibold text-sm mb-4">Research</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/development" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Software Development
+                  Applied R&D
                 </Link>
               </li>
               <li>
@@ -123,13 +123,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-sm text-gray-600">Web Apps</span>
-              </li>
-              <li>
-                <span className="text-sm text-gray-600">Mobile Apps</span>
-              </li>
-              <li>
                 <span className="text-sm text-gray-600">AI & ML</span>
+              </li>
+              <li>
+                <span className="text-sm text-gray-600">Quantum Computing</span>
+              </li>
+              <li>
+                <span className="text-sm text-gray-600">Distributed Systems</span>
               </li>
             </ul>
           </div>

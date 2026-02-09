@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Axion Deep Labs. AI integration projects, research collaborations, and technical inquiries.",
+  description: "Contact Axion Deep Labs. Research collaborations, technical inquiries, and partnership discussions.",
   alternates: { canonical: "/contact" },
 };
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-500">
-                  We work with clients worldwide.
+                  Distributed research team, global reach.
                 </p>
               </div>
             </div>

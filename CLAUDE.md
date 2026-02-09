@@ -4,28 +4,29 @@
 
 ---
 
+## BRAND POSITIONING — CRITICAL
+**AxionDeep is a PURE R&D holding company. NO sales, NO services, NO client-facing language.**
+- Sales go through AAIT Technologies (separate entity)
+- Website language: "research," "investigate," "advance," "innovate"
+- NEVER: "hire us," "services," "pricing," "your project," "client"
+
 ## SESSION STATE (Update before ending each session)
-**Last Updated:** 2026-01-10
+**Last Updated:** 2026-02-08
 
 ### Where We Left Off:
-- Sales Portal & CMS fully deployed and functional
-- Research page created with Project DRIFT
-- QUANTA crosslinked with research
-- Video autoplay fix pushed
-
-### Completed This Session:
-- Deployed Amplify backend (Lambda functions, DynamoDB, S3)
-- Fixed CORS issues with Lambda Function URLs
-- Set up passwords in DynamoDB (Contractor: SoftwareSales7$, Admin: Porange333!!!)
-- Created `/research` page with Project DRIFT
-- Added Research to navigation
-- Fixed video autoplay on Solutions page
+- Full SEO overhaul: removed all sales/services language, repositioned as pure R&D
+- Removed "Independent Sales Partner" job listing (sales belongs to AAIT)
+- Changed JSON-LD from ProfessionalService to ResearchOrganization
+- Updated all meta tags, descriptions, keywords, alt texts, llms.txt
+- Footer "Services" column → "Research" column
+- Navbar "Development" → "R&D"
+- Contact form "Tell us about your project" → "How can we help?"
+- PlatformCards SEO content reframed from services to R&D
 
 ### Roadmap / Future Enhancements:
-- [ ] Upload actual training content via admin CMS
-- [ ] Style tweaks to portal/admin UI
-- [ ] Add more content categories if needed
+- [ ] Remove or repurpose Sales Portal pages (/portal, /admin)
 - [ ] QUANTA subscription tiers (planned)
+- [ ] Update OG image to reflect R&D branding
 
 ### Current Blockers:
 - None

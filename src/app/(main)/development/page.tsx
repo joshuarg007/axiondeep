@@ -4,14 +4,14 @@ import Image from "next/image";
 import PlatformCards from "@/components/PlatformCards";
 
 export const metadata: Metadata = {
-  title: "Development",
+  title: "Applied R&D",
   description:
-    "AI integration services and applied R&D across web, mobile, and spatial computing. Custom AI integration from prototype to production.",
+    "Applied research and development across AI, quantum computing, and spatial computing. From hypothesis to production-grade technology.",
   keywords: [
-    "AI integration services",
-    "custom AI integration",
-    "AI integration development",
-    "enterprise AI integration",
+    "applied AI research",
+    "technology R&D",
+    "AI research development",
+    "deep tech innovation",
     "software R&D",
     "research-driven development",
   ],
@@ -21,24 +21,24 @@ export const metadata: Metadata = {
 const processSteps = [
   {
     step: "01",
-    title: "Discover",
-    description: "Deep investigation into the problem space, constraints, and technical landscape.",
+    title: "Investigate",
+    description: "Deep exploration of the problem space, constraints, and technical landscape.",
     image: "/images/process-discover.webp",
-    alt: "Discovery phase - scoping AI integration requirements",
+    alt: "Investigation phase - exploring the research problem",
   },
   {
     step: "02",
-    title: "Design",
+    title: "Prototype",
     description: "Architecture, prototyping, and validation. We prove the approach before committing to it.",
     image: "/images/process-design.webp",
-    alt: "Design phase - architecting AI integration solutions",
+    alt: "Prototype phase - validating research hypotheses",
   },
   {
     step: "03",
-    title: "Deliver",
-    description: "Iterative development, rigorous testing, production deployment, and continuous support.",
+    title: "Ship",
+    description: "Iterative development, rigorous testing, and production deployment with continuous improvement.",
     image: "/images/process-deliver.webp",
-    alt: "Delivery phase - deploying production-ready AI integration",
+    alt: "Ship phase - deploying production-ready technology",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function DevelopmentPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-white hover:opacity-90 transition-all duration-300 shadow-lg shadow-cyan-500/25"
             >
-              Discuss a Project
+              Research Inquiries
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -150,14 +150,14 @@ export default function DevelopmentPage() {
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Have a{" "}
+            Interested in our{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-              Project
-            </span>{" "}
-            in Mind?
+              Research
+            </span>
+            ?
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Technical inquiries, research collaborations, or project discussions.
+            Technical inquiries, research collaborations, or partnership discussions.
           </p>
           <Link
             href="/contact"
