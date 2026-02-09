@@ -184,7 +184,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Axion Deep Labs. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/legal#privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
+            <Link href="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <Link href="/legal#terms" className="text-sm text-gray-500 hover:text-white transition-colors">
