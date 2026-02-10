@@ -892,12 +892,20 @@ export default function ResearchPage() {
               anyone working at the intersection of quantum physics, machine
               intelligence, and consciousness.
             </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-semibold hover:opacity-90 transition"
-            >
-              Contact Research Team
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/research/experiments"
+                className="inline-block px-8 py-3 rounded-full bg-white/[0.06] border border-white/[0.1] text-white font-semibold hover:bg-white/[0.1] transition"
+              >
+                Experimental Protocols
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-semibold hover:opacity-90 transition"
+              >
+                Contact Research Team
+              </Link>
+            </div>
           </div>
         </div>
       </section>
