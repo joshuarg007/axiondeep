@@ -922,6 +922,136 @@ export default function ExperimentsPage() {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* Execution Workflow                                             */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <SectionDivider color="from-violet-500/30" />
+
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              Execution Workflow
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              How experiments progress from hypothesis to publication.
+              All experiments are tracked via ClearML (self-hosted, open source)
+              for full reproducibility.
+            </p>
+          </div>
+
+          {/* Pipeline */}
+          <div className="space-y-4 mb-10">
+            {[
+              {
+                step: "1",
+                title: "Configure",
+                desc: "Define hypothesis, architecture, hyperparameters, and benchmarks in versioned YAML config. All experimental parameters are declarative — nothing hardcoded.",
+                color: "text-violet-400",
+                borderColor: "border-violet-500/20",
+              },
+              {
+                step: "2",
+                title: "Train Baseline",
+                desc: "Train target architecture to convergence on Task A. Checkpoints saved at intervals for downstream analysis. Loss curves, accuracy, and learning rate tracked in real time.",
+                color: "text-emerald-400",
+                borderColor: "border-emerald-500/20",
+              },
+              {
+                step: "3",
+                title: "Measure",
+                desc: "Run experiment-specific measurements: loss landscape sampling + persistent homology (EXP-01), Phi* computation across partitions (EXP-02), or memorization capacity binary search (EXP-03). Results logged automatically.",
+                color: "text-amber-400",
+                borderColor: "border-amber-500/20",
+              },
+              {
+                step: "4",
+                title: "Perturb & Observe",
+                desc: "Apply the experimental intervention: sequential task training (EXP-01), architecture survey across families (EXP-02), or depth/width sweep at controlled ratios (EXP-03). Measure target variables at defined intervals.",
+                color: "text-cyan-400",
+                borderColor: "border-cyan-500/20",
+              },
+              {
+                step: "5",
+                title: "Correlate",
+                desc: "Statistical analysis: Spearman rank correlation, Bayesian model comparison (BIC), power-law fitting. Determine whether the hypothesis is supported, refuted, or inconclusive.",
+                color: "text-rose-400",
+                borderColor: "border-rose-500/20",
+              },
+              {
+                step: "6",
+                title: "Iterate or Publish",
+                desc: "Positive result: extend to additional architectures, write paper. Negative result: analyze why, pivot methodology, document findings. All results — positive or negative — are publishable.",
+                color: "text-white",
+                borderColor: "border-white/20",
+              },
+            ].map((s) => (
+              <div
+                key={s.step}
+                className={`flex gap-4 items-start rounded-xl bg-white/[0.02] border ${s.borderColor} p-5`}
+              >
+                <span className={`text-2xl font-bold ${s.color} opacity-40 shrink-0 w-8 text-right`}>
+                  {s.step}
+                </span>
+                <div>
+                  <h3 className={`font-semibold ${s.color} mb-1`}>{s.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Infrastructure */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">Compute</h3>
+              <ul className="space-y-2">
+                {[
+                  "Local GPU cluster (NVIDIA RTX, CUDA)",
+                  "PyTorch 2.x with mixed precision",
+                  "Distributed training for architecture sweeps",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-gray-400">
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/20 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">Tracking</h3>
+              <ul className="space-y-2">
+                {[
+                  "ClearML (self-hosted, Apache 2.0)",
+                  "Full experiment versioning and comparison",
+                  "Automated artifact and model storage",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-gray-400">
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/20 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">Reproducibility</h3>
+              <ul className="space-y-2">
+                {[
+                  "Deterministic seeding across all runs",
+                  "Version-controlled configs (YAML)",
+                  "Full dependency pinning (pyproject.toml)",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-gray-400">
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/20 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer nav */}
       <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 justify-center">
