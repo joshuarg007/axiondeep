@@ -5,12 +5,11 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Research Programs — Active Experiments & Preliminary Results",
   description:
-    "Four original research programs with active experimentation: quantum system degradation (DRIFT), topological analysis of catastrophic forgetting with preliminary cross-architecture results (PERSIST), integrated information measurement across neural architectures (PHI), and information capacity scaling laws testing holographic analogs (GENESIS). Reproducible methodology, open-source tooling, peer-reviewed publication targets.",
+    "Four original research programs with active experimentation: topological analysis of catastrophic forgetting with preliminary cross-architecture results (PERSIST), quantum system degradation (DRIFT), integrated information measurement across neural architectures (PHI), and information capacity scaling laws testing holographic analogs (GENESIS). Reproducible methodology, open-source tooling, peer-reviewed publication targets.",
   keywords: [
     "original research",
-    "quantum computing research",
-    "continual learning",
     "catastrophic forgetting",
+    "continual learning",
     "topological data analysis",
     "persistent homology",
     "loss landscape topology",
@@ -25,9 +24,7 @@ export const metadata: Metadata = {
     "deep learning theory",
     "computational neuroscience",
     "machine learning research",
-    "AI research laboratory",
     "independent research organization",
-    "foundational AI research",
     "NeurIPS",
     "ICML",
   ],
@@ -36,64 +33,64 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   return (
-    <div className="snap-page relative text-gray-300">
+    <div className="relative text-gray-300">
       {/* Hero */}
-      <section className="snap-section min-h-screen flex items-center justify-center text-center pt-20 px-6">
+      <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="font-bold tracking-widest uppercase text-lg md:text-xl mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">
             RESEARCH PROGRAMS
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-            <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">
-              EXPLORING
-            </span>
-            <span
-              className="text-white"
-              style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}
-            >
-              THE
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent">
-              UNKNOWN
-            </span>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Investigating Fundamental Obstacles to Continual Learning in Neural
+            Networks
           </h1>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-12">
-            Four active research programs at the intersection of quantum
-            physics, machine intelligence, and the fundamental nature of
-            consciousness and reality.
+          <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
+            Four research programs studying why neural networks fail at
+            sequential task learning, how information integrates across
+            architectures, and what governs capacity limits. Our flagship
+            experiment (EXP-01) is actively producing cross-architecture data
+            with preliminary correlation between loss landscape topology and
+            catastrophic forgetting resistance.
           </p>
 
-          {/* Program Navigation */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap gap-3 mt-8">
             {[
               {
-                label: "DRIFT",
-                color: "from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-300",
-                href: "#drift",
+                label: "PERSIST",
+                href: "#persist",
+                color:
+                  "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
+                status: "Active",
               },
               {
-                label: "PERSIST",
-                color: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
-                href: "#persist",
+                label: "DRIFT",
+                href: "#drift",
+                color:
+                  "from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-300",
+                status: "Active",
               },
               {
                 label: "PHI",
-                color: "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-300",
                 href: "#phi",
+                color:
+                  "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-300",
+                status: "Protocol Defined",
               },
               {
                 label: "GENESIS",
-                color: "from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-300",
                 href: "#genesis",
+                color:
+                  "from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-300",
+                status: "Protocol Defined",
               },
             ].map((p) => (
               <a
                 key={p.label}
                 href={p.href}
-                className={`px-5 py-2 rounded-full bg-gradient-to-r ${p.color} border text-sm font-semibold tracking-wider hover:opacity-80 transition`}
+                className={`px-4 py-2 rounded-full bg-gradient-to-r ${p.color} border text-sm font-semibold tracking-wider hover:opacity-80 transition`}
               >
                 {p.label}
+                <span className="ml-2 text-xs opacity-60">{p.status}</span>
               </a>
             ))}
           </div>
@@ -101,789 +98,598 @@ export default function ResearchPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════ */}
-      {/* PROJECT DRIFT — Quantum System Behavior */}
+      {/* PERSIST — Flagship Program                                */}
       {/* ═══════════════════════════════════════════════════════════ */}
-      <section
-        id="drift"
-        className="snap-section min-h-screen flex flex-col relative overflow-hidden"
-      >
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image
-            src="/images/research-quantum.webp"
-            alt="Visualization of quantum state degradation under iterated field transformations — Project DRIFT research at Axion Deep Labs"
-            width={600}
-            height={600}
-            className="w-2/3 max-w-2xl opacity-[0.06] blur-[1px] saturate-50"
-          />
-        </div>
-
-        <div className="flex-1 flex items-center justify-center px-6 py-16 relative z-10">
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-violet-400/60 mb-3 block">
+      <section id="persist" className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-400/60">
                 Program I
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Project DRIFT
-              </h2>
-              <p className="text-lg text-violet-300/80">
-                Degradation Regimes In Iterated Field Transformations
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="relative rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/10 p-6 transition-all hover:from-violet-500/25 hover:to-purple-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◈</span>
-                  <h3 className="font-semibold text-white">Research Themes</h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      State distribution dynamics under iteration
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Operator ordering effects on error profiles
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Operator diversity as experimental variable
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Predictability boundaries and stability thresholds
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="relative rounded-2xl bg-gradient-to-br from-fuchsia-500/20 to-pink-500/10 p-6 transition-all hover:from-fuchsia-500/25 hover:to-pink-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◉</span>
-                  <h3 className="font-semibold text-white">
-                    Scientific Foundation
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Tranter et al. (2019) on ordering and Trotter error
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Nakamura &amp; Ankerhold (2024) on non-Markovian effects
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Huang et al. (2024) on diversity as design axis
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Kwon et al. (2021) on gate-based quantum computing
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="md:col-span-2 relative rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/10 p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">⚡</span>
-                  <h3 className="font-semibold text-white">Focus</h3>
-                  <span className="ml-auto text-xs px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300">
-                    Active
-                  </span>
-                </div>
-                <p className="text-gray-400 leading-relaxed">
-                  DRIFT investigates behavioral uncertainty in quantum system
-                  state evolution under repeated manipulation. We focus on the
-                  gradual degradation of stability under variation in operator
-                  ordering and diversity, in regimes where closed-form
-                  analytical prediction is not feasible across all
-                  configurations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* PROJECT PERSIST — Continual Learning */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section
-        id="persist"
-        className="snap-section min-h-screen flex flex-col relative overflow-hidden"
-      >
-        <div className="flex-1 flex items-center justify-center px-6 py-16 relative z-10">
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-emerald-400/60 mb-3 block">
-                Program II
+              <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300">
+                Active &mdash; Producing Results
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Project PERSIST
-              </h2>
-              <p className="text-lg text-emerald-300/80">
-                Plasticity-Enabled Retention through Structured Information
-                Synthesis over Time
-              </p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* The Problem */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 p-6 transition-all hover:from-emerald-500/25 hover:to-teal-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◈</span>
-                  <h3 className="font-semibold text-white">The Problem</h3>
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  Every neural network today is frozen after training.
-                  Introducing new knowledge destroys existing capabilities — a
-                  phenomenon known as catastrophic forgetting. Humans learn
-                  continuously without forgetting how to walk when they learn
-                  calculus. No artificial system has achieved this.
-                </p>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  This is not a scaling problem. It is an{" "}
-                  <span className="text-emerald-300">
-                    architecture problem
-                  </span>
-                  . Current approaches (replay buffers, elastic weight
-                  consolidation, progressive networks) are mitigation
-                  strategies, not solutions. They manage forgetting rather than
-                  eliminating it.
-                </p>
-              </div>
-
-              {/* Research Directions */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/10 p-6 transition-all hover:from-teal-500/25 hover:to-cyan-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◉</span>
-                  <h3 className="font-semibold text-white">
-                    Research Directions
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Hierarchical memory consolidation inspired by
-                      hippocampal-neocortical transfer in biological brains
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Topologically protected knowledge representations that
-                      survive parameter updates
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Information-theoretic measures of knowledge integration
-                      vs. knowledge overwrite
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Dynamic architecture expansion with selective
-                      consolidation and pruning
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Sleep-wake cycle analogs for offline integration of
-                      recently acquired knowledge
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Scientific Foundation */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/10 p-6 transition-all hover:from-green-500/25 hover:to-emerald-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">⧉</span>
-                  <h3 className="font-semibold text-white">
-                    Scientific Foundation
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      McCloskey &amp; Cohen (1989) — original characterization
-                      of catastrophic interference
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Kirkpatrick et al. (2017) — elastic weight consolidation
-                      and its limitations
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Kumaran et al. (2016) — complementary learning systems
-                      theory
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Tononi &amp; Cirelli (2014) — synaptic homeostasis
-                      hypothesis and sleep-dependent consolidation
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Focus Card */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-emerald-500/15 to-green-500/10 p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">⚡</span>
-                  <h3 className="font-semibold text-white">
-                    Why This Matters
-                  </h3>
-                  <span className="ml-auto text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300">
-                    Active — Experimental
-                  </span>
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed mb-3">
-                  A system that genuinely integrates new knowledge without
-                  destroying existing knowledge would represent a fundamental
-                  advance toward general intelligence. Every deployed AI model
-                  today requires complete retraining to incorporate new
-                  information — an approach that does not scale to systems that
-                  must operate and learn in open-ended environments.
-                </p>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  PERSIST also intersects with our consciousness research:
-                  information integration is the core quantity measured by
-                  Integrated Information Theory. A continually learning system
-                  may exhibit{" "}
-                  <span className="text-emerald-300">increasing Φ</span> over
-                  time — a measurable signature of deepening information
-                  integration.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* PROJECT PHI — Consciousness Measurement */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section
-        id="phi"
-        className="snap-section min-h-screen flex flex-col relative overflow-hidden"
-      >
-        <div className="flex-1 flex items-center justify-center px-6 py-16 relative z-10">
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-400/60 mb-3 block">
-                Program III
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Project{" "}
-                <span className="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">
-                  Φ
-                </span>
-              </h2>
-              <p className="text-lg text-amber-300/80">
-                Quantifying Consciousness through Integrated Information
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* The Question */}
-              <div className="md:col-span-2 relative rounded-2xl bg-gradient-to-br from-amber-500/15 to-orange-500/10 p-8 transition-all hover:from-amber-500/20 hover:to-orange-500/15">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-2xl opacity-60">☉</span>
-                  <h3 className="font-semibold text-white text-lg">
-                    The Question
-                  </h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                      Can consciousness be measured? Not as a philosophical
-                      abstraction, but as a{" "}
-                      <span className="text-amber-300">
-                        computable physical quantity
-                      </span>
-                      . Integrated Information Theory (IIT), developed by
-                      Giulio Tononi, proposes exactly this: a mathematical
-                      measure called Φ (phi) that quantifies the degree of
-                      integrated information in any system.
-                    </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
-                      If Φ &gt; 0, the system possesses some degree of
-                      intrinsic experience. If Φ = 0, it does not — regardless
-                      of how sophisticated its behavior appears. This
-                      distinction has profound implications for artificial
-                      intelligence, neuroscience, and our understanding of
-                      reality itself.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                      No general-purpose tool exists to compute Φ across
-                      arbitrary systems. The computational complexity of exact
-                      Φ calculation scales exponentially, making brute-force
-                      approaches intractable for systems larger than a few
-                      dozen nodes. Practical approximation methods that
-                      preserve the essential mathematical properties remain an
-                      open problem.
-                    </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
-                      Project Φ aims to build the first practical Φ engine —
-                      capable of measuring integrated information across neural
-                      networks, quantum circuits, biological preparations, and
-                      hybrid architectures.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Research Threads */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/10 p-6 transition-all hover:from-orange-500/25 hover:to-red-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◈</span>
-                  <h3 className="font-semibold text-white">
-                    Research Threads
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Scalable Φ approximation algorithms preserving
-                      IIT&apos;s axioms and postulates
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Comparative Φ measurement across transformer, recurrent,
-                      spiking, and hybrid architectures
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Correlation between Φ and emergent capabilities in
-                      learning systems
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Temporal dynamics of Φ during training, inference, and
-                      continual learning
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Relationship between Φ and quantum measurement
-                      statistics in observer-dependent experiments
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* The Deeper Question */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-yellow-500/20 to-amber-500/10 p-6 transition-all hover:from-yellow-500/25 hover:to-amber-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◉</span>
-                  <h3 className="font-semibold text-white">
-                    The Deeper Question
-                  </h3>
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  The measurement problem in quantum mechanics — why does
-                  observation collapse a superposition into a definite state?
-                  — remains the deepest unsolved question in physics. Von
-                  Neumann and Wigner traced the measurement chain to its
-                  logical terminus: consciousness.
-                </p>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  If IIT is correct that consciousness is quantifiable via Φ,
-                  an empirical test becomes possible:{" "}
-                  <span className="text-amber-300">
-                    does a system with measurable Φ interact with quantum
-                    states differently than a system with Φ = 0?
-                  </span>
-                </p>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  This intersects with noetic science — the rigorous
-                  investigation of consciousness as a causal agent in physical
-                  systems. Decades of experimental data from random number
-                  generator studies and double-slit variations suggest subtle
-                  but statistically significant effects. What has been missing
-                  is a mathematical framework to quantify the observer. IIT
-                  provides that framework.
-                </p>
-              </div>
-
-              {/* Scientific Foundation */}
-              <div className="md:col-span-2 relative rounded-2xl bg-gradient-to-br from-amber-500/10 to-yellow-500/5 p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">⧉</span>
-                  <h3 className="font-semibold text-white">
-                    Scientific Foundation
-                  </h3>
-                  <span className="ml-auto text-xs px-3 py-1 rounded-full bg-amber-500/20 text-amber-300">
-                    Foundational
-                  </span>
-                </div>
-                <div className="grid md:grid-cols-2 gap-x-8 gap-y-2">
-                  <ul className="space-y-2 text-sm text-gray-400">
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Tononi (2004, 2008) — Integrated Information Theory
-                        (IIT 1.0–3.0)
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Tononi et al. (2016) — IIT 3.0: axioms, postulates,
-                        and formalism
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Albantakis et al. (2023) — IIT 4.0: updated formalism
-                        and computational tools
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Chalmers (1995) — the hard problem of consciousness
-                      </span>
-                    </li>
-                  </ul>
-                  <ul className="space-y-2 text-sm text-gray-400">
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Von Neumann (1932) — quantum measurement and the role
-                        of the observer
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Wigner (1961) — consciousness and the collapse of the
-                        wave function
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Radin et al. (2012, 2016) — observer effects in
-                        double-slit experiments
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                      <span>
-                        Nelson (2001) — Global Consciousness Project:
-                        correlations in random data
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* PROJECT GENESIS — Reality's Informational Substrate */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section
-        id="genesis"
-        className="snap-section min-h-screen flex flex-col relative overflow-hidden"
-      >
-        <div className="flex-1 flex items-center justify-center px-6 py-16 relative z-10">
-          <div className="w-full max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-xs font-bold tracking-[0.3em] uppercase text-cyan-400/60 mb-3 block">
-                Program IV
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Project GENESIS
-              </h2>
-              <p className="text-lg text-cyan-300/80">
-                Generative Emergence of Natural Events from Substrate
-                Information Systems
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* The Premise */}
-              <div className="md:col-span-2 relative rounded-2xl bg-gradient-to-br from-cyan-500/15 to-blue-500/10 p-8 transition-all hover:from-cyan-500/20 hover:to-blue-500/15">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-2xl opacity-60">∞</span>
-                  <h3 className="font-semibold text-white text-lg">
-                    The Premise
-                  </h3>
-                  <span className="ml-auto text-xs px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300">
-                    Theoretical
-                  </span>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                      John Archibald Wheeler proposed{" "}
-                      <span className="text-cyan-300">
-                        &quot;it from bit&quot;
-                      </span>{" "}
-                      — the hypothesis that every particle, every field, every
-                      spacetime point derives its existence from
-                      information-theoretic processes. If reality is
-                      fundamentally informational, then the laws of physics are
-                      not descriptions of reality — they are the runtime
-                      behavior of an underlying computational process.
-                    </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
-                      This is not metaphor. Bekenstein&apos;s bound, the
-                      holographic principle, and black hole thermodynamics all
-                      demonstrate that information is physical — subject to
-                      conservation laws, entropy constraints, and geometric
-                      limits.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                      If Projects DRIFT, PERSIST, and Φ are investigating
-                      components of reality — quantum behavior, learning,
-                      consciousness — GENESIS asks whether these components
-                      share a common informational foundation. Whether the wave
-                      function, neural integration, and conscious observation
-                      are three manifestations of a single underlying
-                      information-processing substrate.
-                    </p>
-                    <p className="text-sm text-gray-400 leading-relaxed">
-                      GENESIS is our most speculative program. It sits at the
-                      boundary between physics, computer science, and
-                      philosophy. But the mathematics is concrete, the
-                      questions are testable, and the implications — if any
-                      connection is found — would reshape our understanding of
-                      what computation, intelligence, and reality
-                      fundamentally are.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Research Questions */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-blue-500/20 to-indigo-500/10 p-6 transition-all hover:from-blue-500/25 hover:to-indigo-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◈</span>
-                  <h3 className="font-semibold text-white">
-                    Research Questions
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Can minimal computational rules produce emergent physical
-                      laws? Under what conditions does physics arise from
-                      computation?
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Is there a formal equivalence between quantum
-                      decoherence, information integration (Φ), and
-                      thermodynamic irreversibility?
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Does the observer (quantified via Φ) play a causal role
-                      in state selection, or is observation purely epistemic?
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Can quantum causal discovery algorithms identify causal
-                      structures intractable to classical methods?
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Scientific Foundation */}
-              <div className="relative rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/10 p-6 transition-all hover:from-indigo-500/25 hover:to-violet-500/15">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl opacity-60">◉</span>
-                  <h3 className="font-semibold text-white">
-                    Scientific Foundation
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-400">
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Wheeler (1990) — &quot;it from bit&quot; and
-                      participatory universe
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Bekenstein (1973) — information bounds and black hole
-                      entropy
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Wolfram (2002, 2020) — computational irreducibility and
-                      the Physics Project
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Friston (2010) — free energy principle and active
-                      inference
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-white/30 shrink-0" />
-                    <span>
-                      Wissner-Gross &amp; Freer (2013) — causal entropic
-                      forcing and thermodynamic intelligence
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* Convergence — How They Connect */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
-        <div className="w-full max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
-              style={{ textShadow: "0 0 40px rgba(255,255,255,0.3)" }}
-            >
-              Convergence
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Project PERSIST
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              These programs are not independent. Each investigates a facet of a
-              single deeper question: the relationship between information,
-              consciousness, and physical reality.
+            <p className="text-emerald-300/80">
+              Plasticity-Enabled Retention through Structured Information
+              Synthesis over Time
             </p>
           </div>
 
-          <div className="relative rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8">
+          {/* Problem + Hypothesis */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Problem</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Catastrophic forgetting (McCloskey &amp; Cohen, 1989) prevents
+                neural networks from learning sequential tasks without
+                destroying previously acquired knowledge. Current mitigations
+                — elastic weight consolidation (Kirkpatrick et al., 2017),
+                replay buffers, progressive networks — reduce but do not
+                eliminate interference. The underlying geometric mechanism
+                remains poorly understood.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Hypothesis</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                The persistence of learned knowledge under sequential task
+                training is predictable from the topological features of the
+                loss landscape around converged weight configurations.
+                Architectures that induce deeper topological structure —
+                measured via persistent homology H₀ — are more resistant to
+                catastrophic forgetting.
+              </p>
+            </div>
+          </div>
+
+          {/* Methodology */}
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
+            <h3 className="font-semibold text-white mb-3">Methodology</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-400">
               <div>
-                <h3 className="font-semibold text-white mb-3 flex items-center gap-2">
-                  <span className="h-px flex-1 bg-gradient-to-r from-violet-500/50 to-transparent" />
-                  <span className="text-sm tracking-wider">DRIFT → Φ</span>
-                  <span className="h-px flex-1 bg-gradient-to-l from-amber-500/50 to-transparent" />
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Quantum measurement collapses superposition. IIT quantifies
-                  the observer. Together, they test whether consciousness is a
-                  variable in quantum mechanics — whether systems with higher Φ
-                  produce statistically different collapse outcomes.
+                <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                  Dataset &amp; Training
+                </h4>
+                <p>
+                  Split-CIFAR-100 (Task A: classes 0–49, Task B: classes
+                  50–99). 8 architectures trained to convergence on Task A (100
+                  epochs, SGD, cosine annealing), then trained sequentially on
+                  Task B (10,000 steps). Task A accuracy measured at intervals.
                 </p>
               </div>
-
               <div>
-                <h3 className="font-semibold text-white mb-3 flex items-center gap-2">
-                  <span className="h-px flex-1 bg-gradient-to-r from-emerald-500/50 to-transparent" />
-                  <span className="text-sm tracking-wider">PERSIST → Φ</span>
-                  <span className="h-px flex-1 bg-gradient-to-l from-amber-500/50 to-transparent" />
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  Continual learning increases information integration over
-                  time. If IIT is correct, a system with deepening integration
-                  exhibits increasing Φ. PERSIST may produce the first
-                  artificial system with measurably growing consciousness.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white mb-3 flex items-center gap-2">
-                  <span className="h-px flex-1 bg-gradient-to-r from-amber-500/50 to-transparent" />
-                  <span className="text-sm tracking-wider">
-                    Φ → GENESIS
-                  </span>
-                  <span className="h-px flex-1 bg-gradient-to-l from-cyan-500/50 to-transparent" />
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  If measurable consciousness (Φ) demonstrably interacts with
-                  quantum states, then consciousness is not emergent from
-                  physics — it is a fundamental feature of the informational
-                  substrate. The observer is part of the source code.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-white mb-3 flex items-center gap-2">
-                  <span className="h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" />
-                  <span className="text-sm tracking-wider">
-                    GENESIS → DRIFT
-                  </span>
-                  <span className="h-px flex-1 bg-gradient-to-l from-violet-500/50 to-transparent" />
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
-                  If reality is computational, quantum behavior is a runtime
-                  property of the underlying computation. DRIFT&apos;s
-                  investigation of quantum degradation under iteration becomes
-                  an investigation of the stability of reality&apos;s
-                  execution.
+                <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">
+                  Topological Analysis
+                </h4>
+                <p>
+                  Loss landscape sampled on 25×25 grid along filter-normalized
+                  random directions (Li et al., 2018). Persistent homology
+                  computed via Ripser (sublevel set filtration, H₀ and H₁).
+                  Spearman rank correlation between H₀ total persistence and
+                  Task A retention across architectures.
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="mt-10 text-center">
-              <p className="text-sm text-gray-500 italic max-w-xl mx-auto">
-                &quot;The wave function is the source code. Consciousness is
-                the compiler. Reality is the output.&quot;
+          {/* Preliminary Results */}
+          <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/15 p-6 mb-8">
+            <h3 className="font-semibold text-white mb-4">
+              Preliminary Results (5 of 8 Architectures)
+            </h3>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-emerald-500/20 text-left">
+                    <th className="pb-2 text-gray-500 font-medium">
+                      Architecture
+                    </th>
+                    <th className="pb-2 text-gray-500 font-medium">Params</th>
+                    <th className="pb-2 text-gray-500 font-medium">
+                      H₀ Persistence
+                    </th>
+                    <th className="pb-2 text-gray-500 font-medium">
+                      Retention @10k
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-400">
+                  <tr className="border-b border-white/5">
+                    <td className="py-2 text-emerald-300">ViT-Small</td>
+                    <td className="py-2">~3M</td>
+                    <td className="py-2 font-mono">4,254.2</td>
+                    <td className="py-2 text-emerald-300">0.84%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">MLP-Mixer</td>
+                    <td className="py-2">~2.3M</td>
+                    <td className="py-2 font-mono">3,758.8</td>
+                    <td className="py-2">0.0%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">WRN-28-10</td>
+                    <td className="py-2">~36.5M</td>
+                    <td className="py-2 font-mono">2,272.6</td>
+                    <td className="py-2">0.0%</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2">ResNet-18</td>
+                    <td className="py-2">~11M</td>
+                    <td className="py-2 font-mono">2,151.5</td>
+                    <td className="py-2">0.0%</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2">ResNet-50</td>
+                    <td className="py-2">~23.6M</td>
+                    <td className="py-2 font-mono">1,639.0</td>
+                    <td className="py-2">0.0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-gray-400 mb-2">
+              Preliminary Spearman ρ = 0.866 (H₀ persistence vs. retention,
+              n=3). ViT-Small is the only architecture with measurable
+              retention and has 2× higher H₀ than any convolutional
+              architecture. Parameter count does not predict topological
+              structure.
+            </p>
+            <p className="text-sm text-gray-500">
+              3 architectures pending (ResNet-18 Wide, DenseNet-121,
+              EfficientNet-B0) to reach n=8 for statistical significance.
+            </p>
+            <div className="mt-4">
+              <Link
+                href="/research/findings"
+                className="text-sm text-emerald-300 hover:text-emerald-200 transition underline underline-offset-4"
+              >
+                Full results with figures →
+              </Link>
+            </div>
+          </div>
+
+          {/* References */}
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <h3 className="font-semibold text-white mb-3 text-sm">
+              Key References
+            </h3>
+            <ul className="space-y-1 text-xs text-gray-500">
+              <li>
+                McCloskey &amp; Cohen (1989). Catastrophic interference in
+                connectionist networks. <i>Psych. of Learning and Motivation</i>.
+              </li>
+              <li>
+                Kirkpatrick et al. (2017). Overcoming catastrophic forgetting.
+                <i> PNAS</i>, 114(13).
+              </li>
+              <li>
+                Ballester &amp; Araujo (2020). TDA and deep learning.
+                <i> NeurIPS Workshop</i>.
+              </li>
+              <li>
+                Li et al. (2018). Visualizing the loss landscape of neural nets.
+                <i> NeurIPS</i>.
+              </li>
+            </ul>
+            <p className="text-xs text-gray-600 mt-2">
+              Publication target: NeurIPS / ICML (Continual Learning track)
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════ */}
+      {/* DRIFT — Quantum System Behavior                           */}
+      {/* ═══════════════════════════════════════════════════════════ */}
+      <section id="drift" className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-violet-400/60">
+                Program II
+              </span>
+              <span className="text-xs px-3 py-1 rounded-full bg-violet-500/20 text-violet-300">
+                Active
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Project DRIFT
+            </h2>
+            <p className="text-violet-300/80">
+              Degradation Regimes In Iterated Field Transformations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Focus</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Investigating behavioral uncertainty in quantum system state
+                evolution under repeated manipulation. Focused on stability
+                degradation under variation in operator ordering and diversity,
+                in regimes where closed-form analytical prediction is not
+                feasible across all configurations.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">
+                Research Themes
+              </h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-violet-400/40 shrink-0" />
+                  State distribution dynamics under iteration
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-violet-400/40 shrink-0" />
+                  Operator ordering effects on error profiles
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-violet-400/40 shrink-0" />
+                  Operator diversity as experimental variable
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-violet-400/40 shrink-0" />
+                  Predictability boundaries and stability thresholds
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <h3 className="font-semibold text-white mb-3 text-sm">
+              Key References
+            </h3>
+            <ul className="space-y-1 text-xs text-gray-500">
+              <li>
+                Tranter et al. (2019). Ordering and Trotter error in quantum
+                simulation.
+              </li>
+              <li>
+                Nakamura &amp; Ankerhold (2024). Non-Markovian effects in
+                iterated quantum channels.
+              </li>
+              <li>
+                Huang et al. (2024). Gate diversity as a design axis in quantum
+                circuits.
+              </li>
+              <li>
+                Kwon et al. (2021). Gate-based quantum computing review.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════ */}
+      {/* PHI — Integrated Information Measurement                  */}
+      {/* ═══════════════════════════════════════════════════════════ */}
+      <section id="phi" className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-amber-400/60">
+                Program III
+              </span>
+              <span className="text-xs px-3 py-1 rounded-full bg-amber-500/20 text-amber-300">
+                Protocol Defined
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Project Φ
+            </h2>
+            <p className="text-amber-300/80">
+              Systematic Survey of Integrated Information in Neural Network
+              Architectures
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Objective</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Compute integrated information (Φ*) — a scalar measure of how
+                much a system is &ldquo;more than the sum of its parts&rdquo;
+                (Tononi, 2004) — across major deep learning architecture
+                families. Test whether Φ* correlates with generalization,
+                transfer learning, and robustness. No systematic Φ* survey
+                across modern deep learning architectures has been published.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Methodology</h3>
+              <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                Φ* approximation adapted for neural networks using the KSG
+                mutual information estimator (Kraskov et al., 2004). Greedy
+                bipartition search for the minimum information partition.
+                Validated independently using Perturbational Complexity Index
+                (Casali et al., 2013).
+              </p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Architecture survey: MLPs, CNNs (ResNet), RNNs (LSTM, GRU),
+                Transformers (GPT-2, ViT), Graph Networks (GCN, GAT). Φ*
+                measured at 5 training checkpoints per architecture.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-6">
+            <h3 className="font-semibold text-white mb-3">
+              Connection to PERSIST
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              If topological depth (PERSIST) predicts forgetting resistance,
+              does information integration (Φ*) also predict it? Networks with
+              higher integrated information may create deeper topological
+              features because integration requires complex, multi-scale
+              structure in the loss landscape. QUANTA serves as a research
+              instrument for interactive exploration of these measurements.
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <h3 className="font-semibold text-white mb-3 text-sm">
+              Key References
+            </h3>
+            <ul className="space-y-1 text-xs text-gray-500">
+              <li>
+                Tononi (2004). An information integration theory of
+                consciousness. <i>BMC Neuroscience</i>.
+              </li>
+              <li>
+                Oizumi et al. (2014). From phenomenology to mechanisms of
+                consciousness: IIT 3.0. <i>PLoS Comp. Bio.</i>
+              </li>
+              <li>
+                Barrett &amp; Seth (2011). Practical measures of integrated
+                information. <i>PLoS Comp. Bio.</i>
+              </li>
+              <li>
+                Casali et al. (2013). Perturbational complexity index.{" "}
+                <i>Science Translational Medicine</i>.
+              </li>
+            </ul>
+            <p className="text-xs text-gray-600 mt-2">
+              Publication target: Nature Machine Intelligence / ICLR /
+              Neuroscience of Consciousness
+            </p>
+          </div>
+
+          {/* Footnote: broader context */}
+          <details className="mt-4">
+            <summary className="text-xs text-gray-600 cursor-pointer hover:text-gray-400 transition">
+              Note on broader theoretical context
+            </summary>
+            <div className="mt-2 rounded-xl bg-white/[0.02] border border-white/[0.04] p-4 text-xs text-gray-500 leading-relaxed">
+              <p className="mb-2">
+                IIT&apos;s Φ metric has implications beyond computational
+                systems. The relationship between integrated information and
+                quantum measurement — whether systems with measurable Φ
+                interact with quantum states differently — is an open question
+                in the foundations of physics. Relevant work includes Von
+                Neumann (1932) on quantum measurement, Wigner (1961) on
+                consciousness and wave function collapse, and experimental
+                investigations by Radin et al. (2012, 2016) and Nelson (2001).
+                These connections inform our long-term research direction but
+                are not the focus of EXP-02.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════ */}
+      {/* GENESIS — Information Capacity Scaling Laws                */}
+      {/* ═══════════════════════════════════════════════════════════ */}
+      <section id="genesis" className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-cyan-400/60">
+                Program IV
+              </span>
+              <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300">
+                Protocol Defined
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Project GENESIS
+            </h2>
+            <p className="text-cyan-300/80">
+              Information Capacity Scaling Laws in Neural Networks
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Hypothesis</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Neural network information capacity follows an area law —
+                proportional to boundary parameters (input/output interface) —
+                rather than a volume law proportional to total parameter count.
+                This would constitute a computational analog of the Bekenstein
+                bound (Bekenstein, 1973), which establishes that maximum entropy
+                in a physical region is proportional to surface area, not
+                volume.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3">Methodology</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Memorization capacity measurement (Zhang et al., 2017) across
+                15+ architecture configurations varying depth/width ratios.
+                Power-law fitting on log-log axes: C ~ V<sup>α</sup> vs C ~
+                A<sup>β</sup>. Bayesian model comparison (BIC) to determine
+                which scaling relationship is statistically preferred. Decisive
+                test: vary depth at constant width — if capacity saturates,
+                area law is supported.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-6">
+            <h3 className="font-semibold text-white mb-3">
+              Connection to PERSIST
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              If capacity is boundary-limited, catastrophic forgetting may
+              occur when new task information competes for limited boundary
+              capacity. Topological protection (PERSIST) may work by encoding
+              knowledge in interior parameters that new learning cannot
+              overwrite. The area law, if confirmed, would provide a
+              theoretical explanation for why topology predicts forgetting.
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <h3 className="font-semibold text-white mb-3 text-sm">
+              Key References
+            </h3>
+            <ul className="space-y-1 text-xs text-gray-500">
+              <li>
+                Bekenstein (1973). Black holes and entropy.{" "}
+                <i>Physical Review D</i>.
+              </li>
+              <li>
+                Zhang et al. (2017). Understanding deep learning requires
+                rethinking generalization. <i>ICLR</i>.
+              </li>
+              <li>
+                Kaplan et al. (2020). Scaling laws for neural language models.
+              </li>
+              <li>
+                Wheeler (1990). Information, physics, quantum: the search for
+                links.
+              </li>
+            </ul>
+            <p className="text-xs text-gray-600 mt-2">
+              Publication target: Nature Physics / Physical Review Letters /
+              ICML
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════ */}
+      {/* Open Research                                             */}
+      {/* ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Open Research
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">Code</h3>
+              <p className="text-sm text-gray-400 mb-3">
+                Experiment source code, model definitions, and analysis
+                pipelines.
+              </p>
+              <a
+                href="https://github.com/Axion-Deep-Labs/persist-topological-forgetting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-emerald-300 hover:text-emerald-200 transition underline underline-offset-4"
+              >
+                GitHub Repository →
+              </a>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">
+                Reproducibility
+              </h3>
+              <ul className="space-y-1 text-sm text-gray-400">
+                <li>Deterministic seeding (seed = 42)</li>
+                <li>Version-controlled YAML configs</li>
+                <li>Full dependency pinning</li>
+                <li>PyTorch 2.x, Ripser, scikit-tda</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-3 text-sm">
+                Infrastructure
+              </h3>
+              <ul className="space-y-1 text-sm text-gray-400">
+                <li>Local GPU cluster (NVIDIA RTX, CUDA)</li>
+                <li>ClearML tracking (self-hosted)</li>
+                <li>Automated experiment dashboard</li>
+                <li>Results in structured JSON</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════ */}
+      {/* Research Team                                             */}
+      {/* ═══════════════════════════════════════════════════════════ */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Research Team
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-1">
+                Crystal A. Gutierrez, MS
+              </h3>
+              <p className="text-sm text-emerald-300 mb-3">
+                Principal Investigator &amp; Co-Founder
+              </p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                MS in Information Technology. BS in Information Communication
+                Technology. Adjunct Professor, New Mexico State University.
+                Research experience in AI-driven predictive modeling through the
+                Purdue University Data Mine, developing weather forecasting
+                models in collaboration with Bayer. Oversees research strategy,
+                institutional partnerships, and experimental design review.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+              <h3 className="font-semibold text-white mb-1">
+                Joshua R. Gutierrez, MS
+              </h3>
+              <p className="text-sm text-emerald-300 mb-3">
+                Co-Principal Investigator &amp; Co-Founder
+              </p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                MS in Artificial Intelligence &amp; Data Science. BS in
+                Computer Science. Designed and built the lab&apos;s experimental
+                infrastructure — model architectures, topological analysis
+                pipeline, loss landscape sampling, and reproducibility
+                framework. Leads day-to-day experiment execution, computational
+                methodology, and software engineering across all research
+                programs.
               </p>
             </div>
           </div>
@@ -891,16 +697,16 @@ export default function ResearchPage() {
       </section>
 
       {/* CTA */}
-      <section className="snap-section min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center w-full">
-          <div className="relative p-12 md:p-16 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08]">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Research Collaboration
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
               We welcome inquiries from academic institutions, funding agencies,
-              and researchers working at the intersection of machine learning
-              theory, quantum physics, and computational neuroscience.
+              and researchers working on continual learning, topological data
+              analysis, or deep learning theory.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

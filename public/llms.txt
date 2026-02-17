@@ -64,6 +64,12 @@ Testing whether neural network information capacity follows an area law (proport
 - Finding: ViT-Small uniquely retains knowledge (0.84% at 10k steps) with 2x higher H0 than convolutional architectures
 - Open question: MLP-Mixer shows high H0 but zero retention — H0 may be necessary but not sufficient
 
+## Open Source
+
+- Experiment code: https://github.com/Axion-Deep-Labs/persist-topological-forgetting
+- Includes: training scripts, topology computation, correlation analysis, YAML configs
+- License: MIT
+
 ## Research Methodology
 
 - Reproducibility: Deterministic seeding, version-controlled YAML configurations, full dependency pinning
@@ -80,7 +86,7 @@ Testing whether neural network information capacity follows an area law (proport
 - Information Theory
 - Deep Learning Theory
 
-## Products (Research-Derived)
+## Ventures (Research-Derived)
 
 - Site2CRM (https://site2crm.io): AI-powered lead capture with real-time CRM sync
 - Made4Founders (https://made4founders.com): Startup command center for solo founders

@@ -3,15 +3,15 @@ import Link from "next/link";
 import ProductGrid from "./ProductGrid";
 
 export const metadata: Metadata = {
-  title: "Our Projects",
+  title: "Ventures",
   description:
-    "Software built from original research: Site2CRM AI lead capture, Made4Founders startup command center, QUANTA quantum education, Vesper penetration testing, and more.",
+    "Research-derived ventures from Axion Deep Labs: Site2CRM AI lead capture, Made4Founders startup command center, QUANTA quantum computing education platform, and Vesper autonomous penetration testing.",
   keywords: [
-    "AI research products",
-    "deep tech portfolio",
+    "research-derived ventures",
+    "deep tech ventures",
     "quantum computing education",
-    "research-driven software",
-    "technology innovation",
+    "AI lead capture",
+    "research commercialization",
   ],
   alternates: { canonical: "/solutions" },
 };
@@ -23,22 +23,22 @@ export default function SolutionsPage() {
       <section className="min-h-[50vh] flex items-center justify-center px-6 pt-28 pb-12">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-bold tracking-widest uppercase text-lg md:text-xl mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            FROM THE LABS
+            VENTURES
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <span
               className="text-white"
               style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}
             >
-              Our{" "}
+              Research-Derived{" "}
             </span>
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Products
+              Ventures
             </span>
           </h1>
           <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto">
-            Real software solving real problems. Every product built, owned, and
-            operated by Axion Deep Labs.
+            Software and platforms built from our research programs. Each venture
+            applies insights from our experimental work to practical problems.
           </p>
         </div>
       </section>

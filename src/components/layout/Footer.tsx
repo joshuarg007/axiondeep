@@ -92,7 +92,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/solutions" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Our Solutions
+                  Ventures
                 </Link>
               </li>
               <li>
@@ -137,7 +137,7 @@ export default function Footer() {
 
           {/* Products Column */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Our Products</h4>
+            <h4 className="text-white font-semibold text-sm mb-4">Ventures</h4>
             <ul className="space-y-3">
               <li>
                 <a
