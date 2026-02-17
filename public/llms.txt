@@ -52,6 +52,18 @@ Testing whether neural network information capacity follows an area law (proport
 - Publication target: Nature Physics, Physical Review Letters, or ICML
 - Foundation: Bekenstein (1973), Wheeler (1990), Wolfram (2002), Kaplan et al. (2020)
 
+## Research Outputs
+
+### EXP-01 Preliminary Results: Topological Signatures of Knowledge Persistence
+- Full report: https://www.axiondeep.com/research/findings
+- 5 of 8 architecture runs completed with cross-architecture data
+- Figures: loss landscape topology comparison, forgetting curves across architectures
+- Data: H0 persistence values, Task A retention curves, Spearman correlation
+- Finding: Loss landscape topology (H0 persistent homology) varies 2.6x across architectures and clusters by architecture family
+- Finding: Model parameter count does not predict topological structure
+- Finding: ViT-Small uniquely retains knowledge (0.84% at 10k steps) with 2x higher H0 than convolutional architectures
+- Open question: MLP-Mixer shows high H0 but zero retention — H0 may be necessary but not sufficient
+
 ## Research Methodology
 
 - Reproducibility: Deterministic seeding, version-controlled YAML configurations, full dependency pinning

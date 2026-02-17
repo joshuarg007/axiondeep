@@ -222,6 +222,35 @@ const jsonLd = {
         "Deep learning theory",
       ],
     },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://www.axiondeep.com/#exp01-findings",
+      name: "Topological Signatures of Knowledge Persistence in Continual Learning Systems: Preliminary Cross-Architecture Results",
+      headline:
+        "Topological Signatures of Knowledge Persistence in Continual Learning Systems",
+      description:
+        "Cross-architecture study investigating whether persistent homology features of neural network loss landscapes predict resistance to catastrophic forgetting. 5 of 8 architectures completed on Split-CIFAR-100. Preliminary Spearman ρ=0.866 between H₀ persistence and knowledge retention.",
+      url: "https://www.axiondeep.com/research/findings",
+      datePublished: "2026-02-17",
+      author: {
+        "@id": "https://www.axiondeep.com/#organization",
+      },
+      publisher: {
+        "@id": "https://www.axiondeep.com/#organization",
+      },
+      about: [
+        "Topological data analysis",
+        "Persistent homology",
+        "Catastrophic forgetting",
+        "Continual learning",
+        "Loss landscape topology",
+        "Cross-architecture analysis",
+        "Split-CIFAR-100",
+      ],
+      isPartOf: {
+        "@id": "https://www.axiondeep.com/#persist",
+      },
+    },
   ],
 };
 

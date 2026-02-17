@@ -898,11 +898,17 @@ export default function ResearchPage() {
               Research Collaboration
             </h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              We welcome inquiries from academic institutions, researchers, and
-              anyone working at the intersection of quantum physics, machine
-              intelligence, and consciousness.
+              We welcome inquiries from academic institutions, funding agencies,
+              and researchers working at the intersection of machine learning
+              theory, quantum physics, and computational neuroscience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/research/findings"
+                className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold hover:opacity-90 transition"
+              >
+                Research Findings
+              </Link>
               <Link
                 href="/research/experiments"
                 className="inline-block px-8 py-3 rounded-full bg-white/[0.06] border border-white/[0.1] text-white font-semibold hover:bg-white/[0.1] transition"

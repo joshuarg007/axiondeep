@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              R&D laboratory advancing AI, quantum computing, and intelligent automation.
+              Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -113,23 +113,24 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm mb-4">Research</h4>
             <ul className="space-y-3">
               <li>
+                <Link href="/research" className="text-sm text-gray-500 hover:text-white transition-colors">
+                  Research Programs
+                </Link>
+              </li>
+              <li>
+                <Link href="/research/findings" className="text-sm text-gray-500 hover:text-emerald-400 transition-colors">
+                  Research Findings
+                </Link>
+              </li>
+              <li>
+                <Link href="/research/experiments" className="text-sm text-gray-500 hover:text-white transition-colors">
+                  Experimental Protocols
+                </Link>
+              </li>
+              <li>
                 <Link href="/development" className="text-sm text-gray-500 hover:text-white transition-colors">
                   Applied R&D
                 </Link>
-              </li>
-              <li>
-                <Link href="/research" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  R&D Programs
-                </Link>
-              </li>
-              <li>
-                <span className="text-sm text-gray-600">AI & ML</span>
-              </li>
-              <li>
-                <span className="text-sm text-gray-600">Quantum Computing</span>
-              </li>
-              <li>
-                <span className="text-sm text-gray-600">Distributed Systems</span>
               </li>
             </ul>
           </div>
