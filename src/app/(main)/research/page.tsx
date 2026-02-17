@@ -3,23 +3,33 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Research Programs",
+  title: "Research Programs — Active Experiments & Preliminary Results",
   description:
-    "Four active research programs investigating quantum system behavior, continual machine learning, consciousness measurement, and the informational substrate of reality.",
+    "Four original research programs with active experimentation: quantum system degradation (DRIFT), topological analysis of catastrophic forgetting with preliminary cross-architecture results (PERSIST), integrated information measurement across neural architectures (PHI), and information capacity scaling laws testing holographic analogs (GENESIS). Reproducible methodology, open-source tooling, peer-reviewed publication targets.",
   keywords: [
+    "original research",
     "quantum computing research",
-    "Project DRIFT",
-    "continual learning AI",
+    "continual learning",
     "catastrophic forgetting",
-    "consciousness measurement",
+    "topological data analysis",
+    "persistent homology",
+    "loss landscape topology",
     "integrated information theory",
-    "IIT phi",
-    "quantum causal inference",
+    "IIT phi neural networks",
+    "Bekenstein bound",
+    "holographic principle",
+    "information capacity scaling laws",
+    "cross-architecture analysis",
+    "reproducible research",
+    "preliminary results",
+    "deep learning theory",
+    "computational neuroscience",
+    "machine learning research",
     "AI research laboratory",
-    "noetic science research",
-    "wave function collapse consciousness",
-    "thermodynamic intelligence",
-    "artificial general intelligence research",
+    "independent research organization",
+    "foundational AI research",
+    "NeurIPS",
+    "ICML",
   ],
   alternates: { canonical: "/research" },
 };
@@ -100,7 +110,7 @@ export default function ResearchPage() {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <Image
             src="/images/research-quantum.webp"
-            alt="Quantum research visualization"
+            alt="Visualization of quantum state degradation under iterated field transformations — Project DRIFT research at Axion Deep Labs"
             width={600}
             height={600}
             className="w-2/3 max-w-2xl opacity-[0.06] blur-[1px] saturate-50"
@@ -355,7 +365,7 @@ export default function ResearchPage() {
                     Why This Matters
                   </h3>
                   <span className="ml-auto text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300">
-                    Foundational
+                    Active — Experimental
                   </span>
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed mb-3">

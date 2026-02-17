@@ -11,25 +11,39 @@
 - NEVER: "hire us," "services," "pricing," "your project," "client"
 
 ## SESSION STATE (Update before ending each session)
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-17
 
 ### Where We Left Off:
-- Full SEO overhaul: removed all sales/services language, repositioned as pure R&D
-- Removed "Independent Sales Partner" job listing (sales belongs to AAIT)
-- Changed JSON-LD from ProfessionalService to ResearchOrganization
-- Updated all meta tags, descriptions, keywords, alt texts, llms.txt
-- Footer "Services" column → "Research" column
-- Navbar "Development" → "R&D"
-- Contact form "Tell us about your project" → "How can we help?"
-- PlatformCards SEO content reframed from services to R&D
+- Federal grant SEO overhaul: all metadata, descriptions, keywords, llms.txt rewritten for grant-reviewer and AI-scraper discoverability
+- Un-noindexed /research/experiments page (was hidden from crawlers)
+- Added /research/experiments to sitemap.xml with priority 0.9
+- Updated EXP-01 status from "Proposed" to "Active — Phase 4" with preliminary results table (5 architectures, ρ=0.866)
+- Bumped /research sitemap priority from 0.8 to 0.9, changefreq from monthly to weekly
+- Added 4 ResearchProject JSON-LD schemas (DRIFT, PERSIST, PHI, GENESIS) with descriptions, about fields, and preliminary findings
+- Expanded llms.txt from basic overview to comprehensive research-focused document with all 4 programs, methodology, preliminary results, and publication targets
+- Updated all page meta descriptions (home, mission, development, contact, research, experiments) with grant-focused language
+- Updated OG/Twitter card descriptions for research positioning
+- Updated research page image alt text with descriptive research context
+- Updated site.webmanifest description
+- PERSIST badge changed from "Foundational" to "Active — Experimental"
+
+### Research Experiment Status (from ~/Corporate/axiondeep-experiments):
+- **EXP-01 (PERSIST):** Active — Phase 4. 5/8 architectures complete. ρ=0.866 preliminary. Pending: ResNet-18 Wide (Phase 1 done), DenseNet-121, EfficientNet-B0
+- **EXP-02 (PHI):** Protocol defined, pending execution
+- **EXP-03 (GENESIS):** Protocol defined, pending execution
+- **Action needed:** Weekly experiment progress cadence — run at least 1 architecture per week
 
 ### Roadmap / Future Enhancements:
 - [ ] Remove or repurpose Sales Portal pages (/portal, /admin)
 - [ ] QUANTA subscription tiers (planned)
-- [ ] Update OG image to reflect R&D branding
+- [ ] Update OG image to reflect R&D/research branding
+- [ ] Add Research Team page when talent pool is established
+- [ ] Publish EXP-01 preprint to arXiv when n=8 architectures complete
+- [ ] Add Publications section once preprints exist
 
 ### Current Blockers:
-- None
+- No research team page yet (need talent pool first)
+- EXP-01 needs 3 more architecture runs for statistical significance
 
 ### Environment Variables (Amplify Hosting):
 - `REACT_APP_AUTH_API_URL` = Lambda auth function URL

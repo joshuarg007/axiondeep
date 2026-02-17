@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Axion Deep Labs. Research collaborations, technical inquiries, and partnership discussions.",
+  description: "Contact Axion Deep Labs for research collaboration inquiries, academic partnerships, and technical discussions. We welcome engagement from academic institutions, funding agencies, and fellow researchers.",
   alternates: { canonical: "/contact" },
 };
 

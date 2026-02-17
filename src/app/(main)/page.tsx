@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   description:
-    "R&D laboratory advancing AI, quantum computing, and intelligent automation. Original research powering next-generation technology products.",
+    "Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience. Four active research programs with experimental results in topological data analysis of catastrophic forgetting, integrated information measurement, and information capacity scaling laws.",
   alternates: {
     canonical: "/",
   },

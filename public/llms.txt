@@ -1,39 +1,89 @@
 # Axion Deep Labs
 
-> R&D laboratory advancing AI, quantum computing, and intelligent automation. Original research driving next-generation technology products.
+> Independent R&D laboratory conducting original research in machine learning theory, quantum computing, and computational neuroscience. Active experiments with preliminary results targeting peer-reviewed publication.
 
-Axion Deep Labs is a research and development laboratory. We conduct original research in artificial intelligence, quantum computing, and intelligent automation, and build the technologies behind next-generation software products.
+Axion Deep Labs is an independent research organization. We design, execute, and publish original research investigating fundamental questions in machine learning, quantum system behavior, and information theory. Our research methodology emphasizes reproducibility, open-source tooling, and cross-disciplinary rigor.
 
-## Research
+## Research Programs
 
-Project DRIFT (Degradation Regimes In Iterated Field Transformations): Investigating behavioral uncertainty in quantum system state evolution under repeated manipulation. Focused on stability degradation under variation in operator ordering and diversity.
+We maintain four interconnected research programs, each with defined hypotheses, experimental protocols, and publication targets.
+
+### Program I: Project DRIFT
+**Degradation Regimes In Iterated Field Transformations**
+
+Investigating behavioral uncertainty in quantum system state evolution under repeated manipulation. Research focuses on stability degradation under variation in operator ordering and diversity, in regimes where closed-form analytical prediction is not feasible.
+
+- Status: Active
+- Foundation: Tranter et al. (2019), Nakamura & Ankerhold (2024), Huang et al. (2024), Kwon et al. (2021)
+
+### Program II: Project PERSIST
+**Plasticity-Enabled Retention through Structured Information Synthesis over Time**
+
+Researching the catastrophic forgetting problem in neural networks through the lens of topological data analysis. Our primary experiment (EXP-01) investigates whether persistent homology features of loss landscapes predict resistance to catastrophic forgetting across architecture families.
+
+- Status: Active — Experimental (EXP-01 in Phase 4: Cross-Architecture Correlation)
+- Progress: 5 of 8 architectures completed (ResNet-18, ResNet-50, ViT-Small, WRN-28-10, MLP-Mixer)
+- Preliminary result: Spearman rho = 0.866 between H0 persistence and knowledge retention (n=3, expanding to n=8)
+- Key finding: ViT-Small shows 2x higher topological persistence than convolutional architectures and is the only architecture with measurable knowledge retention after sequential training
+- Key finding: Model size does not predict topological structure (ResNet-50 at 23.6M params has lower H0 than ResNet-18 at 11M params)
+- Dataset: Split-CIFAR-100 (50/50 class split)
+- Tools: PyTorch 2.x, Ripser (persistent homology), scikit-tda, ClearML
+- Publication target: NeurIPS / ICML (Continual Learning track)
+- Foundation: McCloskey & Cohen (1989), Kirkpatrick et al. (2017), Ballester & Araujo (2020), Li et al. (2018)
+
+### Program III: Project Phi
+**Quantifying Consciousness through Integrated Information**
+
+Building the first systematic measurement of integrated information (Phi) across modern deep learning architectures, testing whether Phi correlates with generalization, transferability, and robustness. Adapting Integrated Information Theory (Tononi, 2004) from neuroscience to computational systems.
+
+- Status: Protocol defined, pending execution
+- Methodology: Phi* approximation with KSG estimator, validated against Perturbational Complexity Index (PCI)
+- Architecture survey: MLPs, CNNs, RNNs, Transformers, Graph Networks
+- Publication target: Nature Machine Intelligence, ICLR, or Neuroscience of Consciousness
+- Foundation: Tononi (2004), Oizumi et al. (2014), Barrett & Seth (2011), Casali et al. (2013)
+
+### Program IV: Project GENESIS
+**Generative Emergence of Natural Events from Substrate Information Systems**
+
+Testing whether neural network information capacity follows an area law (proportional to boundary parameters) rather than a volume law (proportional to total parameters) — a computational analog of the Bekenstein bound from black hole thermodynamics.
+
+- Status: Protocol defined, pending execution
+- Methodology: Memorization capacity measurement (Zhang et al., 2017) across 15+ architecture configurations, power-law fitting, Bayesian model comparison
+- Publication target: Nature Physics, Physical Review Letters, or ICML
+- Foundation: Bekenstein (1973), Wheeler (1990), Wolfram (2002), Kaplan et al. (2020)
+
+## Research Methodology
+
+- Reproducibility: Deterministic seeding, version-controlled YAML configurations, full dependency pinning
+- Infrastructure: Local GPU cluster (NVIDIA RTX, CUDA), PyTorch 2.x with mixed precision
+- Experiment tracking: ClearML (self-hosted, Apache 2.0 license)
+- Analysis: Persistent homology (Ripser, Gudhi), mutual information estimation (KSG, MINE), Spearman rank correlation, Bayesian model comparison
 
 ## Technical Domains
 
-- Artificial Intelligence Research
+- Machine Learning Theory
+- Topological Data Analysis
 - Quantum Computing
-- Intelligent Automation
-- Distributed Systems
-- Spatial Computing & XR
-- Machine Learning
+- Computational Neuroscience
+- Information Theory
+- Deep Learning Theory
 
-## Products
+## Products (Research-Derived)
 
-- [Site2CRM](https://site2crm.io): AI-powered lead capture with real-time CRM sync
-- [Made4Founders](https://made4founders.com): Startup command center for solo founders
-- [QUANTA](https://axiondeep.com/projects/quanta): Quantum computing education platform
-- [Vesper AI](https://axiondeep.com/projects/vesper): Autonomous penetration testing platform
-- [Forma](https://axiondeep.com/projects/forma): Component-driven design system
+- Site2CRM (https://site2crm.io): AI-powered lead capture with real-time CRM sync
+- Made4Founders (https://made4founders.com): Startup command center for solo founders
+- QUANTA (https://axiondeep.com/projects/quanta): Quantum computing education platform
+- Vesper AI (https://axiondeep.com/projects/vesper): Autonomous penetration testing platform
 
 ## Contact
 
 - Website: https://www.axiondeep.com
-- Email: hello@axiondeep.com
+- Research inquiries: hello@axiondeep.com
+- Research programs: https://www.axiondeep.com/research
+- Experimental protocols: https://www.axiondeep.com/research/experiments
 
 ## Social
 
 - LinkedIn: https://www.linkedin.com/company/111213915
 - X/Twitter: https://x.com/axiondeeplabs
-- Facebook: https://www.facebook.com/people/Axion-Deep-Labs/61587313467089/
 - YouTube: https://www.youtube.com/@AxionDeepLabs
-- Instagram: https://www.instagram.com/axion_deep_labs/

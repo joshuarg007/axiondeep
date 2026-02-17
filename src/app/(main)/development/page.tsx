@@ -6,14 +6,15 @@ import PlatformCards from "@/components/PlatformCards";
 export const metadata: Metadata = {
   title: "Applied R&D",
   description:
-    "Applied research and development across AI, quantum computing, and spatial computing. From hypothesis to production-grade technology.",
+    "Applied research and development translating original findings in machine learning theory, quantum computing, and information theory into production-grade technology. Research-to-deployment pipeline with reproducible methodology.",
   keywords: [
     "applied AI research",
-    "technology R&D",
-    "AI research development",
-    "deep tech innovation",
-    "software R&D",
+    "research-to-production pipeline",
+    "machine learning engineering",
+    "technology transfer",
     "research-driven development",
+    "reproducible methodology",
+    "deep tech R&D",
   ],
   alternates: { canonical: "/development" },
 };
