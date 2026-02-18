@@ -5,7 +5,7 @@ import ProductGrid from "./ProductGrid";
 export const metadata: Metadata = {
   title: "Ventures",
   description:
-    "Research-derived ventures from Axion Deep Labs: Site2CRM AI lead capture, Made4Founders startup command center, QUANTA quantum computing education platform, and Vesper autonomous penetration testing.",
+    "Research-derived ventures from Axion Deep Labs — Made4Founders, Site2CRM, QUANTA, Vesper AI, and Forma. Software built from original research.",
   keywords: [
     "research-derived ventures",
     "deep tech ventures",
@@ -40,6 +40,39 @@ export default function SolutionsPage() {
             Software and platforms built from our research programs. Each venture
             applies insights from our experimental work to practical problems.
           </p>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="px-6 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Approach</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/10">
+              <h3 className="font-semibold text-white mb-2">Research-Driven</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Every product originates from our active research programs. Insights from
+                topological data analysis, AI agent architectures, and information theory
+                inform the technology behind each venture.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/10">
+              <h3 className="font-semibold text-white mb-2">Production-Grade</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Research prototypes become production software through rigorous engineering.
+                Each product is built with modern infrastructure, automated testing, and
+                continuous deployment pipelines.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-transparent border border-fuchsia-500/10">
+              <h3 className="font-semibold text-white mb-2">Open Methodology</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                We publish our research findings and experimental protocols openly. The
+                technical foundations behind our ventures are documented and reproducible
+                by the broader research community.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

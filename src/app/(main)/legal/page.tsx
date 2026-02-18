@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Legal",
+  title: "Privacy Policy & Terms of Service",
   description:
     "Privacy policy and terms of service. How we collect, use, and protect your information when using our services.",
   keywords: ["privacy policy", "terms of service", "data protection", "Axion Deep Labs terms"],
@@ -13,7 +13,7 @@ export default function LegalPage() {
   return (
     <div className="no-snap relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 pb-20">
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-white">Privacy & Terms</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-white">Privacy Policy &amp; Terms of Service for Axion Deep Labs</h1>
         <p className="text-gray-400 mb-12">Last updated: January 2026</p>
 
         {/* Privacy Policy */}
@@ -52,6 +52,24 @@ export default function LegalPage() {
               You have the right to access, correct, or delete your personal information. To exercise
               these rights, please contact us using the information below.
             </p>
+
+            <h3 className="text-lg font-medium text-white">Data Retention</h3>
+            <p>
+              We retain your personal information for as long as your account is active or as
+              needed to provide you services. Contact form submissions are retained for up to
+              12 months to facilitate ongoing communication. You may request deletion of your
+              data at any time by contacting us. We may retain certain information as required
+              by law or for legitimate business purposes, such as fraud prevention.
+            </p>
+
+            <h3 className="text-lg font-medium text-white">Third-Party Services</h3>
+            <p>
+              Our platforms integrate with third-party services including payment processors
+              (Stripe), cloud infrastructure providers (AWS), analytics services, and CRM
+              platforms. These services have their own privacy policies governing their use
+              of your data. We share only the minimum information necessary for these services
+              to function. We do not sell your personal information to third parties.
+            </p>
           </div>
         </section>
 
@@ -76,6 +94,15 @@ export default function LegalPage() {
             <p>
               Axion Deep Labs provides this website &quot;as is&quot; without warranties of any kind.
               We shall not be liable for any damages arising from the use of this website.
+            </p>
+
+            <h3 className="text-lg font-medium text-white">Permitted Use</h3>
+            <p>
+              You may use our website and services for lawful purposes only. You agree not to
+              use our services to transmit harmful, fraudulent, or illegal content, attempt to
+              gain unauthorized access to our systems, or interfere with the proper functioning
+              of our platforms. We reserve the right to suspend or terminate access for violations
+              of these terms.
             </p>
 
             <h3 className="text-lg font-medium text-white">Changes to Terms</h3>

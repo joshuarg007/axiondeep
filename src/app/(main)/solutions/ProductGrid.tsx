@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -125,9 +123,8 @@ export default function ProductGrid() {
   return (
     <div className="max-w-7xl mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-6">
       {products.map((p) => (
-        <Link
+        <div
           key={p.slug}
-          href={p.href}
           className={`group relative flex flex-col rounded-2xl bg-gradient-to-br ${p.gradientBg} border ${p.borderColor} ${p.borderHover} transition-all duration-200 hover:scale-[1.01] hover:shadow-2xl hover:shadow-black/30`}
         >
           <div className="p-7 pb-0 flex-1 flex flex-col">
@@ -150,7 +147,11 @@ export default function ProductGrid() {
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xl font-bold text-white truncate">{p.name}</h3>
+                  <h3 className="text-xl font-bold truncate">
+                    <Link href={p.href} className="text-white hover:text-gray-200 transition-colors">
+                      {p.name}
+                    </Link>
+                  </h3>
                   <span
                     className={`text-[10px] font-semibold px-2 py-0.5 rounded border shrink-0 ${badgeStyles[p.badgeColor]}`}
                   >
@@ -196,28 +197,18 @@ export default function ProductGrid() {
 
           {/* Bottom action bar */}
           <div className="px-7 py-4 border-t border-white/5 flex items-center justify-between">
-            <span
-              className={`text-sm font-medium ${p.accentText} group-hover:translate-x-1 transition-transform`}
+            <Link
+              href={p.href}
+              className={`text-sm font-medium ${p.accentText} hover:translate-x-1 transition-transform`}
             >
               View Project →
-            </span>
+            </Link>
             {p.url && (
-              <span
-                role="button"
-                tabIndex={0}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.open(p.url!, "_blank", "noopener,noreferrer");
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    window.open(p.url!, "_blank", "noopener,noreferrer");
-                  }
-                }}
-                className="text-xs text-gray-500 hover:text-gray-300 transition-colors cursor-pointer flex items-center gap-1"
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-1"
               >
                 {p.url.replace("https://", "")}
                 <svg
@@ -233,10 +224,10 @@ export default function ProductGrid() {
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-              </span>
+              </a>
             )}
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );

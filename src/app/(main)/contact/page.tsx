@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Axion Deep Labs for research collaboration inquiries, academic partnerships, and technical discussions. We welcome engagement from academic institutions, funding agencies, and fellow researchers.",
+  description: "Contact Axion Deep Labs for research collaborations, academic partnerships, and technical discussions. We respond within 24 hours.",
   alternates: { canonical: "/contact" },
 };
 
@@ -93,6 +93,80 @@ export default function ContactPage() {
             {/* Right - Contact Form */}
             <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
               <ContactForm />
+            </div>
+          </div>
+
+          {/* What We Can Help With */}
+          <div className="mt-20">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">What We Can Help With</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-5 rounded-xl bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/10">
+                <h3 className="font-semibold text-white mb-2">Research Collaboration</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Academic partnerships, joint experiments, and co-authored publications in
+                  deep learning theory, topological data analysis, and continual learning.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/10">
+                <h3 className="font-semibold text-white mb-2">Product Inquiries</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Questions about Made4Founders, Site2CRM, QUANTA, Vesper, or Forma. Demo
+                  requests, pricing, and enterprise partnerships.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-gradient-to-br from-fuchsia-500/10 to-transparent border border-fuchsia-500/10">
+                <h3 className="font-semibold text-white mb-2">Funding &amp; Investment</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Grant applications, research funding inquiries, and venture discussions
+                  for our deep tech research programs and product ventures.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/10">
+                <h3 className="font-semibold text-white mb-2">Careers &amp; Contracting</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Open positions, contractor opportunities, and research fellowships. We
+                  work with researchers and engineers across AI, quantum, and systems.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-20">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-white mb-2">How quickly do you respond?</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We typically respond within 24 hours on business days. For urgent matters,
+                  mention it in your message and we&apos;ll prioritize your inquiry.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-white mb-2">Do you take on external research projects?</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We welcome collaborations that align with our active research programs in
+                  deep learning theory, continual learning, and topological data analysis.
+                  Reach out with a brief description of your project and how it connects to
+                  our work.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-white mb-2">Where is your team located?</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  We are a remote-first research lab with team members distributed globally.
+                  We collaborate asynchronously and maintain a flexible work environment that
+                  prioritizes deep focus over fixed schedules.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-white mb-2">Can I access your research data?</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Yes. Our experimental code, configurations, and results are published
+                  open-source on GitHub. Visit our research pages for links to repositories
+                  and detailed experimental protocols.
+                </p>
+              </div>
             </div>
           </div>
         </div>

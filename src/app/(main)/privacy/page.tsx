@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
     <div className="no-snap relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 pb-20">
       <div>
         <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white">
-          Privacy Policy
+          Privacy Policy for Axion Deep Labs Products &amp; Services
         </h1>
         <p className="text-gray-400 mb-12">
           Last updated: February 2026 &middot; Axion Deep Labs

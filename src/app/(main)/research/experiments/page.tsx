@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Experimental Protocols & Preliminary Results — Research Programs",
+  title: "Experimental Protocols — Research Programs",
   description:
-    "Active experimental research with preliminary results. EXP-01: Cross-architecture study of topological signatures in catastrophic forgetting — 5 of 8 architectures completed, Spearman ρ=0.866 between persistent homology and knowledge retention. EXP-02: Systematic integrated information (Φ) survey across deep learning architectures. EXP-03: Information capacity scaling laws testing holographic principle analogs in neural networks. Reproducible methodology with open-source tooling.",
+    "Three experimental protocols: topological signatures in catastrophic forgetting, integrated information across architectures, and neural network capacity scaling laws.",
   keywords: [
     "topological data analysis catastrophic forgetting",
     "persistent homology loss landscape",

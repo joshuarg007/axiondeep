@@ -92,14 +92,14 @@ export default function CareersPage() {
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
             <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">
-              BUILD
+              BUILD THE FUTURE OF
             </span>
             <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              WHAT&apos;S
+              AI
             </span>
             <br />
             <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              NEXT
+              &amp; Quantum Computing
             </span>
           </h1>
           <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto">
@@ -111,20 +111,65 @@ export default function CareersPage() {
       {/* Philosophy + Research Domains */}
       <section className="snap-section min-h-screen flex items-center px-6 py-16">
         <div className="max-w-6xl mx-auto w-full">
+          {/* What You'll Work On */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-white mb-6">What You&apos;ll Work On</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-cyan-400 mb-2">Original Research</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Design and execute controlled experiments in deep learning theory, from
+                  topological analysis of loss landscapes to information capacity scaling laws.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-violet-400 mb-2">Production Software</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Build and ship research-derived products used by real customers — from AI
+                  chat agents to quantum computing education platforms.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-fuchsia-400 mb-2">Experimental Infrastructure</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Develop the tools that make our research reproducible — experiment dashboards,
+                  automated pipelines, and GPU cluster management.
+                </p>
+              </div>
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <h3 className="font-semibold text-emerald-400 mb-2">Open Science</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Contribute to papers targeting NeurIPS, ICML, and Nature. All code and data
+                  are published openly for the research community.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Philosophy Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">How We Work</h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed mb-3">
                 Hybrid research network. Remote-first. Asynchronous. If you prototype at 3 AM to test
                 a hypothesis, you&apos;ll fit right in.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                We value depth over breadth, rigor over speed, and reproducibility over novelty.
+                Every experiment is version-controlled, every result is independently verifiable,
+                and every team member has the autonomy to pursue ideas that challenge assumptions.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">Who We Are</h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed mb-3">
                 Researchers, engineers, experimentalists. AI theory, quantum computation, systems
                 architecture, applied mathematics.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                Our team spans machine learning research, full-stack engineering, and computational
+                physics. We look for people who are equally comfortable reading a NeurIPS paper
+                and shipping production code — and who bring intellectual curiosity to both.
               </p>
             </div>
           </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Axion Deep Labs investigates fundamental questions in deep learning theory through controlled experimentation. Our research centers on catastrophic forgetting, loss landscape topology, information capacity, and integrated information measurement across neural architectures.",
+    "Axion Deep Labs conducts original research in deep learning theory — catastrophic forgetting, loss landscape topology, and neural network generalization.",
   keywords: [
     "deep learning theory research",
     "catastrophic forgetting",

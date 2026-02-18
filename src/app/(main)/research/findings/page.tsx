@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
-    "Research Findings — Topological Signatures of Knowledge Persistence in Continual Learning Systems",
+    "Research Findings — Topological Signatures of Knowledge Persistence",
   description:
-    "Preliminary cross-architecture results from EXP-01 (Project PERSIST): persistent homology features of neural network loss landscapes show strong correlation (Spearman ρ=0.866) with resistance to catastrophic forgetting. 5 of 8 architectures completed on Split-CIFAR-100. ViT-Small exhibits 2× higher H₀ persistence and is the only architecture with measurable knowledge retention. Model size does not predict topological structure.",
+    "EXP-01 results: loss landscape topology correlates with catastrophic forgetting resistance across five architectures. ViT-Small shows unique retention.",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",

@@ -21,7 +21,7 @@ export default function Made4FoundersPage() {
               SaaS
             </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Made4Founders</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Made4Founders: All-in-One Startup Command Center</h1>
           <p className="text-xl text-orange-400 font-medium mb-4">
             Your startup&apos;s command center. One dashboard to rule them all.
           </p>

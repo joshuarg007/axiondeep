@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Research Programs — Active Experiments & Preliminary Results",
+  title: "Research Programs — Active Experiments",
   description:
-    "Four original research programs with active experimentation: topological analysis of catastrophic forgetting with preliminary cross-architecture results (PERSIST), quantum system degradation (DRIFT), integrated information measurement across neural architectures (PHI), and information capacity scaling laws testing holographic analogs (GENESIS). Reproducible methodology, open-source tooling, peer-reviewed publication targets.",
+    "Four research programs studying catastrophic forgetting, quantum system behavior, integrated information, and capacity scaling laws in neural networks.",
   keywords: [
     "original research",
     "catastrophic forgetting",
@@ -45,9 +45,9 @@ export default function ResearchPage() {
             Networks
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
-            Four research programs studying why neural networks fail at
-            sequential task learning, how information integrates across
-            architectures, and what governs capacity limits. Our flagship
+            Four research programs with active experiments studying why neural
+            networks fail at sequential task learning, how information integrates
+            across architectures, and what governs capacity limits. Our flagship
             experiment (EXP-01) is actively producing cross-architecture data
             with preliminary correlation between loss landscape topology and
             catastrophic forgetting resistance.

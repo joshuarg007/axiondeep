@@ -6,7 +6,7 @@ import PlatformCards from "@/components/PlatformCards";
 export const metadata: Metadata = {
   title: "Applied R&D",
   description:
-    "Applied research and development translating original findings in machine learning theory, quantum computing, and information theory into production-grade technology. Research-to-deployment pipeline with reproducible methodology.",
+    "Applied R&D translating original research in machine learning, quantum computing, and information theory into production software.",
   keywords: [
     "applied AI research",
     "research-to-production pipeline",
@@ -23,21 +23,21 @@ const processSteps = [
   {
     step: "01",
     title: "Investigate",
-    description: "Deep exploration of the problem space, constraints, and technical landscape.",
+    description: "Deep exploration of the problem space, literature review, and technical feasibility assessment. We identify gaps in existing solutions and formulate testable hypotheses before writing any code.",
     image: "/images/process-discover.webp",
     alt: "Investigation phase - exploring the research problem",
   },
   {
     step: "02",
     title: "Prototype",
-    description: "Architecture, prototyping, and validation. We prove the approach before committing to it.",
+    description: "Architecture design, rapid prototyping, and hypothesis validation. We build minimal viable experiments to prove the approach works before committing to full implementation. Every prototype is version-controlled and reproducible.",
     image: "/images/process-design.webp",
     alt: "Prototype phase - validating research hypotheses",
   },
   {
     step: "03",
     title: "Ship",
-    description: "Iterative development, rigorous testing, and production deployment with continuous improvement.",
+    description: "Iterative development with rigorous testing, automated CI/CD pipelines, and production deployment. We monitor performance, gather feedback, and continuously improve based on real-world usage data.",
     image: "/images/process-deliver.webp",
     alt: "Ship phase - deploying production-ready technology",
   },
@@ -143,6 +143,44 @@ export default function DevelopmentPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-4 mb-10">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Core Technology Stack</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              The tools and frameworks we use across our research and product engineering.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/10">
+              <h3 className="font-semibold text-white mb-3">AI &amp; Machine Learning</h3>
+              <div className="flex flex-wrap gap-2">
+                {["PyTorch", "Qiskit", "Ripser", "scikit-tda", "Ollama", "Claude AI", "DeepSeek"].map((t) => (
+                  <span key={t} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/10">
+              <h3 className="font-semibold text-white mb-3">Web &amp; Backend</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Next.js", "React", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "Docker"].map((t) => (
+                  <span key={t} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-transparent border border-fuchsia-500/10">
+              <h3 className="font-semibold text-white mb-3">Infrastructure</h3>
+              <div className="flex flex-wrap gap-2">
+                {["AWS", "CUDA", "GitHub Actions", "Stripe", "Plaid", "Three.js"].map((t) => (
+                  <span key={t} className="text-xs px-3 py-1 rounded-full bg-white/5 text-gray-400 border border-white/10">{t}</span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
