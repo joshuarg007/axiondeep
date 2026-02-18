@@ -256,7 +256,7 @@ export default function ResearchPage() {
           {/* References */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
             <h3 className="font-semibold text-white mb-3 text-sm">
-              Key References
+              PERSIST References
             </h3>
             <ul className="space-y-1 text-xs text-gray-500">
               <li>
@@ -348,7 +348,7 @@ export default function ResearchPage() {
 
           <div className="mt-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
             <h3 className="font-semibold text-white mb-3 text-sm">
-              Key References
+              DRIFT References
             </h3>
             <ul className="space-y-1 text-xs text-gray-500">
               <li>
@@ -444,7 +444,7 @@ export default function ResearchPage() {
 
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
             <h3 className="font-semibold text-white mb-3 text-sm">
-              Key References
+              PHI References
             </h3>
             <ul className="space-y-1 text-xs text-gray-500">
               <li>
@@ -563,7 +563,7 @@ export default function ResearchPage() {
 
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
             <h3 className="font-semibold text-white mb-3 text-sm">
-              Key References
+              GENESIS References
             </h3>
             <ul className="space-y-1 text-xs text-gray-500">
               <li>

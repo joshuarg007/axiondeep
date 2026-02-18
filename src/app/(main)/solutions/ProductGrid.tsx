@@ -87,7 +87,7 @@ const products = [
     tagBorder: "border-cyan-500/20",
     tech: ["React", "TypeScript", "FastAPI", "Qiskit", "Three.js"],
     tags: ["Circuit Builder", "Bloch Sphere", "16 Qubits", "Curriculum"],
-    url: "https://quanta.axiondeep.com",
+    url: null,
     href: "/projects/quanta",
   },
   {
@@ -201,7 +201,7 @@ export default function ProductGrid() {
               href={p.href}
               className={`text-sm font-medium ${p.accentText} hover:translate-x-1 transition-transform`}
             >
-              View Project →
+              Explore {p.name} →
             </Link>
             {p.url && (
               <a

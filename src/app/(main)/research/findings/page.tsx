@@ -3,8 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title:
-    "Research Findings — Topological Signatures of Knowledge Persistence",
+  title: "Research Findings — Topological Knowledge Persistence",
   description:
     "EXP-01 results: loss landscape topology correlates with catastrophic forgetting resistance across five architectures. ViT-Small shows unique retention.",
   keywords: [

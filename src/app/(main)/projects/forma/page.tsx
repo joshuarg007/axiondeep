@@ -137,6 +137,29 @@ export default function FormaPage() {
           </div>
         </div>
 
+        {/* How Forma Generates Code */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">How the Design System Generates Real Code</h2>
+          <div className="space-y-4">
+            {[
+              { step: "01", title: "Design Visually", desc: "Drag components from the library onto your canvas. Arrange layouts with flexbox and grid controls, set responsive breakpoints, and preview your design across device sizes. Every component maps directly to a React component in the exported code." },
+              { step: "02", title: "Define Your Data", desc: "Use the schema-driven data modeler to define entities, relationships, and validation rules. Forma generates API endpoints and database schemas automatically, connecting your UI components to real data without writing backend code." },
+              { step: "03", title: "Let AI Assist", desc: "Describe a page layout in natural language and the AI generates a complete design using your component library. Refine with follow-up prompts or switch to manual editing at any point. The AI understands your design system constraints and produces consistent results." },
+              { step: "04", title: "Export to Next.js", desc: "One click exports your entire application as a clean, well-structured Next.js project with TypeScript, Tailwind CSS, and modern React patterns. You own the generated code and can deploy it to any hosting provider." },
+            ].map((item) => (
+              <div key={item.step} className="flex gap-4 items-start rounded-xl bg-white/[0.02] border border-fuchsia-500/10 p-5">
+                <span className="text-2xl font-bold text-fuchsia-400 opacity-40 shrink-0 w-8 text-right">
+                  {item.step}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>

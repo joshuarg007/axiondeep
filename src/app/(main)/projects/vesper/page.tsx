@@ -141,6 +141,29 @@ export default function VesperPage() {
           </div>
         </div>
 
+        {/* Responsible Use */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Responsible Penetration Testing</h2>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-500/[0.08] to-purple-500/[0.04] border border-white/[0.08]">
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Vesper AI is designed exclusively for authorized security testing, including
+              contracted penetration testing engagements, bug bounty programs, and defensive
+              security assessments. The platform enforces scope boundaries through target
+              configuration controls and rate limiting to ensure testing stays within
+              authorized parameters.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              The dual AI agent architecture separates offensive execution from analytical
+              judgment. The attack agent systematically maps attack surfaces and executes
+              vulnerability templates, while the analysis agent independently validates findings,
+              eliminates false positives, and prioritizes remediation. This separation of concerns
+              produces higher-quality results than single-agent approaches, reducing noise in
+              security reports and ensuring that every reported vulnerability includes validated
+              proof-of-concept details and actionable remediation steps.
+            </p>
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>

@@ -129,6 +129,51 @@ export default function Site2CRMPage() {
           </div>
         </div>
 
+        {/* How It Works */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">How AI Lead Capture Works</h2>
+          <div className="space-y-4">
+            {[
+              { step: "01", title: "Install the Widget", desc: "Add a single script tag to your website. The AI chat agent appears as a customizable widget that matches your brand colors and messaging. No code changes to your existing site required." },
+              { step: "02", title: "AI Engages Visitors", desc: "When a visitor arrives, the AI agent initiates natural conversation based on the page context. It qualifies leads by asking your custom qualification questions, handles up to 10 objection rebuttals per conversation, and guides prospects toward conversion." },
+              { step: "03", title: "Leads Sync to Your CRM", desc: "Qualified contacts are pushed to your CRM in real time — HubSpot, Salesforce, Pipedrive, Zoho, or Nutshell. Each contact record includes the full conversation transcript, lead score, qualification responses, and source attribution." },
+              { step: "04", title: "Analyze and Optimize", desc: "The analytics dashboard shows conversion rates by page, top objection categories, average conversation length, and pipeline value. Use these insights to refine your AI agent prompts and improve lead quality over time." },
+            ].map((item) => (
+              <div key={item.step} className="flex gap-4 items-start rounded-xl bg-white/[0.02] border border-cyan-500/10 p-5">
+                <span className="text-2xl font-bold text-cyan-400 opacity-40 shrink-0 w-8 text-right">
+                  {item.step}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Site2CRM */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Why Teams Choose Site2CRM for CRM Integration</h2>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/[0.08] to-blue-500/[0.04] border border-white/[0.08]">
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Traditional lead capture forms have a problem: visitors abandon them. Static forms
+              cannot answer questions, overcome objections, or adapt to individual visitors.
+              Site2CRM replaces passive forms with persistent AI chat agents that have real
+              conversations, qualify leads based on your specific criteria, and push qualified
+              contacts directly into your CRM pipeline without manual data entry.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              The real-time CRM integration eliminates the gap between lead capture and sales
+              follow-up. Your team sees new qualified leads appear in their CRM the moment a
+              conversation converts, complete with conversation history, lead score, and
+              qualification data. Combined with multi-step forms for structured data collection
+              and a full analytics dashboard, Site2CRM provides a complete AI-powered lead capture
+              and CRM integration solution.
+            </p>
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>

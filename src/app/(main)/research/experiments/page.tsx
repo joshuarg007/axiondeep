@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Experimental Protocols — Research Programs",
   description:
-    "Three experimental protocols: topological signatures in catastrophic forgetting, integrated information across architectures, and neural network capacity scaling laws.",
+    "Three experimental protocols: topological forgetting signatures, integrated information across architectures, and neural network capacity scaling laws.",
   keywords: [
     "topological data analysis catastrophic forgetting",
     "persistent homology loss landscape",
@@ -296,7 +296,7 @@ export default function ExperimentsPage() {
           {/* Metrics */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Primary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">PERSIST Primary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "H₀, H₁, H₂ persistent homology groups (birth-death pairs)",
@@ -313,7 +313,7 @@ export default function ExperimentsPage() {
               </ul>
             </div>
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Secondary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">PERSIST Secondary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "Spearman ρ between total persistence and retention",
@@ -333,7 +333,7 @@ export default function ExperimentsPage() {
 
           {/* Tools & Infrastructure */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Tools &amp; Infrastructure</h3>
+            <h3 className="font-semibold text-white mb-3">PERSIST Tools &amp; Infrastructure</h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-400">
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Training</h4>
@@ -352,7 +352,7 @@ export default function ExperimentsPage() {
 
           {/* Expected Outputs */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Expected Outputs &amp; Publication Target</h3>
+            <h3 className="font-semibold text-white mb-3">PERSIST Expected Outputs</h3>
             <ul className="space-y-2">
               {[
                 "Correlation analysis: total persistence vs. retention rate across architectures and benchmarks",
@@ -371,7 +371,7 @@ export default function ExperimentsPage() {
 
           {/* Risks & Mitigations */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Risks &amp; Mitigations</h3>
+            <h3 className="font-semibold text-white mb-3">PERSIST Risks &amp; Mitigations</h3>
             <div className="space-y-3">
               {[
                 {
@@ -397,7 +397,7 @@ export default function ExperimentsPage() {
 
           {/* References */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-            <h3 className="font-semibold text-white mb-3">Key References</h3>
+            <h3 className="font-semibold text-white mb-3">PERSIST References</h3>
             <ul className="space-y-2">
               <Citation text="McCloskey, M. & Cohen, N. J. (1989). Catastrophic interference in connectionist networks. Psychology of Learning and Motivation, 24, 109-165." />
               <Citation text="Kirkpatrick, J. et al. (2017). Overcoming catastrophic forgetting in neural networks. PNAS, 114(13), 3521-3526." />
@@ -529,7 +529,7 @@ export default function ExperimentsPage() {
           {/* Metrics */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Primary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">PHI Primary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "Φ* (minimum information partition) at each training checkpoint",
@@ -546,7 +546,7 @@ export default function ExperimentsPage() {
               </ul>
             </div>
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Secondary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">PHI Secondary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "Φ* trajectory shape classification (monotonic, peaked, oscillating)",
@@ -595,7 +595,7 @@ export default function ExperimentsPage() {
 
           {/* Tools */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Tools &amp; Infrastructure</h3>
+            <h3 className="font-semibold text-white mb-3">PHI Tools &amp; Infrastructure</h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-400">
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Computation</h4>
@@ -614,7 +614,7 @@ export default function ExperimentsPage() {
 
           {/* Expected Outputs */}
           <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/10 p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Expected Outputs &amp; Publication Target</h3>
+            <h3 className="font-semibold text-white mb-3">PHI Expected Outputs</h3>
             <ul className="space-y-2">
               {[
                 "First Φ* landscape map across modern deep learning architectures — the 'periodic table' of information integration",
@@ -633,7 +633,7 @@ export default function ExperimentsPage() {
 
           {/* Risks */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Risks &amp; Mitigations</h3>
+            <h3 className="font-semibold text-white mb-3">PHI Risks &amp; Mitigations</h3>
             <div className="space-y-3">
               {[
                 {
@@ -659,7 +659,7 @@ export default function ExperimentsPage() {
 
           {/* References */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-            <h3 className="font-semibold text-white mb-3">Key References</h3>
+            <h3 className="font-semibold text-white mb-3">PHI References</h3>
             <ul className="space-y-2">
               <Citation text="Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5(1), 42." />
               <Citation text="Tononi, G. et al. (2016). Integrated information theory: from consciousness to its physical substrate. Nature Reviews Neuroscience, 17(7), 450-461." />
@@ -820,7 +820,7 @@ export default function ExperimentsPage() {
           {/* Metrics */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Primary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">GENESIS Primary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "Maximum memorizable dataset size (bits) per architecture",
@@ -837,7 +837,7 @@ export default function ExperimentsPage() {
               </ul>
             </div>
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3">Secondary Metrics</h3>
+              <h3 className="font-semibold text-white mb-3">GENESIS Secondary Metrics</h3>
               <ul className="space-y-2">
                 {[
                   "Mutual information I(W; D_train) at convergence (via MINE)",
@@ -857,7 +857,7 @@ export default function ExperimentsPage() {
 
           {/* Tools */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Tools &amp; Infrastructure</h3>
+            <h3 className="font-semibold text-white mb-3">GENESIS Tools &amp; Infrastructure</h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-400">
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Training</h4>
@@ -876,7 +876,7 @@ export default function ExperimentsPage() {
 
           {/* Expected Outputs */}
           <div className="rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-500/5 border border-cyan-500/10 p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Expected Outputs &amp; Publication Target</h3>
+            <h3 className="font-semibold text-white mb-3">GENESIS Expected Outputs</h3>
             <ul className="space-y-2">
               {[
                 "Scaling law characterization: area law vs volume law for 15+ architecture configurations",
@@ -895,7 +895,7 @@ export default function ExperimentsPage() {
 
           {/* Risks */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6 mb-8">
-            <h3 className="font-semibold text-white mb-3">Risks &amp; Mitigations</h3>
+            <h3 className="font-semibold text-white mb-3">GENESIS Risks &amp; Mitigations</h3>
             <div className="space-y-3">
               {[
                 {
@@ -925,7 +925,7 @@ export default function ExperimentsPage() {
 
           {/* References */}
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-            <h3 className="font-semibold text-white mb-3">Key References</h3>
+            <h3 className="font-semibold text-white mb-3">GENESIS References</h3>
             <ul className="space-y-2">
               <Citation text="Bekenstein, J. D. (1973). Black holes and entropy. Physical Review D, 7(8), 2333." />
               <Citation text="'t Hooft, G. (1993). Dimensional reduction in quantum gravity. arXiv:gr-qc/9310026." />

@@ -81,6 +81,39 @@ export default function SolutionsPage() {
         <ProductGrid />
       </section>
 
+      {/* Research to Product Pipeline */}
+      <section className="px-6 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">From Research to Venture</h2>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-500/[0.08] to-cyan-500/[0.04] border border-white/[0.08]">
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Each venture in our portfolio originates from active research at Axion Deep Labs.
+              Made4Founders applies AI integration patterns developed through our agent architecture
+              research to create personalized daily briefings and intelligent document management
+              for startup founders. Site2CRM deploys persistent AI chat agents — informed by our
+              work on conversational AI and objection handling — to capture and qualify leads in
+              real time across five major CRM platforms.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              QUANTA translates our quantum computing research (Project DRIFT) into an interactive
+              education platform where learners build circuits with drag-and-drop gates and observe
+              quantum state evolution on a 3D Bloch sphere. Vesper AI applies our dual-agent
+              architecture research to autonomous penetration testing, pairing an attack agent
+              with an analysis agent to produce validated security assessments. Forma draws on
+              our component system research to generate production-ready Next.js code from visual
+              designs and natural language prompts.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              This research-to-venture pipeline ensures that our products are built on original
+              insights rather than incremental feature additions. Every venture solves a real
+              problem using technology that comes directly from our experimental work — from
+              topological data analysis to information integration measurement to AI agent
+              coordination patterns.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">

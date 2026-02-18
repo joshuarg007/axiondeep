@@ -128,6 +128,51 @@ export default function Made4FoundersPage() {
           </div>
         </div>
 
+        {/* How It Works */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">How the Startup Command Center Works</h2>
+          <div className="space-y-4">
+            {[
+              { step: "01", title: "Connect Your Accounts", desc: "Link your bank accounts via Plaid, connect Stripe for revenue tracking, and import your cap table. Made4Founders pulls everything into a single command center so you stop switching between twelve tabs." },
+              { step: "02", title: "AI Generates Your Daily Brief", desc: "Every morning, the AI assistant analyzes your runway, upcoming deadlines, compliance gaps, and investor pipeline. You get a personalized briefing that surfaces what matters most — not a generic dashboard." },
+              { step: "03", title: "Track Compliance Automatically", desc: "The 96-item compliance checklist covers formation documents, state filings, tax deadlines, SOC2 readiness, GDPR requirements, and employment law basics. Automatic alerts ensure nothing falls through the cracks." },
+              { step: "04", title: "Manage Your Fundraise", desc: "Track every investor from warm intro to term sheet. Log meeting notes, set follow-up reminders, and maintain a clean data room with AES-256 encrypted document storage. Your cap table updates automatically as rounds close." },
+            ].map((item) => (
+              <div key={item.step} className="flex gap-4 items-start rounded-xl bg-white/[0.02] border border-orange-500/10 p-5">
+                <span className="text-2xl font-bold text-orange-400 opacity-40 shrink-0 w-8 text-right">
+                  {item.step}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Founders Choose Made4Founders */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Why Solo Founders Choose Made4Founders</h2>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-orange-500/[0.08] to-red-500/[0.04] border border-white/[0.08]">
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Most startup tools assume you have a team. Made4Founders is built for the solo founder
+              and small teams of 1-5 people who wear every hat. Instead of paying for separate
+              tools for compliance, cap table management, investor relations, document storage,
+              and financial tracking, everything lives in one all-in-one platform with a single
+              login and a unified dashboard.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              The AI daily brief is what sets Made4Founders apart from generic project management
+              tools. It learns your patterns, understands your runway, and proactively surfaces
+              risks before they become problems. Combined with bank-grade AES-256 encryption for
+              your most sensitive documents and real-time financial data from Plaid and Stripe
+              integrations, it is the command center that replaces the dozen browser tabs you have
+              open right now.
+            </p>
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>

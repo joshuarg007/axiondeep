@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "QUANTA — Quantum Computing Education Platform",
-  description: "QUANTA is an interactive quantum computing education platform with drag-and-drop circuit builder, Bloch sphere visualization, and structured curriculum from qubits to Grover's algorithm.",
+  title: "QUANTA — Quantum Computing Education",
+  description: "Interactive quantum computing education with drag-and-drop circuit builder, 3D Bloch sphere, and curriculum from qubits to Grover's algorithm.",
   keywords: [
     "quantum computing education",
     "quantum simulation",
@@ -137,6 +137,35 @@ export default function QuantaPage() {
           </div>
         </div>
 
+        {/* How QUANTA Teaches Quantum Computing */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-6">How QUANTA Teaches Quantum Computing</h2>
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/[0.08] to-violet-500/[0.04] border border-white/[0.08]">
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Traditional quantum computing education relies heavily on linear algebra notation
+              and abstract mathematical formalism. QUANTA takes a different approach: every concept
+              is paired with an interactive simulation. When you learn about superposition, you
+              place a Hadamard gate on a qubit wire and watch the Bloch sphere rotate in real time.
+              When you study entanglement, you build a Bell state circuit and observe correlated
+              measurement outcomes across multiple shots.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              The structured curriculum progresses from single-qubit operations through multi-qubit
+              entanglement to complete algorithms. Each module builds on the previous one with
+              interactive exercises that reinforce concepts through hands-on circuit building.
+              The platform supports up to 16 qubits, enabling exploration of algorithms like
+              Grover&apos;s search, quantum teleportation, and the Deutsch-Jozsa algorithm.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              QUANTA&apos;s drag-and-drop circuit builder supports over 20 quantum gates including
+              Hadamard, CNOT, Pauli-X/Y/Z, phase gates, T gates, and controlled rotations. The
+              3D Bloch sphere visualization, rendered with Three.js and WebGL, provides immediate
+              visual feedback as you modify circuits, making abstract quantum states tangible and
+              intuitive for learners at every level.
+            </p>
+          </div>
+        </div>
+
         {/* Tech Stack */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-6">Tech Stack</h2>
@@ -154,14 +183,12 @@ export default function QuantaPage() {
 
         {/* CTA */}
         <div className="flex gap-4">
-          <a
-            href="https://quanta.axiondeep.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact"
             className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-white hover:opacity-90 transition"
           >
-            Try QUANTA
-          </a>
+            Request Beta Access
+          </Link>
           <Link
             href="/research#drift"
             className="px-8 py-4 rounded-full border border-white/20 font-medium text-white hover:bg-white/5 transition flex items-center gap-2"
