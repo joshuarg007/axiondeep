@@ -12,7 +12,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/images/logo.webp"
-                alt="Axion Deep Labs"
+                alt="Axion Deep Labs home"
                 width={374}
                 height={94}
                 className="h-10 w-auto"

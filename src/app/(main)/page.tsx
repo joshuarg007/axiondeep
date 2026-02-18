@@ -21,7 +21,7 @@ export default function HomePage() {
             <span className="block text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
               Axion Deep Labs
             </span>
-            <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
               Research and Development
             </span>
           </h1>
@@ -44,7 +44,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div className="lg:sticky lg:top-32">
-              <p className="font-bold tracking-widest uppercase text-lg mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <p className="font-bold tracking-widest uppercase text-lg mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
                 OUR PROCESS
               </p>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -58,7 +58,7 @@ export default function HomePage() {
                 <span className="text-xl md:text-2xl font-light text-gray-400 tracking-widest mr-3">
                   TO
                 </span>
-                <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
                   REALITY
                 </span>
               </h2>
@@ -196,7 +196,7 @@ export default function HomePage() {
           </svg>
           <blockquote className="text-3xl md:text-4xl font-light text-white leading-relaxed mb-8">
             Great software is built by people who care deeply about
-            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
               {" "}
               craft, clarity, and outcomes
             </span>
