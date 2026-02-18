@@ -22,7 +22,7 @@ export default function HomePage() {
               Axion Deep Labs
             </span>
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              Research & Development
+              Research and Development
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">

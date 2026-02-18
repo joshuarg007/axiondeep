@@ -32,3 +32,47 @@ customHeaders:
     headers:
       - key: Content-Type
         value: text/html; charset=utf-8
+  - pattern: /
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /mission
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /solutions
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /development
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /research
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /research/*
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /careers
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /contact
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /privacy
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /legal
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
+  - pattern: /projects/*
+    headers:
+      - key: Content-Type
+        value: text/html; charset=utf-8
