@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function ResearchPage() {
   return (
-    <div className="relative text-gray-300">
+    <div className="no-snap relative text-gray-300">
       {/* Hero */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">

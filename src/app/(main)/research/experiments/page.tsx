@@ -61,7 +61,7 @@ function Citation({ text }: { text: string }) {
 
 export default function ExperimentsPage() {
   return (
-    <div className="relative text-gray-300 min-h-screen">
+    <div className="no-snap relative text-gray-300 min-h-screen">
       {/* Header */}
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto">

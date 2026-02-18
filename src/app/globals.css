@@ -46,7 +46,7 @@ body {
 /* Scroll snap container - desktop only */
 @media (min-width: 768px) {
   .snap-container {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-padding-top: 80px;
     overflow-y: scroll;
     height: 100vh;
