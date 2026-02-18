@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   description:
-    "Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience. Four active research programs with experimental results in topological data analysis of catastrophic forgetting, integrated information measurement, and information capacity scaling laws.",
+    "Axion Deep Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
   alternates: {
     canonical: "/",
   },
@@ -26,11 +26,13 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            AI, quantum computing, and intelligent automation.
+            Original research and development in AI, quantum computing, and intelligent automation.
+          </p>
+          <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-4">
+            Axion Deep Labs is an independent research and development organization that conducts original investigations in machine learning theory, quantum computing, and computational neuroscience. Our research programs produce experimental results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-            We conduct original research and build the technologies behind next-generation software. Our work spans
-            autonomous AI systems, quantum algorithm development, and the platforms that bring both to production.
+            We bridge the gap between theoretical research and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring breakthrough discoveries into real-world applications.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -61,12 +63,10 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                Research-driven methodology. Every project starts with deep investigation and ends with
-                production-grade software.
+                Every project at Axion Deep Labs follows a research-driven methodology that begins with deep investigation into the problem space and concludes with the delivery of production-grade software.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                We prototype, validate, and iterate before committing to production architectures. Clear milestones,
-                rigorous testing, and no shortcuts in critical paths.
+                Our development process emphasizes rapid prototyping and early validation of assumptions before committing to final production architectures, ensuring that every milestone is backed by rigorous testing and measurable progress toward clearly defined objectives.
               </p>
             </div>
 
@@ -75,25 +75,25 @@ export default function HomePage() {
                 {
                   num: "01",
                   title: "Investigate",
-                  desc: "Deep exploration of the problem space. Map constraints, identify unknowns, define the research agenda.",
+                  desc: "We begin every engagement with a thorough exploration of the problem space, mapping technical constraints, identifying critical unknowns, and defining a focused research agenda that guides all subsequent development work.",
                   color: "from-cyan-500 to-blue-500",
                 },
                 {
                   num: "02",
                   title: "Hypothesize",
-                  desc: "Architecture and prototyping. Validate assumptions early, iterate until the approach is proven.",
+                  desc: "Our team designs candidate architectures and builds rapid prototypes to validate core assumptions early in the process, iterating on each approach until the technical foundation is proven and the path forward is clear.",
                   color: "from-violet-500 to-purple-500",
                 },
                 {
                   num: "03",
                   title: "Build",
-                  desc: "Rigorous development with continuous validation. Clean code, tested thoroughly, measurable progress.",
+                  desc: "Development proceeds with continuous integration, comprehensive test coverage, and regular code reviews to ensure that every component meets the quality standards required for production-grade research and development output.",
                   color: "from-fuchsia-500 to-pink-500",
                 },
                 {
                   num: "04",
                   title: "Ship & Iterate",
-                  desc: "Deploy to production. Monitor, learn, and continuously improve based on real-world data.",
+                  desc: "We deploy working software to production environments and establish monitoring, feedback loops, and performance benchmarks that drive continuous improvement based on real-world data and user behavior.",
                   color: "from-orange-500 to-red-500",
                 },
               ].map((step, i) => (
@@ -124,7 +124,7 @@ export default function HomePage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Deep expertise</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI to cloud infrastructure, our research spans every layer of modern computing.
+              From AI and machine learning to cloud infrastructure, the research and development work at Axion Deep Labs spans every layer of modern computing, delivering solutions that are both scientifically rigorous and production-ready.
             </p>
           </div>
 
@@ -135,8 +135,7 @@ export default function HomePage() {
               <div className="relative flex flex-col h-full">
                 <h3 className="text-2xl font-bold text-white mb-3">Web Applications</h3>
                 <p className="text-gray-400 leading-relaxed mb-6">
-                  React, Next.js, TypeScript. Full-stack SaaS platforms, dashboards, and complex web apps
-                  built to scale.
+                  We design and develop full-stack SaaS platforms, interactive dashboards, and complex web applications using React, Next.js, and TypeScript, with architectures built to handle enterprise-scale traffic and data requirements from day one.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {["React", "Next.js", "TypeScript", "Node.js"].map((tag) => (
@@ -154,25 +153,25 @@ export default function HomePage() {
             {[
               {
                 title: "Mobile Apps",
-                desc: "iOS, Android, React Native",
+                desc: "Cross-platform iOS and Android development using React Native and native frameworks for high-performance mobile experiences.",
                 gradient: "from-violet-500/10 to-purple-500/5",
                 border: "border-violet-500/20 hover:border-violet-500/40",
               },
               {
                 title: "AI Integration",
-                desc: "LLMs, Custom Models, AI Automation",
+                desc: "Large language model integration, custom model training, and intelligent automation pipelines built on cutting-edge research.",
                 gradient: "from-fuchsia-500/10 to-pink-500/5",
                 border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
               },
               {
                 title: "Backend & APIs",
-                desc: "Python, FastAPI, GraphQL",
+                desc: "Scalable backend systems and API development using Python, FastAPI, and GraphQL with robust data architectures.",
                 gradient: "from-emerald-500/10 to-teal-500/5",
                 border: "border-emerald-500/20 hover:border-emerald-500/40",
               },
               {
                 title: "Cloud & DevOps",
-                desc: "AWS, GCP, CI/CD",
+                desc: "Infrastructure design and deployment automation across AWS and GCP with continuous integration and delivery pipelines.",
                 gradient: "from-orange-500/10 to-red-500/5",
                 border: "border-orange-500/20 hover:border-orange-500/40",
               },
@@ -218,8 +217,11 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Explore what we&apos;re building
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Research collaborations, technical inquiries, or partnership discussions — we respond within one business day.
+              <p className="text-gray-400 text-lg leading-relaxed mb-4">
+                Whether you are exploring a research collaboration, have a technical inquiry about our work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of cutting-edge research and practical software development.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                We respond to all inquiries within one business day and welcome conversations about how our research and development capabilities can support your organization&apos;s goals in AI, quantum computing, or full-stack software engineering.
               </p>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-center gap-3">

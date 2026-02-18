@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "Axion Deep — %s",
   },
   description:
-    "Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience. Active experiments with preliminary results in topological data analysis of catastrophic forgetting, integrated information measurement, and information capacity scaling laws. Reproducible methodology targeting peer-reviewed publication at NeurIPS, ICML, and Nature.",
+    "Axion Deep Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
   keywords: [
     "AI research laboratory",
     "quantum computing research",
@@ -262,6 +262,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
         {/* DNS Prefetch for performance */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
