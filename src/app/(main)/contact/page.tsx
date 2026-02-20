@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -93,6 +94,19 @@ export default function ContactPage() {
             {/* Right - Contact Form */}
             <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
               <ContactForm />
+            </div>
+          </div>
+
+          {/* Schedule a Meeting */}
+          <div className="mt-20">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Prefer a Live Conversation?</h2>
+              <p className="text-gray-400 max-w-lg mx-auto">
+                Book a time that works for you. We&apos;ll discuss your project, answer questions, and explore how we can help.
+              </p>
+            </div>
+            <div className="max-w-3xl mx-auto rounded-3xl bg-white/[0.03] border border-white/[0.06] p-2">
+              <BookingWidget slug="booking-ml9vyn5a" buttonColor="#8b5cf6" />
             </div>
           </div>
 
