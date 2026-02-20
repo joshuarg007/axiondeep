@@ -2,6 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
+const WIDGET_SCRIPT = "https://api.site2crm.io/api/public/book/booking-widget.js";
+const API_BASE = "https://api.site2crm.io";
+
 interface BookingWidgetProps {
   slug: string;
   buttonText?: string;
@@ -22,22 +25,37 @@ export default function BookingWidget({
     if (loaded.current || !containerRef.current) return;
     loaded.current = true;
 
-    const script = document.createElement("script");
-    script.src = "https://api.site2crm.io/api/public/book/booking-widget.js";
-    script.async = true;
-    script.setAttribute("data-slug", slug);
-    script.setAttribute("data-button-text", buttonText);
-    script.setAttribute("data-button-color", buttonColor);
-    script.setAttribute("data-inline", "true");
-    script.setAttribute("data-container", "s2c-booking");
-    if (meeting) script.setAttribute("data-meeting", meeting);
+    const container = containerRef.current;
 
-    containerRef.current.appendChild(script);
+    function createWidget() {
+      // Create the custom element directly with attributes
+      const el = document.createElement("s2c-booking");
+      el.setAttribute("data-slug", slug);
+      el.setAttribute("data-button-text", buttonText);
+      el.setAttribute("data-button-color", buttonColor);
+      el.setAttribute("data-inline", "true");
+      el.setAttribute("data-api-base", API_BASE);
+      if (meeting) el.setAttribute("data-meeting", meeting);
+      container.appendChild(el);
+    }
+
+    // If the custom element is already registered, just create it
+    if (customElements.get("s2c-booking")) {
+      createWidget();
+      return;
+    }
+
+    // Otherwise, load the script to register it first
+    const script = document.createElement("script");
+    script.src = WIDGET_SCRIPT;
+    script.async = true;
+    script.onload = () => {
+      // Script registered the custom element, now create ours
+      // Small delay to ensure customElements.define() has completed
+      requestAnimationFrame(() => createWidget());
+    };
+    document.head.appendChild(script);
   }, [slug, buttonText, buttonColor, meeting]);
 
-  return (
-    <div ref={containerRef}>
-      <div id="s2c-booking" />
-    </div>
-  );
+  return <div ref={containerRef} />;
 }
