@@ -191,13 +191,6 @@ export default function Footer() {
             <Link href="/legal#terms" className="text-sm text-gray-500 hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Image
-              src="/images/qr-code.png"
-              alt="Scan to visit Axion Deep"
-              width={48}
-              height={48}
-              className="rounded"
-            />
           </div>
         </div>
       </div>
