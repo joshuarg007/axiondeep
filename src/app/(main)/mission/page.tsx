@@ -273,10 +273,10 @@ export default function MissionPage() {
             <p className="text-gray-400 leading-relaxed mb-6">
               Our flagship experiment (EXP-01) investigates whether persistent homology features
               of neural network loss landscapes predict resistance to catastrophic forgetting.
-              With 5 of 8 architecture runs completed on Split-CIFAR-100, preliminary results
-              show a Spearman &rho; = 0.866 correlation between H&#8320; persistence and knowledge
-              retention. ViT-Small exhibits 2&times; higher topological persistence than convolutional
-              architectures and is the only architecture with measurable retention after sequential training.
+              With 14 of 19 architectures completed on CIFAR-100, results show H₁ persistence
+              correlates with knowledge retention (Spearman &rho; = 0.61, p = 0.021), but parameter
+              count dominates (&rho; = -0.74). A WRN width ladder experiment and two additional datasets
+              (CUB-200, RESISC-45) are in progress to resolve the topology vs. scale confound.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

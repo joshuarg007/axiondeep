@@ -180,7 +180,7 @@ const jsonLd = {
       "@id": "https://www.axiondeep.com/#persist",
       name: "Project PERSIST — Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-architecture experimental study investigating whether persistent homology features of neural network loss landscapes predict resistance to catastrophic forgetting. 5 of 8 architectures completed with preliminary Spearman rho=0.866 correlation between H0 persistence and knowledge retention. Dataset: Split-CIFAR-100. Tools: PyTorch, Ripser, scikit-tda.",
+        "Cross-architecture study (14 of 19 architectures on CIFAR-100) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. H1 persistence correlates with retention (Spearman rho=0.61, p=0.021) but parameter count dominates (rho=-0.74). WRN width ladder and 2 additional datasets in progress. Tools: PyTorch, Ripser, GUDHI.",
       url: "https://www.axiondeep.com/research#persist",
       parentOrganization: { "@id": "https://www.axiondeep.com/#organization" },
       about: [
@@ -232,7 +232,7 @@ const jsonLd = {
       headline:
         "Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-architecture study investigating whether persistent homology features of neural network loss landscapes predict resistance to catastrophic forgetting. 5 of 8 architectures completed on Split-CIFAR-100. Preliminary Spearman ρ=0.866 between H₀ persistence and knowledge retention.",
+        "Cross-architecture study (14 architectures on CIFAR-100) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. H1 persistence correlates with retention (Spearman rho=0.61, p=0.021) but parameter count dominates (rho=-0.74). WRN width ladder experiment in progress to resolve topology vs. scale confound.",
       url: "https://www.axiondeep.com/research/findings",
       datePublished: "2026-02-17",
       author: {

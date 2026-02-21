@@ -127,29 +127,29 @@ export default function ExperimentsPage() {
 
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
-            <MetaRow label="Status" value="Active — Phase 4 (Cross-Architecture Correlation)" />
-            <MetaRow label="Progress" value="5 of 8 architectures completed (ResNet-18, ResNet-50, ViT-Small, WRN-28-10, MLP-Mixer)" />
+            <MetaRow label="Status" value="Active — 7-phase pipeline, expanding to 3 datasets" />
+            <MetaRow label="Progress" value="14/19 architectures on CIFAR-100 (Phases 1-3). WRN width ladder + CUB-200 + RESISC-45 in progress." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
-            <MetaRow label="Duration" value="3 - 4 months" />
-            <MetaRow label="Compute" value="Local GPU cluster (NVIDIA RTX, CUDA, PyTorch 2.x)" />
+            <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
+            <MetaRow label="Compute" value="Local GPU (NVIDIA RTX 4090, CUDA, PyTorch 2.x)" />
             <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting" />
-            <MetaRow label="Preliminary" value="Spearman ρ = 0.866 (H₀ persistence vs. knowledge retention, n=3, p=0.33 — expanding to n=8)" />
+            <MetaRow label="Preliminary" value="H1 ρ = 0.61 (n=14, p=0.021). Within-CNN: ρ = 0.66 (p=0.026). Params dominate full-sample (ρ = -0.74)." />
           </div>
 
           {/* Preliminary Results */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/15 to-teal-500/10 border border-emerald-500/20 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="text-emerald-400 text-lg">&#9679;</span>
-              Preliminary Results (5 Architectures)
+              Preliminary Results (14 Architectures, CIFAR-100)
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Cross-architecture analysis reveals that loss landscape topology — measured
-              via persistent homology H₀ — varies systematically across architecture families
-              and shows preliminary correlation with resistance to catastrophic forgetting.
-              Model size does not predict topological structure: ResNet-50 (23.6M parameters)
-              exhibits <span className="text-emerald-300">lower</span> H₀ persistence than
-              ResNet-18 (11M parameters).
+              Cross-architecture analysis (n=14) reveals that H1 persistence (loop structure
+              in the loss landscape) correlates with knowledge retention (\u03c1 = 0.61, p = 0.021).
+              However, parameter count dominates (\u03c1 = -0.74, p = 0.002, survives Bonferroni).
+              After partialing out model size, H1 drops to non-significance (partial \u03c1 = 0.35, p = 0.24).
+              Within CNNs only (n=11), H1 re-emerges as significant (\u03c1 = 0.66, p = 0.026),
+              suggesting topology carries information within an architecture family.
             </p>
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-sm">
@@ -157,62 +157,72 @@ export default function ExperimentsPage() {
                   <tr className="border-b border-white/10 text-left">
                     <th className="pb-2 text-gray-500 font-medium">Architecture</th>
                     <th className="pb-2 text-gray-500 font-medium">Params</th>
-                    <th className="pb-2 text-gray-500 font-medium">Task A Acc.</th>
-                    <th className="pb-2 text-gray-500 font-medium">H₀ Persistence</th>
-                    <th className="pb-2 text-gray-500 font-medium">Retention @10k</th>
+                    <th className="pb-2 text-gray-500 font-medium">Acc.</th>
+                    <th className="pb-2 text-gray-500 font-medium">H₁</th>
+                    <th className="pb-2 text-gray-500 font-medium">Ret@100</th>
+                    <th className="pb-2 text-gray-500 font-medium">Type</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-400">
                   <tr className="border-b border-white/5">
-                    <td className="py-2 text-emerald-300">ViT-Small</td>
-                    <td className="py-2">~3M</td>
-                    <td className="py-2">62.2%</td>
-                    <td className="py-2 font-mono">4,254.2</td>
-                    <td className="py-2 text-emerald-300">0.84%</td>
+                    <td className="py-1 text-emerald-300">ViT-Tiny</td>
+                    <td className="py-1">0.3M</td><td className="py-1">52.7%</td>
+                    <td className="py-1 font-mono">0.18</td><td className="py-1 text-emerald-300">22.5%</td>
+                    <td className="py-1 text-xs text-gray-500">Transformer</td>
                   </tr>
                   <tr className="border-b border-white/5">
-                    <td className="py-2">MLP-Mixer</td>
-                    <td className="py-2">~2.3M</td>
-                    <td className="py-2">61.5%</td>
-                    <td className="py-2 font-mono">3,758.8</td>
-                    <td className="py-2">0.0%</td>
+                    <td className="py-1">ShuffleNet-V2</td>
+                    <td className="py-1">1.3M</td><td className="py-1">76.8%</td>
+                    <td className="py-1 font-mono">0.69</td><td className="py-1 text-emerald-300">17.3%</td>
+                    <td className="py-1 text-xs text-gray-500">CNN</td>
                   </tr>
                   <tr className="border-b border-white/5">
-                    <td className="py-2">WRN-28-10</td>
-                    <td className="py-2">~36.5M</td>
-                    <td className="py-2">84.0%</td>
-                    <td className="py-2 font-mono">2,272.6</td>
-                    <td className="py-2">0.0%</td>
+                    <td className="py-1 text-emerald-300">ViT-Small</td>
+                    <td className="py-1">3.0M</td><td className="py-1">62.2%</td>
+                    <td className="py-1 font-mono">0.32</td><td className="py-1 text-emerald-300">9.6%</td>
+                    <td className="py-1 text-xs text-gray-500">Transformer</td>
                   </tr>
                   <tr className="border-b border-white/5">
-                    <td className="py-2">ResNet-18</td>
-                    <td className="py-2">~11M</td>
-                    <td className="py-2">82.0%</td>
-                    <td className="py-2 font-mono">2,151.5</td>
-                    <td className="py-2">0.0%</td>
+                    <td className="py-1">EfficientNet-B0</td>
+                    <td className="py-1">4.1M</td><td className="py-1">76.6%</td>
+                    <td className="py-1 font-mono text-emerald-300">2.12</td><td className="py-1">7.1%</td>
+                    <td className="py-1 text-xs text-gray-500">CNN+SE</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-1">ResNet-18</td>
+                    <td className="py-1">11.2M</td><td className="py-1">82.0%</td>
+                    <td className="py-1 font-mono">0.00</td><td className="py-1">0.2%</td>
+                    <td className="py-1 text-xs text-gray-500">CNN</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-1">WRN-28-10</td>
+                    <td className="py-1">36.5M</td><td className="py-1">84.0%</td>
+                    <td className="py-1 font-mono">0.08</td><td className="py-1">0.3%</td>
+                    <td className="py-1 text-xs text-gray-500">WRN-ladder</td>
                   </tr>
                   <tr>
-                    <td className="py-2">ResNet-50</td>
-                    <td className="py-2">~23.6M</td>
-                    <td className="py-2">83.6%</td>
-                    <td className="py-2 font-mono">1,639.0</td>
-                    <td className="py-2">0.0%</td>
+                    <td className="py-1">ResNet-18 Wide</td>
+                    <td className="py-1">44.7M</td><td className="py-1">83.1%</td>
+                    <td className="py-1 font-mono">0.00</td><td className="py-1">0.0%</td>
+                    <td className="py-1 text-xs text-gray-500">CNN</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="space-y-2 text-sm text-gray-400">
               <p>
-                <span className="text-emerald-300 font-semibold">Key finding:</span>{" "}
-                ViT-Small is the only architecture with measurable Task A retention (0.84%)
-                after 10,000 steps of Task B training — and it has the highest H₀ persistence
-                (4,254.2), more than 2× any convolutional architecture.
+                <span className="text-emerald-300 font-semibold">Key tension:</span>{" "}
+                H1 persistence correlates with retention (\u03c1 = 0.61) but parameter count
+                dominates (\u03c1 = -0.74, survives Bonferroni). After partialing out model size,
+                H1 drops to non-significance. Within CNNs only (n=11), H1 re-emerges as
+                significant (\u03c1 = 0.66, p = 0.026), suggesting topology matters within
+                architecture families.
               </p>
               <p>
-                <span className="text-emerald-300 font-semibold">Remaining work:</span>{" "}
-                3 architectures pending (ResNet-18 Wide, DenseNet-121, EfficientNet-B0) to
-                reach n=8 for statistically robust Spearman correlation. Baseline metrics
-                (Hessian, Fisher information) being added retroactively to early runs.
+                <span className="text-emerald-300 font-semibold">Decisive test:</span>{" "}
+                WRN-28-k width ladder (k=1,2,4,6,8,10) isolates scale from topology. Same
+                architecture, same depth, varying only width. Expanding to CUB-200 and RESISC-45
+                for cross-domain validation. LOAO predictive model with permutation test pending.
               </p>
             </div>
           </div>
@@ -265,24 +275,24 @@ export default function ExperimentsPage() {
             <div className="space-y-6">
               {[
                 {
-                  phase: "Phase 1 — Baseline Training",
-                  desc: "Train target networks to full convergence on Task A. Benchmarks: Split-CIFAR-100 (first 50 classes), Permuted-MNIST, Split-TinyImageNet. Architectures: ResNet-18, Vision Transformer (ViT-Small), LSTM (for sequence tasks on Split-WikiText). Save weight checkpoints.",
+                  phase: "Phase 1 — Train Task A",
+                  desc: "Train 19 architectures (14 diverse + 6-point WRN-28-k width ladder) to convergence on Task A across 3 datasets: CIFAR-100, CUB-200-2011, and NWPU-RESISC45. 100 epochs, SGD with cosine annealing. Save best checkpoints.",
                 },
                 {
-                  phase: "Phase 2 — Topological Characterization",
-                  desc: "Sample the loss landscape around converged weights by perturbing along random orthogonal directions (Li et al., 2018 filter-normalized method). Construct sublevel set filtrations of the loss function. Compute persistent homology using Ripser++ (H₀, H₁, H₂ groups). Generate persistence diagrams and Betti curves for each trained model.",
+                  phase: "Phase 2 — Landscape Topology (Ripser + Cubical)",
+                  desc: "Sample 50x50 loss landscape along filter-normalized random directions (Li et al., 2018). 5 independent random 2D slices per architecture. Compute persistent homology via Ripser (graph-based H₀, H₁) and GUDHI cubical complexes (validation baseline). Compute baseline metrics: Hessian trace, Fisher information, max eigenvalue, loss barrier.",
                 },
                 {
-                  phase: "Phase 3 — Sequential Training & Forgetting Measurement",
-                  desc: "Train each model sequentially on Task B (remaining classes / new permutation). Measure Task A test accuracy at intervals: steps [100, 500, 1,000, 5,000, 10,000, 25,000]. Record weight trajectory and compute Euclidean distance from Task A optimum at each checkpoint.",
+                  phase: "Phase 3 — Sequential Forgetting (Naive + EWC + Cosine)",
+                  desc: "Train sequentially on Task B with 3 variants: naive, EWC regularization (Fisher-based penalty), and cosine LR decay. Measure Task A accuracy at steps [10, 25, 50, 100, 250, 500, 1000, 5000]. Compute early AURC, ret@10, ret@100.",
                 },
                 {
-                  phase: "Phase 4 — Correlation Analysis",
-                  desc: "Correlate topological features with retention. Primary metric: Spearman rank correlation between total persistence (sum of H₁ feature lifetimes) and Task A accuracy retention at step 10,000. Secondary: Wasserstein distance between pre-training and post-forgetting persistence diagrams as a topological measure of 'knowledge displacement.'",
+                  phase: "Phase 4 — Correlation & Diagnostics",
+                  desc: "Spearman + Kendall correlation with Bonferroni correction (12 metrics). Partial correlations controlling for parameter count. Slice robustness diagnostics: Kruskal-Wallis, per-slice Spearman, pairwise ordering probability, Cohen's d. Cubical vs Ripser agreement. EWC benefit analysis. WRN width ladder: within-ladder correlations isolating scale from topology.",
                 },
                 {
-                  phase: "Phase 5 — Topological Regularizer (if positive)",
-                  desc: "If correlation is significant: design a regularization term that penalizes reductions in total persistence during Task B training. Regularizer: L_topo = λ · max(0, P_A - P_current), where P is total persistence. Compare forgetting rates with and without topological regularization against EWC and replay baselines.",
+                  phase: "Phase 5 — Predictive Model (LOAO CV)",
+                  desc: "Leave-one-architecture-out Ridge regression with nested alpha selection. 5 models: A (params only), A2 (params + random noise, matched-dimensionality null), B (params + Ripser topology), C (params + cubical topology), D (topology alone). 1,000-permutation test shuffling topology features to test incremental value. If Model B does not beat A2, topology features are no better than noise.",
                 },
               ].map((p) => (
                 <div key={p.phase}>
@@ -299,11 +309,11 @@ export default function ExperimentsPage() {
               <h3 className="font-semibold text-white mb-3">PERSIST Primary Metrics</h3>
               <ul className="space-y-2">
                 {[
-                  "H₀, H₁, H₂ persistent homology groups (birth-death pairs)",
-                  "Total persistence: Σ(death_i - birth_i) for all features",
-                  "Wasserstein-1 distance between persistence diagrams",
-                  "Betti curves at fixed filtration values",
-                  "Task A accuracy retention curve over Task B training",
+                  "H₀, H₁ persistent homology via Ripser (graph-based) and GUDHI (cubical complexes)",
+                  "Total persistence: Σ(death_i - birth_i) across 5 independent landscape slices",
+                  "Task A retention metrics: early AURC (0-500), ret@10, ret@100",
+                  "LOAO cross-validated prediction error (MAE) for 5 regression models",
+                  "Permutation test p-value for incremental topology value (1,000 permutations)",
                 ].map((m) => (
                   <li key={m} className="flex gap-2 text-sm text-gray-400">
                     <span className="mt-1.5 h-1 w-1 rounded-full bg-emerald-400/40 shrink-0" />
@@ -316,11 +326,11 @@ export default function ExperimentsPage() {
               <h3 className="font-semibold text-white mb-3">PERSIST Secondary Metrics</h3>
               <ul className="space-y-2">
                 {[
-                  "Spearman ρ between total persistence and retention",
-                  "Weight trajectory distance from Task A optimum",
-                  "Layer-wise forgetting decomposition (which layers lose H₁ features first?)",
-                  "Architecture-dependent topological fingerprints",
-                  "Comparison against EWC / replay retention (if Phase 5 reached)",
+                  "Spearman ρ + Kendall τ with Bonferroni correction (12 metrics)",
+                  "Partial correlations controlling for parameter count",
+                  "WRN width ladder: within-ladder Spearman + partial H1|params",
+                  "Slice robustness: Kruskal-Wallis, pairwise ordering, Cohen's d",
+                  "EWC benefit vs topology correlation (does topology predict regularization response?)",
                 ].map((m) => (
                   <li key={m} className="flex gap-2 text-sm text-gray-400">
                     <span className="mt-1.5 h-1 w-1 rounded-full bg-emerald-400/40 shrink-0" />
@@ -337,15 +347,15 @@ export default function ExperimentsPage() {
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-400">
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Training</h4>
-                <p>PyTorch, Weights &amp; Biases (tracking), CUDA-capable GPU cluster</p>
+                <p>PyTorch 2.x, CUDA (RTX 4090), Flask dashboard with live monitoring</p>
               </div>
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Topology</h4>
-                <p>Ripser++ (persistent homology), Gudhi, scikit-tda, Persim (Wasserstein distances)</p>
+                <p>Ripser (graph-based PH), GUDHI (cubical complexes), scikit-learn (Ridge, StandardScaler)</p>
               </div>
               <div>
-                <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Benchmarks</h4>
-                <p>Split-CIFAR-100, Permuted-MNIST, Split-TinyImageNet, Split-WikiText (sequence)</p>
+                <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-2">Datasets</h4>
+                <p>CIFAR-100, CUB-200-2011 (fine-grained birds), NWPU-RESISC45 (satellite scenes)</p>
               </div>
             </div>
           </div>
@@ -355,11 +365,11 @@ export default function ExperimentsPage() {
             <h3 className="font-semibold text-white mb-3">PERSIST Expected Outputs</h3>
             <ul className="space-y-2">
               {[
-                "Correlation analysis: total persistence vs. retention rate across architectures and benchmarks",
-                "First persistence diagram atlas of catastrophic forgetting (before, during, and after Task B)",
-                "Cross-architecture comparison: do transformers, CNNs, and RNNs have different topological forgetting signatures?",
-                "If positive: a topological regularizer that provably reduces forgetting (compared to EWC baseline)",
-                "Publication target: NeurIPS / ICML (Continual Learning track) or Topological Data Analysis journal",
+                "Correlation analysis: Ripser + cubical PH vs retention across 19 architectures and 3 datasets",
+                "WRN width ladder verdict: does topology carry independent signal beyond model scale?",
+                "LOAO predictive model: does topology improve prediction of forgetting over params alone?",
+                "Cross-domain validation: do topological signatures generalize from natural images to fine-grained and satellite data?",
+                "Publication target: NeurIPS / ICML (Continual Learning track)",
               ].map((o) => (
                 <li key={o} className="flex gap-2 text-sm text-gray-400">
                   <span className="mt-1.5 h-1 w-1 rounded-full bg-emerald-400/40 shrink-0" />
