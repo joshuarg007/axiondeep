@@ -128,13 +128,13 @@ export default function ExperimentsPage() {
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
             <MetaRow label="Status" value="Active, 57/57 configurations complete across 3 datasets" />
-            <MetaRow label="Progress" value="19/19 archs on CIFAR-100, CUB-200, and RESISC-45 (Phases 1-5 complete)." />
+            <MetaRow label="Progress" value="19/19 archs on CIFAR-100, CUB-200, and RESISC-45 (Phases 1-6 complete)." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
             <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
             <MetaRow label="Compute" value="Local GPU (NVIDIA RTX 4090, CUDA, PyTorch 2.x)" />
             <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction" />
-            <MetaRow label="Key Result" value="CUB-200: topology rescues prediction (p=0.037, suggestive). RESISC-45: topology does not help (p=0.566). H0 predicts EWC benefit across datasets (rho=0.76-0.86)." />
+            <MetaRow label="Key Result" value="Phase 6 pooled interaction (n=57): dataset moderates H0-EWC benefit (p=0.046). CUB-200 topology rescues forgetting prediction (CI excludes zero). RESISC-45 topology does not help." />
           </div>
 
           {/* Preliminary Results */}

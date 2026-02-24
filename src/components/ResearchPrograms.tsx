@@ -141,7 +141,7 @@ const PROGRAMS: Program[] = [
       ],
       summary: (
         <>
-          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), topology rescues prediction (p = 0.037), but this does not survive Bonferroni across 3 datasets. On RESISC-45 (n=19), topology does not help (p = 0.566), but H0 strongly predicts EWC benefit (rho = 0.86, p = 2.4e-6).
+          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), topology rescues prediction (p = 0.037), but this does not survive Bonferroni across 3 datasets. On RESISC-45 (n=19), topology does not help (p = 0.566), but H0 strongly predicts EWC benefit (rho = 0.86, p = 2.4e-6). Phase 6 pooled interaction analysis (n=57, clustered bootstrap) formally confirms dataset moderation: H0 predicts EWC benefit on CIFAR-100 and RESISC-45 (CIs excluding zero, permutation p=0.046) but not CUB-200.
         </>
       ),
       pending: "57 of 57 configurations complete across 3 datasets (CIFAR-100, CUB-200, RESISC-45).",
@@ -661,10 +661,14 @@ export default function ResearchPrograms() {
             </h3>
 
             {/* Key stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
                 <p className="text-2xl font-bold text-amber-300 font-mono">0.037</p>
                 <p className="text-xs text-gray-500 mt-1">CUB-200 Perm. p (suggestive; does not survive Bonferroni across 3 datasets)</p>
+              </div>
+              <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
+                <p className="text-2xl font-bold text-emerald-300 font-mono">0.046</p>
+                <p className="text-xs text-gray-500 mt-1">Phase 6 Pooled Interaction (n=57, clustered bootstrap, EWC moderation)</p>
               </div>
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
                 <p className="text-2xl font-bold text-amber-300 font-mono">-0.92</p>
@@ -681,7 +685,7 @@ export default function ResearchPrograms() {
             </div>
 
             <p className="text-sm text-gray-400 mb-2">
-              On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, p = 0.0002, survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, fine-grained birds), topology rescues prediction (permutation p = 0.037), but this does not survive Bonferroni correction across 3 datasets. On RESISC-45 (n=19, satellite scenes), topology also does not help predict forgetting (p = 0.566). However, H0 strongly predicts EWC benefit on RESISC-45 (rho = 0.86, p = 2.4e-6). Most stable cross-domain signal: H0 predicts EWC benefit (CIFAR-100 rho = 0.76, RESISC-45 rho = 0.86).
+              On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, p = 0.0002, survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, fine-grained birds), topology rescues prediction (permutation p = 0.037), but this does not survive Bonferroni correction across 3 datasets. On RESISC-45 (n=19, satellite scenes), topology also does not help predict forgetting (p = 0.566). However, H0 strongly predicts EWC benefit on RESISC-45 (rho = 0.86, p = 2.4e-6). Phase 6 pooled interaction analysis (n=57, clustered bootstrap) formally confirms dataset moderation: H0 predicts EWC benefit on CIFAR-100 and RESISC-45 (CIs excluding zero, permutation p=0.046) but not CUB-200.
             </p>
             <p className="text-sm text-gray-500">
               57 of 57 configurations complete across 3 datasets. Most stable signal: H0 predicts EWC benefit (CIFAR-100 rho = 0.76, RESISC-45 rho = 0.86).

@@ -794,6 +794,116 @@ export default function FindingsPage() {
               </div>
             </div>
           </div>
+          {/* Phase 6: Pooled Interaction Analysis */}
+          <div className="rounded-2xl bg-gradient-to-br from-violet-500/10 to-purple-500/5 border border-violet-500/15 p-6 mb-8">
+            <h3 className="font-semibold text-white mb-1">
+              Phase 6: Pooled Interaction Analysis (n=57)
+            </h3>
+            <p className="text-xs text-gray-500 mb-4">
+              Formal test of dataset moderation via OLS with clustered bootstrap.
+              All 57 configurations pooled across 3 datasets with dataset x topology
+              interaction terms.
+            </p>
+
+            {/* EWC Benefit Moderation */}
+            <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/15 p-4 mb-4">
+              <h4 className="text-emerald-300 font-semibold text-sm mb-3">
+                EWC Benefit Moderation Test
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <StatCard
+                  label="Block Permutation p"
+                  value="p = 0.046"
+                  sub="Dataset moderates H0 -> EWC benefit"
+                  accent="emerald"
+                />
+                <StatCard
+                  label="CIFAR-100 H0 Effect"
+                  value="+0.016"
+                  sub="CI [+0.005, +0.062] excludes zero"
+                  accent="emerald"
+                />
+                <StatCard
+                  label="CUB-200 H0 Effect"
+                  value="+0.002"
+                  sub="CI [-0.008, +0.013] includes zero"
+                  accent="amber"
+                />
+                <StatCard
+                  label="RESISC-45 H0 Effect"
+                  value="+0.007"
+                  sub="CI [+0.004, +0.012] excludes zero"
+                  accent="emerald"
+                />
+              </div>
+              <p className="text-xs text-gray-500">
+                H0 partial effects on EWC benefit per dataset. CIs from clustered
+                bootstrap. CIFAR-100 and RESISC-45 confidence intervals exclude zero,
+                confirming the per-dataset correlations. CUB-200 CI includes zero.
+              </p>
+            </div>
+
+            {/* Forgetting Prediction Moderation */}
+            <div className="rounded-xl bg-amber-500/5 border border-amber-500/15 p-4 mb-4">
+              <h4 className="text-amber-300 font-semibold text-sm mb-3">
+                Forgetting Prediction Moderation Test
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+                <StatCard
+                  label="ret@10 Block p"
+                  value="p = 0.196"
+                  sub="Not significant overall"
+                  accent="amber"
+                />
+                <StatCard
+                  label="ret@100 Block p"
+                  value="p = 0.035"
+                  sub="Significant moderation"
+                  accent="emerald"
+                />
+                <StatCard
+                  label="CUB-200 ret@10 Effect"
+                  value="-0.123"
+                  sub="CI [-0.183, -0.046] excludes zero"
+                  accent="emerald"
+                />
+              </div>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-amber-400/40 shrink-0" />
+                  <span>
+                    CIFAR-100 H0 on ret@10: -0.001, CI [-0.486, +0.073] (includes zero)
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-emerald-400/40 shrink-0" />
+                  <span className="text-emerald-300 font-medium">
+                    CUB-200 H0 on ret@10: -0.123, CI [-0.183, -0.046] (excludes zero)
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1.5 h-1 w-1 rounded-full bg-amber-400/40 shrink-0" />
+                  <span>
+                    RESISC-45 H0 on ret@10: -0.021, CI [-0.264, +0.083] (includes zero)
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Bottom line */}
+            <div className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4">
+              <p className="text-sm text-gray-300 leading-relaxed">
+                <span className="text-violet-300 font-semibold">Bottom line: </span>
+                Dataset significantly moderates the topology-EWC benefit relationship
+                (permutation p = 0.046), with H0 predicting EWC benefit on CIFAR-100
+                and RESISC-45 (CIs excluding zero) but not CUB-200. For forgetting
+                prediction, the ret@100 block test is significant (p = 0.035) and
+                CUB-200 is the only dataset where H0 CI on ret@10 excludes zero,
+                consistent with Phase 5 findings that topology rescues prediction
+                specifically on fine-grained tasks.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -855,9 +965,14 @@ export default function FindingsPage() {
                 The most robust finding across all 3 datasets: H0 persistence
                 (connected components) predicts how much a model benefits from
                 Elastic Weight Consolidation. On CIFAR-100: rho = 0.76,
-                p = 0.0002. On RESISC-45: rho = 0.86, p = 2.4e-6. Models with
-                more fragmented loss landscapes (higher H0) benefit more from
-                EWC regularization. This makes topology a mitigation sensitivity
+                p = 0.0002. On RESISC-45: rho = 0.86, p = 2.4e-6. The Phase 6
+                pooled interaction analysis formally confirms that dataset
+                moderates this relationship (block permutation p = 0.046), with
+                per-dataset H0 partial effects excluding zero on CIFAR-100
+                (CI [+0.005, +0.062]) and RESISC-45 (CI [+0.004, +0.012]) but
+                not CUB-200 (CI [-0.008, +0.013]). Models with more fragmented
+                loss landscapes (higher H0) benefit more from EWC
+                regularization. This makes topology a mitigation sensitivity
                 marker, telling you not just whether a model will forget, but
                 how much a specific intervention will help.
               </p>
