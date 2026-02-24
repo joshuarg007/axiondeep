@@ -180,7 +180,7 @@ const jsonLd = {
       "@id": "https://www.axiondeep.com/#persist",
       name: "Project PERSIST — Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-architecture study (19 architectures, 2 datasets) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. Key finding: topology rescues forgetting prediction on hard tasks (CUB-200 permutation p=0.037) where parameter count fails (rho=-0.92). 38/57 configurations complete. RESISC-45 in progress. Tools: PyTorch, Ripser, GUDHI.",
+        "Cross-architecture study (19 architectures, 3 datasets, 57 configs complete) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. Key findings: topology rescues prediction on CUB-200 (p=0.037, suggestive) but not RESISC-45 (p=0.566). Most stable signal: H0 predicts EWC benefit across datasets (CIFAR-100 rho=0.76, RESISC-45 rho=0.86). Tools: PyTorch, Ripser, GUDHI.",
       url: "https://www.axiondeep.com/research#persist",
       parentOrganization: { "@id": "https://www.axiondeep.com/#organization" },
       about: [
@@ -232,7 +232,7 @@ const jsonLd = {
       headline:
         "Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-dataset study (19 architectures, CIFAR-100 + CUB-200) showing topology predicts forgetting on hard tasks (permutation p=0.037) where parameter count fails (rho=-0.92). On easy benchmarks, parameter count dominates. 38/57 configurations complete, RESISC-45 in progress.",
+        "Cross-dataset study (19 architectures, 3 datasets, 57/57 complete). Topology rescues forgetting prediction on CUB-200 (p=0.037, suggestive) but not RESISC-45. H0 predicts EWC mitigation benefit across datasets (rho=0.76-0.86). Parameter count dominates on easy benchmarks.",
       url: "https://www.axiondeep.com/research/findings",
       datePublished: "2026-02-17",
       author: {

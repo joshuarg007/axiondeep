@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Research Findings — Topological Knowledge Persistence",
   description:
-    "EXP-01 cross-dataset results: topology predicts forgetting on hard tasks (CUB-200, permutation test p=0.037) where parameter count fails (rho=-0.92). 38 of 57 configurations complete across 19 architectures and 2 datasets.",
+    "EXP-01 cross-dataset results: topology is a conditional predictor of forgetting (CUB-200 p=0.037 suggestive, RESISC-45 p=0.566 not significant) and a mitigation sensitivity marker (H0 predicts EWC benefit, rho=0.86). 57 of 57 configurations complete across 19 architectures and 3 datasets.",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",
@@ -130,7 +130,7 @@ export default function FindingsPage() {
               EXP-01 &middot; PERSIST
             </span>
             <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">
-              2 Datasets Complete &middot; 38 of 57 Configurations
+              3 Datasets Complete &middot; 57 of 57 Configurations
             </span>
           </div>
 
@@ -141,7 +141,7 @@ export default function FindingsPage() {
 
           <p className="text-sm text-gray-500 mb-6">
             Axion Deep Labs &middot; February 2026 &middot; Working Paper
-            &middot; Updated February 2026 with n=19 cross-dataset results
+            &middot; Updated February 2026 with 57/57 cross-dataset results
           </p>
         </div>
       </section>
@@ -156,19 +156,22 @@ export default function FindingsPage() {
             <p className="text-gray-400 leading-relaxed text-[15px]">
               We investigate whether the topological structure of a neural
               network&apos;s loss landscape predicts resistance to catastrophic
-              forgetting. Across 19 architectures and 2 datasets (CIFAR-100 and
-              CUB-200-2011), we compute persistent homology on 50x50 loss
-              landscape grids using 5 independent random 2D slices with both
-              Ripser and GUDHI cubical complexes. On the easy benchmark
+              forgetting. Across 19 architectures and 3 datasets (CIFAR-100,
+              CUB-200-2011, and NWPU-RESISC45), we compute persistent homology
+              on 50x50 loss landscape grids using 5 independent random 2D slices
+              with both Ripser and GUDHI cubical complexes. On the easy benchmark
               (CIFAR-100, n=19), parameter count dominates (rho = -0.76,
               p = 0.0002, survives Bonferroni) and topology adds no predictive
               value. On the hard fine-grained benchmark (CUB-200, n=19),
-              parameter count fails completely (rho = -0.27, p = 0.27). A
-              leave-one-architecture-out Ridge regression with permutation
-              testing shows topology rescues forgetting prediction on CUB-200
-              (params-only rho = -0.92 wrong direction; params+topology
-              rho = 0.34; permutation p = 0.037). RESISC-45 (satellite scenes)
-              is in progress for cross-domain validation.
+              parameter count fails completely (rho = -0.27, p = 0.27) and
+              topology rescues prediction (permutation p = 0.037), though this
+              does not survive Bonferroni correction across 3 datasets (adjusted
+              alpha = 0.0167). On satellite imagery (RESISC-45, n=19), topology
+              does not help (permutation p = 0.566). However, the most stable
+              cross-dataset signal is that H0 persistence predicts EWC benefit:
+              CIFAR-100 rho = 0.76 (p = 0.0002), RESISC-45 rho = 0.86
+              (p = 2.4e-6). Topology is a conditional predictor of forgetting
+              (task-dependent) and a universal marker of mitigation sensitivity.
             </p>
           </div>
         </div>
@@ -184,8 +187,8 @@ export default function FindingsPage() {
             <StatCard
               label="CUB-200 Key Result"
               value="p = 0.037"
-              sub="Topology significant (permutation test)"
-              accent="emerald"
+              sub="Suggestive (does not survive Bonferroni)"
+              accent="amber"
             />
             <StatCard
               label="Params Alone (CUB)"
@@ -206,18 +209,18 @@ export default function FindingsPage() {
               accent="cyan"
             />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
             <StatCard
               label="Configs Complete"
-              value="38 / 57"
-              sub="19 archs x 2 datasets done"
+              value="57 / 57"
+              sub="19 archs x 3 datasets done"
               accent="emerald"
             />
             <StatCard
-              label="Datasets"
-              value="3"
-              sub="CIFAR-100, CUB-200, RESISC-45"
-              accent="violet"
+              label="RESISC-45 Topology"
+              value="p = 0.566"
+              sub="Topology does not help on satellite"
+              accent="rose"
             />
             <StatCard
               label="Params vs ret (CIFAR)"
@@ -230,6 +233,32 @@ export default function FindingsPage() {
               value="Not sig."
               sub="Redundant on easy tasks"
               accent="amber"
+            />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <StatCard
+              label="EWC Benefit (RESISC)"
+              value="rho = 0.86"
+              sub="H0 predicts EWC benefit, p = 2.4e-6"
+              accent="emerald"
+            />
+            <StatCard
+              label="EWC Benefit (CIFAR)"
+              value="rho = 0.76"
+              sub="H0 predicts EWC benefit, p = 0.0002"
+              accent="emerald"
+            />
+            <StatCard
+              label="WRN H0 Monotonicity"
+              value="rho = -1.0"
+              sub="Perfect on all 3 datasets"
+              accent="violet"
+            />
+            <StatCard
+              label="Cubical vs Ripser"
+              value="rho = 1.0"
+              sub="H1 agreement on all 3 datasets"
+              accent="cyan"
             />
           </div>
         </div>
@@ -293,9 +322,9 @@ export default function FindingsPage() {
                     cross-domain validation.
                   </li>
                   <li>
-                    <span className="text-amber-300">NWPU-RESISC45</span>{" "}
-                    (in progress): Satellite remote sensing. 45 scene classes,
-                    cross-domain validation.
+                    <span className="text-white">NWPU-RESISC45</span> (19/19
+                    architectures complete): Satellite remote sensing. 45 scene
+                    classes, cross-domain validation.
                   </li>
                 </ul>
               </div>
@@ -395,7 +424,7 @@ export default function FindingsPage() {
                   <p className="text-gray-500 text-xs mt-2">
                     Same architecture, varying only width multiplier k.
                     Isolates parameter count from architectural inductive bias.
-                    All complete on CIFAR-100 and CUB-200.
+                    All complete on CIFAR-100, CUB-200, and RESISC-45.
                   </p>
                 </div>
               </div>
@@ -504,20 +533,47 @@ export default function FindingsPage() {
                     <td className="py-2.5 font-mono text-gray-500 text-right">0.295</td>
                     <td className="py-2.5 text-gray-500">Not significant</td>
                   </tr>
-                  <tr>
-                    <td className="py-2.5 text-emerald-300 font-medium">CUB-200 (n=19)</td>
-                    <td className="py-2.5 font-mono text-emerald-300">ret@10</td>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2.5 text-amber-300 font-medium">CUB-200 (n=19)</td>
+                    <td className="py-2.5 font-mono text-amber-300">ret@10</td>
                     <td className="py-2.5 font-mono text-rose-300 text-right">-0.92</td>
-                    <td className="py-2.5 font-mono text-emerald-300 text-right">0.34</td>
-                    <td className="py-2.5 font-mono text-emerald-300 font-medium text-right">0.037</td>
-                    <td className="py-2.5 text-emerald-300 font-medium">Significant</td>
+                    <td className="py-2.5 font-mono text-amber-300 text-right">0.34</td>
+                    <td className="py-2.5 font-mono text-amber-300 font-medium text-right">0.037</td>
+                    <td className="py-2.5 text-amber-300 font-medium">Suggestive</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2.5">RESISC-45 (n=19)</td>
+                    <td className="py-2.5 font-mono">ret@100</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-gray-500 text-right">0.566</td>
+                    <td className="py-2.5 text-gray-500">Not significant</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-2.5">RESISC-45 (n=19)</td>
+                    <td className="py-2.5 font-mono">ret@10</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-gray-500 text-right">0.628</td>
+                    <td className="py-2.5 text-gray-500">Not significant</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2.5">RESISC-45 (n=19)</td>
+                    <td className="py-2.5 font-mono">early_aurc</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-right">--</td>
+                    <td className="py-2.5 font-mono text-gray-500 text-right">0.743</td>
+                    <td className="py-2.5 text-gray-500">Not significant</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-xs text-gray-500 mt-4">
               On CIFAR-100, parameter count alone explains forgetting and topology adds nothing.
-              On CUB-200, parameter count predicts in the wrong direction and topology rescues the prediction.
+              On CUB-200, parameter count predicts in the wrong direction and topology rescues the
+              prediction (suggestive at p = 0.037 but does not survive Bonferroni across 3 datasets,
+              adjusted alpha = 0.0167). On RESISC-45, topology does not help predict forgetting
+              on any metric.
             </p>
           </div>
 
@@ -749,16 +805,18 @@ export default function FindingsPage() {
           </h2>
           <div className="space-y-4">
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-emerald-300 mb-2">
-                Finding 1: Topology predicts forgetting on hard tasks where model size fails
+              <h3 className="font-semibold text-amber-300 mb-2">
+                Finding 1: Topology is a conditional predictor, not a universal one
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                On CUB-200 (200 bird species, fine-grained classification),
-                parameter count alone predicts retention in the wrong direction
-                (rho = -0.92). Adding topological features rescues the
-                prediction (rho = 0.34, permutation test p = 0.037, 17.5% MAE
-                reduction). Topology alone (rho = 0.33) outperforms params
-                alone.
+                On CUB-200 (fine-grained birds), topology rescues forgetting
+                prediction where parameter count fails (params rho = -0.92 wrong
+                direction; +topology rho = 0.34; permutation p = 0.037). However,
+                this p-value does not survive Bonferroni correction across 3
+                datasets (adjusted alpha = 0.0167), making the result suggestive
+                rather than confirmed. On RESISC-45 (satellite scenes), topology
+                does not help at all (perm p = 0.566). Topology appears to matter
+                on fine-grained visual tasks but not on satellite imagery.
               </p>
             </div>
 
@@ -776,39 +834,46 @@ export default function FindingsPage() {
 
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
               <h3 className="font-semibold text-cyan-300 mb-2">
-                Finding 3: Task difficulty determines whether topology matters
+                Finding 3: Task domain, not just difficulty, determines whether topology predicts forgetting
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                The central insight: topology&apos;s predictive value depends on
-                task difficulty. When the task is easy enough that scale alone
-                explains the variance, topology is redundant. When the task is
-                hard enough that scale fails as a predictor, topology captures
-                early knowledge fragility that nothing else does.
+                The picture is more nuanced than &quot;topology helps on hard
+                tasks.&quot; CIFAR-100 (easy): scale dominates. CUB-200
+                (fine-grained): topology is suggestive. RESISC-45 (satellite):
+                topology does not help despite being a non-trivial task. The
+                domain itself matters. Fine-grained visual discrimination may
+                create loss landscape structures that topological features can
+                capture, while satellite scene classification does not.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/15 p-6">
+              <h3 className="font-semibold text-emerald-300 mb-2">
+                Finding 4: H0 predicts EWC benefit across datasets (strongest cross-dataset signal)
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                The most robust finding across all 3 datasets: H0 persistence
+                (connected components) predicts how much a model benefits from
+                Elastic Weight Consolidation. On CIFAR-100: rho = 0.76,
+                p = 0.0002. On RESISC-45: rho = 0.86, p = 2.4e-6. Models with
+                more fragmented loss landscapes (higher H0) benefit more from
+                EWC regularization. This makes topology a mitigation sensitivity
+                marker, telling you not just whether a model will forget, but
+                how much a specific intervention will help.
               </p>
             </div>
 
             <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
               <h3 className="font-semibold text-violet-300 mb-2">
-                Finding 4: The commercially relevant regime favors topology
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Real-world continual learning tasks (medical imaging, rare fraud
-                detection, edge-case driving) are hard and fine-grained, like
-                CUB-200. This is exactly where topology provides its unique
-                value.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-emerald-300 mb-2">
-                Finding 5: WRN width ladder confirms topology is not just a scale proxy
+                Finding 5: WRN width ladder confirms universal H0 monotonicity
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 The WRN-28-k ladder (k=1,2,4,6,8,10) shows H0 perfectly
-                monotonic with width (rho = -1.0), and on CUB-200 the
-                within-ladder direction flips compared to CIFAR-100, confirming
-                that the relationship between topology and forgetting depends on
-                task difficulty, not just model scale.
+                monotonic with width on all 3 datasets (rho = -1.0 on CIFAR-100,
+                CUB-200, and RESISC-45). Wider networks universally produce
+                smoother loss landscapes. Cubical vs Ripser H1 agreement is also
+                perfect (rho = 1.0) on all 3 datasets, confirming methodological
+                robustness.
               </p>
             </div>
           </div>
@@ -846,12 +911,13 @@ export default function FindingsPage() {
               <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
                 <div>
                   <p className="text-emerald-300 font-medium mb-1">
-                    H0 monotonic with width
+                    H0 monotonic with width (universal)
                   </p>
                   <p>
                     H0 persistence is perfectly monotonic with width multiplier
-                    (rho = -1.0). Wider networks produce smoother loss landscapes
-                    with fewer connected components.
+                    (rho = -1.0) on all 3 datasets (CIFAR-100, CUB-200,
+                    RESISC-45). Wider networks universally produce smoother loss
+                    landscapes with fewer connected components.
                   </p>
                 </div>
                 <div>
@@ -861,8 +927,8 @@ export default function FindingsPage() {
                   <p>
                     CIFAR-100: H0 vs retention rho = 0.71 (suggestive). CUB-200:
                     H0 vs retention rho = -0.83, p = 0.04 (opposite direction).
-                    The flip confirms that task difficulty, not just model scale,
-                    determines the topology-forgetting relationship.
+                    The relationship between topology and forgetting varies by
+                    domain, even though H0 monotonicity with scale is universal.
                   </p>
                 </div>
               </div>
@@ -938,21 +1004,23 @@ export default function FindingsPage() {
               </p>
               <p className="text-sm text-gray-400">
                 Fine-grained bird classification. 200 species. Topology rescues
-                prediction (permutation p = 0.037) where parameter count fails
-                (rho = -0.27, not significant).
+                prediction (permutation p = 0.037, suggestive but does not
+                survive Bonferroni across 3 datasets) where parameter count
+                fails (rho = -0.27, not significant).
               </p>
             </div>
-            <div className="rounded-2xl bg-gradient-to-b from-amber-500/10 to-amber-500/[0.02] border border-amber-500/20 p-5">
+            <div className="rounded-2xl bg-gradient-to-b from-rose-500/10 to-rose-500/[0.02] border border-rose-500/20 p-5">
               <h3 className="font-semibold text-white text-sm mb-2">
                 NWPU-RESISC45
               </h3>
-              <p className="text-xs text-amber-300 mb-2">
-                In progress
+              <p className="text-xs text-emerald-300 mb-2">
+                19 / 19 architectures complete
               </p>
               <p className="text-sm text-gray-400">
-                Satellite remote sensing scenes. 45 classes. Will test whether
-                the topology-on-hard-tasks pattern generalizes to a
-                fundamentally different visual domain (aerial imagery).
+                Satellite remote sensing scenes. 45 classes. Topology does NOT
+                help predict forgetting (perm p = 0.566 ret@100, p = 0.628
+                ret@10, p = 0.743 early_aurc). However, H0 strongly predicts
+                EWC benefit (rho = 0.86, p = 2.4e-6).
               </p>
             </div>
           </div>
@@ -967,27 +1035,44 @@ export default function FindingsPage() {
           </h2>
           <div className="space-y-4 text-[15px] text-gray-400 leading-relaxed">
             <p>
-              The cross-dataset results resolve the central ambiguity from our
-              earlier CIFAR-100-only analysis. On easy tasks, parameter count
-              explains everything and topology is redundant. On hard
-              fine-grained tasks, parameter count fails completely and topology
-              provides the only predictive signal for early forgetting.
+              With all 57 configurations complete across 3 datasets, the picture
+              is clear: topology is not a universal predictor of forgetting. The
+              CUB-200 result (p = 0.037) is suggestive but does not survive
+              Bonferroni correction across 3 datasets (adjusted alpha = 0.0167).
+              On RESISC-45, topology provides no forgetting prediction at all
+              (p = 0.566). Topology&apos;s predictive value for forgetting is
+              conditional on the visual domain.
             </p>
             <p>
-              This is not a negative result for topology. It means topology is
-              most valuable precisely when simple metrics fail, which is the
-              commercially and scientifically relevant regime. RESISC-45
-              (satellite remote sensing) is in progress to test whether this
-              pattern generalizes to a third domain.
+              However, the strongest cross-dataset signal is not about predicting
+              forgetting directly. H0 persistence (connected components) predicts
+              how much a model benefits from EWC regularization, and this holds
+              on both CIFAR-100 (rho = 0.76, p = 0.0002) and RESISC-45
+              (rho = 0.86, p = 2.4e-6). This reframes topology&apos;s role: it is
+              a mitigation sensitivity marker. It tells you not just that a model
+              might forget, but how much a specific intervention (EWC) will help.
             </p>
             <p className="text-white font-medium">
-              Pending experiments and analyses:
+              Revised narrative:
+            </p>
+            <ul className="space-y-2 text-sm pl-2 list-disc list-inside">
+              <li>
+                Topology as <span className="text-amber-300">conditional forgetting predictor</span>:
+                works on fine-grained CUB-200, not on satellite RESISC-45 or easy CIFAR-100
+              </li>
+              <li>
+                Topology as <span className="text-emerald-300">mitigation sensitivity marker</span>:
+                H0 predicts EWC benefit across datasets (the most robust finding)
+              </li>
+              <li>
+                WRN H0 monotonicity (rho = -1.0) and cubical/Ripser agreement
+                (rho = 1.0) are <span className="text-emerald-300">universal across all 3 datasets</span>
+              </li>
+            </ul>
+            <p className="text-white font-medium mt-4">
+              Next steps:
             </p>
             <ol className="list-decimal list-inside space-y-2 text-sm pl-2">
-              <li>
-                <span className="text-emerald-300">RESISC-45</span>{" "}
-                (19 architectures, in progress) for cross-domain generalization
-              </li>
               <li>
                 <span className="text-emerald-300">
                   Multi-seed runs
@@ -998,13 +1083,14 @@ export default function FindingsPage() {
                 <span className="text-emerald-300">
                   Scale to 30+ architectures
                 </span>{" "}
-                for more statistical power (target p &lt; 0.01)
+                for more statistical power (target: CUB-200 p &lt; 0.0167
+                after Bonferroni)
               </li>
               <li>
                 <span className="text-emerald-300">
-                  Prototype forgetting risk API
+                  EWC benefit prediction API
                 </span>{" "}
-                for practical deployment
+                as the commercially viable product angle
               </li>
               <li>
                 <span className="text-emerald-300">

@@ -141,10 +141,10 @@ const PROGRAMS: Program[] = [
       ],
       summary: (
         <>
-          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), parameter count fails (rho = -0.27, not significant). Topology rescues forgetting prediction: permutation test p = 0.037, 17.5% MAE reduction.
+          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), topology rescues prediction (p = 0.037), but this does not survive Bonferroni across 3 datasets. On RESISC-45 (n=19), topology does not help (p = 0.566), but H0 strongly predicts EWC benefit (rho = 0.86, p = 2.4e-6).
         </>
       ),
-      pending: "38 of 57 configurations complete (2 datasets). RESISC-45 in progress for cross-domain validation.",
+      pending: "57 of 57 configurations complete across 3 datasets (CIFAR-100, CUB-200, RESISC-45).",
       findingsLink: true,
     },
     references: [
@@ -458,7 +458,7 @@ function ProgramModal({
           {program.results && (
             <div className={`rounded-xl bg-gradient-to-br ${c.gradientBg} border ${c.border} p-5 mb-6`}>
               <h3 className="font-semibold text-white mb-4">
-                Results (19 Architectures, 2 Datasets)
+                Results (19 Architectures, 3 Datasets)
               </h3>
               <div className="overflow-x-auto mb-4">
                 <table className="w-full text-sm">
@@ -657,14 +657,14 @@ export default function ResearchPrograms() {
           {/* Preliminary Results */}
           <div className="mt-8 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/15 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4">
-              Results (19 Architectures, 2 Datasets Complete)
+              Results (19 Architectures, 3 Datasets Complete)
             </h3>
 
             {/* Key stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
-                <p className="text-2xl font-bold text-emerald-300 font-mono">0.037</p>
-                <p className="text-xs text-gray-500 mt-1">CUB-200 Perm. p</p>
+                <p className="text-2xl font-bold text-amber-300 font-mono">0.037</p>
+                <p className="text-xs text-gray-500 mt-1">CUB-200 Perm. p (suggestive; does not survive Bonferroni across 3 datasets)</p>
               </div>
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
                 <p className="text-2xl font-bold text-amber-300 font-mono">-0.92</p>
@@ -681,10 +681,10 @@ export default function ResearchPrograms() {
             </div>
 
             <p className="text-sm text-gray-400 mb-2">
-              On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, p = 0.0002, survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, fine-grained birds), parameter count fails (rho = -0.27, p = 0.27). A leave-one-architecture-out Ridge regression with permutation testing shows topology rescues prediction: params-only rho = -0.92 (wrong direction), params+topology rho = 0.34 (p = 0.037).
+              On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, p = 0.0002, survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, fine-grained birds), topology rescues prediction (permutation p = 0.037), but this does not survive Bonferroni correction across 3 datasets. On RESISC-45 (n=19, satellite scenes), topology also does not help predict forgetting (p = 0.566). However, H0 strongly predicts EWC benefit on RESISC-45 (rho = 0.86, p = 2.4e-6). Most stable cross-domain signal: H0 predicts EWC benefit (CIFAR-100 rho = 0.76, RESISC-45 rho = 0.86).
             </p>
             <p className="text-sm text-gray-500">
-              38 of 57 configurations complete. RESISC-45 (satellite scenes) in progress for cross-domain validation.
+              57 of 57 configurations complete across 3 datasets. Most stable signal: H0 predicts EWC benefit (CIFAR-100 rho = 0.76, RESISC-45 rho = 0.86).
             </p>
             <div className="mt-4">
               <Link

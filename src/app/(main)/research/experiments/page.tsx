@@ -127,30 +127,29 @@ export default function ExperimentsPage() {
 
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
-            <MetaRow label="Status" value="Active, 38/57 configurations complete across 2 datasets" />
-            <MetaRow label="Progress" value="19/19 archs on CIFAR-100 and CUB-200 (Phases 1-5 complete). RESISC-45 in progress." />
+            <MetaRow label="Status" value="Active, 57/57 configurations complete across 3 datasets" />
+            <MetaRow label="Progress" value="19/19 archs on CIFAR-100, CUB-200, and RESISC-45 (Phases 1-5 complete)." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
             <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
             <MetaRow label="Compute" value="Local GPU (NVIDIA RTX 4090, CUDA, PyTorch 2.x)" />
             <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction" />
-            <MetaRow label="Key Result" value="CUB-200: topology rescues forgetting prediction (p=0.037) where params fail (rho=-0.92). CIFAR-100: params dominate, topology redundant." />
+            <MetaRow label="Key Result" value="CUB-200: topology rescues prediction (p=0.037, suggestive). RESISC-45: topology does not help (p=0.566). H0 predicts EWC benefit across datasets (rho=0.76-0.86)." />
           </div>
 
           {/* Preliminary Results */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/15 to-teal-500/10 border border-emerald-500/20 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="text-emerald-400 text-lg">&#9679;</span>
-              Results (19 Architectures, 2 Datasets Complete)
+              Results (19 Architectures, 3 Datasets Complete)
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Cross-dataset analysis reveals that topology&apos;s predictive value depends on task difficulty.
-              On CIFAR-100 (n=19, easy benchmark), parameter count dominates (\u03c1 = -0.76, p = 0.0002,
-              survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, hard
-              fine-grained), parameter count fails (\u03c1 = -0.27, p = 0.27). Leave-one-architecture-out
-              Ridge regression with permutation testing shows topology rescues prediction on CUB-200:
-              params-only \u03c1 = -0.92 (wrong direction), params+topology \u03c1 = 0.34, permutation p = 0.037,
-              17.5% MAE reduction.
+              Cross-dataset analysis (57/57 configs, 3 datasets) reveals topology is a conditional predictor.
+              On CIFAR-100 (easy), params dominate (\u03c1 = -0.76, p = 0.0002). On CUB-200 (fine-grained birds),
+              topology rescues prediction (perm. p = 0.037, suggestive; does not survive Bonferroni across
+              3 datasets). On RESISC-45 (satellite scenes), topology does not help (p = 0.566). The most
+              stable cross-dataset signal: H0 predicts EWC benefit on CIFAR-100 (\u03c1 = 0.76, p = 0.0002)
+              and RESISC-45 (\u03c1 = 0.86, p = 2.4e-6).
             </p>
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-sm">
@@ -215,14 +214,14 @@ export default function ExperimentsPage() {
                 <span className="text-emerald-300 font-semibold">Key finding:</span>{" "}
                 Topology&apos;s value depends on task difficulty. On CIFAR-100, params dominate
                 (\u03c1 = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (hard,
-                fine-grained), params fail (\u03c1 = -0.27, not significant) and topology rescues
-                prediction (permutation p = 0.037).
+                fine-grained), topology rescues prediction (perm. p = 0.037, suggestive).
+                On RESISC-45, topology does not help. H0 predicts EWC benefit across datasets.
               </p>
               <p>
                 <span className="text-emerald-300 font-semibold">CUB-200 detail:</span>{" "}
                 Params-only \u03c1 = -0.92 (wrong direction). Adding topology: \u03c1 = 0.34,
                 17.5% MAE reduction. WRN width ladder complete, confirming H0 monotonicity
-                and direction flip between easy and hard tasks. RESISC-45 in progress.
+                and direction flip between easy and hard tasks. All 3 datasets complete.
               </p>
             </div>
           </div>

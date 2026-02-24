@@ -273,11 +273,12 @@ export default function MissionPage() {
             <p className="text-gray-400 leading-relaxed mb-6">
               Our flagship experiment (EXP-01) investigates whether persistent homology features
               of neural network loss landscapes predict resistance to catastrophic forgetting.
-              With 38 of 57 configurations complete across 19 architectures and 2 datasets, our key
-              finding is that topology predicts forgetting on hard tasks where model size fails. On
-              CUB-200 (fine-grained, n=19), parameter count predicts the wrong direction (&rho; = -0.92),
-              but adding topology rescues prediction (permutation test p = 0.037). RESISC-45 in progress
-              for cross-domain validation.
+              With all 57 configurations complete across 19 architectures and 3 datasets, our findings
+              show topology is a conditional predictor of forgetting. On CUB-200 (fine-grained birds),
+              topology rescues prediction where parameter count fails (permutation p = 0.037, suggestive
+              but does not survive Bonferroni across 3 datasets). On RESISC-45 (satellite scenes),
+              topology does not help. The most stable cross-dataset signal: loss landscape connectivity
+              (H0) predicts how much EWC regularization helps (CIFAR-100 &rho; = 0.76, RESISC-45 &rho; = 0.86).
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
