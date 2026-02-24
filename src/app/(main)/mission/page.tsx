@@ -273,10 +273,11 @@ export default function MissionPage() {
             <p className="text-gray-400 leading-relaxed mb-6">
               Our flagship experiment (EXP-01) investigates whether persistent homology features
               of neural network loss landscapes predict resistance to catastrophic forgetting.
-              With 14 of 19 architectures completed on CIFAR-100, results show H₁ persistence
-              correlates with knowledge retention (Spearman &rho; = 0.61, p = 0.021), but parameter
-              count dominates (&rho; = -0.74). A WRN width ladder experiment and two additional datasets
-              (CUB-200, RESISC-45) are in progress to resolve the topology vs. scale confound.
+              With 38 of 57 configurations complete across 19 architectures and 2 datasets, our key
+              finding is that topology predicts forgetting on hard tasks where model size fails. On
+              CUB-200 (fine-grained, n=19), parameter count predicts the wrong direction (&rho; = -0.92),
+              but adding topology rescues prediction (permutation test p = 0.037). RESISC-45 in progress
+              for cross-domain validation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

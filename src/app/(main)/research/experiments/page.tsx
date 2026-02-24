@@ -127,29 +127,30 @@ export default function ExperimentsPage() {
 
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
-            <MetaRow label="Status" value="Active — 7-phase pipeline, expanding to 3 datasets" />
-            <MetaRow label="Progress" value="14/19 architectures on CIFAR-100 (Phases 1-3). WRN width ladder + CUB-200 + RESISC-45 in progress." />
+            <MetaRow label="Status" value="Active, 38/57 configurations complete across 2 datasets" />
+            <MetaRow label="Progress" value="19/19 archs on CIFAR-100 and CUB-200 (Phases 1-5 complete). RESISC-45 in progress." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
             <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
             <MetaRow label="Compute" value="Local GPU (NVIDIA RTX 4090, CUDA, PyTorch 2.x)" />
-            <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting" />
-            <MetaRow label="Preliminary" value="H1 ρ = 0.61 (n=14, p=0.021). Within-CNN: ρ = 0.66 (p=0.026). Params dominate full-sample (ρ = -0.74)." />
+            <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction" />
+            <MetaRow label="Key Result" value="CUB-200: topology rescues forgetting prediction (p=0.037) where params fail (rho=-0.92). CIFAR-100: params dominate, topology redundant." />
           </div>
 
           {/* Preliminary Results */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/15 to-teal-500/10 border border-emerald-500/20 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="text-emerald-400 text-lg">&#9679;</span>
-              Preliminary Results (14 Architectures, CIFAR-100)
+              Results (19 Architectures, 2 Datasets Complete)
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Cross-architecture analysis (n=14) reveals that H1 persistence (loop structure
-              in the loss landscape) correlates with knowledge retention (\u03c1 = 0.61, p = 0.021).
-              However, parameter count dominates (\u03c1 = -0.74, p = 0.002, survives Bonferroni).
-              After partialing out model size, H1 drops to non-significance (partial \u03c1 = 0.35, p = 0.24).
-              Within CNNs only (n=11), H1 re-emerges as significant (\u03c1 = 0.66, p = 0.026),
-              suggesting topology carries information within an architecture family.
+              Cross-dataset analysis reveals that topology&apos;s predictive value depends on task difficulty.
+              On CIFAR-100 (n=19, easy benchmark), parameter count dominates (\u03c1 = -0.76, p = 0.0002,
+              survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, hard
+              fine-grained), parameter count fails (\u03c1 = -0.27, p = 0.27). Leave-one-architecture-out
+              Ridge regression with permutation testing shows topology rescues prediction on CUB-200:
+              params-only \u03c1 = -0.92 (wrong direction), params+topology \u03c1 = 0.34, permutation p = 0.037,
+              17.5% MAE reduction.
             </p>
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-sm">
@@ -167,38 +168,38 @@ export default function ExperimentsPage() {
                   <tr className="border-b border-white/5">
                     <td className="py-1 text-emerald-300">ViT-Tiny</td>
                     <td className="py-1">0.3M</td><td className="py-1">52.7%</td>
-                    <td className="py-1 font-mono">0.18</td><td className="py-1 text-emerald-300">22.5%</td>
+                    <td className="py-1 font-mono">0.01</td><td className="py-1 text-emerald-300">22.5%</td>
                     <td className="py-1 text-xs text-gray-500">Transformer</td>
                   </tr>
                   <tr className="border-b border-white/5">
                     <td className="py-1">ShuffleNet-V2</td>
                     <td className="py-1">1.3M</td><td className="py-1">76.8%</td>
-                    <td className="py-1 font-mono">0.69</td><td className="py-1 text-emerald-300">17.3%</td>
+                    <td className="py-1 font-mono">0.79</td><td className="py-1 text-emerald-300">17.3%</td>
                     <td className="py-1 text-xs text-gray-500">CNN</td>
                   </tr>
                   <tr className="border-b border-white/5">
                     <td className="py-1 text-emerald-300">ViT-Small</td>
-                    <td className="py-1">3.0M</td><td className="py-1">62.2%</td>
-                    <td className="py-1 font-mono">0.32</td><td className="py-1 text-emerald-300">9.6%</td>
+                    <td className="py-1">2.2M</td><td className="py-1">62.2%</td>
+                    <td className="py-1 font-mono">0.24</td><td className="py-1 text-emerald-300">9.6%</td>
                     <td className="py-1 text-xs text-gray-500">Transformer</td>
                   </tr>
                   <tr className="border-b border-white/5">
                     <td className="py-1">EfficientNet-B0</td>
                     <td className="py-1">4.1M</td><td className="py-1">76.6%</td>
-                    <td className="py-1 font-mono text-emerald-300">2.12</td><td className="py-1">7.1%</td>
-                    <td className="py-1 text-xs text-gray-500">CNN+SE</td>
+                    <td className="py-1 font-mono text-emerald-300">1.91</td><td className="py-1">7.1%</td>
+                    <td className="py-1 text-xs text-gray-500">CNN</td>
+                  </tr>
+                  <tr className="border-b border-white/5">
+                    <td className="py-1">WRN-28-10</td>
+                    <td className="py-1">36.5M</td><td className="py-1">84.0%</td>
+                    <td className="py-1 font-mono">0.07</td><td className="py-1">0.3%</td>
+                    <td className="py-1 text-xs text-gray-500">WRN-ladder</td>
                   </tr>
                   <tr className="border-b border-white/5">
                     <td className="py-1">ResNet-18</td>
                     <td className="py-1">11.2M</td><td className="py-1">82.0%</td>
                     <td className="py-1 font-mono">0.00</td><td className="py-1">0.2%</td>
                     <td className="py-1 text-xs text-gray-500">CNN</td>
-                  </tr>
-                  <tr className="border-b border-white/5">
-                    <td className="py-1">WRN-28-10</td>
-                    <td className="py-1">36.5M</td><td className="py-1">84.0%</td>
-                    <td className="py-1 font-mono">0.08</td><td className="py-1">0.3%</td>
-                    <td className="py-1 text-xs text-gray-500">WRN-ladder</td>
                   </tr>
                   <tr>
                     <td className="py-1">ResNet-18 Wide</td>
@@ -211,18 +212,17 @@ export default function ExperimentsPage() {
             </div>
             <div className="space-y-2 text-sm text-gray-400">
               <p>
-                <span className="text-emerald-300 font-semibold">Key tension:</span>{" "}
-                H1 persistence correlates with retention (\u03c1 = 0.61) but parameter count
-                dominates (\u03c1 = -0.74, survives Bonferroni). After partialing out model size,
-                H1 drops to non-significance. Within CNNs only (n=11), H1 re-emerges as
-                significant (\u03c1 = 0.66, p = 0.026), suggesting topology matters within
-                architecture families.
+                <span className="text-emerald-300 font-semibold">Key finding:</span>{" "}
+                Topology&apos;s value depends on task difficulty. On CIFAR-100, params dominate
+                (\u03c1 = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (hard,
+                fine-grained), params fail (\u03c1 = -0.27, not significant) and topology rescues
+                prediction (permutation p = 0.037).
               </p>
               <p>
-                <span className="text-emerald-300 font-semibold">Decisive test:</span>{" "}
-                WRN-28-k width ladder (k=1,2,4,6,8,10) isolates scale from topology. Same
-                architecture, same depth, varying only width. Expanding to CUB-200 and RESISC-45
-                for cross-domain validation. LOAO predictive model with permutation test pending.
+                <span className="text-emerald-300 font-semibold">CUB-200 detail:</span>{" "}
+                Params-only \u03c1 = -0.92 (wrong direction). Adding topology: \u03c1 = 0.34,
+                17.5% MAE reduction. WRN width ladder complete, confirming H0 monotonicity
+                and direction flip between easy and hard tasks. RESISC-45 in progress.
               </p>
             </div>
           </div>

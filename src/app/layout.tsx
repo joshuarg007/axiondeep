@@ -180,7 +180,7 @@ const jsonLd = {
       "@id": "https://www.axiondeep.com/#persist",
       name: "Project PERSIST — Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-architecture study (14 of 19 architectures on CIFAR-100) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. H1 persistence correlates with retention (Spearman rho=0.61, p=0.021) but parameter count dominates (rho=-0.74). WRN width ladder and 2 additional datasets in progress. Tools: PyTorch, Ripser, GUDHI.",
+        "Cross-architecture study (19 architectures, 2 datasets) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. Key finding: topology rescues forgetting prediction on hard tasks (CUB-200 permutation p=0.037) where parameter count fails (rho=-0.92). 38/57 configurations complete. RESISC-45 in progress. Tools: PyTorch, Ripser, GUDHI.",
       url: "https://www.axiondeep.com/research#persist",
       parentOrganization: { "@id": "https://www.axiondeep.com/#organization" },
       about: [
@@ -232,7 +232,7 @@ const jsonLd = {
       headline:
         "Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
-        "Cross-architecture study (14 architectures on CIFAR-100) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. H1 persistence correlates with retention (Spearman rho=0.61, p=0.021) but parameter count dominates (rho=-0.74). WRN width ladder experiment in progress to resolve topology vs. scale confound.",
+        "Cross-dataset study (19 architectures, CIFAR-100 + CUB-200) showing topology predicts forgetting on hard tasks (permutation p=0.037) where parameter count fails (rho=-0.92). On easy benchmarks, parameter count dominates. 38/57 configurations complete, RESISC-45 in progress.",
       url: "https://www.axiondeep.com/research/findings",
       datePublished: "2026-02-17",
       author: {

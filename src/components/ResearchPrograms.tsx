@@ -133,21 +133,18 @@ const PROGRAMS: Program[] = [
     },
     results: {
       rows: [
-        { arch: "ViT-Small", params: "~3M", h0: "4,254.2", retention: "9.6%", highlight: true },
-        { arch: "EfficientNet-B0", params: "~4.1M", h0: "3,579.9", retention: "7.1%" },
-        { arch: "MLP-Mixer", params: "~2.3M", h0: "3,758.8", retention: "0.03%" },
-        { arch: "ResNet-18", params: "~11M", h0: "2,151.5", retention: "0.2%" },
-        { arch: "ResNet-50", params: "~23.6M", h0: "1,639.0", retention: "0.1%" },
+        { arch: "ViT-Tiny", params: "0.3M", h0: "0.01", retention: "22.5%", highlight: true },
+        { arch: "ShuffleNet-V2", params: "1.3M", h0: "0.79", retention: "17.3%" },
+        { arch: "EfficientNet-B0", params: "4.1M", h0: "1.91", retention: "7.1%" },
+        { arch: "WRN-28-10", params: "36.5M", h0: "0.07", retention: "0.3%" },
+        { arch: "ResNet-18 Wide", params: "44.7M", h0: "0.00", retention: "0.0%" },
       ],
       summary: (
         <>
-          H1 persistence correlates with retention (\u03c1 = 0.61, p = 0.021, n=14) but parameter
-          count dominates (\u03c1 = -0.74). Within CNNs only, H1 re-emerges as significant
-          (\u03c1 = 0.66, p = 0.026). WRN width ladder experiment in progress to disentangle
-          topology from scale.
+          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), parameter count fails (rho = -0.27, not significant). Topology rescues forgetting prediction: permutation test p = 0.037, 17.5% MAE reduction.
         </>
       ),
-      pending: "19 architectures on 3 datasets. WRN width ladder (the decisive experiment) in progress. LOAO predictive model and EWC benefit analysis pending.",
+      pending: "38 of 57 configurations complete (2 datasets). RESISC-45 in progress for cross-domain validation.",
       findingsLink: true,
     },
     references: [
@@ -461,7 +458,7 @@ function ProgramModal({
           {program.results && (
             <div className={`rounded-xl bg-gradient-to-br ${c.gradientBg} border ${c.border} p-5 mb-6`}>
               <h3 className="font-semibold text-white mb-4">
-                Preliminary Results (CIFAR-100, 14 Architectures)
+                Results (19 Architectures, 2 Datasets)
               </h3>
               <div className="overflow-x-auto mb-4">
                 <table className="w-full text-sm">
@@ -660,40 +657,34 @@ export default function ResearchPrograms() {
           {/* Preliminary Results */}
           <div className="mt-8 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/15 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4">
-              Preliminary Results (CIFAR-100, 14 Architectures)
+              Results (19 Architectures, 2 Datasets Complete)
             </h3>
 
             {/* Key stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
-                <p className="text-2xl font-bold text-emerald-300 font-mono">0.61</p>
-                <p className="text-xs text-gray-500 mt-1">H₁ vs Retention (rho)</p>
+                <p className="text-2xl font-bold text-emerald-300 font-mono">0.037</p>
+                <p className="text-xs text-gray-500 mt-1">CUB-200 Perm. p</p>
               </div>
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
-                <p className="text-2xl font-bold text-amber-300 font-mono">-0.74</p>
-                <p className="text-xs text-gray-500 mt-1">Params vs Retention (rho)</p>
+                <p className="text-2xl font-bold text-amber-300 font-mono">-0.92</p>
+                <p className="text-xs text-gray-500 mt-1">Params-only (CUB)</p>
               </div>
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
-                <p className="text-2xl font-bold text-gray-400 font-mono">0.35</p>
-                <p className="text-xs text-gray-500 mt-1">Partial H₁|params</p>
+                <p className="text-2xl font-bold text-emerald-300 font-mono">0.34</p>
+                <p className="text-xs text-gray-500 mt-1">+Topology (CUB)</p>
               </div>
               <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 text-center">
-                <p className="text-2xl font-bold text-cyan-300 font-mono">0.66</p>
-                <p className="text-xs text-gray-500 mt-1">Within-CNN H₁ (rho)</p>
+                <p className="text-2xl font-bold text-cyan-300 font-mono">-0.76</p>
+                <p className="text-xs text-gray-500 mt-1">Params (CIFAR)</p>
               </div>
             </div>
 
             <p className="text-sm text-gray-400 mb-2">
-              H₁ persistence (loop structure) correlates with knowledge retention at
-              rho = 0.61 (p = 0.021), but parameter count correlates more strongly
-              (rho = -0.74, p = 0.002). After partialing out model size, H₁ drops to
-              non-significance. However, within CNNs only (n=11), H₁ re-emerges as
-              significant (rho = 0.66, p = 0.026), suggesting topology carries
-              information within architecture families that scale alone cannot explain.
+              On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, p = 0.0002, survives Bonferroni) and topology adds no predictive value. On CUB-200 (n=19, fine-grained birds), parameter count fails (rho = -0.27, p = 0.27). A leave-one-architecture-out Ridge regression with permutation testing shows topology rescues prediction: params-only rho = -0.92 (wrong direction), params+topology rho = 0.34 (p = 0.037).
             </p>
             <p className="text-sm text-gray-500">
-              WRN width ladder (k=1 to 10) and two additional datasets (CUB-200,
-              RESISC-45) in progress to resolve the topology vs. scale confound.
+              38 of 57 configurations complete. RESISC-45 (satellite scenes) in progress for cross-domain validation.
             </p>
             <div className="mt-4">
               <Link
