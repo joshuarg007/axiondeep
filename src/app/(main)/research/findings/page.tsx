@@ -1218,11 +1218,205 @@ export default function FindingsPage() {
         </div>
       </section>
 
+      {/* Proposed Mechanism */}
+      <section className="px-6 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">
+            9. Proposed Mechanism: Basin Fragmentation
+          </h2>
+          <div className="rounded-2xl bg-gradient-to-br from-violet-500/10 to-violet-500/[0.02] border border-violet-500/20 p-6">
+            <div className="space-y-4 text-[15px] text-gray-400 leading-relaxed">
+              <p>
+                H0 in persistent homology counts connected components in the sublevel
+                set filtration of the loss landscape. A high H0 count indicates a
+                <span className="text-violet-300"> fragmented landscape </span>
+                with many disconnected basins at low loss values.
+              </p>
+              <p>
+                We propose the <span className="text-white font-medium">basin
+                fragmentation hypothesis</span>: H0 measures the degree of loss
+                landscape fragmentation, which determines how much curvature-based
+                regularization (EWC) can help by preventing inter-basin drift during
+                sequential training.
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 my-4">
+                <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/10 p-4">
+                  <p className="text-xs text-emerald-400 uppercase tracking-wider mb-2">
+                    High H0 (fragmented landscape)
+                  </p>
+                  <ul className="space-y-1 text-sm text-gray-400">
+                    <li>Many disconnected basins at low loss</li>
+                    <li>Naive training drifts across basin boundaries</li>
+                    <li>EWC prevents inter-basin drift via Fisher penalty</li>
+                    <li>Large EWC benefit</li>
+                  </ul>
+                </div>
+                <div className="rounded-xl bg-rose-500/5 border border-rose-500/10 p-4">
+                  <p className="text-xs text-rose-400 uppercase tracking-wider mb-2">
+                    Low H0 (smooth landscape)
+                  </p>
+                  <ul className="space-y-1 text-sm text-gray-400">
+                    <li>One broad basin; few disconnected regions</li>
+                    <li>Naive training perturbs within the same basin</li>
+                    <li>EWC penalty addresses a problem that does not exist</li>
+                    <li>Small EWC benefit</li>
+                  </ul>
+                </div>
+              </div>
+              <p>
+                The WRN width ladder provides supporting evidence: H0 decreases
+                perfectly with width (rho = -1.0 vs params) across all three datasets,
+                consistent with wider networks having smoother, less fragmented
+                landscapes. The CUB-200 null for EWC benefit (rho = 0.31, p = 0.19)
+                may indicate that fine-grained discrimination creates forgetting through
+                feature-level interference rather than parameter-level basin drift.
+              </p>
+              <p className="text-xs text-gray-500 mt-2 italic">
+                This mechanism is tentative. A causal test would require intervening
+                on landscape topology (e.g., via landscape-aware regularization) and
+                measuring the effect on EWC benefit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Limitations */}
+      <section className="px-6 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">
+            10. Limitations and External Validity
+          </h2>
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <div className="space-y-4 text-[15px] text-gray-400 leading-relaxed">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-medium text-sm mb-2">What we claim</h4>
+                  <ul className="space-y-1 text-sm list-disc list-inside">
+                    <li>
+                      Dataset significantly moderates the H0-EWC benefit relationship
+                      (Phase 6, p = 0.046)
+                    </li>
+                    <li>
+                      H0 partial effects on EWC benefit exclude zero on CIFAR-100 and
+                      RESISC-45 but not CUB-200
+                    </li>
+                    <li>
+                      On CUB-200, topology provides the only predictive signal for early
+                      forgetting (ret@10 CI excludes zero)
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-white font-medium text-sm mb-2">What we do not claim</h4>
+                  <ul className="space-y-1 text-sm list-disc list-inside">
+                    <li>
+                      That topology universally predicts forgetting (RESISC-45 null)
+                    </li>
+                    <li>
+                      That the EWC moderation finding is confirmatory (it emerged from
+                      exploratory analysis)
+                    </li>
+                    <li>
+                      That basin fragmentation is an established causal mechanism
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-medium text-sm mb-2">Scope limitations</h4>
+                <ul className="space-y-1 text-sm list-disc list-inside">
+                  <li>
+                    <span className="text-amber-300">19 architectures:</span> moderate
+                    statistical power; WRN width ladder controls for family but has
+                    limited within-ladder degrees of freedom
+                  </li>
+                  <li>
+                    <span className="text-amber-300">One mitigation method:</span> only
+                    EWC tested; if H0 does not predict benefit under Synaptic Intelligence
+                    or PackNet, the finding is EWC-specific
+                  </li>
+                  <li>
+                    <span className="text-amber-300">2D projections:</span> topology
+                    computed on 2D landscape cross-sections, not the full high-dimensional
+                    landscape; 5 slices mitigate but do not eliminate sampling variance
+                  </li>
+                  <li>
+                    <span className="text-amber-300">Borderline p-values:</span> EWC
+                    moderation p = 0.046, forgetting ret@100 p = 0.035; CUB-200
+                    ret@10 p = 0.037 does not survive Bonferroni
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-4">
+                <h4 className="text-white font-medium text-sm mb-2">Falsification targets</h4>
+                <ol className="space-y-1 text-sm list-decimal list-inside">
+                  <li>
+                    Synaptic Intelligence benefit shows no H0 correlation on CIFAR-100
+                    or RESISC-45 (mechanism is EWC-specific)
+                  </li>
+                  <li>
+                    Adding 10+ architectures eliminates the CUB-200 ret@10 signal
+                    (forgetting prediction claim fails)
+                  </li>
+                  <li>
+                    Landscape intervention (e.g., SAM) changes H0 without changing EWC
+                    benefit (causal link is broken)
+                  </li>
+                  <li>
+                    Cubical persistence disagrees with Ripser-based H0 on the
+                    moderation result (measurement is method-dependent)
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Analysis Transparency */}
+      <section className="px-6 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-xl font-bold text-white mb-4">
+            11. Analysis Path Transparency
+          </h2>
+          <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
+            <div className="space-y-4 text-[15px] text-gray-400 leading-relaxed">
+              <p>
+                The original hypothesis targeted topology as a direct predictor of
+                forgetting. Retention at step 10 was pre-specified as the primary
+                outcome, with ret@100 and early AURC as robustness checks.
+              </p>
+              <p>
+                CIFAR-100 was run first and showed parameter count dominates
+                (topology null, p = 0.295). CUB-200 was run second and showed topology
+                rescues prediction (p = 0.037). RESISC-45 was run third and returned
+                a null for topology (p = 0.566), falsifying the simpler
+                &ldquo;topology helps on hard tasks&rdquo; framing.
+              </p>
+              <p>
+                The EWC benefit analysis was computed as part of Phase 4 diagnostics,
+                not as the original target hypothesis. The shift from
+                &ldquo;topology predicts forgetting&rdquo; to &ldquo;topology predicts
+                mitigation benefit&rdquo; emerged from the data after the RESISC-45
+                null. The Phase 6 pooled interaction model was designed post hoc to
+                formalize the cross-dataset moderation pattern.
+              </p>
+              <p className="text-white font-medium">
+                The EWC moderation finding (p = 0.046) should be interpreted as a
+                data-driven discovery requiring pre-registered replication, not as a
+                confirmatory result.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Reproducibility */}
       <section className="px-6 pb-12">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold text-white mb-4">
-            9. Reproducibility and Infrastructure
+            12. Reproducibility and Infrastructure
           </h2>
           <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
             <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-400">
