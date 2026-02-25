@@ -103,7 +103,7 @@ const PROGRAMS: Program[] = [
     number: "I",
     name: "Project PERSIST",
     fullName: "Plasticity-Enabled Retention through Structured Information Synthesis over Time",
-    status: "Active \u2014 Producing Results",
+    status: "Preliminary Complete \u2014 Phase I Scale Validation Planned (Requires Supercomputer)",
     colors: COLORS.persist,
     sections: [
       {
@@ -141,10 +141,10 @@ const PROGRAMS: Program[] = [
       ],
       summary: (
         <>
-          On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), topology rescues prediction (p = 0.037), but this does not survive Bonferroni across 3 datasets. On RESISC-45 (n=19), topology does not help (p = 0.566), but H0 strongly predicts EWC benefit (rho = 0.86, p = 2.4e-6). Phase 6 pooled interaction analysis (n=57, clustered bootstrap) formally confirms dataset moderation: H0 predicts EWC benefit on CIFAR-100 and RESISC-45 (CIs excluding zero, permutation p=0.046) but not CUB-200.
+          <strong>Preliminary proof-of-concept (small-scale, 0.3M-44.7M params):</strong> On CIFAR-100 (n=19), parameter count dominates (rho = -0.76, survives Bonferroni) and topology is redundant. On CUB-200 (n=19), topology rescues prediction (p = 0.037), but this does not survive Bonferroni across 3 datasets. On RESISC-45 (n=19), topology does not help (p = 0.566), but H0 strongly predicts EWC benefit (rho = 0.86, p = 2.4e-6). Phase 6 pooled interaction analysis (n=57, clustered bootstrap) formally confirms dataset moderation (p=0.046). <strong>Phase I (planned, requires supercomputer):</strong> Whether these signals survive at production scale (100M-7B+ params) is genuinely unknown. Computing persistent homology on large parameter spaces introduces fundamental computational barriers requiring novel distributed algorithms and supercomputer resources.
         </>
       ),
-      pending: "57 of 57 configurations complete across 3 datasets (CIFAR-100, CUB-200, RESISC-45).",
+      pending: "Preliminary: 57/57 configurations complete (small-scale proof-of-concept). Phase I: Scale validation to 100M-7B+ parameter models planned (requires supercomputer allocation).",
       findingsLink: true,
     },
     references: [

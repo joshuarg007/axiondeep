@@ -82,10 +82,11 @@ export default function ExperimentsPage() {
             Priority Experiments
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-            Detailed scope, methodology, and preliminary results for three
-            priority experiments selected for novelty, feasibility, and
-            publication impact. EXP-01 is actively producing cross-architecture
-            data with strong preliminary correlation.
+            Detailed scope, methodology, and results for three priority
+            experiments. EXP-01 (PERSIST) has completed preliminary
+            proof-of-concept across 57 small-scale configurations. Phase I
+            scale validation to production-size models (100M-7B+ parameters)
+            is planned, requiring supercomputer resources.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
@@ -127,29 +128,30 @@ export default function ExperimentsPage() {
 
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
-            <MetaRow label="Status" value="Active, 57/57 configurations complete across 3 datasets" />
-            <MetaRow label="Progress" value="19/19 archs on CIFAR-100, CUB-200, and RESISC-45 (Phases 1-6 complete)." />
+            <MetaRow label="Status" value="Preliminary proof-of-concept complete (57/57 small-scale configs). Phase I scale validation planned (supercomputer required)." />
+            <MetaRow label="Preliminary" value="19/19 archs (0.3M-44.7M params) on CIFAR-100, CUB-200, and RESISC-45 (all phases complete)." />
+            <MetaRow label="Phase I" value="Planned: 100M-7B+ param models, ImageNet/NLP, 10-100+ task sequences, multiple CL methods. Requires supercomputer allocation." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
             <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
-            <MetaRow label="Compute" value="Local GPU (NVIDIA RTX 4090, CUDA, PyTorch 2.x)" />
+            <MetaRow label="Compute" value="Preliminary: Local GPU (NVIDIA RTX 4090). Phase I: Supercomputer (NSF ACCESS or equivalent)." />
             <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction" />
-            <MetaRow label="Key Result" value="Phase 6 pooled interaction (n=57): dataset moderates H0-EWC benefit (p=0.046). CUB-200 topology rescues forgetting prediction (CI excludes zero). RESISC-45 topology does not help." />
+            <MetaRow label="Preliminary Result" value="Phase 6 pooled interaction (n=57): dataset moderates H0-EWC benefit (p=0.046). Small models only (under 45M params). Scale survival is the open research question for Phase I." />
           </div>
 
           {/* Preliminary Results */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/15 to-teal-500/10 border border-emerald-500/20 p-6 mb-8">
             <h3 className="font-semibold text-white mb-4 flex items-center gap-2">
               <span className="text-emerald-400 text-lg">&#9679;</span>
-              Results (19 Architectures, 3 Datasets Complete)
+              Preliminary Results (19 Architectures, 3 Datasets, Small-Scale Proof-of-Concept)
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              Cross-dataset analysis (57/57 configs, 3 datasets) reveals topology is a conditional predictor.
-              On CIFAR-100 (easy), params dominate (\u03c1 = -0.76, p = 0.0002). On CUB-200 (fine-grained birds),
-              topology rescues prediction (perm. p = 0.037, suggestive; does not survive Bonferroni across
-              3 datasets). On RESISC-45 (satellite scenes), topology does not help (p = 0.566). The most
-              stable cross-dataset signal: H0 predicts EWC benefit on CIFAR-100 (\u03c1 = 0.76, p = 0.0002)
-              and RESISC-45 (\u03c1 = 0.86, p = 2.4e-6).
+              Preliminary proof-of-concept (all models under 45M params): Cross-dataset analysis (57/57 configs, 3 datasets)
+              reveals topology is a conditional predictor at small scale. On CIFAR-100 (easy), params dominate
+              (\u03c1 = -0.76). On CUB-200, topology rescues prediction (perm. p = 0.037, suggestive). On RESISC-45,
+              topology does not help (p = 0.566). Most stable signal: H0 predicts EWC benefit (CIFAR-100
+              \u03c1 = 0.76, RESISC-45 \u03c1 = 0.86). Whether these patterns survive at production scale (100M-7B+
+              params) is the critical open research question for Phase I, requiring supercomputer resources.
             </p>
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-sm">

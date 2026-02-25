@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Research Findings — Topological Knowledge Persistence",
   description:
-    "EXP-01 cross-dataset results: topology is a conditional predictor of forgetting (CUB-200 p=0.037 suggestive, RESISC-45 p=0.566 not significant) and a mitigation sensitivity marker (H0 predicts EWC benefit, rho=0.86). 57 of 57 configurations complete across 19 architectures and 3 datasets.",
+    "EXP-01 preliminary proof-of-concept results (small-scale, 0.3M-44.7M params): topology is a conditional predictor of forgetting (CUB-200 p=0.037 suggestive) and a mitigation sensitivity marker (H0 predicts EWC benefit, rho=0.86). 57/57 configurations complete. Phase I scale validation (100M-7B+ params) planned, requiring supercomputer resources.",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",
@@ -130,7 +130,7 @@ export default function FindingsPage() {
               EXP-01 &middot; PERSIST
             </span>
             <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">
-              3 Datasets Complete &middot; 57 of 57 Configurations
+              Preliminary Complete &middot; 57 of 57 Configs &middot; Phase I Scale Validation Planned
             </span>
           </div>
 
@@ -140,8 +140,8 @@ export default function FindingsPage() {
           </h1>
 
           <p className="text-sm text-gray-500 mb-6">
-            Axion Deep Labs &middot; February 2026 &middot; Working Paper
-            &middot; Updated February 2026 with 57/57 cross-dataset results
+            Axion Deep Labs &middot; February 2026 &middot; Preliminary Proof-of-Concept (Small-Scale)
+            &middot; Phase I Scale Validation Planned (Supercomputer Required)
           </p>
         </div>
       </section>
@@ -154,24 +154,20 @@ export default function FindingsPage() {
               Abstract
             </h2>
             <p className="text-gray-400 leading-relaxed text-[15px]">
-              We investigate whether the topological structure of a neural
-              network&apos;s loss landscape predicts resistance to catastrophic
-              forgetting. Across 19 architectures and 3 datasets (CIFAR-100,
-              CUB-200-2011, and NWPU-RESISC45), we compute persistent homology
-              on 50x50 loss landscape grids using 5 independent random 2D slices
-              with both Ripser and GUDHI cubical complexes. On the easy benchmark
-              (CIFAR-100, n=19), parameter count dominates (rho = -0.76,
-              p = 0.0002, survives Bonferroni) and topology adds no predictive
-              value. On the hard fine-grained benchmark (CUB-200, n=19),
-              parameter count fails completely (rho = -0.27, p = 0.27) and
-              topology rescues prediction (permutation p = 0.037), though this
-              does not survive Bonferroni correction across 3 datasets (adjusted
-              alpha = 0.0167). On satellite imagery (RESISC-45, n=19), topology
-              does not help (permutation p = 0.566). However, the most stable
-              cross-dataset signal is that H0 persistence predicts EWC benefit:
-              CIFAR-100 rho = 0.76 (p = 0.0002), RESISC-45 rho = 0.86
-              (p = 2.4e-6). Topology is a conditional predictor of forgetting
-              (task-dependent) and a universal marker of mitigation sensitivity.
+              Preliminary proof-of-concept: We investigate whether the topological
+              structure of neural network loss landscapes predicts resistance to
+              catastrophic forgetting. Across 19 small-to-medium architectures
+              (0.3M-44.7M parameters) and 3 small-image datasets (CIFAR-100,
+              CUB-200-2011, NWPU-RESISC45), we compute persistent homology on
+              50x50 loss landscape grids using 5 independent random 2D slices.
+              The most stable signal: H0 persistence predicts EWC mitigation
+              benefit (CIFAR-100 rho = 0.76, RESISC-45 rho = 0.86). These results
+              are preliminary, established on models well below production scale.
+              The critical open question for Phase I is whether the topological
+              signal survives on 100M-7B+ parameter models, long task sequences,
+              and diverse continual learning methods, which requires supercomputer
+              resources and potentially novel distributed persistent homology
+              algorithms.
             </p>
           </div>
         </div>

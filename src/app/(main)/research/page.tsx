@@ -45,12 +45,13 @@ export default function ResearchPage() {
             Networks
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
-            Four research programs with active experiments studying why neural
-            networks fail at sequential task learning, how information integrates
-            across architectures, and what governs capacity limits. Our flagship
-            experiment (EXP-01) is actively producing cross-architecture data
-            with preliminary correlation between loss landscape topology and
-            catastrophic forgetting resistance.
+            Four research programs investigating fundamental obstacles to continual learning.
+            Our flagship experiment (EXP-01 PERSIST) has completed preliminary
+            proof-of-concept across 19 architectures and 3 datasets, demonstrating
+            that loss landscape topology predicts mitigation benefit at small scale.
+            Phase I will test whether these signals survive at production scale
+            (100M-7B+ parameters), requiring supercomputer resources and novel
+            distributed persistent homology algorithms.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-8">
@@ -60,7 +61,7 @@ export default function ResearchPage() {
                 href: "#persist",
                 color:
                   "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
-                status: "Active",
+                status: "Preliminary Complete",
               },
               {
                 label: "DRIFT",
@@ -145,8 +146,8 @@ export default function ResearchPage() {
                 Infrastructure
               </h3>
               <ul className="space-y-1 text-sm text-gray-400">
-                <li>Local GPU cluster (NVIDIA RTX, CUDA)</li>
-                <li>ClearML tracking (self-hosted)</li>
+                <li>Preliminary: Local GPU (NVIDIA RTX 4090)</li>
+                <li>Phase I: Supercomputer (planned)</li>
                 <li>Automated experiment dashboard</li>
                 <li>Results in structured JSON</li>
               </ul>
