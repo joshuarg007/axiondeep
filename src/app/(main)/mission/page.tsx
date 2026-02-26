@@ -283,7 +283,7 @@ export default function MissionPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/research/findings"
+                href="/research/persist/findings"
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:opacity-90 transition-opacity text-center"
               >
                 View preliminary results

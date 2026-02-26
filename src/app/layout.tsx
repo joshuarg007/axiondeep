@@ -233,7 +233,7 @@ const jsonLd = {
         "Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
         "Cross-dataset study (19 architectures, 3 datasets, 57/57 complete). Topology rescues forgetting prediction on CUB-200 (p=0.037, suggestive) but not RESISC-45. H0 predicts EWC mitigation benefit across datasets (rho=0.76-0.86). Parameter count dominates on easy benchmarks.",
-      url: "https://www.axiondeep.com/research/findings",
+      url: "https://www.axiondeep.com/research/persist/findings",
       datePublished: "2026-02-17",
       author: {
         "@id": "https://www.axiondeep.com/#organization",

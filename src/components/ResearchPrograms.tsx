@@ -490,7 +490,7 @@ function ProgramModal({
               {program.results.findingsLink && (
                 <div className="mt-4">
                   <Link
-                    href="/research/findings"
+                    href={`/research/${program.id}/findings`}
                     className={`text-sm ${c.text} hover:opacity-80 transition underline underline-offset-4`}
                   >
                     Full results with figures &rarr;
@@ -692,7 +692,7 @@ export default function ResearchPrograms() {
             </p>
             <div className="mt-4">
               <Link
-                href="/research/findings"
+                href="/research/persist/findings"
                 className="text-sm text-emerald-300 hover:text-emerald-200 transition underline underline-offset-4"
               >
                 Full results and statistical analysis →

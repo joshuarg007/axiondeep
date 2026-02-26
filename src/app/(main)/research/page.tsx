@@ -221,7 +221,7 @@ export default function ResearchPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/research/findings"
+                href="/research/persist/findings"
                 className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold hover:opacity-90 transition"
               >
                 Research Findings
