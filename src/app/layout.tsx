@@ -127,7 +127,7 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "research inquiries",
-        email: "hello@axiondeep.com",
+        email: "labs@axiondeep.com",
       },
     },
     {

@@ -96,7 +96,7 @@ Testing whether neural network information capacity follows an area law (proport
 ## Contact
 
 - Website: https://www.axiondeep.com
-- Research inquiries: hello@axiondeep.com
+- Research inquiries: labs@axiondeep.com
 - Research programs: https://www.axiondeep.com/research
 - Experimental protocols: https://www.axiondeep.com/research/experiments
 

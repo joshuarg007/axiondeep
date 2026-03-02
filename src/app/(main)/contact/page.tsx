@@ -45,8 +45,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">Email Us</h3>
-                    <a href="mailto:hello@axiondeep.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                      hello@axiondeep.com
+                    <a href="mailto:labs@axiondeep.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                      labs@axiondeep.com
                     </a>
                   </div>
                 </div>

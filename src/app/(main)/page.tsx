@@ -240,7 +240,7 @@ export default function HomePage() {
                       />
                     </svg>
                   </div>
-                  <span>hello@axiondeep.com</span>
+                  <span>labs@axiondeep.com</span>
                 </div>
               </div>
             </div>
