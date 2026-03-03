@@ -3,6 +3,28 @@ import Image from "next/image";
 
 const products = [
   {
+    name: "SDI",
+    slug: "sdi",
+    tagline: "Structural divergence index for model version governance",
+    description:
+      "Predicts performance degradation in fine-tuned foundation models without running full benchmark suites. Combines spectral analysis, representation drift, and curvature shift into a single risk score. Under 10 minutes for 7B parameter models.",
+    icon: null,
+    badge: "R&D" as const,
+    badgeColor: "blue" as const,
+    accentText: "text-blue-400",
+    iconBg: "bg-blue-500/20",
+    borderColor: "border-blue-500/20",
+    borderHover: "hover:border-blue-500/40",
+    gradientBg: "from-blue-500/15 via-blue-500/5 to-transparent",
+    tagBg: "bg-blue-500/10",
+    tagText: "text-blue-400",
+    tagBorder: "border-blue-500/20",
+    tech: ["Python", "PyTorch", "HuggingFace", "NumPy"],
+    tags: ["Model Governance", "Risk Scoring", "Spectral Analysis", "NSF SBIR"],
+    url: "https://github.com/Axion-Deep-Labs/structural-divergence-index",
+    href: "/projects/sdi",
+  },
+  {
     name: "Made4Founders",
     slug: "made4founders",
     tagline: "Command center for solo founders",
@@ -117,6 +139,7 @@ const products = [
 const badgeStyles: Record<string, string> = {
   green: "bg-green-500/20 text-green-300 border-green-400/30",
   amber: "bg-amber-500/20 text-amber-300 border-amber-400/30",
+  blue: "bg-blue-500/20 text-blue-300 border-blue-400/30",
 };
 
 export default function ProductGrid() {
