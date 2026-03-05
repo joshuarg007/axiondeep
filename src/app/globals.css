@@ -70,7 +70,7 @@ body {
   }
   .no-snap {
     display: block !important;
-    scroll-snap-align: start;
+    scroll-snap-align: none;
     min-height: 100vh;
   }
 }

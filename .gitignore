@@ -37,6 +37,9 @@ yarn-error.log*
 public/videos/*.mp4
 public/videos/BL_proxy/
 
+# Sora prompts (internal only)
+SORA2_PROMPTS.md
+
 # Generated scripts
 scripts/generate_*.py
 

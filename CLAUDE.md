@@ -10,6 +10,9 @@
 - Website language: "research," "investigate," "advance," "innovate"
 - NEVER: "hire us," "services," "pricing," "your project," "client"
 
+### Exception: `/marketing/*` Routes
+The `/marketing` section is "Axion Deep Marketing" — a services arm bundling web dev, SEO, and Site2CRM lead capture into done-for-you packages. These pages intentionally use commercial/services language ("build," "grow," "convert," pricing tiers, CTAs). This overrides the "pure R&D, no sales" rule for `/marketing/*` routes only.
+
 ## SESSION STATE (Update before ending each session)
 **Last Updated:** 2026-02-17
 
@@ -109,6 +112,11 @@ npm run dev  # Runs on port 3000
 - `/` - Home
 - `/mission` - Mission statement
 - `/solutions` - Product portfolio
+- `/marketing` - Axion Deep Marketing (services landing page)
+- `/marketing/web-development` - Web development services
+- `/marketing/seo` - SEO services
+- `/marketing/lead-capture` - Lead capture / Site2CRM services
+- `/marketing/contact` - Contact + booking
 - `/development` - Applied R&D
 - `/research` - Project DRIFT overview
 - `/careers` - Join the labs
