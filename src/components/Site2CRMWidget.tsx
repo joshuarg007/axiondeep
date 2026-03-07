@@ -25,14 +25,14 @@ export default function Site2CRMWidget({
     script.setAttribute("data-container", containerId);
     script.setAttribute("data-source", "axiondeep.com");
 
-    containerRef.current?.appendChild(script);
+    const node = containerRef.current;
+    node?.appendChild(script);
 
     return () => {
-      // Cleanup if component unmounts
-      if (containerRef.current) {
-        const existingScript = containerRef.current.querySelector("script");
+      if (node) {
+        const existingScript = node.querySelector("script");
         if (existingScript) {
-          containerRef.current.removeChild(existingScript);
+          node.removeChild(existingScript);
         }
       }
     };

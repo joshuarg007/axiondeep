@@ -28,7 +28,7 @@ const LINES: Line[] = [
 
 export default function TerminalSection() {
   const [visibleLines, setVisibleLines] = useState<number>(0);
-  const [typingIndex, setTypingIndex] = useState(0);
+  const [, setTypingIndex] = useState(0);
   const [currentTyped, setCurrentTyped] = useState("");
   const sectionRef = useRef<HTMLDivElement>(null);
   const hasStarted = useRef(false);
