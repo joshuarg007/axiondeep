@@ -21,18 +21,19 @@ export default function HomePage() {
             <span className="block text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
               Axion Deep Labs
             </span>
+            {" "}
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
-              Research and Development
+              Innovation and Development
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Original research and development in AI, quantum computing, and intelligent automation.
+            Pioneering advances in AI, quantum computing, and intelligent automation.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-4">
-            Axion Deep Labs is an independent research and development organization that conducts original investigations in machine learning theory, quantum computing, and computational neuroscience. Our research programs produce experimental results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
+            Axion Deep Labs is an independent R&D organization that conducts original investigations in machine learning theory, quantum computing, and computational neuroscience. Our experimental programs produce measurable results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-            We bridge the gap between theoretical research and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring breakthrough discoveries into real-world applications.
+            We bridge the gap between theoretical inquiry and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring breakthrough discoveries into real-world applications.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -63,7 +64,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                Every project at Axion Deep Labs follows a research-driven methodology that begins with deep investigation into the problem space and concludes with the delivery of production-grade software.
+                Every project at Axion Deep Labs follows a rigorous, inquiry-driven methodology that begins with deep investigation into the problem space and concludes with the delivery of production-grade software.
               </p>
               <p className="text-gray-400 leading-relaxed">
                 Our development process emphasizes rapid prototyping and early validation of assumptions before committing to final production architectures, ensuring that every milestone is backed by rigorous testing and measurable progress toward clearly defined objectives.
@@ -75,7 +76,7 @@ export default function HomePage() {
                 {
                   num: "01",
                   title: "Investigate",
-                  desc: "We begin every engagement with a thorough exploration of the problem space, mapping technical constraints, identifying critical unknowns, and defining a focused research agenda that guides all subsequent development work.",
+                  desc: "We begin every engagement with a thorough exploration of the problem space, mapping technical constraints, identifying critical unknowns, and defining a focused investigative agenda that guides all subsequent development work.",
                   color: "from-cyan-500 to-blue-500",
                 },
                 {
@@ -87,7 +88,7 @@ export default function HomePage() {
                 {
                   num: "03",
                   title: "Build",
-                  desc: "Development proceeds with continuous integration, comprehensive test coverage, and regular code reviews to ensure that every component meets the quality standards required for production-grade research and development output.",
+                  desc: "Development proceeds with continuous integration, comprehensive test coverage, and regular code reviews to ensure that every component meets the quality standards required for production-grade scientific and engineering output.",
                   color: "from-fuchsia-500 to-pink-500",
                 },
                 {
@@ -124,7 +125,7 @@ export default function HomePage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Deep expertise</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI and machine learning to cloud infrastructure, the research and development work at Axion Deep Labs spans every layer of modern computing, delivering solutions that are both scientifically rigorous and production-ready.
+              From AI and machine learning to cloud infrastructure, the scientific and engineering work at Axion Deep Labs spans every layer of modern computing, delivering solutions that are both rigorously tested and production-ready.
             </p>
           </div>
 
@@ -159,7 +160,7 @@ export default function HomePage() {
               },
               {
                 title: "AI Integration",
-                desc: "Large language model integration, custom model training, and intelligent automation pipelines built on cutting-edge research.",
+                desc: "Large language model integration, custom model training, and intelligent automation pipelines built on cutting-edge science and experimentation.",
                 gradient: "from-fuchsia-500/10 to-pink-500/5",
                 border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
               },
@@ -184,6 +185,52 @@ export default function HomePage() {
                 <p className="text-sm text-gray-500">{service.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Current Focus Section */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-cyan-400 font-medium tracking-wide uppercase text-sm mb-4">
+              Active Programs
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Where we focus today</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Our current experimental programs explore the boundaries of what neural networks can learn, how information flows through deep architectures, and why certain models generalize better than others.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20">
+              <p className="text-emerald-400 font-mono text-sm mb-2">PERSIST</p>
+              <h3 className="text-xl font-bold text-white mb-3">Topological Signatures in Continual Learning</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Investigating whether the shape of loss landscapes — measured through persistent homology — can predict a neural network&apos;s vulnerability to catastrophic forgetting. Cross-architecture study spanning 19 model families and 3 datasets.
+              </p>
+            </div>
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-violet-500/10 to-purple-500/5 border border-violet-500/20">
+              <p className="text-violet-400 font-mono text-sm mb-2">DRIFT</p>
+              <h3 className="text-xl font-bold text-white mb-3">Quantum State Evolution Under Repeated Manipulation</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Characterizing behavioral uncertainty in quantum systems subjected to iterated field transformations. Focused on stability degradation patterns under variation in operator ordering and diversity across multiple quantum circuit configurations.
+              </p>
+            </div>
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-fuchsia-500/10 to-pink-500/5 border border-fuchsia-500/20">
+              <p className="text-fuchsia-400 font-mono text-sm mb-2">PHI</p>
+              <h3 className="text-xl font-bold text-white mb-3">Integrated Information in Deep Networks</h3>
+              <p className="text-gray-400 leading-relaxed">
+                First comprehensive measurement of integrated information (Phi) across major deep learning architecture families, testing whether information integration correlates with generalization, transfer learning, and robustness to distribution shift.
+              </p>
+            </div>
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-500/10 to-red-500/5 border border-orange-500/20">
+              <p className="text-orange-400 font-mono text-sm mb-2">GENESIS</p>
+              <h3 className="text-xl font-bold text-white mb-3">Information Capacity Scaling Laws</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Testing whether neural network information capacity follows an area law rather than a volume law — a computational analog of the holographic principle. Spanning 15+ architecture configurations with power-law fitting and Bayesian model comparison.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -218,10 +265,10 @@ export default function HomePage() {
                 Explore what we&apos;re building
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-4">
-                Whether you are exploring a research collaboration, have a technical inquiry about our work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of cutting-edge research and practical software development.
+                Whether you are exploring a scientific collaboration, have a technical inquiry about our work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of advanced R&D and practical software engineering.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
-                We respond to all inquiries within one business day and welcome conversations about how our research and development capabilities can support your organization&apos;s goals in AI, quantum computing, or full-stack software engineering.
+                We respond to all inquiries within one business day and welcome conversations about how our R&D capabilities can support your organization&apos;s goals in AI, quantum computing, or full-stack software engineering.
               </p>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-center gap-3">
