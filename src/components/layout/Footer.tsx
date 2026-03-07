@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="snap-start border-t border-white/[0.06] relative z-10 bg-black/20">
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-4">
@@ -101,35 +101,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" className="text-sm text-gray-500 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-sm text-gray-500 hover:text-white transition-colors">
                   Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services Column */}
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Services</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/marketing" className="text-sm text-gray-500 hover:text-cyan-400 transition-colors">
-                  Marketing Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/marketing/web-development" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link href="/marketing/seo" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  SEO
-                </Link>
-              </li>
-              <li>
-                <Link href="/marketing/lead-capture" className="text-sm text-gray-500 hover:text-white transition-colors">
-                  Lead Capture
                 </Link>
               </li>
             </ul>
