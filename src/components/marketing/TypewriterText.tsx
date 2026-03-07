@@ -25,8 +25,8 @@ export default function TypewriterText({
   useEffect(() => {
     const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     if (prefersReduced) {
-      setText(phrases[0]);
-      return;
+      const id = setTimeout(() => setText(phrases[0]), 0);
+      return () => clearTimeout(id);
     }
 
     let timeout: NodeJS.Timeout;

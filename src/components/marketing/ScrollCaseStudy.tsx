@@ -1,21 +1,21 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ScrollCaseStudy() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollContainer, setScrollContainer] = useState<HTMLElement | null>(null);
+  const scrollContainerRef = useRef<HTMLElement>(null);
 
   // Find the actual scroll container (.snap-container) instead of window
   useEffect(() => {
     const el = document.querySelector(".snap-container") as HTMLElement | null;
-    setScrollContainer(el || document.documentElement);
+    scrollContainerRef.current = el || document.documentElement;
   }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    container: scrollContainer ? { current: scrollContainer } : undefined,
+    container: scrollContainerRef,
     offset: ["start end", "end start"],
   });
 

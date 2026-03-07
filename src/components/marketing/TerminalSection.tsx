@@ -33,27 +33,6 @@ export default function TerminalSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const hasStarted = useRef(false);
 
-  useEffect(() => {
-    const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (prefersReduced) {
-      setVisibleLines(LINES.length);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasStarted.current) {
-          hasStarted.current = true;
-          startAnimation();
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   function startAnimation() {
     LINES.forEach((line, i) => {
       setTimeout(() => {
@@ -76,6 +55,27 @@ export default function TerminalSection() {
       }, line.delay);
     });
   }
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    if (prefersReduced) {
+      const id = setTimeout(() => setVisibleLines(LINES.length), 0);
+      return () => clearTimeout(id);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted.current) {
+          hasStarted.current = true;
+          startAnimation();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section ref={sectionRef} className="px-6 py-24">
