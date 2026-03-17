@@ -267,6 +267,12 @@ export default function RootLayout({
       <head>
         {/* DNS Prefetch for performance */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Bing Webmaster Tools verification */}
+        <meta name="msvalidate.01" content="BING_VERIFICATION_CODE" />
+        {/* Yandex Webmaster verification */}
+        <meta name="yandex-verification" content="YANDEX_VERIFICATION_CODE" />
+        {/* IndexNow API key */}
+        <meta name="indexnow-key" content="2c85497cccf94576a6c7f5e177265c47" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
