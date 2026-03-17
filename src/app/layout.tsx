@@ -269,8 +269,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Bing Webmaster Tools verification */}
         <meta name="msvalidate.01" content="AB4FF550AF95CB57D30F6310D306078F" />
-        {/* Yandex Webmaster verification */}
-        <meta name="yandex-verification" content="YANDEX_VERIFICATION_CODE" />
         {/* IndexNow API key */}
         <meta name="indexnow-key" content="2c85497cccf94576a6c7f5e177265c47" />
         <script
