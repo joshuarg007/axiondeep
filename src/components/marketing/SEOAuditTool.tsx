@@ -127,6 +127,7 @@ export default function SEOAuditTool() {
         },
         body: JSON.stringify({
           email: email.trim(),
+          name: email.trim().split("@")[0].replace(/[._]/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
           notes: `[SEO Audit] URL: ${url} | Performance: ${result?.performance} | SEO: ${result?.seo} | Accessibility: ${result?.accessibility}`,
           source: "axiondeep.com/marketing (SEO audit)",
         }),
