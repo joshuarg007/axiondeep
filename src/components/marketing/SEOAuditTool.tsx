@@ -267,6 +267,7 @@ export default function SEOAuditTool() {
                 </div>
                 <p className="text-xl text-white font-medium mb-2">Report on the way!</p>
                 <p className="text-gray-400">We&apos;ll send a detailed audit with recommendations within 24 hours.</p>
+                <p className="text-gray-600 text-xs mt-4">You can <a href="/unsubscribe" className="text-violet-400 hover:text-violet-300 transition-colors">unsubscribe</a> at any time.</p>
                 <button
                   onClick={() => { setState("idle"); setUrl(""); setEmail(""); setResult(null); }}
                   className="mt-6 text-sm text-violet-400 hover:text-white transition-colors"
