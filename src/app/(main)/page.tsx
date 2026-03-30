@@ -23,17 +23,17 @@ export default function HomePage() {
             </span>
             {" "}
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
-              Innovation and Development
+              Research and Development
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Pioneering advances in AI, quantum computing, and intelligent automation.
+            Pioneering <strong className="font-semibold text-gray-300">scientific research</strong> in AI, quantum computing, and computational neuroscience.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-4">
-            Axion Deep Labs is an independent R&D organization that conducts original investigations in machine learning theory, quantum computing, and computational neuroscience. Our experimental programs produce measurable results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
+            Axion Deep Labs is an <strong className="font-medium text-gray-400">independent research laboratory</strong> that conducts original scientific investigations in machine learning theory, quantum computing, and computational neuroscience. Our experimental research programs produce measurable results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
-            We bridge the gap between theoretical inquiry and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring breakthrough discoveries into real-world applications.
+            We bridge the gap between <strong className="font-medium text-gray-400">peer-reviewed research</strong> and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring scientific discoveries into real-world applications. Every project is rooted in rigorous R&D methodology with reproducible experiments and published findings.
           </p>
         </div>
         {/* Client-side animations overlay */}
@@ -64,10 +64,10 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                Every project at Axion Deep Labs follows a rigorous, inquiry-driven methodology that begins with deep investigation into the problem space and concludes with the delivery of production-grade software.
+                Every project at Axion Deep Labs follows a <strong className="font-semibold">rigorous, research-driven methodology</strong> that begins with scientific investigation into the problem space and concludes with the delivery of production-grade software.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Our development process emphasizes rapid prototyping and early validation of assumptions before committing to final production architectures, ensuring that every milestone is backed by rigorous testing and measurable progress toward clearly defined objectives.
+                Our R&D process emphasizes rapid prototyping and early experimental validation before committing to final production architectures, ensuring that every milestone is backed by reproducible results and measurable progress toward clearly defined research objectives.
               </p>
             </div>
 
@@ -123,9 +123,9 @@ export default function HomePage() {
             <p className="text-violet-400 font-medium tracking-wide uppercase text-sm mb-4">
               Technical Domains
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Deep expertise</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Research domains</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI and machine learning to cloud infrastructure, the scientific and engineering work at Axion Deep Labs spans every layer of modern computing, delivering solutions that are both rigorously tested and production-ready.
+              From AI and machine learning research to cloud infrastructure, the scientific and engineering work at Axion Deep Labs spans every layer of modern computing, delivering solutions grounded in rigorous experimentation and peer-reviewed methodology.
             </p>
           </div>
 
@@ -159,8 +159,8 @@ export default function HomePage() {
                 border: "border-violet-500/20 hover:border-violet-500/40",
               },
               {
-                title: "AI Integration",
-                desc: "Large language model integration, custom model training, and intelligent automation pipelines built on cutting-edge science and experimentation.",
+                title: "AI Research & Integration",
+                desc: "Large language model research, custom model training, and intelligent automation pipelines built on cutting-edge scientific experimentation and published findings.",
                 gradient: "from-fuchsia-500/10 to-pink-500/5",
                 border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
               },
@@ -196,9 +196,9 @@ export default function HomePage() {
             <p className="text-cyan-400 font-medium tracking-wide uppercase text-sm mb-4">
               Active Programs
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Where we focus today</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Active research programs</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Our current experimental programs explore the boundaries of what neural networks can learn, how information flows through deep architectures, and why certain models generalize better than others.
+              Our current scientific research programs explore the boundaries of what neural networks can learn, how information flows through deep architectures, and why certain models generalize better than others. Each program targets peer-reviewed publication.
             </p>
           </div>
 
@@ -265,10 +265,10 @@ export default function HomePage() {
                 Explore what we&apos;re building
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-4">
-                Whether you are exploring a scientific collaboration, have a technical inquiry about our work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of advanced R&D and practical software engineering.
+                Whether you are exploring a <strong className="font-medium text-gray-300">scientific research collaboration</strong>, have a technical inquiry about our experimental work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of advanced R&D and practical software engineering.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
-                We respond to all inquiries within one business day and welcome conversations about how our R&D capabilities can support your organization&apos;s goals in AI, quantum computing, or full-stack software engineering.
+                We respond to all research inquiries within one business day and welcome conversations about how our laboratory capabilities can support your organization&apos;s goals in AI research, quantum computing, or full-stack software engineering.
               </p>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-center gap-3">
