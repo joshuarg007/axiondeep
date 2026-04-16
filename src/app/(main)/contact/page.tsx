@@ -72,6 +72,25 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-white/[0.06]">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold">Call the Lab</h3>
+                    <a href="tel:+15127615351" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                      (512) 761-5351
+                    </a>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-500">
+                  For urgent research questions or press inquiries during US business hours.
+                </p>
+              </div>
+
               <div className="p-6 rounded-2xl bg-gradient-to-br from-fuchsia-500/10 to-pink-500/5 border border-white/[0.06]">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center">
@@ -82,11 +101,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold">Location</h3>
-                    <span className="text-gray-400">Remote-first, Global team</span>
+                    <span className="text-gray-400">Remote-first, global research team</span>
                   </div>
                 </div>
                 <p className="text-sm text-gray-500">
-                  Distributed research team, global reach.
+                  Distributed laboratory with research and engineering staff across the United States and Europe.
                 </p>
               </div>
             </div>

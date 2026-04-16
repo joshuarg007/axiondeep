@@ -189,6 +189,15 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Contact / NAP strip */}
+        <div className="pt-8 border-t border-white/[0.06] mb-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+          <address className="not-italic flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span className="font-semibold text-gray-300">Axion Deep Labs</span>
+            <a href="tel:+15127615351" className="hover:text-white transition-colors">(512) 761-5351</a>
+            <a href="mailto:labs@axiondeep.com" className="hover:text-white transition-colors">labs@axiondeep.com</a>
+          </address>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">

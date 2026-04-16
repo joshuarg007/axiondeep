@@ -185,6 +185,38 @@ export default function DevelopmentPage() {
         </div>
       </section>
 
+      {/* Research-to-Production Philosophy */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="text-center space-y-3">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">Why applied R&amp;D, not just research</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              A result without a runnable artifact is a result that evaporates.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 pt-4">
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">Every finding ships</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Every major experiment at Axion Deep Labs concludes with a deliverable: a benchmark, a reference
+                implementation, a trained model, or a deployed service. Results that cannot be exercised by another
+                engineer are treated as incomplete. This requirement forces our methodology to remain grounded in
+                real constraints rather than drifting into theory for its own sake.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">Industry timelines, academic rigor</h3>
+              <p className="text-gray-400 leading-relaxed">
+                We compress the academic publication cycle into an industry delivery cadence. A program that might
+                run eighteen months in a traditional laboratory ships a production checkpoint every quarter here,
+                with the final peer-reviewable write-up landing alongside the code. Reviewers get both the paper
+                and the repository; readers get conclusions backed by software they can run themselves.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="snap-section min-h-screen flex items-center justify-center px-6 py-16">
         <div className="text-center space-y-8 max-w-4xl mx-auto">

@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Axion Deep Labs — AI & Quantum Computing R&D",
+    default: "Axion Deep Labs — AI Research & Quantum Computing",
     template: "Axion Deep — %s",
   },
   description:

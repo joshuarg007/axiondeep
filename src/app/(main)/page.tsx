@@ -235,6 +235,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Research Output & Methodology */}
+      <section className="snap-section min-h-screen flex items-center px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-cyan-400 font-medium tracking-wide uppercase text-sm mb-4">
+              Methodology
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How we publish our work</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">Reproducibility first</h3>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                Every scientific claim from Axion Deep Labs ships with the code, the hyperparameters, the random seeds, and the exact datasets used to produce it. Our experimental protocols are versioned alongside our results so any reader can rerun the analysis and confirm the numbers on their own hardware.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                We treat failed experiments with the same rigor as successful ones. Negative results, ablation studies, and null findings are published publicly because the field advances faster when the dead ends are documented.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-3">From laboratory to production</h3>
+              <p className="text-gray-400 leading-relaxed mb-3">
+                Our research is never purely theoretical. Each program at the laboratory produces a working software artifact — a library, a benchmark, a training pipeline, or a deployed service — so the findings land in tools that other engineers and scientists can pick up and extend immediately.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                This research-to-production pipeline is what distinguishes Axion Deep Labs from a traditional academic lab. We publish peer-reviewable scientific papers, and we also ship the production code that puts those ideas into the hands of practitioners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Section */}
       <section className="snap-section min-h-screen flex items-center px-6 py-16">
         <div className="max-w-4xl mx-auto text-center">
@@ -287,7 +319,25 @@ export default function HomePage() {
                       />
                     </svg>
                   </div>
-                  <span>labs@axiondeep.com</span>
+                  <a href="mailto:labs@axiondeep.com" className="hover:text-white transition-colors">labs@axiondeep.com</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                      />
+                    </svg>
+                  </div>
+                  <a href="tel:+15127615351" className="hover:text-white transition-colors">(512) 761-5351</a>
                 </div>
               </div>
             </div>
