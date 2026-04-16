@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
-  title: "SEO Services — Rank Higher, Get Found, Grow Revenue",
+  title: "SEO Services — Get Found, Grow Revenue",
   description:
     "Data-driven SEO that puts you on page one. Technical audits, on-page optimization, content strategy, and measurable results with monthly reporting.",
   keywords: [

@@ -55,7 +55,7 @@ Testing whether neural network information capacity follows an area law (proport
 ## Research Outputs
 
 ### EXP-01 Preliminary Results: Topological Signatures of Knowledge Persistence
-- Full report: https://www.axiondeep.com/research/findings
+- Full report: https://www.axiondeep.com/research/persist/findings
 - 5 of 8 architecture runs completed with cross-architecture data
 - Figures: loss landscape topology comparison, forgetting curves across architectures
 - Data: H0 persistence values, Task A retention curves, Spearman correlation

@@ -6,7 +6,7 @@ import BookingWidget from "@/components/BookingWidget";
 import Site2CRMWidget from "@/components/Site2CRMWidget";
 
 export const metadata: Metadata = {
-  title: "Lead Capture — Every Visitor Becomes a Qualified Lead",
+  title: "Lead Capture — Turn Visitors Into Leads",
   description:
     "Smart lead capture forms, AI chat widgets, and direct CRM integration powered by Site2CRM. Stop losing leads to manual data entry.",
   keywords: [
@@ -133,6 +133,55 @@ export default function LeadCapturePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="px-6 py-24">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-fuchsia-400 font-medium tracking-widest uppercase text-sm mb-4">How It Works</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              From first click to qualified lead in your CRM
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Site2CRM combines smart multi-step forms, a 24/7 AI chat widget, and a server-side webhook layer
+              that writes directly to your CRM. No middleware to babysit, no Zapier zaps to debug, no data loss
+              between tools. Every lead is captured, enriched, and routed automatically.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <div className="text-fuchsia-400 text-2xl font-bold mb-3">01</div>
+              <h3 className="text-white font-semibold mb-2">Visitor interacts</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                A prospect lands on your site and either fills out a qualification form or chats with the AI
+                assistant. The assistant asks qualifying questions based on your ideal customer profile and
+                captures intent in natural conversation. Works 24 hours a day, so after-hours traffic still
+                converts into booked calls and real pipeline.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <div className="text-cyan-400 text-2xl font-bold mb-3">02</div>
+              <h3 className="text-white font-semibold mb-2">Lead gets enriched</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                The server stamps every submission with UTM parameters, referrer, landing page, device, and
+                timestamp. Email addresses are validated, phone numbers are normalized, and company domains
+                are matched to firmographic data when available. Junk submissions get filtered before they
+                ever reach your sales pipeline.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <div className="text-emerald-400 text-2xl font-bold mb-3">03</div>
+              <h3 className="text-white font-semibold mb-2">CRM receives the lead</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                A signed webhook fires to your CRM with the enriched payload. HubSpot, Salesforce, Pipedrive,
+                Nutshell, and Zoho all have first-class adapters, and the Zapier fallback handles anything
+                custom. Your sales team sees the lead in under two seconds with every field they need to
+                follow up intelligently.
+              </p>
+            </div>
           </div>
         </div>
       </section>

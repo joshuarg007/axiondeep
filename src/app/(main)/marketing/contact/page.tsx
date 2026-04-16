@@ -97,6 +97,53 @@ export default function MarketingContactPage() {
           </div>
         </div>
       </section>
+
+      {/* What to expect */}
+      <section className="px-6 py-20 border-t border-white/[0.06]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-cyan-400 font-medium tracking-widest uppercase text-sm mb-4">What to Expect</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Your free strategy call, start to finish
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              The strategy call is a working session, not a sales pitch. We come prepared with a live
+              audit of your current site, a shortlist of the highest-impact opportunities, and a
+              realistic read on timeline and cost. You leave with a plan you can act on, whether we
+              end up working together or not.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">Before the call</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Once you book, we run your site through DeepAudit AI and review your analytics, search
+                console data, and competitor rankings. By the time we meet we already know where you
+                rank, what is broken, and where the ceiling is for organic growth. No intake form
+                fatigue, no making you explain the basics.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">During the call</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                We share our findings on screen and walk through the three or four opportunities that
+                will move the needle fastest for your business. You get straight answers on what a
+                rebuild, an SEO engagement, or a lead capture rollout would actually look like,
+                including scope, timeline, and budget ranges. Questions welcome at any point.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">After the call</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                You get a written recap with the audit findings, prioritized recommendations, and a
+                copy-paste fix list for anything you want to tackle in-house. If it makes sense to
+                keep talking, we send a detailed proposal with fixed pricing. If it does not, you
+                still walk away with a roadmap you can use.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

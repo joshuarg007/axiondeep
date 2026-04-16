@@ -191,6 +191,61 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
+      {/* What's Included */}
+      <section className="px-6 py-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-cyan-400 font-medium tracking-widest uppercase text-sm mb-4">What&apos;s Included</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Every site ships production-ready
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              No add-on fees for the things that should come standard. Performance, accessibility,
+              analytics, and SEO are all part of the base build. You get a site that performs on day
+              one and keeps performing as you grow.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">Performance by default</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Every build targets 95 or higher on Google Lighthouse across performance,
+                accessibility, best practices, and SEO. We ship optimized images, code splitting,
+                lazy loading, edge caching, and server-side rendering from day one. Core Web Vitals
+                are measured and budgeted during development, not bolted on afterward.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">SEO baked in</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Structured data, Open Graph, canonical URLs, XML sitemap, and robots configuration
+                all ship with the site. Heading hierarchy and internal linking are planned during
+                discovery, so your pages are ready to rank the moment Google crawls them. No
+                plugins, no patches, no retrofits later.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">CRM and analytics integrated</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Forms wire directly to your CRM through Site2CRM, so leads land in your pipeline
+                with full UTM and referrer context. Google Analytics 4, Consent Mode v2, and
+                conversion tracking are configured during launch. You see real attribution from
+                the first visitor forward.
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
+              <h3 className="text-white font-semibold mb-2">Accessible and mobile-first</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                WCAG 2.1 AA is the baseline. Color contrast, keyboard navigation, focus indicators,
+                form labels, and ARIA landmarks are validated before launch. Every layout is
+                designed mobile-first so the phone experience is first-class, not a responsive
+                afterthought.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section id="contact" className="px-6 py-24">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16">

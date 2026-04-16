@@ -13,9 +13,9 @@ import PortfolioShowcase from "@/components/marketing/PortfolioShowcase";
 import MarketingCTA from "@/components/marketing/MarketingCTA";
 
 export const metadata: Metadata = {
-  title: "Marketing Services — Web Development, SEO & Lead Capture",
+  title: "Marketing — Web Dev, SEO & Lead Capture",
   description:
-    "Axion Deep Marketing builds high-performance websites, ranks them on Google, and captures leads directly into your CRM. Full-funnel digital services for growing businesses.",
+    "Axion Deep Marketing builds fast websites, ranks them on Google, and sends leads to your CRM automatically. Full-funnel services for growing businesses.",
   keywords: [
     "web development agency",
     "SEO services",
