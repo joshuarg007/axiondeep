@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Research Findings — Topological Knowledge Persistence",
+  title: "Topological Knowledge Persistence Findings",
   description:
-    "EXP-01 preliminary proof-of-concept results (small-scale, 0.3M-44.7M params): topology is a conditional predictor of forgetting (CUB-200 p=0.037 suggestive) and a mitigation sensitivity marker (H0 predicts EWC benefit, rho=0.86). 57/57 configurations complete. Phase I scale validation (100M-7B+ params) planned, requiring supercomputer resources.",
+    "EXP-01 results: loss-landscape topology predicts catastrophic forgetting and EWC benefit. 57 of 57 configs complete; Phase I scale validation planned.",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",

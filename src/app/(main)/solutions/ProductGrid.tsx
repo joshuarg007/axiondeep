@@ -170,10 +170,8 @@ export default function ProductGrid() {
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xl font-bold truncate">
-                    <Link href={p.href} className="text-white hover:text-gray-200 transition-colors">
-                      {p.name}
-                    </Link>
+                  <h3 className="text-xl font-bold truncate text-white">
+                    {p.name}
                   </h3>
                   <span
                     className={`text-[10px] font-semibold px-2 py-0.5 rounded border shrink-0 ${badgeStyles[p.badgeColor]}`}
