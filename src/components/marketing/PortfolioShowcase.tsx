@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     name: "Site2CRM",
-    tagline: "Lead capture SaaS — form to CRM in seconds",
+    tagline: "Lead capture SaaS, form to CRM in seconds",
     description:
       "Full-stack SaaS platform that captures leads from website forms and AI chat widgets, then syncs them directly into HubSpot, Salesforce, Pipedrive, Nutshell, and Zoho. Approved on the Zapier marketplace with 5,000+ app integrations.",
     url: "https://site2crm.io",
@@ -80,7 +80,7 @@ export default function PortfolioShowcase() {
             Built by us, used in production
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            We don&apos;t just talk about building great products — we ship them. These are live platforms we built from scratch, serving real users every day.
+            We don&apos;t just talk about building great products, we ship them. These are live platforms we built from scratch, serving real users every day.
           </p>
         </div>
 

@@ -125,14 +125,14 @@ export default function CareersPage() {
               <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                 <h3 className="font-semibold text-violet-400 mb-2">Production Software</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Build and ship research-derived products used by real customers — from AI
+                  Build and ship research-derived products used by real customers, from AI
                   chat agents to quantum computing education platforms.
                 </p>
               </div>
               <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                 <h3 className="font-semibold text-fuchsia-400 mb-2">Experimental Infrastructure</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Develop the tools that make our research reproducible — experiment dashboards,
+                  Develop the tools that make our research reproducible, experiment dashboards,
                   automated pipelines, and GPU cluster management.
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function CareersPage() {
               <p className="text-gray-400 leading-relaxed">
                 Our team spans machine learning research, full-stack engineering, and computational
                 physics. We look for people who are equally comfortable reading a NeurIPS paper
-                and shipping production code — and who bring intellectual curiosity to both.
+                and shipping production code, and who bring intellectual curiosity to both.
               </p>
             </div>
           </div>

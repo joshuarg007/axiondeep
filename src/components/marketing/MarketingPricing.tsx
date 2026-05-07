@@ -8,7 +8,7 @@ const tiers = [
     name: "Starter",
     tagline: "Get online and start converting",
     icon: "/images/marketing/pricing-starter-plan-icon.webp",
-    iconAlt: "Starter plan icon — minimalist rocket launch representing business takeoff with web presence",
+    iconAlt: "Starter plan icon, minimalist rocket launch representing business takeoff with web presence",
     features: [
       "Custom responsive website",
       "Mobile-first design",
@@ -25,7 +25,7 @@ const tiers = [
     name: "Growth",
     tagline: "Rank higher, capture more",
     icon: "/images/marketing/pricing-growth-plan-icon.webp",
-    iconAlt: "Growth plan icon — ascending chart with SEO and CRM integration symbols for scaling businesses",
+    iconAlt: "Growth plan icon, ascending chart with SEO and CRM integration symbols for scaling businesses",
     features: [
       "Everything in Starter",
       "Advanced technical SEO",
@@ -43,7 +43,7 @@ const tiers = [
     name: "Enterprise",
     tagline: "Full-funnel revenue engine",
     icon: "/images/marketing/pricing-enterprise-plan-icon.webp",
-    iconAlt: "Enterprise plan icon — interconnected network of services representing full-funnel digital revenue engine",
+    iconAlt: "Enterprise plan icon, interconnected network of services representing full-funnel digital revenue engine",
     features: [
       "Everything in Growth",
       "Custom web application",

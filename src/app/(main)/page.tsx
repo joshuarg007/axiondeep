@@ -207,7 +207,7 @@ export default function HomePage() {
               <p className="text-emerald-400 font-mono text-sm mb-2">PERSIST</p>
               <h3 className="text-xl font-bold text-white mb-3">Topological Signatures in Continual Learning</h3>
               <p className="text-gray-400 leading-relaxed">
-                Investigating whether the shape of loss landscapes — measured through persistent homology — can predict a neural network&apos;s vulnerability to catastrophic forgetting. Cross-architecture study spanning 19 model families and 3 datasets.
+                Predicts how a deep learning model will forget under continual learning, and recommends the best mitigation with expected benefit before retraining. Phase I-A scale validation complete on ImageNet-100. Phase I-B cross-dataset sweep complete. Validation underway for medical imaging under FDA PCCP.
               </p>
             </div>
             <div className="p-8 rounded-3xl bg-gradient-to-br from-violet-500/10 to-purple-500/5 border border-violet-500/20">
@@ -228,7 +228,7 @@ export default function HomePage() {
               <p className="text-orange-400 font-mono text-sm mb-2">GENESIS</p>
               <h3 className="text-xl font-bold text-white mb-3">Information Capacity Scaling Laws</h3>
               <p className="text-gray-400 leading-relaxed">
-                Testing whether neural network information capacity follows an area law rather than a volume law — a computational analog of the holographic principle. Spanning 15+ architecture configurations with power-law fitting and Bayesian model comparison.
+                Testing whether neural network information capacity follows an area law rather than a volume law, a computational analog of the holographic principle. Spanning 15+ architecture configurations with power-law fitting and Bayesian model comparison.
               </p>
             </div>
           </div>
@@ -257,7 +257,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-white mb-3">From laboratory to production</h3>
               <p className="text-gray-400 leading-relaxed mb-3">
-                Our research is never purely theoretical. Each program at the laboratory produces a working software artifact — a library, a benchmark, a training pipeline, or a deployed service — so the findings land in tools that other engineers and scientists can pick up and extend immediately.
+                Our research is never purely theoretical. Each program at the laboratory produces a working software artifact, a library, a benchmark, a training pipeline, or a deployed service, so the findings land in tools that other engineers and scientists can pick up and extend immediately.
               </p>
               <p className="text-gray-400 leading-relaxed">
                 This research-to-production pipeline is what distinguishes Axion Deep Labs from a traditional academic lab. We publish peer-reviewable scientific papers, and we also ship the production code that puts those ideas into the hands of practitioners.
@@ -281,7 +281,7 @@ export default function HomePage() {
             </span>
             .
           </blockquote>
-          <p className="text-gray-500">— The Axion Deep Labs Philosophy</p>
+          <p className="text-gray-500">The Axion Deep Labs Philosophy</p>
         </div>
       </section>
 

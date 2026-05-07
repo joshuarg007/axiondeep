@@ -86,7 +86,7 @@ export default function DevelopmentPage() {
               </svg>
             </Link>
             <Link
-              href="/solutions"
+              href="/projects"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 font-semibold text-white hover:bg-white/10 transition-all duration-300"
             >
               View Our Work

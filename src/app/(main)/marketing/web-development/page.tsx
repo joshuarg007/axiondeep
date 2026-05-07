@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
-  title: "Web Development — Custom Websites That Convert",
+  title: "Web Development | Custom Websites That Convert",
   description:
     "Custom web development with React, Next.js, and Tailwind CSS. Mobile-first, blazing fast, and built to turn visitors into customers.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/marketing/web-development" },
   openGraph: {
-    title: "Web Development — Axion Deep Marketing",
+    title: "Web Development | Axion Deep Marketing",
     description: "High-performance websites built with modern frameworks. Mobile-first, SEO-ready, CRM-connected.",
     url: "/marketing/web-development",
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: "/images/marketing/og-web-development-agency-services.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep web development services — custom React and Next.js websites that convert visitors into leads",
+        alt: "Axion Deep web development services, custom React and Next.js websites that convert visitors into leads",
       },
     ],
   },
@@ -52,7 +52,7 @@ const process = [
     desc: "We learn your business, audience, competitors, and goals. By the end of this phase we have a complete sitemap, content outline, and design brief.",
     color: "from-cyan-500 to-blue-500",
     image: "/images/marketing/process-discovery-research-phase.webp",
-    imageAlt: "Discovery and research phase — analyzing business goals, audience data, and competitor landscape for web project planning",
+    imageAlt: "Discovery and research phase, analyzing business goals, audience data, and competitor landscape for web project planning",
   },
   {
     num: "02",
@@ -60,7 +60,7 @@ const process = [
     desc: "High-fidelity mockups for desktop and mobile. You see exactly what your site will look like before we write a single line of code. Revisions included.",
     color: "from-violet-500 to-purple-500",
     image: "/images/marketing/process-design-wireframe-phase.webp",
-    imageAlt: "Design and wireframe phase — creating high-fidelity mockups and responsive layouts before development begins",
+    imageAlt: "Design and wireframe phase, creating high-fidelity mockups and responsive layouts before development begins",
   },
   {
     num: "03",
@@ -68,7 +68,7 @@ const process = [
     desc: "We build with React, Next.js, and Tailwind CSS for maximum speed and SEO performance. Every site is responsive, accessible, and optimized for Core Web Vitals.",
     color: "from-fuchsia-500 to-pink-500",
     image: "/images/marketing/process-development-coding-phase.webp",
-    imageAlt: "Development and coding phase — building with React, Next.js, and Tailwind CSS for optimal performance and SEO",
+    imageAlt: "Development and coding phase, building with React, Next.js, and Tailwind CSS for optimal performance and SEO",
   },
   {
     num: "04",
@@ -76,7 +76,7 @@ const process = [
     desc: "Deployment, DNS, SSL, analytics, and CRM integration all handled. Post-launch we monitor performance and provide ongoing support to keep you growing.",
     color: "from-emerald-500 to-teal-500",
     image: "/images/marketing/process-launch-deployment-phase.webp",
-    imageAlt: "Launch and deployment phase — production deployment with DNS, SSL, analytics, and CRM integration setup",
+    imageAlt: "Launch and deployment phase, production deployment with DNS, SSL, analytics, and CRM integration setup",
   },
 ];
 
@@ -255,7 +255,7 @@ export default function WebDevelopmentPage() {
               Let&apos;s build something great
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Book a free discovery call. We&apos;ll discuss your goals, timeline, and budget — and tell you exactly what we&apos;d build and how.
+              Book a free discovery call. We&apos;ll discuss your goals, timeline, and budget, and tell you exactly what we&apos;d build and how.
             </p>
             <BookingWidget slug="axiondeep" buttonText="Book a Discovery Call" buttonColor="#06b6d4" />
           </div>

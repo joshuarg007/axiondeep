@@ -99,7 +99,7 @@ export default function TerminalSection() {
             <div className="w-3 h-3 rounded-full bg-red-500/70" />
             <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
             <div className="w-3 h-3 rounded-full bg-green-500/70" />
-            <span className="ml-3 text-xs text-gray-600 font-mono">terminal — axion-deep</span>
+            <span className="ml-3 text-xs text-gray-600 font-mono">terminal, axion-deep</span>
           </div>
 
           {/* Terminal body */}

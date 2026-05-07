@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vesper AI — Autonomous Penetration Testing",
+  title: "Vesper AI | Autonomous Penetration Testing",
   description: "Vesper AI is an autonomous penetration testing platform with dual AI agents, 11,697 vulnerability templates, and OWASP Top 10 coverage for security research.",
   keywords: [
     "AI penetration testing",
@@ -31,7 +31,7 @@ export default function VesperPage() {
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Vesper AI: Autonomous Penetration Testing Platform</h1>
           <p className="text-xl text-violet-400 font-medium mb-4">
-            Two AI agents working in tandem — one attacks, one analyzes.
+            Two AI agents working in tandem, one attacks, one analyzes.
           </p>
           <p className="text-lg text-gray-400 leading-relaxed">
             Vesper AI is an autonomous penetration testing platform that pairs two AI agents
@@ -124,7 +124,7 @@ export default function VesperPage() {
           <div className="space-y-4">
             {[
               { step: "01", title: "Target Configuration", desc: "Define the scope, target URLs, and testing parameters. Set exclusion rules and rate limits to stay within authorized boundaries." },
-              { step: "02", title: "Automated Reconnaissance", desc: "The attack agent maps the target surface — subdomains, open ports, technology stack, and entry points — building a comprehensive attack graph." },
+              { step: "02", title: "Automated Reconnaissance", desc: "The attack agent maps the target surface | subdomains, open ports, technology stack, and entry points | building a comprehensive attack graph." },
               { step: "03", title: "Vulnerability Scanning", desc: "11,697 templates run against discovered endpoints. The AI agent selects and sequences templates based on the identified technology stack." },
               { step: "04", title: "Analysis & Reporting", desc: "The analysis agent validates each finding, eliminates false positives, assigns severity scores, and generates a remediation report with proof-of-concept details." },
             ].map((item) => (
@@ -188,7 +188,7 @@ export default function VesperPage() {
             Request Access
           </Link>
           <Link
-            href="/solutions"
+            href="/projects"
             className="px-8 py-4 rounded-full border border-white/20 font-medium text-white hover:bg-white/5 transition flex items-center gap-2"
           >
             View All Projects
@@ -197,11 +197,11 @@ export default function VesperPage() {
 
         {/* Back Link */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/solutions" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Solutions
+            Back to Projects
           </Link>
         </div>
       </div>

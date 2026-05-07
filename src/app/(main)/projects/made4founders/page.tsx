@@ -134,7 +134,7 @@ export default function Made4FoundersPage() {
           <div className="space-y-4">
             {[
               { step: "01", title: "Connect Your Accounts", desc: "Link your bank accounts via Plaid, connect Stripe for revenue tracking, and import your cap table. Made4Founders pulls everything into a single command center so you stop switching between twelve tabs." },
-              { step: "02", title: "AI Generates Your Daily Brief", desc: "Every morning, the AI assistant analyzes your runway, upcoming deadlines, compliance gaps, and investor pipeline. You get a personalized briefing that surfaces what matters most — not a generic dashboard." },
+              { step: "02", title: "AI Generates Your Daily Brief", desc: "Every morning, the AI assistant analyzes your runway, upcoming deadlines, compliance gaps, and investor pipeline. You get a personalized briefing that surfaces what matters most, not a generic dashboard." },
               { step: "03", title: "Track Compliance Automatically", desc: "The 96-item compliance checklist covers formation documents, state filings, tax deadlines, SOC2 readiness, GDPR requirements, and employment law basics. Automatic alerts ensure nothing falls through the cracks." },
               { step: "04", title: "Manage Your Fundraise", desc: "Track every investor from warm intro to term sheet. Log meeting notes, set follow-up reminders, and maintain a clean data room with AES-256 encrypted document storage. Your cap table updates automatically as rounds close." },
             ].map((item) => (
@@ -213,11 +213,11 @@ export default function Made4FoundersPage() {
 
         {/* Back Link */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/solutions" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Solutions
+            Back to Projects
           </Link>
         </div>
       </div>

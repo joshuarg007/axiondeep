@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Experimental Protocols — Research Programs",
+  title: "Experimental Protocols | Research Programs",
   description:
     "Three experimental protocols: topological forgetting signatures, integrated information across architectures, and neural network capacity scaling laws.",
   keywords: [
@@ -128,15 +128,16 @@ export default function ExperimentsPage() {
 
           {/* Meta */}
           <div className="rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/10 p-6 mb-8 space-y-2">
-            <MetaRow label="Status" value="Preliminary proof-of-concept complete (57/57 small-scale configs). Phase I scale validation planned (supercomputer required)." />
-            <MetaRow label="Preliminary" value="19/19 archs (0.3M-44.7M params) on CIFAR-100, CUB-200, and RESISC-45 (all phases complete)." />
-            <MetaRow label="Phase I" value="Planned: 100M-7B+ param models, ImageNet/NLP, 10-100+ task sequences, multiple CL methods. Requires supercomputer allocation." />
+            <MetaRow label="Status" value="Phase I-A scale validation complete on ImageNet-100 (2026-04-02). Phase I-B cross-dataset forgetting sweep complete (114/114 configurations, 2026-04-24). Writeup in preparation." />
+            <MetaRow label="Phase 0 (Preliminary)" value="19/19 archs (0.3M-44.7M params) on CIFAR-100, CUB-200, and RESISC-45 (57/57 configs, all phases complete)." />
+            <MetaRow label="Phase I-A" value="ImageNet-100 scale validation: 8 architectures including ResNet-101, ConvNeXt-S/B/L, EfficientNet-B5, DenseNet-201, ViT-B/16, ViT-L/16. Topological signal replicates and strengthens at scale." />
+            <MetaRow label="Phase I-B" value="Cross-dataset forgetting sweep: 114 configurations covering 6 ordered dataset pairs across 19 architectures. Mixed-effects analysis identifies where topology is load-bearing." />
             <MetaRow label="Program" value="PERSIST (Continual Learning)" />
             <MetaRow label="Priority" value="1 of 3" />
-            <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 configs)" />
-            <MetaRow label="Compute" value="Preliminary: Local GPU (NVIDIA RTX 4090). Phase I: Supercomputer (NSF ACCESS or equivalent)." />
-            <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction" />
-            <MetaRow label="Preliminary Result" value="Phase 6 pooled interaction (n=57): dataset moderates H0-EWC benefit (p=0.046). Small models only (under 45M params). Scale survival is the open research question for Phase I." />
+            <MetaRow label="Scope" value="19 architectures (14 diverse + 6-point WRN width ladder) across 3 datasets (57 base configs) plus 8-arch ImageNet-100 scale validation set." />
+            <MetaRow label="Compute" value="NMSU Discovery HPC cluster, NVIDIA A100-PCIE-40GB, no-cost institutional access. Local NVIDIA RTX 4090 for development." />
+            <MetaRow label="Novelty" value="First connection of persistent homology to catastrophic forgetting prediction, with cross-dataset replication." />
+            <MetaRow label="Headline Result" value="At ImageNet-100 scale, H1 dominant with rho = 0.93, p = 0.0007 (n=8). 3-dataset Phase 6 pooled interaction replicates. NSF SBIR Phase I application in active development for medical imaging under FDA PCCP." />
           </div>
 
           {/* Preliminary Results */}
@@ -276,23 +277,23 @@ export default function ExperimentsPage() {
             <div className="space-y-6">
               {[
                 {
-                  phase: "Phase 1 — Train Task A",
+                  phase: "Phase 1, Train Task A",
                   desc: "Train 19 architectures (14 diverse + 6-point WRN-28-k width ladder) to convergence on Task A across 3 datasets: CIFAR-100, CUB-200-2011, and NWPU-RESISC45. 100 epochs, SGD with cosine annealing. Save best checkpoints.",
                 },
                 {
-                  phase: "Phase 2 — Landscape Topology (Ripser + Cubical)",
+                  phase: "Phase 2, Landscape Topology (Ripser + Cubical)",
                   desc: "Sample 50x50 loss landscape along filter-normalized random directions (Li et al., 2018). 5 independent random 2D slices per architecture. Compute persistent homology via Ripser (graph-based H₀, H₁) and GUDHI cubical complexes (validation baseline). Compute baseline metrics: Hessian trace, Fisher information, max eigenvalue, loss barrier.",
                 },
                 {
-                  phase: "Phase 3 — Sequential Forgetting (Naive + EWC + Cosine)",
+                  phase: "Phase 3, Sequential Forgetting (Naive + EWC + Cosine)",
                   desc: "Train sequentially on Task B with 3 variants: naive, EWC regularization (Fisher-based penalty), and cosine LR decay. Measure Task A accuracy at steps [10, 25, 50, 100, 250, 500, 1000, 5000]. Compute early AURC, ret@10, ret@100.",
                 },
                 {
-                  phase: "Phase 4 — Correlation & Diagnostics",
+                  phase: "Phase 4, Correlation & Diagnostics",
                   desc: "Spearman + Kendall correlation with Bonferroni correction (12 metrics). Partial correlations controlling for parameter count. Slice robustness diagnostics: Kruskal-Wallis, per-slice Spearman, pairwise ordering probability, Cohen's d. Cubical vs Ripser agreement. EWC benefit analysis. WRN width ladder: within-ladder correlations isolating scale from topology.",
                 },
                 {
-                  phase: "Phase 5 — Predictive Model (LOAO CV)",
+                  phase: "Phase 5, Predictive Model (LOAO CV)",
                   desc: "Leave-one-architecture-out Ridge regression with nested alpha selection. 5 models: A (params only), A2 (params + random noise, matched-dimensionality null), B (params + Ripser topology), C (params + cubical topology), D (topology alone). 1,000-permutation test shuffling topology features to test incremental value. If Model B does not beat A2, topology features are no better than noise.",
                 },
               ].map((p) => (
@@ -509,23 +510,23 @@ export default function ExperimentsPage() {
             <div className="space-y-6">
               {[
                 {
-                  phase: "Phase 1 — Phi* Implementation for Neural Networks",
+                  phase: "Phase 1, Phi* Implementation for Neural Networks",
                   desc: "Implement Φ* computation adapted for neural networks. Partition each network into functional modules: individual layers, attention heads (transformers), feature map groups (CNNs), temporal steps (RNNs). For each partition scheme, compute mutual information between all module pairs using the KSG estimator (Kraskov et al., 2004) on activation vectors from a held-out probe dataset. Find the Minimum Information Partition (MIP) via greedy bipartition search. Φ* = total mutual information minus information across the MIP.",
                 },
                 {
-                  phase: "Phase 2 — Architecture Survey",
-                  desc: "Compute Φ* at 5 training checkpoints (random initialization, 25%, 50%, 75%, full convergence) for: Feedforward MLPs (2, 4, 8 layers), Convolutional (ResNet-18, ResNet-50), Recurrent (LSTM, GRU — 2 and 4 layers), Transformer (GPT-2-small, ViT-Small), Graph (GCN, GAT on Cora/CiteSeer). All trained on comparable tasks (CIFAR-10/100 for vision, WikiText for language, Cora for graph). Record Φ* trajectory during training.",
+                  phase: "Phase 2, Architecture Survey",
+                  desc: "Compute Φ* at 5 training checkpoints (random initialization, 25%, 50%, 75%, full convergence) for: Feedforward MLPs (2, 4, 8 layers), Convolutional (ResNet-18, ResNet-50), Recurrent (LSTM, GRU, 2 and 4 layers), Transformer (GPT-2-small, ViT-Small), Graph (GCN, GAT on Cora/CiteSeer). All trained on comparable tasks (CIFAR-10/100 for vision, WikiText for language, Cora for graph). Record Φ* trajectory during training.",
                 },
                 {
-                  phase: "Phase 3 — Correlation with Generalization",
+                  phase: "Phase 3, Correlation with Generalization",
                   desc: "For each architecture at convergence, measure: test accuracy (generalization gap = train - test), transfer learning performance (fine-tune on CIFAR-100 after CIFAR-10 pretraining, or SST-2 after WikiText), adversarial robustness (PGD attack, ε = 8/255 for vision). Compute Spearman correlation between Φ* and each performance metric across all architectures.",
                 },
                 {
-                  phase: "Phase 4 — Perturbational Complexity Index",
+                  phase: "Phase 4, Perturbational Complexity Index",
                   desc: "Independently validate Φ* results using PCI (Casali et al., 2013), adapted from neuroscience. For each trained network: inject calibrated Gaussian noise at a single layer, record the propagation pattern across all subsequent layers, compute Lempel-Ziv complexity of the binarized activation response. Compare PCI ranking with Φ* ranking across architectures. Agreement between two independent measures strengthens the result.",
                 },
                 {
-                  phase: "Phase 5 — Phi Dynamics During Training",
+                  phase: "Phase 5, Phi Dynamics During Training",
                   desc: "Analyze the Φ* trajectory. Key questions: Does Φ* increase monotonically during training, or does it peak and decline (overfitting as integration collapse)? Does Φ* correlate with the information bottleneck phase transitions identified by Shwartz-Ziv & Tishby (2017)? Is there a critical Φ* threshold below which transfer learning fails?",
                 },
               ].map((p) => (
@@ -628,7 +629,7 @@ export default function ExperimentsPage() {
             <h3 className="font-semibold text-white mb-3">PHI Expected Outputs</h3>
             <ul className="space-y-2">
               {[
-                "First Φ* landscape map across modern deep learning architectures — the 'periodic table' of information integration",
+                "First Φ* landscape map across modern deep learning architectures, the 'periodic table' of information integration",
                 "Φ trajectory analysis: how integration evolves during training (potential connection to information bottleneck theory)",
                 "PCI-Φ* cross-validation: do two independent measures of integration agree in artificial systems?",
                 "If correlation holds: Φ* as a practical architecture selection and early-stopping metric",
@@ -653,11 +654,11 @@ export default function ExperimentsPage() {
                 },
                 {
                   risk: "No correlation between Φ* and generalization",
-                  mitigation: "Negative result is highly publishable — 'integrated information does not predict generalization' constrains IIT's applicability to artificial systems. Check if correlation exists with different Φ variants (geometric, stochastic interaction).",
+                  mitigation: "Negative result is highly publishable, 'integrated information does not predict generalization' constrains IIT's applicability to artificial systems. Check if correlation exists with different Φ variants (geometric, stochastic interaction).",
                 },
                 {
                   risk: "Partition dependence makes results non-comparable across architectures",
-                  mitigation: "Develop a canonical partition scheme based on computational graph structure. Alternatively, report Φ* under the partition that maximizes it (most charitable interpretation) — if even maximum Φ* doesn't correlate, the result is stronger.",
+                  mitigation: "Develop a canonical partition scheme based on computational graph structure. Alternatively, report Φ* under the partition that maximizes it (most charitable interpretation), if even maximum Φ* doesn't correlate, the result is stronger.",
                 },
               ].map((r) => (
                 <div key={r.risk}>
@@ -715,7 +716,7 @@ export default function ExperimentsPage() {
             <MetaRow label="Duration" value="3 - 4 months" />
             <MetaRow label="Compute" value="GPU cluster (systematic training runs)" />
             <MetaRow label="Novelty" value="First test of holographic principle analogs in deep learning" />
-            <MetaRow label="Risk Profile" value="High risk, high reward — Nature-tier if area law holds" />
+            <MetaRow label="Risk Profile" value="High risk, high reward, Nature-tier if area law holds" />
           </div>
 
           {/* Hypothesis */}
@@ -800,24 +801,24 @@ export default function ExperimentsPage() {
             <div className="space-y-6">
               {[
                 {
-                  phase: "Phase 1 — Capacity Measurement Protocol",
+                  phase: "Phase 1, Capacity Measurement Protocol",
                   desc: "For each architecture configuration, generate datasets with random labels (uniform random assignment of K classes to N samples from CIFAR-10 or synthetic Gaussian data). Binary search for the maximum N where the network reaches 100% training accuracy within a fixed compute budget (50 epochs, SGD with momentum). This N is the effective memorization capacity. Repeat 5 times with different random seeds, report median.",
                 },
                 {
-                  phase: "Phase 2 — Systematic Architecture Sweep",
+                  phase: "Phase 2, Systematic Architecture Sweep",
                   desc: "Measure capacity for 15+ architecture configurations spanning different depth/width ratios. MLPs: [2×512, 4×256, 8×128, 16×64, 32×32] (constant volume ~260K params, varying depth). Wide ResNets: WRN-d-k for d ∈ {16, 22, 28, 40} and k ∈ {1, 2, 4, 8}. Transformers: {2, 4, 8, 12} layers × {64, 128, 256} model dim. For each, compute V (volume) and A (boundary under both definitions).",
                 },
                 {
-                  phase: "Phase 3 — Scaling Law Extraction",
-                  desc: "Plot C vs V and C vs A on log-log axes. Fit power laws: C ~ V^α and C ~ A^β. If β ≈ 1.0 and α < 1.0, the area law holds — capacity scales with boundary, not volume. Compute R² for both fits. Use Bayesian model comparison (BIC) to determine which scaling relationship is statistically preferred. Critical test: vary depth at constant width (changes V but not A under Definition 1). If capacity stays constant, area law is strongly supported.",
+                  phase: "Phase 3, Scaling Law Extraction",
+                  desc: "Plot C vs V and C vs A on log-log axes. Fit power laws: C ~ V^α and C ~ A^β. If β ≈ 1.0 and α < 1.0, the area law holds, capacity scales with boundary, not volume. Compute R² for both fits. Use Bayesian model comparison (BIC) to determine which scaling relationship is statistically preferred. Critical test: vary depth at constant width (changes V but not A under Definition 1). If capacity stays constant, area law is strongly supported.",
                 },
                 {
-                  phase: "Phase 4 — Skip Connections as 'Wormholes'",
-                  desc: "Skip connections create direct information pathways between non-adjacent layers — topological shortcuts analogous to wormholes in spacetime. Compare capacity of ResNets (with skip connections) vs equivalent-depth plain networks (without). Under the holographic analogy, skip connections should increase the effective boundary area, predicting higher capacity. If confirmed, skip connections are computational wormholes that expand the information boundary.",
+                  phase: "Phase 4, Skip Connections as 'Wormholes'",
+                  desc: "Skip connections create direct information pathways between non-adjacent layers, topological shortcuts analogous to wormholes in spacetime. Compare capacity of ResNets (with skip connections) vs equivalent-depth plain networks (without). Under the holographic analogy, skip connections should increase the effective boundary area, predicting higher capacity. If confirmed, skip connections are computational wormholes that expand the information boundary.",
                 },
                 {
-                  phase: "Phase 5 — Attention as Non-Local Information Coupling",
-                  desc: "Self-attention allows every position to directly access every other position — effectively making the entire network a 'boundary.' Prediction: transformers should deviate from the area law (or equivalently, their effective boundary ≈ volume due to attention). If transformers obey a volume law while non-attention architectures obey an area law, attention is the mechanism that breaks the holographic constraint. This has implications for why transformers scale so well.",
+                  phase: "Phase 5, Attention as Non-Local Information Coupling",
+                  desc: "Self-attention allows every position to directly access every other position, effectively making the entire network a 'boundary.' Prediction: transformers should deviate from the area law (or equivalently, their effective boundary ≈ volume due to attention). If transformers obey a volume law while non-attention architectures obey an area law, attention is the mechanism that breaks the holographic constraint. This has implications for why transformers scale so well.",
                 },
               ].map((p) => (
                 <div key={p.phase}>
@@ -891,7 +892,7 @@ export default function ExperimentsPage() {
             <ul className="space-y-2">
               {[
                 "Scaling law characterization: area law vs volume law for 15+ architecture configurations",
-                "If area law: first evidence of holographic principle analogs in computational systems — bridging deep learning theory and theoretical physics",
+                "If area law: first evidence of holographic principle analogs in computational systems, bridging deep learning theory and theoretical physics",
                 "Skip connection analysis: empirical test of 'computational wormhole' hypothesis",
                 "Transformer exceptionalism: why attention-based architectures may break the area law (explaining their empirical superiority)",
                 "Publication target: Nature Physics, Physical Review Letters, or ICML (if framed computationally). Cross-listing on arXiv: cs.LG + hep-th",
@@ -918,12 +919,12 @@ export default function ExperimentsPage() {
                   mitigation: "Supplement with mutual information measurement I(W; D_train) using MINE. If MI-based capacity and memorization-based capacity give the same scaling exponent, the proxy is validated.",
                 },
                 {
-                  risk: "The analogy to Bekenstein is superficial — neural networks aren't physical systems",
+                  risk: "The analogy to Bekenstein is superficial, neural networks aren't physical systems",
                   mitigation: "The claim is not that neural networks are literally bounded by the Bekenstein bound. The claim is that information storage in computational systems may be subject to analogous area-law constraints, suggesting shared mathematical structure. Frame as 'computational holographic principle' not 'Bekenstein bound for neural networks.'",
                 },
                 {
                   risk: "Results are optimizer-dependent (SGD vs Adam may give different capacity)",
-                  mitigation: "Run full sweep with both SGD+momentum and Adam. If scaling exponents differ, report both — optimizer dependence is itself an interesting finding.",
+                  mitigation: "Run full sweep with both SGD+momentum and Adam. If scaling exponents differ, report both, optimizer dependence is itself an interesting finding.",
                 },
               ].map((r) => (
                 <div key={r.risk}>
@@ -1048,7 +1049,7 @@ export default function ExperimentsPage() {
               {
                 step: "1",
                 title: "Configure",
-                desc: "Define hypothesis, architecture, hyperparameters, and benchmarks in versioned YAML config. All experimental parameters are declarative — nothing hardcoded.",
+                desc: "Define hypothesis, architecture, hyperparameters, and benchmarks in versioned YAML config. All experimental parameters are declarative, nothing hardcoded.",
                 color: "text-violet-400",
                 borderColor: "border-violet-500/20",
               },
@@ -1083,7 +1084,7 @@ export default function ExperimentsPage() {
               {
                 step: "6",
                 title: "Iterate or Publish",
-                desc: "Positive result: extend to additional architectures, write paper. Negative result: analyze why, pivot methodology, document findings. All results — positive or negative — are publishable.",
+                desc: "Positive result: extend to additional architectures, write paper. Negative result: analyze why, pivot methodology, document findings. All results, positive or negative, are publishable.",
                 color: "text-white",
                 borderColor: "border-white/20",
               },

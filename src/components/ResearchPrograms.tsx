@@ -437,7 +437,7 @@ function ProgramModal({
             </div>
           )}
 
-          {/* Methodology (PERSIST only — has 2-column sub-layout) */}
+          {/* Methodology (PERSIST only, has 2-column sub-layout) */}
           {program.methodology && (
             <div className="rounded-xl bg-white/[0.04] border border-white/[0.08] p-5 mb-6">
               <h3 className="font-semibold text-white mb-3">Methodology</h3>
@@ -830,9 +830,9 @@ export default function ResearchPrograms() {
             <FrameCard onClick={() => openProgram("phi")}>
               <h3 className="font-semibold text-white mb-3">Objective</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Compute integrated information (Φ*) — a scalar measure of how much a
-                system is &ldquo;more than the sum of its parts&rdquo; (Tononi, 2004)
-                — across major deep learning architecture families. Test whether Φ*
+                Compute integrated information (Φ*), a scalar measure of how much a
+                system is &ldquo;more than the sum of its parts&rdquo; (Tononi, 2004),
+                across major deep learning architecture families. Test whether Φ*
                 correlates with generalization, transfer learning, and robustness. No
                 systematic Φ* survey across modern deep learning architectures has been
                 published.
@@ -904,9 +904,8 @@ export default function ResearchPrograms() {
             <div className="mt-2 rounded-xl bg-white/[0.02] border border-white/[0.04] p-4 text-xs text-gray-500 leading-relaxed">
               <p className="mb-2">
                 IIT&apos;s Φ metric has implications beyond computational systems. The
-                relationship between integrated information and quantum measurement —
-                whether systems with measurable Φ interact with quantum states
-                differently — is an open question in the foundations of physics.
+                relationship between integrated information and quantum measurement,                 whether systems with measurable Φ interact with quantum states
+                differently, is an open question in the foundations of physics.
                 Relevant work includes Von Neumann (1932) on quantum measurement,
                 Wigner (1961) on consciousness and wave function collapse, and
                 experimental investigations by Radin et al. (2012, 2016) and Nelson
@@ -944,8 +943,8 @@ export default function ResearchPrograms() {
             <FrameCard onClick={() => openProgram("genesis")}>
               <h3 className="font-semibold text-white mb-3">Hypothesis</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Neural network information capacity follows an area law — proportional
-                to boundary parameters (input/output interface) — rather than a volume
+                Neural network information capacity follows an area law, proportional
+                to boundary parameters (input/output interface), rather than a volume
                 law proportional to total parameter count. This would constitute a
                 computational analog of the Bekenstein bound (Bekenstein, 1973), which
                 establishes that maximum entropy in a physical region is proportional to
@@ -959,8 +958,8 @@ export default function ResearchPrograms() {
                 architecture configurations varying depth/width ratios. Power-law
                 fitting on log-log axes: C ~ V<sup>α</sup> vs C ~ A<sup>β</sup>.
                 Bayesian model comparison (BIC) to determine which scaling relationship
-                is statistically preferred. Decisive test: vary depth at constant width
-                — if capacity saturates, area law is supported.
+                is statistically preferred. Decisive test: vary depth at constant width.
+                If capacity saturates, area law is supported.
               </p>
             </FrameCard>
           </div>

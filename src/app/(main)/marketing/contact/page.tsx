@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
-  title: "Contact — Get a Free Strategy Call",
+  title: "Contact | Get a Free Strategy Call",
   description:
     "Book a free 30-minute strategy call with Axion Deep Marketing. We'll audit your site, identify growth opportunities, and build a custom plan.",
   alternates: { canonical: "/marketing/contact" },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "/images/marketing/og-axion-deep-marketing-services.png",
         width: 1200,
         height: 630,
-        alt: "Contact Axion Deep Marketing — book a free strategy call for web development, SEO, and lead capture services",
+        alt: "Contact Axion Deep Marketing, book a free strategy call for web development, SEO, and lead capture services",
       },
     ],
   },
@@ -53,11 +53,11 @@ export default function MarketingContactPage() {
       {/* Contact grid */}
       <section className="px-6 py-16">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16">
-          {/* Left — booking + info */}
+          {/* Left, booking + info */}
           <div>
             <h2 className="text-2xl font-bold text-white mb-6">Book a free strategy call</h2>
             <p className="text-gray-400 leading-relaxed mb-8">
-              30 minutes, no obligation. We&apos;ll review your current online presence, identify your biggest growth opportunities, and outline a custom plan — whether you work with us or not.
+              30 minutes, no obligation. We&apos;ll review your current online presence, identify your biggest growth opportunities, and outline a custom plan, whether you work with us or not.
             </p>
 
             <div className="mb-10">
@@ -90,7 +90,7 @@ export default function MarketingContactPage() {
             </div>
           </div>
 
-          {/* Right — contact form */}
+          {/* Right, contact form */}
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
             <h3 className="text-lg font-semibold text-white mb-6">Send a message</h3>
             <ContactForm />

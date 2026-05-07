@@ -6,7 +6,7 @@ import BookingWidget from "@/components/BookingWidget";
 import Site2CRMWidget from "@/components/Site2CRMWidget";
 
 export const metadata: Metadata = {
-  title: "Lead Capture — Turn Visitors Into Leads",
+  title: "Lead Capture | Turn Visitors Into Leads",
   description:
     "Smart lead capture forms, AI chat widgets, and direct CRM integration powered by Site2CRM. Stop losing leads to manual data entry.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/marketing/lead-capture" },
   openGraph: {
-    title: "Lead Capture — Axion Deep Marketing",
+    title: "Lead Capture | Axion Deep Marketing",
     description: "Every visitor becomes a qualified lead. Smart forms + AI chat + direct CRM sync.",
     url: "/marketing/lead-capture",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/images/marketing/og-lead-capture-crm-integration.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep lead capture — automated form and AI chat to CRM integration powered by Site2CRM",
+        alt: "Axion Deep lead capture, automated form and AI chat to CRM integration powered by Site2CRM",
       },
     ],
   },
@@ -57,7 +57,7 @@ const crms = [
 ];
 
 const painPoints = [
-  { problem: "7 minutes per lead entry", solution: "Instant — zero manual entry" },
+  { problem: "7 minutes per lead entry", solution: "Instant, zero manual entry" },
   { problem: "30 leads/day = 3.5 hours wasted", solution: "3.5 hours saved every day" },
   { problem: "Leads slip through the cracks", solution: "Every lead captured, every time" },
   { problem: "No source tracking", solution: "UTM, referrer, landing page tracked" },
@@ -96,7 +96,7 @@ export default function LeadCapturePage() {
           </span>
         </h1>
         <p className="relative text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          Every visitor who leaves your site without converting is lost revenue. Our lead capture system — powered by Site2CRM — makes sure that never happens.
+          Every visitor who leaves your site without converting is lost revenue. Our lead capture system, powered by Site2CRM, makes sure that never happens.
         </p>
         <div className="relative flex flex-col sm:flex-row gap-4">
           <a href="#contact" className="shimmer-button px-8 py-4 rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-600 font-semibold text-white hover:opacity-90 transition-opacity text-lg">
@@ -220,7 +220,7 @@ export default function LeadCapturePage() {
             Try it right now
           </h2>
           <p className="text-gray-400 mb-8">
-            The chat widget in the bottom-right corner is a live Site2CRM instance. Try sending a message — that&apos;s exactly what your customers would experience.
+            The chat widget in the bottom-right corner is a live Site2CRM instance. Try sending a message, that&apos;s exactly what your customers would experience.
           </p>
           <Site2CRMWidget orgKey="org_jUITQNG0ZcPF_KJ0vplRQV8rwWk0pvR9" />
         </div>
@@ -235,7 +235,7 @@ export default function LeadCapturePage() {
               Never lose a lead again
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Book a free call and we&apos;ll show you exactly how many leads your current site is losing — and how to capture every one of them.
+              Book a free call and we&apos;ll show you exactly how many leads your current site is losing, and how to capture every one of them.
             </p>
             <BookingWidget slug="axiondeep" buttonText="Book a Demo" buttonColor="#ec4899" />
           </div>

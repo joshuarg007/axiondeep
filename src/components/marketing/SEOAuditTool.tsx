@@ -149,7 +149,7 @@ export default function SEOAuditTool() {
             Instant SEO audit
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Enter any URL and see exactly how your website performs. Real data from Google&apos;s own analysis engine — no signup required.
+            Enter any URL and see exactly how your website performs. Real data from Google&apos;s own analysis engine, no signup required.
           </p>
         </div>
 

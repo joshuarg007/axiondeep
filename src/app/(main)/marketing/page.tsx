@@ -13,7 +13,7 @@ import PortfolioShowcase from "@/components/marketing/PortfolioShowcase";
 import MarketingCTA from "@/components/marketing/MarketingCTA";
 
 export const metadata: Metadata = {
-  title: "Marketing — Web Dev, SEO & Lead Capture",
+  title: "Marketing | Web Dev, SEO & Lead Capture",
   description:
     "Axion Deep Marketing builds fast websites, ranks them on Google, and sends leads to your CRM automatically. Full-funnel services for growing businesses.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/marketing" },
   openGraph: {
-    title: "Axion Deep Marketing — We Build. We Rank. We Convert.",
+    title: "Axion Deep Marketing | We Build. We Rank. We Convert.",
     description:
       "High-performance websites, SEO that actually works, and lead capture that fills your CRM automatically.",
     url: "/marketing",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: "/images/marketing/og-axion-deep-marketing-services.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep Marketing — full-funnel digital services including web development, SEO, and automated lead capture with CRM integration",
+        alt: "Axion Deep Marketing, full-funnel digital services including web development, SEO, and automated lead capture with CRM integration",
       },
     ],
   },
@@ -86,7 +86,7 @@ export default function MarketingPage() {
       {/* Services */}
       <ServicesCards />
 
-      {/* Portfolio — Site2CRM & Made4Founders */}
+      {/* Portfolio, Site2CRM & Made4Founders */}
       <PortfolioShowcase />
 
       {/* SEO Audit Tool */}

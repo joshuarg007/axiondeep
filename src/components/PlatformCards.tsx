@@ -179,7 +179,7 @@ const platforms: Platform[] = [
     id: "ai",
     title: "AI Integration",
     description:
-      "AI research — LLMs, autonomous agents, machine learning pipelines, and intelligent automation systems.",
+      "AI research, LLMs, autonomous agents, machine learning pipelines, and intelligent automation systems.",
     gradient: "from-indigo-500 to-violet-600",
     tech: ["Claude AI", "GPT-4", "LangChain", "PyTorch"],
     image: "/images/platform-ai.webp",

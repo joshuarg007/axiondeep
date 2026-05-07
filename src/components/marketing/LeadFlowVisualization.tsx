@@ -68,7 +68,7 @@ export default function LeadFlowVisualization() {
             From visitor to customer
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Every step is automated. A visitor lands on your site, fills out a form, and their data flows directly into your CRM — no manual entry, no delays.
+            Every step is automated. A visitor lands on your site, fills out a form, and their data flows directly into your CRM, no manual entry, no delays.
           </p>
         </div>
 

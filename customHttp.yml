@@ -21,10 +21,6 @@ customHeaders:
     headers:
       - key: Content-Type
         value: text/html; charset=utf-8
-  - pattern: /solutions
-    headers:
-      - key: Content-Type
-        value: text/html; charset=utf-8
   - pattern: /development
     headers:
       - key: Content-Type

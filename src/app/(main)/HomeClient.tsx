@@ -23,7 +23,7 @@ export default function HomeClient() {
         className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
       >
         <Link
-          href="/solutions"
+          href="/projects"
           className="group px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-100 transition-all flex items-center gap-2"
         >
           Explore Our Work

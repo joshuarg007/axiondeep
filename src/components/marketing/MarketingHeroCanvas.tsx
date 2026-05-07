@@ -98,7 +98,7 @@ export default function MarketingHeroCanvas() {
         let targetX = p.baseX + Math.sin(p.drift) * p.driftRadius;
         let targetY = p.baseY + Math.cos(p.drift * 0.7) * p.driftRadius * 0.6;
 
-        // Mouse interaction — attract toward cursor
+        // Mouse interaction, attract toward cursor
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);

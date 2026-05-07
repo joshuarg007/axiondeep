@@ -33,7 +33,7 @@ export default function MarketingHero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 overflow-hidden">
-      {/* Background poster image — loads instantly for fast LCP */}
+      {/* Background poster image, loads instantly for fast LCP */}
       <Image
         src="/images/marketing/hero-background-digital-network.webp"
         alt="Abstract digital network visualization with glowing cyan and violet nodes representing connected web infrastructure"
@@ -43,7 +43,7 @@ export default function MarketingHero() {
         className="object-cover"
       />
 
-      {/* Background video — lazy-loaded, fades in over poster */}
+      {/* Background video, lazy-loaded, fades in over poster */}
       <video
         ref={videoRef}
         muted
@@ -58,7 +58,7 @@ export default function MarketingHero() {
         <source src="/images/marketing/hero-background-digital-network.mp4" type="video/mp4" />
       </video>
 
-      {/* Canvas particle mesh — renders on top of video */}
+      {/* Canvas particle mesh, renders on top of video */}
       {!isMobile && <MarketingHeroCanvas />}
 
       {/* Radial gradient overlay */}

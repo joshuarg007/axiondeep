@@ -21,7 +21,7 @@ const services = [
   {
     title: "SEO",
     description:
-      "Technical SEO, on-page optimization, and content strategy that puts you on page one. We don't guess — we measure, test, and prove results with data.",
+      "Technical SEO, on-page optimization, and content strategy that puts you on page one. We don't guess, we measure, test, and prove results with data.",
     gradient: "from-violet-500/10 to-purple-500/5",
     border: "border-violet-500/20 hover:border-violet-500/40",
     glow: "bg-violet-500/10",
@@ -35,7 +35,7 @@ const services = [
   {
     title: "Lead Capture",
     description:
-      "Every visitor becomes a qualified lead. Smart forms, AI chat widgets, and direct CRM integration — powered by Site2CRM, our proprietary lead capture platform.",
+      "Every visitor becomes a qualified lead. Smart forms, AI chat widgets, and direct CRM integration, powered by Site2CRM, our proprietary lead capture platform.",
     gradient: "from-fuchsia-500/10 to-pink-500/5",
     border: "border-fuchsia-500/20 hover:border-fuchsia-500/40",
     glow: "bg-fuchsia-500/10",
@@ -60,7 +60,7 @@ export default function ServicesCards() {
             Full-funnel digital services
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            From the first pixel to the last lead — we handle every step of turning your online presence into a revenue engine.
+            From the first pixel to the last lead, we handle every step of turning your online presence into a revenue engine.
           </p>
         </div>
 

@@ -63,25 +63,25 @@ export default function BeforeAfterSlider() {
           onMouseLeave={handleMouseUp}
           onTouchMove={handleTouchMove}
         >
-          {/* "Before" side — outdated website design */}
+          {/* "Before" side, outdated website design */}
           <div className="absolute inset-0">
             <Image
               src="/images/marketing/website-redesign-before-comparison.webp"
-              alt="Before redesign — outdated website with poor layout, low contrast text, cluttered navigation, and no clear call-to-action"
+              alt="Before redesign, outdated website with poor layout, low contrast text, cluttered navigation, and no clear call-to-action"
               fill
               sizes="(max-width: 768px) 100vw, 896px"
               className="object-cover object-top"
             />
           </div>
 
-          {/* "After" side — modern professional redesign */}
+          {/* "After" side, modern professional redesign */}
           <div
             className="absolute inset-0"
             style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
           >
             <Image
               src="/images/marketing/website-redesign-after-comparison.webp"
-              alt="After redesign — modern, high-converting website with clean layout, clear CTA buttons, mobile-responsive design, and professional branding"
+              alt="After redesign, modern, high-converting website with clean layout, clear CTA buttons, mobile-responsive design, and professional branding"
               fill
               sizes="(max-width: 768px) 100vw, 896px"
               className="object-cover object-top"

@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
-  title: "SEO Services — Get Found, Grow Revenue",
+  title: "SEO Services | Get Found, Grow Revenue",
   description:
     "Data-driven SEO that puts you on page one. Technical audits, on-page optimization, content strategy, and measurable results with monthly reporting.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/marketing/seo" },
   openGraph: {
-    title: "SEO Services — Axion Deep Marketing",
+    title: "SEO Services | Axion Deep Marketing",
     description: "Data-driven SEO that puts you on page one. Technical audits, on-page optimization, and measurable results.",
     url: "/marketing/seo",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "/images/marketing/og-seo-services-search-optimization.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep SEO services — data-driven search engine optimization with technical audits and ranking improvements",
+        alt: "Axion Deep SEO services, data-driven search engine optimization with technical audits and ranking improvements",
       },
     ],
   },
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "Do you guarantee first page rankings?",
-    a: "No ethical SEO company can guarantee specific rankings — Google's algorithm has hundreds of factors. What we guarantee is a data-driven process, transparent reporting, and measurable progress toward your goals.",
+    a: "No ethical SEO company can guarantee specific rankings, Google's algorithm has hundreds of factors. What we guarantee is a data-driven process, transparent reporting, and measurable progress toward your goals.",
   },
   {
     q: "What's included in the monthly report?",
@@ -122,7 +122,7 @@ export default function SEOPage() {
           </span>
         </h1>
         <p className="relative text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          Data-driven SEO that puts your business on page one. We don&apos;t guess — we measure, test, and prove results with transparent monthly reporting.
+          Data-driven SEO that puts your business on page one. We don&apos;t guess, we measure, test, and prove results with transparent monthly reporting.
         </p>
         <div className="relative flex flex-col sm:flex-row gap-4">
           <a href="#audit" className="shimmer-button px-8 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-600 font-semibold text-white hover:opacity-90 transition-opacity text-lg">

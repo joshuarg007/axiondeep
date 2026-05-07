@@ -15,8 +15,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Axion Deep Labs — AI Research & Quantum Computing",
-    template: "Axion Deep — %s",
+    default: "Axion Deep Labs, AI Research & Quantum Computing",
+    template: "Axion Deep, %s",
   },
   description:
     "Axion Deep Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.axiondeep.com",
     siteName: "Axion Deep Labs",
-    title: "Axion Deep Labs — Original Research in ML Theory, Quantum Computing & Computational Neuroscience",
+    title: "Axion Deep Labs | Original Research in ML Theory, Quantum Computing & Computational Neuroscience",
     description:
       "Independent research organization with active experiments and preliminary results in topological data analysis, integrated information theory, and information capacity scaling laws. Peer-reviewed publication targets.",
     images: [
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep Labs — Independent research organization in machine learning theory, quantum computing, and computational neuroscience",
+        alt: "Axion Deep Labs, Independent research organization in machine learning theory, quantum computing, and computational neuroscience",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axion Deep Labs — Original Research in ML Theory & Quantum Computing",
+    title: "Axion Deep Labs | Original Research in ML Theory & Quantum Computing",
     description:
       "Independent research organization with active experiments in topological data analysis, integrated information theory, and information capacity scaling laws. Preliminary results and peer-reviewed publication targets.",
     images: ["/og-image.png"],
@@ -163,7 +163,7 @@ const jsonLd = {
     {
       "@type": "ResearchProject",
       "@id": "https://www.axiondeep.com/#drift",
-      name: "Project DRIFT — Degradation Regimes In Iterated Field Transformations",
+      name: "Project DRIFT, Degradation Regimes In Iterated Field Transformations",
       description:
         "Investigating behavioral uncertainty in quantum system state evolution under repeated manipulation. Focused on stability degradation under variation in operator ordering and diversity.",
       url: "https://www.axiondeep.com/research#drift",
@@ -178,7 +178,7 @@ const jsonLd = {
     {
       "@type": "ResearchProject",
       "@id": "https://www.axiondeep.com/#persist",
-      name: "Project PERSIST — Topological Signatures of Knowledge Persistence in Continual Learning Systems",
+      name: "Project PERSIST, Topological Signatures of Knowledge Persistence in Continual Learning Systems",
       description:
         "Cross-architecture study (19 architectures, 3 datasets, 57 configs complete) investigating whether persistent homology of loss landscapes predicts resistance to catastrophic forgetting. Key findings: topology rescues prediction on CUB-200 (p=0.037, suggestive) but not RESISC-45 (p=0.566). Most stable signal: H0 predicts EWC benefit across datasets (CIFAR-100 rho=0.76, RESISC-45 rho=0.86). Tools: PyTorch, Ripser, GUDHI.",
       url: "https://www.axiondeep.com/research#persist",
@@ -195,7 +195,7 @@ const jsonLd = {
     {
       "@type": "ResearchProject",
       "@id": "https://www.axiondeep.com/#phi",
-      name: "Project Phi — Systematic Survey of Integrated Information in Neural Network Architectures",
+      name: "Project Phi, Systematic Survey of Integrated Information in Neural Network Architectures",
       description:
         "First comprehensive measurement of integrated information (Phi) across major deep learning architecture families, testing correlation with generalization, transfer learning, and robustness. Methodology: Phi* approximation with KSG estimator, validated against Perturbational Complexity Index.",
       url: "https://www.axiondeep.com/research#phi",
@@ -211,7 +211,7 @@ const jsonLd = {
     {
       "@type": "ResearchProject",
       "@id": "https://www.axiondeep.com/#genesis",
-      name: "Project GENESIS — Information Capacity Scaling Laws Testing Holographic Analogs in Neural Networks",
+      name: "Project GENESIS, Information Capacity Scaling Laws Testing Holographic Analogs in Neural Networks",
       description:
         "Testing whether neural network information capacity follows an area law (proportional to boundary parameters) rather than a volume law (proportional to total parameters), constituting a computational analog of the Bekenstein bound. Methodology: memorization capacity measurement across 15+ architecture configurations with power-law fitting and Bayesian model comparison.",
       url: "https://www.axiondeep.com/research#genesis",

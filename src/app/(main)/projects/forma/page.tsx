@@ -71,7 +71,7 @@ export default function FormaPage() {
               </div>
               <h3 className="font-semibold text-white mb-2">Visual Component Editor</h3>
               <p className="text-sm text-gray-400">
-                Drag and drop from a library of 100+ components — buttons, forms, cards,
+                Drag and drop from a library of 100+ components, buttons, forms, cards,
                 navigation, data tables, charts, and more. Each component is fully customizable
                 with props, variants, and responsive breakpoints.
               </p>
@@ -131,7 +131,7 @@ export default function FormaPage() {
             <p className="text-gray-400 leading-relaxed">
               The component library follows a consistent design system that prioritizes
               accessibility, responsive behavior, and dark mode support. Components are built
-              with composition in mind — combine simple primitives to create complex interfaces
+              with composition in mind, combine simple primitives to create complex interfaces
               without fighting the framework.
             </p>
           </div>
@@ -184,7 +184,7 @@ export default function FormaPage() {
             Request Beta Access
           </Link>
           <Link
-            href="/solutions"
+            href="/projects"
             className="px-8 py-4 rounded-full border border-white/20 font-medium text-white hover:bg-white/5 transition flex items-center gap-2"
           >
             View All Projects
@@ -193,11 +193,11 @@ export default function FormaPage() {
 
         {/* Back Link */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/solutions" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Solutions
+            Back to Projects
           </Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Axion Deep Labs conducts original research in deep learning theory — catastrophic forgetting, loss landscape topology, and neural network generalization.",
+    "Axion Deep Labs conducts original research in deep learning theory, catastrophic forgetting, loss landscape topology, and neural network generalization.",
   keywords: [
     "deep learning theory research",
     "catastrophic forgetting",
@@ -27,7 +27,7 @@ const researchDomains = [
     title: "Continual Learning & Catastrophic Forgetting",
     description:
       "Why do neural networks forget previously learned tasks when trained on new data? We investigate the structural and topological conditions under which knowledge persists or degrades across sequential training regimes.",
-    status: "Active — experimental data collected",
+    status: "Active, experimental data collected",
     gradient: "from-cyan-500/10 to-blue-500/5",
     icon: (
       <svg className="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -39,7 +39,7 @@ const researchDomains = [
     title: "Topological Data Analysis",
     description:
       "Applying persistent homology to characterize the shape of neural network loss landscapes. We measure how topological features (connected components, loops, voids) relate to learning dynamics and generalization.",
-    status: "Active — cross-architecture study in progress",
+    status: "Active, cross-architecture study in progress",
     gradient: "from-violet-500/10 to-purple-500/5",
     icon: (
       <svg className="w-8 h-8 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -51,7 +51,7 @@ const researchDomains = [
     title: "Information Capacity & Scaling Laws",
     description:
       "Does neural network information capacity follow area laws or volume laws? We test whether capacity scales with boundary parameters (a computational analog of the Bekenstein bound) rather than total parameter count.",
-    status: "Protocol defined — pending execution",
+    status: "Protocol defined, pending execution",
     gradient: "from-fuchsia-500/10 to-pink-500/5",
     icon: (
       <svg className="w-8 h-8 text-fuchsia-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -63,7 +63,7 @@ const researchDomains = [
     title: "Integrated Information Measurement",
     description:
       "Adapting Integrated Information Theory (Tononi, 2004) from neuroscience to computational systems. We measure Phi across deep learning architecture families and test its correlation with generalization and robustness.",
-    status: "Protocol defined — pending execution",
+    status: "Protocol defined, pending execution",
     gradient: "from-emerald-500/10 to-teal-500/5",
     icon: (
       <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -75,7 +75,7 @@ const researchDomains = [
     title: "Quantum System Behavior",
     description:
       "Characterizing stability degradation in quantum state evolution under repeated operator application. We investigate how operator ordering and diversity affect behavioral uncertainty in regimes beyond closed-form prediction.",
-    status: "Active — theoretical framework established",
+    status: "Active, theoretical framework established",
     gradient: "from-orange-500/10 to-amber-500/5",
     icon: (
       <svg className="w-8 h-8 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -170,7 +170,7 @@ export default function MissionPage() {
           <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8">
             Axion Deep Labs conducts original experimental research in deep learning theory.
             We investigate the structural conditions that govern knowledge persistence, information
-            capacity, and generalization in neural networks — with an emphasis on reproducibility,
+            capacity, and generalization in neural networks, with an emphasis on reproducibility,
             open methodology, and cross-disciplinary rigor.
           </p>
 

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "QUANTA — Quantum Computing Education",
+  title: "QUANTA | Quantum Computing Education",
   description: "Interactive quantum computing education with drag-and-drop circuit builder, 3D Bloch sphere, and curriculum from qubits to Grover's algorithm.",
   keywords: [
     "quantum computing education",
@@ -130,8 +130,8 @@ export default function QuantaPage() {
               research program, which investigates stability degradation in quantum systems
               under repeated operations. The platform serves as both an educational tool and a
               research instrument for exploring how operator ordering and gate diversity affect
-              quantum state evolution. Concepts explored in QUANTA&apos;s curriculum — gate
-              composition, measurement, and entanglement — map directly to the phenomena under
+              quantum state evolution. Concepts explored in QUANTA&apos;s curriculum, gate
+              composition, measurement, and entanglement, map directly to the phenomena under
               study in our active research.
             </p>
           </div>
@@ -199,11 +199,11 @@ export default function QuantaPage() {
 
         {/* Back Link */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/solutions" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Solutions
+            Back to Projects
           </Link>
         </div>
       </div>

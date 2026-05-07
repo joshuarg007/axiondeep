@@ -676,7 +676,7 @@ Start minimal. Add tools only when you hit a specific pain point. And when you d
 Your first year should be focused on building your product and finding customers, not on managing a dozen software subscriptions. Keep your tool stack lean and your attention focused on what actually moves the business forward.`,
   },
   // =========================================================================
-  // AXION DEEP DIGITAL — AI SEO TOOL
+  // AXION DEEP DIGITAL, AI SEO TOOL
   // =========================================================================
   {
     slug: "we-built-a-free-ai-seo-audit-tool-here-is-what-we-learned",

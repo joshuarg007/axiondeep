@@ -45,12 +45,12 @@ export default function VideoWithPoster({
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
 
-  // IntersectionObserver — start loading video when container enters viewport
+  // IntersectionObserver, start loading video when container enters viewport
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
-    // Respect reduced-motion preference — never load video
+    // Respect reduced-motion preference, never load video
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const observer = new IntersectionObserver(
@@ -83,7 +83,7 @@ export default function VideoWithPoster({
 
   return (
     <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
-      {/* Poster image — always present, loads instantly */}
+      {/* Poster image, always present, loads instantly */}
       <Image
         src={poster}
         alt={alt}
@@ -94,7 +94,7 @@ export default function VideoWithPoster({
         style={{ objectPosition }}
       />
 
-      {/* Video — lazy-loaded, fades in on top of poster */}
+      {/* Video, lazy-loaded, fades in on top of poster */}
       {shouldLoad && (
         <video
           ref={videoRef}

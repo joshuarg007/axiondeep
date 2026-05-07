@@ -3,7 +3,7 @@ import Link from "next/link";
 import ResearchPrograms from "@/components/ResearchPrograms";
 
 export const metadata: Metadata = {
-  title: "Research Programs — Active Experiments",
+  title: "Research Programs | Active Experiments",
   description:
     "Four research programs studying catastrophic forgetting, quantum system behavior, integrated information, and capacity scaling laws in neural networks.",
   keywords: [
@@ -98,7 +98,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* Research Programs (client component — handles modal interaction) */}
+      {/* Research Programs (client component, handles modal interaction) */}
       <ResearchPrograms />
 
       {/* Divider */}
@@ -196,7 +196,7 @@ export default function ResearchPage() {
               <p className="text-sm text-gray-400 leading-relaxed">
                 MS in Artificial Intelligence &amp; Data Science. BS in
                 Computer Science. Designed and built the lab&apos;s experimental
-                infrastructure — model architectures, topological analysis
+                infrastructure, model architectures, topological analysis
                 pipeline, loss landscape sampling, and reproducibility
                 framework. Leads day-to-day experiment execution, computational
                 methodology, and software engineering across all research

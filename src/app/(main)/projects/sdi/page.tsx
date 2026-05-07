@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "SDI — Structural Divergence Index for Model Version Governance",
+  title: "SDI | Structural Divergence Index for Model Version Governance",
   description:
     "SDI predicts performance degradation in fine-tuned foundation models without running full benchmark suites. Combines spectral analysis, representation drift, curvature shift, and weight geometry into a single risk score.",
   keywords: [
@@ -231,6 +231,16 @@ export default function SDIPage() {
             </Link>
           </div>
         </section>
+
+        {/* Back */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Projects
+          </Link>
+        </div>
       </div>
     </div>
   );

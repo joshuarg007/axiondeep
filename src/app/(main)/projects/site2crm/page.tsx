@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Site2CRM — AI Lead Capture & CRM Integration",
+  title: "Site2CRM | AI Lead Capture &amp; CRM Integration",
   description: "Site2CRM connects your website to your CRM in real time with AI chat agents that qualify leads, handle objections, and sync to HubSpot, Salesforce, and more.",
   keywords: [
     "AI lead capture",
@@ -136,7 +136,7 @@ export default function Site2CRMPage() {
             {[
               { step: "01", title: "Install the Widget", desc: "Add a single script tag to your website. The AI chat agent appears as a customizable widget that matches your brand colors and messaging. No code changes to your existing site required." },
               { step: "02", title: "AI Engages Visitors", desc: "When a visitor arrives, the AI agent initiates natural conversation based on the page context. It qualifies leads by asking your custom qualification questions, handles up to 10 objection rebuttals per conversation, and guides prospects toward conversion." },
-              { step: "03", title: "Leads Sync to Your CRM", desc: "Qualified contacts are pushed to your CRM in real time — HubSpot, Salesforce, Pipedrive, Zoho, or Nutshell. Each contact record includes the full conversation transcript, lead score, qualification responses, and source attribution." },
+              { step: "03", title: "Leads Sync to Your CRM", desc: "Qualified contacts are pushed to your CRM in real time across HubSpot, Salesforce, Pipedrive, Zoho, or Nutshell. Each contact record includes the full conversation transcript, lead score, qualification responses, and source attribution." },
               { step: "04", title: "Analyze and Optimize", desc: "The analytics dashboard shows conversion rates by page, top objection categories, average conversation length, and pipeline value. Use these insights to refine your AI agent prompts and improve lead quality over time." },
             ].map((item) => (
               <div key={item.step} className="flex gap-4 items-start rounded-xl bg-white/[0.02] border border-cyan-500/10 p-5">
@@ -214,11 +214,11 @@ export default function Site2CRMPage() {
 
         {/* Back Link */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <Link href="/solutions" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+          <Link href="/projects" className="text-gray-400 hover:text-white transition flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Solutions
+            Back to Projects
           </Link>
         </div>
       </div>

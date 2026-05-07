@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Topological Knowledge Persistence Findings",
+  title: "PERSIST | Phase 0 Findings &amp; Methodology",
   description:
-    "EXP-01 results: loss-landscape topology predicts catastrophic forgetting and EWC benefit. 57 of 57 configs complete; Phase I scale validation planned.",
+    "EXP-01 PERSIST Phase 0 proof-of-concept. Loss-landscape topology predicts catastrophic forgetting and EWC mitigation benefit across 57 small-scale configurations. Superseded by Phase I-A (ImageNet-100 scale validation, complete) and Phase I-B (cross-dataset sweep, complete).",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",
@@ -149,10 +149,10 @@ export default function FindingsPage() {
               RESEARCH OUTPUT
             </span>
             <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">
-              EXP-01 &middot; PERSIST
+              EXP-01 &middot; PERSIST &middot; Phase 0
             </span>
-            <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-medium">
-              Preliminary Complete &middot; 57 of 57 Configs &middot; Phase I Scale Validation Planned
+            <span className="text-xs px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-medium">
+              Superseded by Phase I-A &amp; I-B
             </span>
           </div>
 
@@ -162,9 +162,33 @@ export default function FindingsPage() {
           </h1>
 
           <p className="text-sm text-gray-500 mb-6">
-            Axion Deep Labs &middot; February 2026 &middot; Preliminary Proof-of-Concept (Small-Scale)
-            &middot; Phase I Scale Validation Planned (Supercomputer Required)
+            Axion Deep Labs &middot; February 2026 &middot; Phase 0 Proof-of-Concept (Small-Scale)
           </p>
+
+          {/* Status banner */}
+          <div className="rounded-xl border border-amber-500/30 bg-gradient-to-r from-amber-500/[0.08] to-emerald-500/[0.06] p-5 mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-amber-300/80 mb-2">
+              Status update &middot; April 2026
+            </p>
+            <p className="text-sm text-gray-300 leading-relaxed mb-3">
+              The findings on this page describe the original Phase 0 proof-of-concept across 19
+              architectures and 3 small-image datasets. <strong className="text-white">Phase I-A (ImageNet-100 scale validation, 8
+              architectures up to ViT-L/16)</strong> and <strong className="text-white">Phase I-B (cross-dataset forgetting sweep, 114
+              configurations across 6 ordered dataset pairs)</strong> are both complete on the NMSU
+              Discovery HPC cluster. Headline result at scale: H1 dominant with rho = 0.93,
+              p = 0.0007 on ImageNet-100. NSF SBIR Phase I application targeting medical imaging
+              under FDA PCCP is in active development.
+            </p>
+            <Link
+              href="/projects/persist"
+              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-300 hover:text-emerald-200 transition"
+            >
+              See current PERSIST overview
+              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 

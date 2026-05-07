@@ -19,7 +19,7 @@ export default function MarketingCTA() {
 
       <div className="relative max-w-5xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left side — copy + booking */}
+          {/* Left side, copy + booking */}
           <div>
             <p className="text-cyan-400 font-medium tracking-widest uppercase text-sm mb-4">
               Get Started
@@ -51,7 +51,7 @@ export default function MarketingCTA() {
             </div>
           </div>
 
-          {/* Right side — contact form */}
+          {/* Right side, contact form */}
           <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.06]">
             <h3 className="text-lg font-semibold text-white mb-6">Send us a message</h3>
             <ContactForm />
