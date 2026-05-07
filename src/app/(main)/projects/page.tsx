@@ -124,13 +124,25 @@ const badgeStyles: Record<Badge, string> = {
 
 const projects: Project[] = [
   {
+    name: "DeepAudit AI",
+    tagline: "The audit other tools wish they were",
+    description:
+      "Renders every page in a real headless Chromium browser the same way Googlebot does. 60+ technical, performance, accessibility, and on-page checks in roughly 60 seconds. Free, no signup, no email. 292+ business sites audited and counting.",
+    stage: "shipped",
+    badge: "Live",
+    accent: "cyan",
+    tags: ["Real Browser Rendering", "60+ Checks", "~60s Scan", "Free + No Signup"],
+    href: "/projects/deepaudit",
+    external: "https://axiondeepdigital.com/free-seo-audit",
+  },
+  {
     name: "Site2CRM",
     tagline: "AI lead capture that talks to your CRM in real time",
     description:
       "Persistent AI chat agents qualify leads, handle up to 10 objection rebuttals per conversation, and sync directly into HubSpot, Salesforce, Pipedrive, Zoho, and Nutshell. Replaces passive forms with conversation.",
     stage: "shipped",
     badge: "Live",
-    accent: "cyan",
+    accent: "violet",
     tags: ["AI Agents", "5 CRMs", "Real-Time Sync", "Lead Scoring"],
     href: "/projects/site2crm",
     external: "https://site2crm.io",
@@ -354,147 +366,15 @@ export default function ProjectsIndexPage() {
         </div>
       </section>
 
-      {/* DeepAudit AI Headliner */}
-      <section className="px-6 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="inline-block text-[11px] font-bold tracking-[0.3em] uppercase text-cyan-300/80 mb-2">
-              ★ FEATURED · LIVE NOW
-            </span>
-          </div>
-
-          <div className="relative rounded-3xl overflow-hidden border border-cyan-500/30 bg-gradient-to-br from-cyan-500/[0.12] via-violet-500/[0.06] to-fuchsia-500/[0.08]">
-            {/* Glow */}
-            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-fuchsia-500/15 blur-3xl pointer-events-none" />
-
-            <div className="relative p-8 md:p-12">
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded border bg-emerald-500/20 text-emerald-200 border-emerald-400/30">
-                  Live
-                </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded border bg-cyan-500/20 text-cyan-200 border-cyan-400/30">
-                  Free · No Signup
-                </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded border bg-violet-500/20 text-violet-200 border-violet-400/30">
-                  Real Browser Rendering
-                </span>
-              </div>
-
-              <h2 className="text-4xl md:text-6xl font-bold mb-3">
-                <span className="bg-gradient-to-r from-cyan-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">
-                  DeepAudit AI
-                </span>
-              </h2>
-              <p className="text-xl md:text-2xl text-cyan-200/90 font-medium mb-6 max-w-3xl">
-                The audit other tools wish they were.
-              </p>
-
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl">
-                Most SEO tools parse static HTML. Googlebot doesn&apos;t. <strong className="text-white">DeepAudit
-                renders every page in a real headless Chromium browser</strong>, the same way
-                Google sees your site. It executes your JavaScript, waits for hydration, captures
-                every network request, and runs <strong className="text-white">60+ technical, performance,
-                accessibility, and on-page checks</strong> in roughly 60 seconds. No signup.
-                No email. No paywall. <strong className="text-white">Already audited 292+ business sites</strong> in
-                our public study, and counting.
-              </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="text-center p-5 rounded-2xl bg-white/[0.04] border border-cyan-500/20">
-                  <p className="text-3xl md:text-4xl font-bold text-cyan-300">60+</p>
-                  <p className="text-[11px] text-gray-400 mt-1 uppercase tracking-wider">Checks per scan</p>
-                </div>
-                <div className="text-center p-5 rounded-2xl bg-white/[0.04] border border-violet-500/20">
-                  <p className="text-3xl md:text-4xl font-bold text-violet-300">~60s</p>
-                  <p className="text-[11px] text-gray-400 mt-1 uppercase tracking-wider">End-to-end</p>
-                </div>
-                <div className="text-center p-5 rounded-2xl bg-white/[0.04] border border-fuchsia-500/20">
-                  <p className="text-3xl md:text-4xl font-bold text-fuchsia-300">292+</p>
-                  <p className="text-[11px] text-gray-400 mt-1 uppercase tracking-wider">Sites audited</p>
-                </div>
-                <div className="text-center p-5 rounded-2xl bg-white/[0.04] border border-emerald-500/20">
-                  <p className="text-3xl md:text-4xl font-bold text-emerald-300">$0</p>
-                  <p className="text-[11px] text-gray-400 mt-1 uppercase tracking-wider">Cost to try</p>
-                </div>
-              </div>
-
-              {/* What it actually checks */}
-              <div className="mb-8">
-                <h3 className="text-sm font-bold tracking-widest uppercase text-gray-300 mb-3">What it catches</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-400">
-                  <div>· Core Web Vitals (LCP, INP, CLS) on rendered DOM</div>
-                  <div>· Render-blocking resources and JS hydration cost</div>
-                  <div>· Title, meta, canonical, hreflang, OpenGraph, Twitter</div>
-                  <div>· Structured data (JSON-LD) validation</div>
-                  <div>· Heading hierarchy, alt text, semantic HTML</div>
-                  <div>· Internal link integrity and orphan detection</div>
-                  <div>· robots.txt, sitemap.xml, indexability rules</div>
-                  <div>· Image optimization, lazy loading, WebP/AVIF</div>
-                  <div>· Keyword extraction and content depth signals</div>
-                  <div>· Mobile responsiveness and viewport behavior</div>
-                  <div>· HTTPS, HSTS, mixed-content, CSP integrity</div>
-                  <div>· Accessibility audits (axe-core ruleset)</div>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
-                <a
-                  href="https://axiondeepdigital.com/free-seo-audit"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 via-violet-500 to-fuchsia-500 font-semibold text-white hover:opacity-90 transition shadow-lg shadow-violet-500/30"
-                >
-                  Run a free audit →
-                </a>
-                <a
-                  href="https://axiondeepdigital.com/research"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full border border-white/20 font-medium text-white hover:bg-white/5 transition"
-                >
-                  Read the 292-site study
-                </a>
-                <Link
-                  href="/projects/deepaudit"
-                  className="px-8 py-4 rounded-full border border-white/20 font-medium text-white hover:bg-white/5 transition"
-                >
-                  Project page
-                </Link>
-              </div>
-
-              {/* Subsidiary attribution */}
-              <p className="mt-8 text-xs text-gray-500">
-                Operated by{" "}
-                <a
-                  href="https://axiondeepdigital.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-cyan-300 transition underline-offset-4 hover:underline"
-                >
-                  Axion Deep Digital
-                </a>
-                , our applied web and SEO arm. Engineering and research support from Axion Deep Labs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Shipped */}
       <section className="px-6 pb-20">
         <div className="max-w-7xl mx-auto">
           <StageHeader
             label="Shipped"
-            count={shipped.length + 1}
-            sublabel="Live in production. Revenue-bearing. Customers using them today."
+            count={shipped.length}
+            sublabel="Live in production. Customers and visitors using them today."
           />
-          <p className="text-xs text-gray-500 mb-6">
-            DeepAudit AI counted in this track (featured above).
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {shipped.map((p) => (
               <ProjectCard key={p.name} p={p} />
             ))}
