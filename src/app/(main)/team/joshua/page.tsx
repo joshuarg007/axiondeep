@@ -369,6 +369,33 @@ export default function JoshuaPage() {
                 <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/15" />
                 <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                   <h3 className="text-white font-semibold">
+                    Independent Software Consultant
+                  </h3>
+                  <span className="text-xs text-gray-500 tracking-wide">
+                    2014 — 2023
+                  </span>
+                </div>
+                <p className="text-cyan-300 text-sm mb-2">
+                  Custom Programming &middot; Remote
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Nine-year independent practice designing and shipping bespoke
+                  software for clients across multiple industries. Delivered
+                  full-stack systems on a rotating set of frameworks, CMS
+                  platforms, and MVC architectures, paired with cloud-native
+                  API layers and scalable relational and document data models.
+                  Introduced AI-augmented features ahead of the wider market —
+                  automated workflows, data-classification tooling, and
+                  predictive decision logic that measurably improved client
+                  operations. Owned the full lifecycle: requirements, secure
+                  cloud deployment, performance tuning, and maintainable
+                  hand-off documentation.
+                </p>
+              </li>
+              <li className="relative">
+                <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/15" />
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                  <h3 className="text-white font-semibold">
                     Independent Sales Consultant
                   </h3>
                   <span className="text-xs text-gray-500 tracking-wide">
