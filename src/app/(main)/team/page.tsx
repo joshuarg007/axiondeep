@@ -30,6 +30,7 @@ const team = [
     role: "Chairperson, President & COO",
     image: "/images/team/crystal.jpg",
     accent: "violet",
+    profile: "/team/crystal",
     bio: [
       "Co-founder, majority shareholder, and operating leader of Axion Deep Labs. Crystal directs corporate governance, research infrastructure, and institutional partnerships across the entire portfolio of products and research programs.",
       "Adjunct Professor in the NMSU Engineering Department, she provides the laboratory with institutional access to the NMSU Discovery high-performance computing cluster, a strategic resource powering the PERSIST research program and future experimental work.",
@@ -56,6 +57,7 @@ const team = [
     role: "CEO, Principal Investigator & Full-Stack Engineer",
     image: "/images/team/joshua.jpg",
     accent: "cyan",
+    profile: "/team/joshua",
     bio: [
       "Co-founder and Principal Investigator at Axion Deep Labs. Joshua leads research direction, full-stack product engineering, and grant strategy across the laboratory's commercial and research programs.",
       "Principal Investigator on PERSIST, an NSF SBIR-track research program investigating whether the topology of a neural network's loss landscape predicts catastrophic forgetting. Phase I-A results submitted to CoLLAs 2026.",
@@ -234,30 +236,34 @@ export default function TeamPage() {
                   </div>
 
                   {/* Links */}
-                  {Object.keys(member.links).length > 0 && (
-                    <div className="flex gap-5 mt-auto pt-4 border-t border-white/[0.05]">
-                      {member.links.linkedin && (
-                        <a
-                          href={member.links.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
-                        >
-                          LinkedIn
-                        </a>
-                      )}
-                      {member.links.github && (
-                        <a
-                          href={member.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
-                        >
-                          GitHub
-                        </a>
-                      )}
-                    </div>
-                  )}
+                  <div className="flex gap-5 mt-auto pt-4 border-t border-white/[0.05] items-center">
+                    <Link
+                      href={member.profile}
+                      className={`text-xs font-medium tracking-wide uppercase ${a.chipText} hover:text-white transition-colors`}
+                    >
+                      Read full bio &rarr;
+                    </Link>
+                    {member.links.linkedin && (
+                      <a
+                        href={member.links.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                    )}
+                    {member.links.github && (
+                      <a
+                        href={member.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             );
