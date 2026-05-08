@@ -198,7 +198,7 @@ export default function CrystalPage() {
           {/* Roles */}
           <section className="mb-16">
             <h2 className={sectionHeading}>Roles &amp; Appointments</h2>
-            <ol className="relative border-l border-white/[0.08] pl-6 space-y-8">
+            <ol className="list-none relative border-l border-white/[0.08] pl-6 space-y-8">
               <li className="relative">
                 <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-violet-400 ring-4 ring-violet-400/15" />
                 <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">

@@ -301,7 +301,7 @@ export default function JoshuaPage() {
           {/* Roles */}
           <section className="mb-16">
             <h2 className={sectionHeading}>Roles &amp; Appointments</h2>
-            <ol className="relative border-l border-white/[0.08] pl-6 space-y-8">
+            <ol className="list-none relative border-l border-white/[0.08] pl-6 space-y-8">
               <li className="relative">
                 <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/15" />
                 <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
@@ -363,6 +363,29 @@ export default function JoshuaPage() {
                   integration (DeepSeek, Claude, OpenAI), product UX, and
                   go-to-market for each line. Stack spans PyTorch, FastAPI,
                   Next.js/React, AWS serverless, and PyQt6 desktop.
+                </p>
+              </li>
+              <li className="relative">
+                <span className="absolute -left-[7px] top-2 w-3 h-3 rounded-full bg-cyan-400 ring-4 ring-cyan-400/15" />
+                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                  <h3 className="text-white font-semibold">
+                    Independent Sales Consultant
+                  </h3>
+                  <span className="text-xs text-gray-500 tracking-wide">
+                    2010 — Present
+                  </span>
+                </div>
+                <p className="text-cyan-300 text-sm mb-2">
+                  Vector Marketing &middot; Cutco Cutlery
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Sixteen-year sales tenure with Vector Marketing, the direct-sales
+                  arm of Cutco Cutlery. Built and sustained a long-term referral
+                  pipeline through in-person product demonstrations, consultative
+                  needs assessment, and relationship-driven follow-up — the
+                  same customer-discovery instincts that now anchor product
+                  positioning, grant narrative, and sales conversations across
+                  the Axion Deep Labs portfolio.
                 </p>
               </li>
             </ol>
