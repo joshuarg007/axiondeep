@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "PERSIST | Phase 0 Findings &amp; Methodology",
   description:
-    "EXP-01 PERSIST Phase 0 proof-of-concept. Loss-landscape topology predicts catastrophic forgetting and EWC mitigation benefit across 57 small-scale configurations. Superseded by Phase I-A (ImageNet-100 scale validation, complete) and Phase I-B (cross-dataset sweep, complete).",
+    "EXP-01 PERSIST Phase 0: loss-landscape topology predicts catastrophic forgetting across 57 configurations. Superseded by Phase I-A scale validation.",
   keywords: [
     "topological data analysis",
     "catastrophic forgetting",
