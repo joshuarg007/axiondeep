@@ -13,12 +13,14 @@ const CATEGORY_LABELS: Record<string, string> = {
   "site2crm": "Site2CRM",
   "axion-deep-digital": "Axion Deep Digital",
   "made4founders": "Made4Founders",
+  "labs": "Axion Deep Labs",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
   "site2crm": "from-cyan-500/20 to-cyan-500/5 border-cyan-500/20 text-cyan-400",
   "axion-deep-digital": "from-violet-500/20 to-violet-500/5 border-violet-500/20 text-violet-400",
   "made4founders": "from-fuchsia-500/20 to-fuchsia-500/5 border-fuchsia-500/20 text-fuchsia-400",
+  "labs": "from-cyan-400/20 via-violet-500/15 to-fuchsia-500/15 border-cyan-400/30 text-cyan-300",
 };
 
 export default function BlogPage() {
