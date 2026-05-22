@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal - San Carlos HOA Resident Gate App | Axion Deep Labs</title>
+<style>
+  :root {
+    --amber-400: #06B6D4;
+    --amber-500: #22D3EE;
+    --amber-600: #06B6D4;
+    --amber-700: #8B5CF6;
+    --amber-800: #7C3AED;
+    --amber-900: #1E1B4B;
+    --text-dark: #1a1a2e;
+    --text-body: #374151;
+    --text-muted: #6B7280;
+    --text-light: #9CA3AF;
+    --bg-white: #FFFFFF;
+    --bg-light: #F9FAFB;
+    --bg-card: #F3F4F6;
+    --bg-dark: #0a0a0f;
+    --bg-dark-card: #111827;
+    --border: #E5E7EB;
+    --green: #22C55E;
+    --red: #EF4444;
+    --orange: #F97316;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-body);
+    background: var(--bg-white);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    min-height: 100vh;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(6,182,212,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(139,92,246,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+  }
+
+  .cover-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 48px;
+    filter: drop-shadow(0 0 30px rgba(6,182,212,0.3));
+  }
+
+  .cover-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--amber-400);
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .cover-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 60px;
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--amber-400), var(--amber-700));
+    margin: 0 auto 40px;
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .cover-meta dt {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber-600);
+    margin-bottom: 6px;
+  }
+
+  .cover-meta dd {
+    color: #D1D5DB;
+    font-weight: 400;
+  }
+
+  /* ===== PAGE SECTIONS ===== */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    page-break-before: always;
+  }
+
+  .page:first-of-type {
+    page-break-before: auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--amber-600);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .section-intro {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .amber-line {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber-400), var(--amber-700));
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+
+  h3.block-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+  }
+
+  thead th {
+    background: var(--bg-dark);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  thead th:first-child { border-radius: 8px 0 0 0; }
+  thead th:last-child { border-radius: 0 8px 0 0; text-align: right; }
+
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 2px solid var(--text-dark);
+  }
+
+  tbody td:last-child {
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  tbody tr.total-row td {
+    background: var(--bg-light);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+  }
+
+  .td-category {
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .td-detail {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* ===== PRICING TIERS ===== */
+  .tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tier {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .tier.featured {
+    border: 2px solid var(--amber-400);
+    box-shadow: 0 4px 24px rgba(6,182,212,0.15);
+    transform: scale(1.03);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--amber-400), var(--amber-600));
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border-radius: 20px;
+  }
+
+  .tier-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .tier-price {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .tier-price .currency { font-size: 20px; vertical-align: top; }
+
+  .tier-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .tier-range {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .tier-includes {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    color: var(--text-body);
+  }
+
+  .tier-includes li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--bg-card);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .tier-includes li::before {
+    content: '\2713';
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--amber-400);
+    border: 3px solid var(--bg-white);
+    box-shadow: 0 0 0 2px var(--amber-400);
+  }
+
+  .timeline-week {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber-600);
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== TERMS ===== */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .terms-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .terms-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .terms-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ===== FOOTER / CTA ===== */
+  .cta-section {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .cta-section h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+
+  .cta-section p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--amber-400), var(--amber-600));
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-contact {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .cta-contact a {
+    color: var(--amber-400);
+    text-decoration: none;
+  }
+
+  .doc-footer {
+    text-align: center;
+    padding: 20px 40px;
+    font-size: 11px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+  }
+
+  .doc-footer strong {
+    color: var(--amber-600);
+  }
+
+  /* ===== SIGNATURE ===== */
+  .signature-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 48px;
+    padding-top: 20px;
+  }
+
+  .sig-block {
+    border-top: 2px solid var(--text-dark);
+    padding-top: 12px;
+  }
+
+  .sig-block .sig-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .sig-block .sig-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .sig-block .sig-title {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .sig-block .sig-date {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 8px;
+  }
+
+  /* ===== KEY POINTS / CARDS ===== */
+  .findings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+
+  .finding-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 4px solid var(--red);
+  }
+
+  .finding-card.warn { border-left-color: var(--orange); }
+  .finding-card.good { border-left-color: var(--green); }
+
+  .finding-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .finding-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ===== CALLOUT ===== */
+  .callout {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber-400);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .callout h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  .callout ul {
+    margin: 8px 0 0 18px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { font-size: 12px; }
+    .cover { min-height: 100vh; }
+    .page { padding: 40px 20px; max-width: 100%; }
+    .tiers { gap: 12px; }
+    .tier.featured { transform: none; }
+    .cta-section { break-inside: avoid; }
+    .findings { break-inside: avoid; }
+    .callout { break-inside: avoid; }
+    table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==============================================================
+     AXION DEEP DIGITAL - PROPOSAL ADL-2026-0001
+     San Carlos HOA - Resident Gate-Monitoring App
+     ==============================================================
+     PLACEHOLDERS TO FILL BEFORE SENDING:
+       [COMMUNITY NAME]  - the HOA / community's actual name
+       Confirm community size band for the monthly service tier
+     ============================================================== -->
+
+<!-- ===== COVER PAGE ===== -->
+<div class="cover">
+  <div class="cover-content">
+
+    <img src="../../images/marketing-images-amber-rebrand-2026/axiondeepdigital-logo-stacked-250x250.png"
+         alt="Axion Deep Labs" class="cover-logo">
+
+    <div class="cover-label">Mobile App Development Proposal</div>
+
+    <h1 class="cover-title">Resident Gate-Monitoring App</h1>
+
+    <p class="cover-subtitle">[COMMUNITY NAME] Homeowners Association &middot; San Carlos, Sonora</p>
+
+    <div class="cover-divider"></div>
+
+    <dl class="cover-meta">
+      <div>
+        <dt>Prepared</dt>
+        <dd>May 22, 2026</dd>
+      </div>
+      <div>
+        <dt>Prepared For</dt>
+        <dd>Elizabeth &amp; Jose Quintana</dd>
+      </div>
+      <div>
+        <dt>Proposal</dt>
+        <dd>ADL-2026-0001</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+<!-- ===== 01 / THE OPPORTUNITY ===== -->
+<div class="page">
+  <div class="section-label">01 / The Opportunity</div>
+  <div class="amber-line"></div>
+  <h2 class="section-title">Every Homeowner, Their Own View of the Gate</h2>
+  <p class="section-intro">
+    Your community is installing the Inex Technologies IZCloud LPR Virtual Guard system. Its
+    cameras automatically read and log every license plate entering and leaving through
+    the gate. This proposal adds the one piece IZCloud deliberately leaves out: a private,
+    cloud-based app that puts that gate activity in every homeowner's pocket, in real time.
+  </p>
+
+  <div class="findings">
+    <div class="finding-card warn">
+      <h4>IZCloud Has No Resident App</h4>
+      <p>Inex's platform is built to be "app-free." Residents interact by voice and SMS, and
+      only the HOA board gets a management dashboard. Individual homeowners currently have no
+      way to see who is entering the community.</p>
+    </div>
+    <div class="finding-card good">
+      <h4>The Data Already Exists</h4>
+      <p>Every plate, vehicle photo, make, model, color, and timestamp is already captured by
+      the IZCloud cameras. We add no hardware. We surface data the HOA is already paying
+      to collect.</p>
+    </div>
+    <div class="finding-card good">
+      <h4>One App, Private Accounts</h4>
+      <p>A single app, branded for your community. Each homeowner signs into their own secure
+      account on their own phone. The HOA owns the community account and controls who has access.</p>
+    </div>
+    <div class="finding-card good">
+      <h4>Built for San Carlos</h4>
+      <p>Fully bilingual in English and Spanish, for a community of both expat and
+      Mexican owners, running on the iPhones and Android phones residents already carry.</p>
+    </div>
+  </div>
+
+  <h3 class="block-title">What Homeowners Get</h3>
+  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.7;">
+    A live feed of gate activity: license plate, vehicle photo, make/model/color, time,
+    and whether it was an entry or an exit. Real-time push notifications the moment a vehicle
+    passes the gate. A searchable history of everything that has come and gone. All private to
+    their account, all on their phone.
+  </p>
+
+  <h3 class="block-title">What the HOA Gets</h3>
+  <p style="font-size:13px;color:var(--text-muted);line-height:1.7;">
+    A simple web console to invite and manage homeowner accounts, assign units, and broadcast
+    community-wide alerts (gate closures, security notices, board announcements)
+    straight to every resident's phone. The board stays in control; the app does the work.
+  </p>
+</div>
+
+
+<!-- ===== 02 / SCOPE OF WORK ===== -->
+<div class="page">
+  <div class="section-label">02 / Scope of Work</div>
+  <div class="amber-line"></div>
+  <h2 class="section-title">What We'll Build</h2>
+  <p class="section-intro">
+    We recommend a focused v1.0 launch first: the complete monitoring experience,
+    built end to end. Then optional enhancements once residents are live and giving
+    feedback. This gets a working app into homeowners' hands fast, without paying up front
+    for features the community may want to shape later.
+  </p>
+
+  <h3 class="block-title">Phase 1: App Launch (v1.0)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 27%">Component</th>
+        <th>What's Included</th>
+        <th style="width: 12%">Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-category">IZCloud Integration</td>
+        <td>Confirm and build the secure connection to the Inex IZCloud platform. Ingest
+        entry/exit events, plate images, and vehicle metadata in real time as vehicles pass
+        the gate.</td>
+        <td>50 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Cloud Backend &amp; Resident Accounts</td>
+        <td>AWS cloud infrastructure, database, and a secure per-homeowner account system.
+        One community account owned by the HOA, with role-based access (homeowner vs. HOA
+        admin).</td>
+        <td>60 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Resident App (iOS + Android)</td>
+        <td>The homeowner app: live gate-activity feed with plate, vehicle photo,
+        make/model/color, timestamp, and entry/exit direction; searchable history; fully
+        bilingual English/Spanish; branded for the community. Built once, published to both
+        app stores.</td>
+        <td>85 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Push Notifications</td>
+        <td>Real-time alerts to each homeowner's phone the moment a vehicle passes the gate,
+        with per-resident notification preferences.</td>
+        <td>25 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">HOA Admin Console</td>
+        <td>Web console for the board to invite and manage homeowner accounts, assign units,
+        and broadcast community-wide alerts to every resident.</td>
+        <td>25 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">QA, Store Launch &amp; Onboarding</td>
+        <td>Full testing, security review, App Store and Google Play submission, resident and
+        board onboarding materials, a training call, and project handoff.</td>
+        <td>35 hrs</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">Phase 1 Total</td>
+        <td>280 hrs</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="block-title">Phase 2: Enhancements (Optional, Post-Launch)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 27%">Component</th>
+        <th>What's Included</th>
+        <th style="width: 12%">Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-category">Visitor Pre-Authorization</td>
+        <td>Homeowners register an expected guest's plate or request a one-time PIN from
+        inside the app, then get notified when that guest actually arrives at the gate.</td>
+        <td>45 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Household Vehicle Registry</td>
+        <td>Homeowners manage their own household's known vehicles, so family cars show as
+        recognized in the feed.</td>
+        <td>25 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Suspicious-Vehicle Flagging</td>
+        <td>Residents flag a vehicle straight to HOA security from the feed, with a follow-up
+        and resolution workflow for the board.</td>
+        <td>30 hrs</td>
+      </tr>
+      <tr>
+        <td class="td-category">Advanced Admin &amp; Reporting</td>
+        <td>Full two-way access-list sync with IZCloud, plus community activity reports and
+        exports for the board.</td>
+        <td>40 hrs</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">Phase 2 Total</td>
+        <td>140 hrs</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ===== 03 / INVESTMENT ===== -->
+<div class="page">
+  <div class="section-label">03 / Investment</div>
+  <div class="amber-line"></div>
+  <h2 class="section-title">Investment</h2>
+  <p class="section-intro">
+    A full custom mobile app (backend, third-party integration, two app stores, and an
+    admin console) is a serious build. Here is what it costs through a typical agency
+    versus what it costs with us.
+  </p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-name">Typical Agency</div>
+      <div class="tier-price">
+        <span class="currency">$</span>110,000
+      </div>
+      <div class="tier-range">$90,000 - $150,000</div>
+      <div class="tier-desc">What most app studios charge for this scope, billed over 4-7 months.</div>
+      <ul class="tier-includes">
+        <li>Discovery &amp; research phase</li>
+        <li>Separate iOS and Android teams</li>
+        <li>Backend &amp; integration build</li>
+        <li>Project management overhead</li>
+        <li>500-750 billable hours at $150-200/hr</li>
+      </ul>
+    </div>
+
+    <div class="tier featured">
+      <div class="tier-badge">Recommended</div>
+      <div class="tier-name">Axion Deep Labs</div>
+      <div class="tier-price">
+        <span class="currency">$</span>28,000
+      </div>
+      <div class="tier-range">$100/hr &times; 280 hours &middot; Phase 1</div>
+      <div class="tier-desc">The complete v1.0 launch. One cross-platform codebase, no agency bloat.</div>
+      <ul class="tier-includes">
+        <li>Free discovery consultation</li>
+        <li>IZCloud integration</li>
+        <li>iOS + Android resident app</li>
+        <li>Real-time push notifications</li>
+        <li>HOA admin console</li>
+        <li>Both app stores + onboarding</li>
+        <li>30-day post-launch support</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="block-title">Pricing Summary</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 32%">Item</th>
+        <th>Description</th>
+        <th style="width: 20%">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-category">Phase 1: App Launch
+          <div class="td-detail">One-time</div>
+        </td>
+        <td>The complete v1.0 monitoring app, end to end: integration, backend, iOS + Android
+        app, notifications, admin console, and store launch.</td>
+        <td>$28,000</td>
+      </tr>
+      <tr>
+        <td class="td-category">Phase 2: Enhancements
+          <div class="td-detail">One-time &middot; optional</div>
+        </td>
+        <td>Visitor pre-authorization, vehicle registry, suspicious-vehicle flagging, and
+        advanced admin/reporting. Commissioned later if and when the community wants it.</td>
+        <td>$14,000</td>
+      </tr>
+      <tr>
+        <td class="td-category">Managed Service &amp; Hosting
+          <div class="td-detail">Recurring &middot; begins at launch</div>
+        </td>
+        <td>Priced per home so it scales with your community. Covers all cloud hosting,
+        integration monitoring, app maintenance, store account renewals, and resident/board
+        support. 100 homes is $100/mo, 200 homes is $200/mo.</td>
+        <td>$1 / home / mo</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>What the Monthly Service Covers</h4>
+    <ul>
+      <li>All AWS cloud hosting and infrastructure</li>
+      <li>IZCloud integration monitoring and upkeep</li>
+      <li>App updates for new iOS / Android versions and security patches</li>
+      <li>Apple Developer and Google Play account management and renewals</li>
+      <li>Email and phone support for the HOA board and residents</li>
+      <li>Up to 2 hours per month of minor changes and adjustments</li>
+    </ul>
+    <p style="margin-top:10px;">Pay only for the homes you have. No flat fee, no per-home padding.</p>
+  </div>
+
+  <div class="callout">
+    <h4>Why the Difference?</h4>
+    <p>
+      Agencies staff separate iOS and Android teams and bill a long discovery phase before they
+      write a line of code. We build both platforms from one modern codebase, run lean on
+      proven AWS infrastructure, and scope a tight v1.0 instead of an everything-at-once build.
+      Same result in homeowners' hands, without paying for the overhead.
+    </p>
+  </div>
+</div>
+
+
+<!-- ===== 04 / TIMELINE & TERMS ===== -->
+<div class="page">
+  <div class="section-label">04 / Timeline &amp; Terms</div>
+  <div class="amber-line"></div>
+  <h2 class="section-title">How It Works</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-week">Week 1</div>
+      <div class="timeline-title">Kickoff &amp; Integration Confirmation</div>
+      <div class="timeline-desc">Kickoff call with the HOA board. We confirm IZCloud data
+      access directly with Inex Technologies, finalize the app design, and lock the resident
+      roster.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 2-3</div>
+      <div class="timeline-title">Cloud Backend &amp; Accounts</div>
+      <div class="timeline-desc">AWS infrastructure, the secure account system, and the live
+      IZCloud integration service that ingests gate activity.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 4-6</div>
+      <div class="timeline-title">Resident App Build</div>
+      <div class="timeline-desc">The iOS and Android app: live feed, searchable history, and
+      full English/Spanish bilingual support, branded for the community.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 7</div>
+      <div class="timeline-title">Notifications &amp; Admin Console</div>
+      <div class="timeline-desc">Real-time push notifications and the HOA admin console for
+      managing residents and broadcasting alerts.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 8</div>
+      <div class="timeline-title">QA &amp; Security Review</div>
+      <div class="timeline-desc">Full testing across devices, a security pass, and submission
+      to the App Store and Google Play.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-week">Week 9</div>
+      <div class="timeline-title">Launch &amp; Onboarding</div>
+      <div class="timeline-desc">Store approval, resident rollout, a board training call, and
+      project handoff. The community is live.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>Key Dependency: IZCloud Data Access</h4>
+    <p>
+      This proposal assumes Inex Technologies provides programmatic access to IZCloud gate
+      activity, whether via API, webhook, or data feed. We will confirm this directly with Inex
+      (Justin Boothe) during Week 1, before any integration work is billed. If Inex cannot
+      provide access, an alternative integration path will be scoped as a separate written
+      addendum for the HOA's approval, with no surprise charges.
+    </p>
+  </div>
+
+  <h3 class="block-title">Assumptions &amp; What's Not Included</h3>
+  <div class="callout">
+    <p><strong>Not included (third-party costs the HOA pays directly):</strong></p>
+    <ul>
+      <li>The Inex IZCloud-HOA hardware, on-site installation, and IZCloud platform
+      subscription (purchased separately through Inex Technologies)</li>
+      <li>Apple Developer Program ($99/yr) and Google Play Developer ($25 one-time).
+      Axion Deep Labs can manage these under the monthly service</li>
+    </ul>
+    <p style="margin-top:10px;"><strong>This quote assumes:</strong></p>
+    <ul>
+      <li>Inex provides API, webhook, or feed access to IZCloud gate-activity data</li>
+      <li>The IZCloud-HOA hardware is installed and operational before app launch testing</li>
+      <li>The HOA designates one board contact and provides the resident roster</li>
+      <li>One community with the single entry/exit lane set described in the Inex install guide;
+      additional gates or lanes may adjust scope</li>
+    </ul>
+  </div>
+
+  <h3 class="block-title">Terms</h3>
+  <div class="terms-grid">
+    <div class="terms-card">
+      <h4>Payment</h4>
+      <p>Phase 1: 40% at kickoff, 30% at beta (working app in test build), 30% at launch.
+      Invoiced via ACH, Zelle, or check. Net 7.</p>
+    </div>
+    <div class="terms-card">
+      <h4>Validity</h4>
+      <p>This proposal is valid for 30 days from the date above. Scope and pricing may change
+      after that.</p>
+    </div>
+    <div class="terms-card">
+      <h4>Revisions</h4>
+      <p>Two rounds of design revisions included per phase. Additional revisions billed at
+      $100/hr.</p>
+    </div>
+    <div class="terms-card">
+      <h4>Ownership</h4>
+      <p>The HOA owns the app, all resident accounts, and all community data. The app is
+      published under the community's brand.</p>
+    </div>
+    <div class="terms-card">
+      <h4>Support</h4>
+      <p>30 days of post-launch support included. Ongoing support, hosting, and updates are
+      covered by the monthly managed service.</p>
+    </div>
+    <div class="terms-card">
+      <h4>Consultation</h4>
+      <p>Your first discovery consultation is free, no commitment. We'll walk the board
+      through the plan and answer questions before you decide.</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Ready to give your homeowners the gate in their pocket?</h3>
+    <p>Reply to this proposal or book a call to lock in your rate and start Phase 1.</p>
+    <a href="mailto:jgutierrez@axiondeep.com?subject=Proposal%20ADL-2026-0001%20-%20HOA%20Resident%20App" class="cta-btn">Accept Proposal</a>
+    <div class="cta-contact">
+      <span>jgutierrez@axiondeep.com</span>
+      <span>(512) 761-5351</span>
+      <span>axiondeep.com</span>
+    </div>
+  </div>
+
+  <div class="signature-area">
+    <div class="sig-block">
+      <div class="sig-label">Axion Deep Labs</div>
+      <div class="sig-name">Joshua R. Gutierrez</div>
+      <div class="sig-title">CEO &amp; Founder</div>
+      <div class="sig-date">Date: _______________</div>
+    </div>
+    <div class="sig-block">
+      <div class="sig-label">Client</div>
+      <div class="sig-name">___________________________</div>
+      <div class="sig-title">[COMMUNITY NAME] Homeowners Association</div>
+      <div class="sig-date">Date: _______________</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DOCUMENT FOOTER ===== -->
+<div class="doc-footer">
+  <strong>Axion Deep Labs</strong> &middot; axiondeep.com &middot; labs@axiondeep.com &middot; (512) 761-5351<br>
+  5045 El Camino Real, Las Cruces, NM 88007
+</div>
+
+</body>
+</html>
