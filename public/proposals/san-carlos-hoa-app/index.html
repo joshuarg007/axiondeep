@@ -3,1022 +3,827 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proposal - San Carlos HOA Resident Gate App | Axion Deep Labs</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Engineering Blueprint - Caracol Peninsula | Axion Deep Labs</title>
 <style>
   :root {
-    --amber-400: #06B6D4;
-    --amber-500: #22D3EE;
-    --amber-600: #06B6D4;
-    --amber-700: #8B5CF6;
-    --amber-800: #7C3AED;
-    --amber-900: #1E1B4B;
-    --text-dark: #1a1a2e;
-    --text-body: #374151;
-    --text-muted: #6B7280;
-    --text-light: #9CA3AF;
-    --bg-white: #FFFFFF;
-    --bg-light: #F9FAFB;
-    --bg-card: #F3F4F6;
-    --bg-dark: #0a0a0f;
-    --bg-dark-card: #111827;
-    --border: #E5E7EB;
-    --green: #22C55E;
-    --red: #EF4444;
-    --orange: #F97316;
+    --bg: #0a0a0f;
+    --bg-card: #18181b;
+    --bg-code: #111118;
+    --text: #e4e4e7;
+    --text-muted: #a1a1aa;
+    --text-dim: #71717a;
+    --border: #27272a;
+    --cyan: #06B6D4;
+    --violet: #8B5CF6;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  * { box-sizing: border-box; }
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--text-body);
-    background: var(--bg-white);
-    font-size: 14px;
-    line-height: 1.6;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* ===== COVER PAGE ===== */
-  .cover {
-    min-height: 100vh;
-    background: var(--bg-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 40px;
-    position: relative;
-    overflow: hidden;
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
   }
-
-  .cover::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(ellipse at 30% 50%, rgba(6,182,212,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 30%, rgba(139,92,246,0.05) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  .cover-content {
-    position: relative;
-    z-index: 1;
+  .header {
     text-align: center;
-    max-width: 700px;
-  }
-
-  .cover-logo {
-    width: 160px;
-    height: auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
     margin-bottom: 48px;
+  }
+  .header img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 24px;
     filter: drop-shadow(0 0 30px rgba(6,182,212,0.3));
   }
-
-  .cover-label {
+  .header .eyebrow {
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: var(--amber-400);
-    margin-bottom: 24px;
-  }
-
-  .cover-title {
-    font-size: 42px;
-    font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1.15;
-    margin-bottom: 12px;
-  }
-
-  .cover-subtitle {
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--text-light);
-    margin-bottom: 60px;
-  }
-
-  .cover-divider {
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--amber-400), var(--amber-700));
-    margin: 0 auto 40px;
-  }
-
-  .cover-meta {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    color: var(--text-muted);
-    font-size: 13px;
-  }
-
-  .cover-meta dt {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--amber-600);
-    margin-bottom: 6px;
-  }
-
-  .cover-meta dd {
-    color: #D1D5DB;
-    font-weight: 400;
-  }
-
-  /* ===== PAGE SECTIONS ===== */
-  .page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    page-break-before: always;
-  }
-
-  .page:first-of-type {
-    page-break-before: auto;
-  }
-
-  .section-label {
-    font-size: 10px;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--amber-600);
-    margin-bottom: 8px;
+    color: var(--cyan);
+    margin-bottom: 12px;
   }
-
-  .section-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 24px;
+  .header h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
     line-height: 1.2;
   }
-
-  .section-intro {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 36px;
-    max-width: 600px;
-    line-height: 1.7;
+  .header .accent {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    margin: 20px auto 0;
   }
-
-  .amber-line {
-    width: 48px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--amber-400), var(--amber-700));
-    margin-bottom: 24px;
-    border-radius: 2px;
-  }
-
-  h3.block-title {
-    font-size: 16px;
+  h1 { display: none; }
+  h2 {
+    font-size: 22px;
     font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 16px;
-    margin-top: 8px;
+    color: #fff;
+    margin: 56px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cyan);
+    display: inline-block;
   }
-
-  /* ===== TABLES ===== */
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cyan);
+  }
+  p {
+    margin: 0 0 16px;
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: var(--text); font-weight: 600; }
+  em { color: var(--text-muted); }
+  code {
+    background: var(--bg-code);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-family: 'SF Mono', Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    color: var(--cyan);
+  }
+  pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  pre code {
+    background: transparent;
+    padding: 0;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre;
+  }
+  ul, ol {
+    color: var(--text-muted);
+    font-size: 15px;
+    padding-left: 24px;
+    margin: 0 0 16px;
+  }
+  li { margin: 6px 0; }
+  li code { font-size: 12px; }
+  li::marker { color: var(--cyan); }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 32px;
+    margin: 20px 0;
+    font-size: 13px;
   }
-
-  thead th {
-    background: var(--bg-dark);
-    color: #FFFFFF;
-    font-size: 11px;
+  th {
+    background: var(--bg-card);
+    color: var(--text);
+    padding: 10px 14px;
+    text-align: left;
     font-weight: 600;
+    border-bottom: 2px solid var(--cyan);
+    font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 12px 16px;
-    text-align: left;
   }
-
-  thead th:first-child { border-radius: 8px 0 0 0; }
-  thead th:last-child { border-radius: 0 8px 0 0; text-align: right; }
-
-  tbody td {
-    padding: 14px 16px;
+  td {
+    padding: 10px 14px;
     border-bottom: 1px solid var(--border);
-    font-size: 13px;
+    color: var(--text-muted);
     vertical-align: top;
   }
-
-  tbody tr:last-child td {
-    border-bottom: 2px solid var(--text-dark);
-  }
-
-  tbody td:last-child {
-    text-align: right;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  tbody tr.total-row td {
-    background: var(--bg-light);
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-dark);
-    border-bottom: 2px solid var(--text-dark);
-  }
-
-  .td-category {
-    font-weight: 600;
-    color: var(--text-dark);
-  }
-
-  .td-detail {
+  blockquote {
+    border-left: 3px solid var(--cyan);
+    background: var(--bg-card);
+    padding: 14px 20px;
+    margin: 20px 0;
     color: var(--text-muted);
-    font-size: 12px;
-    margin-top: 2px;
+    border-radius: 0 8px 8px 0;
   }
-
-  /* ===== PRICING TIERS ===== */
-  .tiers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .tier {
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 24px;
-    text-align: center;
-    position: relative;
-  }
-
-  .tier.featured {
-    border: 2px solid var(--amber-400);
-    box-shadow: 0 4px 24px rgba(6,182,212,0.15);
-    transform: scale(1.03);
-  }
-
-  .tier-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, var(--amber-400), var(--amber-600));
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 16px;
-    border-radius: 20px;
-  }
-
-  .tier-name {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-  }
-
-  .tier-price {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-  }
-
-  .tier-price .currency { font-size: 20px; vertical-align: top; }
-
-  .tier-desc {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-
-  .tier-range {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  .tier-includes {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    font-size: 12px;
-    color: var(--text-body);
-  }
-
-  .tier-includes li {
-    padding: 6px 0;
-    border-bottom: 1px solid var(--bg-card);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .tier-includes li::before {
-    content: '\2713';
-    color: var(--green);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* ===== TIMELINE ===== */
-  .timeline {
-    position: relative;
-    padding-left: 32px;
-    margin-bottom: 40px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 4px;
-    bottom: 4px;
-    width: 2px;
-    background: var(--border);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 28px;
-  }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -29px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--amber-400);
-    border: 3px solid var(--bg-white);
-    box-shadow: 0 0 0 2px var(--amber-400);
-  }
-
-  .timeline-week {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--amber-600);
-    margin-bottom: 4px;
-  }
-
-  .timeline-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-  }
-
-  .timeline-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* ===== TERMS ===== */
-  .terms-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-  }
-
-  .terms-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-  }
-
-  .terms-card h4 {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 8px;
-  }
-
-  .terms-card p {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* ===== FOOTER / CTA ===== */
-  .cta-section {
-    background: var(--bg-dark);
-    border-radius: 16px;
-    padding: 48px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .cta-section h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 12px;
-  }
-
-  .cta-section p {
-    color: var(--text-light);
-    font-size: 14px;
-    margin-bottom: 28px;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    background: linear-gradient(90deg, var(--amber-400), var(--amber-600));
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 14px 40px;
-    border-radius: 8px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-  }
-
-  .cta-contact {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-
-  .cta-contact a {
-    color: var(--amber-400);
-    text-decoration: none;
-  }
-
-  .doc-footer {
-    text-align: center;
-    padding: 20px 40px;
-    font-size: 11px;
-    color: var(--text-light);
+  blockquote p:last-child { margin-bottom: 0; }
+  hr {
+    border: none;
     border-top: 1px solid var(--border);
+    margin: 56px 0;
   }
-
-  .doc-footer strong {
-    color: var(--amber-600);
-  }
-
-  /* ===== SIGNATURE ===== */
-  .signature-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    margin-top: 48px;
-    padding-top: 20px;
-  }
-
-  .sig-block {
-    border-top: 2px solid var(--text-dark);
-    padding-top: 12px;
-  }
-
-  .sig-block .sig-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  .sig-block .sig-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-dark);
-  }
-
-  .sig-block .sig-title {
+  .footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
     font-size: 12px;
-    color: var(--text-muted);
+    color: var(--text-dim);
   }
-
-  .sig-block .sig-date {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 8px;
-  }
-
-  /* ===== KEY POINTS / CARDS ===== */
-  .findings {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-
-  .finding-card {
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    border-left: 4px solid var(--red);
-  }
-
-  .finding-card.warn { border-left-color: var(--orange); }
-  .finding-card.good { border-left-color: var(--green); }
-
-  .finding-card h4 {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 6px;
-  }
-
-  .finding-card p {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* ===== CALLOUT ===== */
-  .callout {
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--amber-400);
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin-bottom: 32px;
-  }
-
-  .callout h4 {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 8px;
-  }
-
-  .callout p {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.65;
-  }
-
-  .callout ul {
-    margin: 8px 0 0 18px;
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-
-  /* ===== PRINT ===== */
+  .footer strong { color: var(--cyan); }
   @media print {
-    body { font-size: 12px; }
-    .cover { min-height: 100vh; }
-    .page { padding: 40px 20px; max-width: 100%; }
-    .tiers { gap: 12px; }
-    .tier.featured { transform: none; }
-    .cta-section { break-inside: avoid; }
-    .findings { break-inside: avoid; }
-    .callout { break-inside: avoid; }
-    table { break-inside: avoid; }
+    body { background: white; color: black; }
+    .container { padding: 20px; max-width: 100%; }
+    .header img { filter: none; }
+    a { color: black; }
   }
 </style>
 </head>
 <body>
+<div class="container">
+  <div class="header">
+    <img src="./axiondeep-logo-transparent.png" alt="Axion Deep Labs">
+    <div class="eyebrow">Engineering Blueprint</div>
+    <h1>Caracol Peninsula Gate Access System</h1>
+    <div class="accent"></div>
+  </div>
 
-<!-- ==============================================================
-     AXION DEEP DIGITAL - PROPOSAL ADL-2026-0001
-     San Carlos HOA - Resident Gate-Monitoring App
-     ==============================================================
-     PLACEHOLDERS TO FILL BEFORE SENDING:
-       Confirm community size band for the monthly service tier
-     ============================================================== -->
+<h2>1. Overview</h2>
+<p>A complete license-plate-recognition (LPR) gate access system for one HOA gate
+(one entry + one exit lane). Sold as a productized platform: HOA pays $2,999
+setup + $1/home/month for access. We retain ownership of the platform IP.
+Caracol Peninsula is the first deployment; the architecture must replicate to
+other communities with minimal per-deployment engineering.</p>
+<h3>Components</h3>
+<ul>
+<li>2x AI cameras (entry + exit) with ALPR + MMR (make/model recognition)</li>
+<li>1x on-site edge processing unit (mini PC)</li>
+<li>1x gate relay interface to the existing gate operator</li>
+<li>AWS cloud backend (multi-tenant)</li>
+<li>React Native mobile app (iOS + Android) for every homeowner</li>
+<li>React web admin console for the HOA board</li>
+<li>Optional: cellular gateway if the site lacks internet</li>
+</ul>
+<h3>Out of scope for v1</h3>
+<ul>
+<li>RFID / fob credentials (require additional gate hardware; secure visitor codes
+  handle the same use case)</li>
+<li>Facial recognition</li>
+<li>Integrated Airbnb/VRBO API auto-provisioning (data model leaves a hook; not
+  built in v1)</li>
+<li>Multi-gate sites (architecture supports it; not in Caracol's deployment)</li>
+</ul>
+<hr>
+<h2>2. System Architecture</h2>
+<pre><code>ON SITE                                          AWS us-west-2
+─────────────────────────────────────            ─────────────────────────────
 
-<!-- ===== COVER PAGE ===== -->
-<div class="cover">
-  <div class="cover-content">
+  ┌──────────┐         ┌──────────┐               ┌──────────────────┐
+  │ Cam Entry│         │ Cam Exit │               │  API Gateway     │
+  │  IP/PoE  │         │  IP/PoE  │               │  (HTTP API)      │
+  └────┬─────┘         └────┬─────┘               └─────────┬────────┘
+       │  RTSP/ONVIF        │                               │
+       └─────┬──────────┬───┘                               │
+             ▼          ▼                                   ▼
+        ┌──────────────────┐                       ┌──────────────────┐
+        │ PoE+ Switch      │                       │  Lambda          │
+        └─────────┬────────┘                       │  (Node 20)       │
+                  │                                └─────────┬────────┘
+                  ▼                                          │
+        ┌──────────────────┐                                 ▼
+        │ Edge Unit        │   ── TLS / mTLS ──►   ┌──────────────────┐
+        │ Ubuntu Server    │                       │  DynamoDB        │
+        │ CodeProject.AI   │                       │  (single-table)  │
+        │ Gate controller  │                       └──────────────────┘
+        └─────────┬────────┘                       ┌──────────────────┐
+                  │ HTTP                           │  S3 (plate imgs) │
+                  ▼                                │  CloudFront      │
+        ┌──────────────────┐                       └──────────────────┘
+        │ Gate Relay       │                       ┌──────────────────┐
+        │ (Shelly Plus 1)  │                       │  Cognito         │
+        └─────────┬────────┘                       │  (users + roles) │
+                  │ dry contact                    └──────────────────┘
+                  ▼                                ┌──────────────────┐
+        ┌──────────────────┐                       │  SNS / Pinpoint  │
+        │ Existing gate    │                       │  (push notifs)   │
+        │ operator         │                       └──────────────────┘
+        └──────────────────┘                                  │
+                                                              ▼
+                                                  ┌──────────────────┐
+                                                  │ Mobile app       │
+                                                  │ Admin console    │
+                                                  └──────────────────┘
+</code></pre>
+<hr>
+<h2>3. Hardware Bill of Materials</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Qty</th>
+<th>Model</th>
+<th>Cost (ea)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AI LPR camera</td>
+<td>2</td>
+<td>Reolink RLC-823A 16X</td>
+<td>$200-400</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Edge processing unit</td>
+<td>1</td>
+<td>Beelink Mini-S12 Pro</td>
+<td>$250-350</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PoE+ switch (5-port)</td>
+<td>1</td>
+<td>TP-Link TL-SG1005P</td>
+<td>$50-80</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gate relay</td>
+<td>1</td>
+<td>Shelly Plus 1</td>
+<td>$25-50</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Weatherproof enclosure</td>
+<td>1</td>
+<td>NEMA 3R, lockable</td>
+<td>$80-120</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cabling + connectors</td>
+<td>-</td>
+<td>Cat6 outdoor PoE</td>
+<td>$80-150</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Cellular gateway*</td>
+<td>1</td>
+<td>Pepwave MAX BR1 Mini</td>
+<td>$300-500</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Visitor keypad*</td>
+<td>1</td>
+<td>Linear AK-11</td>
+<td>$150-250</td>
+</tr>
+</tbody>
+</table>
+<p>*Only needed depending on site conditions (cellular if no wired internet,
+keypad if the existing intercom has no keypad).</p>
+<p><strong>Subtotal (no cellular, no keypad):</strong> ~$1,000-1,400
+<strong>Subtotal (with cellular):</strong> ~$1,300-1,900</p>
+<p>Component notes:</p>
+<ul>
+<li>AI LPR camera: Hikvision DS-2CD7A26G0/P is an alternative with built-in ALPR
+  if the edge unit ends up undersized.</li>
+<li>Edge processing unit: Intel N100, 16 GB RAM, 512 GB SSD; Ubuntu 24.04 LTS.</li>
+<li>PoE+ switch: 4 ports of PoE+, gigabit, powers both cameras.</li>
+<li>Gate relay: API-controlled, dry-contact, local-only.</li>
+<li>Cabling: outdoor-rated Cat6, weatherproof RJ45, conduit as needed.</li>
+</ul>
+<p>Hardware target: keep under <strong>$1,800</strong> so labor for install + setup fits inside
+the $2,999 setup price.</p>
+<hr>
+<h2>4. Network &amp; Security Design</h2>
+<h3>On-site network</h3>
+<ul>
+<li>Edge unit + cameras isolated on a dedicated LAN segment</li>
+<li>Static local IPs: <code>192.168.50.10</code> (edge), <code>192.168.50.11</code> (cam entry), <code>.12</code>
+  (cam exit), <code>.13</code> (relay)</li>
+<li>Cameras have <strong>no internet route</strong>. RTSP/ONVIF stays local</li>
+<li>Edge unit is the only device with outbound internet, restricted by UFW to:</li>
+<li>TLS 443 to our API Gateway endpoint</li>
+<li>NTP (chrony)</li>
+<li>APT updates (Ubuntu mirrors)</li>
+<li>No inbound services. Remote management via Tailscale (only the edge unit is on
+  the tailnet).</li>
+</ul>
+<h3>Cloud transport</h3>
+<ul>
+<li>TLS 1.2+ everywhere</li>
+<li>Edge unit auths to API Gateway with an <strong>AWS IAM-Signed-V4</strong> request using a
+  per-unit IAM role (via Cognito Identity Pool for unauth → temporary
+  credentials), OR a long-lived signed JWT bound to a <code>community + edge-unit-id</code>
+  claim. (Pick one in implementation; IAM SigV4 is more AWS-native.)</li>
+<li>Backend rejects any event from an unknown edge identity</li>
+</ul>
+<h3>Camera hardening</h3>
+<ul>
+<li>Default admin password rotated at install; credential stored in our 1Password
+  vault</li>
+<li>Firmware locked to a known-good version; auto-update disabled</li>
+<li>ONVIF disabled unless required; RTSP credentials random per camera</li>
+</ul>
+<h3>Edge unit hardening</h3>
+<ul>
+<li>Ubuntu Server 24.04 LTS</li>
+<li>CIS Level 1 baseline (<code>cis-audit-tool</code> or equivalent script)</li>
+<li>SSH: pubkey-only, no passwords, Tailscale-only</li>
+<li><code>unattended-upgrades</code> for security patches</li>
+<li><code>auditd</code> with sensible default rules</li>
+<li>All app processes run as a non-root <code>gateops</code> user</li>
+</ul>
+<h3>Gate relay</h3>
+<ul>
+<li>Shelly Plus 1 on local LAN, no internet</li>
+<li>HTTP auth: long random API key in edge unit's env</li>
+<li>Relay endpoint only callable from <code>192.168.50.10</code></li>
+</ul>
+<h3>Data privacy</h3>
+<ul>
+<li>Plate images encrypted at rest (S3 SSE-S3 at minimum, SSE-KMS for production)</li>
+<li>Default retention: 30 days; configurable per community</li>
+<li>LPR only; no facial recognition, no occupant data</li>
+<li>Mexico (LFPDPPP) and US (state-specific) data-processor terms in the HOA
+  agreement</li>
+<li>Right-to-delete honored per resident on board request</li>
+</ul>
+<hr>
+<h2>5. Cloud Backend (AWS)</h2>
+<h3>Region</h3>
+<p><strong>us-west-2 (Oregon)</strong> - closer to Sonora than us-east-1 (~120 ms vs ~180 ms RTT
+from Hermosillo). Cost roughly equivalent.</p>
+<h3>Services</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Service</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingress</td>
+<td>API Gateway (HTTP API)</td>
+<td>REST endpoints for app, admin, edge</td>
+</tr>
+<tr>
+<td>Compute</td>
+<td>Lambda (Node.js 20, ARM64)</td>
+<td>All business logic</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>DynamoDB</td>
+<td>Events, residents, vehicles, visitor codes</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>S3</td>
+<td>Plate images + admin console SPA build</td>
+</tr>
+<tr>
+<td>CDN</td>
+<td>CloudFront</td>
+<td>Admin console + signed plate-image URLs</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Cognito (user + identity pools)</td>
+<td>Residents, admins, edge IAM</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>SNS + Pinpoint</td>
+<td>APNS + FCM</td>
+</tr>
+<tr>
+<td>Async jobs</td>
+<td>EventBridge Scheduler</td>
+<td>Code expiry, image retention cleanup</td>
+</tr>
+<tr>
+<td>Secrets</td>
+<td>Secrets Manager</td>
+<td>API keys, third-party tokens</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>CloudWatch + X-Ray</td>
+<td>Logs, metrics, traces</td>
+</tr>
+<tr>
+<td>IaC</td>
+<td>AWS CDK (TypeScript)</td>
+<td>All infra version-controlled</td>
+</tr>
+</tbody>
+</table>
+<h3>DynamoDB single-table design</h3>
+<pre><code>PK              SK                      GSI1PK         GSI1SK
+COMMUNITY#cp    META
+COMMUNITY#cp    RESIDENT#u-123          EMAIL#a@b.com
+COMMUNITY#cp    VEHICLE#PLATE-ABC       PLATE#ABC      COMMUNITY#cp
+COMMUNITY#cp    VISITOR#code-XYZ        CODE#XYZ       VALIDUNTIL#2026-05-25
+COMMUNITY#cp    EVENT#2026-05-22T16:30  PLATE#ABC      EVENT#2026-05-22T16:30
+COMMUNITY#cp    AIRBNB#stay-555         HOST#u-123     CHECKIN#2026-06-01
+</code></pre>
+<p>GSI1 supports lookup by plate, by code, and by date range.</p>
+<h3>Multi-tenancy</h3>
+<ul>
+<li>One table for all communities (no per-tenant infrastructure)</li>
+<li>All partition keys prefixed with <code>COMMUNITY#&lt;slug&gt;</code></li>
+<li>Edge unit identity bound to its community via Cognito custom attribute</li>
+<li>Cognito user pool groups: <code>community-&lt;slug&gt;</code></li>
+<li>Each user's JWT carries their community claim; Lambda enforces tenant
+  isolation on every read/write</li>
+</ul>
+<hr>
+<h2>6. ALPR / AI Pipeline</h2>
+<h3>Plate recognition</h3>
+<p><strong>Primary:</strong> <a href="https://www.codeproject.com/AI/">CodeProject.AI Server</a> with the
+License Plate Reader module on the edge unit.
+- Free, OSS, runs locally
+- ~90-95% accuracy on US/Mexico plates
+- ~150-400 ms per inference on the N100 with Coral TPU optional</p>
+<p><strong>Fallback:</strong> <a href="https://platerecognizer.com/">Plate Recognizer</a> Cloud API
+- Only invoked when local confidence &lt; 0.85
+- ~$50-100/mo per 50k reads
+- Higher accuracy, supports Mexican plate formats</p>
+<h3>Make / Model / Color Recognition (MMR)</h3>
+<ul>
+<li>Plate Recognizer also returns MMR on every cloud-fallback read</li>
+<li>For local-only reads, MMR via <a href="https://github.com/anbaiy/MMRNet">MMR-Net</a> or
+  similar OSS model (slower but free)</li>
+</ul>
+<h3>Service vehicle classification</h3>
+<p>Combined approach:</p>
+<ol>
+<li><strong>Plate registry.</strong> Per-community list of known service plates: local police,
+   trash company, USPS/UPS/FedEx/Amazon DSP/DHL, water utility, propane
+   delivery. Admin maintains. Auto-tag in feed and admin console.</li>
+<li><strong>MMR + visual heuristics.</strong> Body type + color + commercial markings →
+   likely-class inference. Lower confidence; presented as <code>[Likely USPS]</code> rather
+   than asserted.</li>
+<li><strong>Resident reporting.</strong> Residents who recognize a service vehicle can tag it;
+   with 2+ confirmations and admin review, the plate enters the community's
+   known list.</li>
+</ol>
+<hr>
+<h2>7. Mobile App</h2>
+<h3>Stack</h3>
+<ul>
+<li><strong>React Native + Expo</strong> (managed workflow for OTA updates)</li>
+<li>TypeScript</li>
+<li>React Navigation (stack + tab)</li>
+<li>Apollo Client OR plain <code>fetch</code> + React Query (lean toward React Query)</li>
+<li>AWS Amplify Auth (Cognito SDK)</li>
+<li>Notifee for local notifications (richer than Expo's built-in)</li>
+</ul>
+<h3>Screens</h3>
+<ol>
+<li>Login / sign-up (invite link)</li>
+<li>Live Feed (real-time gate activity)</li>
+<li>Vehicle Detail (single event w/ image)</li>
+<li>Search History (filterable)</li>
+<li>My Vehicles (green list)</li>
+<li>Visitor Codes (create / list / revoke)</li>
+<li>Airbnb Stays (host role only)</li>
+<li>Flag Vehicle (suspicious report)</li>
+<li>Notification Settings</li>
+<li>Account (language, sign out)</li>
+</ol>
+<h3>Real-time</h3>
+<ul>
+<li>Live Feed uses long-poll on <code>GET /events?since=&lt;ts&gt;</code> with 30s server timeout</li>
+<li>Push notifications for plate matches and gate openings via SNS → APNS/FCM</li>
+</ul>
+<h3>Localization</h3>
+<ul>
+<li><code>i18next</code> with <code>en</code> and <code>es</code> locales</li>
+<li>All strings extracted; no hardcoded UI text</li>
+<li>Native Spanish review pass before launch</li>
+</ul>
+<hr>
+<h2>8. Admin Console</h2>
+<h3>Stack</h3>
+<ul>
+<li>React + Vite + TypeScript</li>
+<li>Static build → S3 → CloudFront</li>
+<li>Cognito Hosted UI for auth</li>
+<li>Tailwind for styling</li>
+</ul>
+<h3>Screens</h3>
+<ol>
+<li>Dashboard (live gate activity, alerts, KPIs)</li>
+<li>Residents (list, add, remove, suspend, payment-status toggle)</li>
+<li>Vehicles (community-wide registry, known service plates)</li>
+<li>Visitor Codes (view/revoke all active)</li>
+<li>Airbnb Stays + Hosts</li>
+<li>Broadcasts (push community-wide alert)</li>
+<li>Reports (entry/exit analytics, CSV export)</li>
+<li>Flagged Vehicles (review/resolve queue)</li>
+<li>Settings (community name, branding, retention policy)</li>
+</ol>
+<hr>
+<h2>9. Identity &amp; Auth</h2>
+<h3>Cognito design</h3>
+<ul>
+<li><strong>One user pool</strong> across all communities (cheaper, simpler federation)</li>
+<li>Custom attribute <code>community</code> (string slug)</li>
+<li>Groups: <code>homeowner</code>, <code>airbnb-host</code>, <code>board-admin</code>, <code>super-admin</code></li>
+<li>MFA required for <code>board-admin</code> and <code>super-admin</code></li>
+<li>Password policy: 12+ chars, mixed case + number + symbol</li>
+</ul>
+<h3>Sign-up flow</h3>
+<ul>
+<li>Board uploads resident roster (CSV) in the admin console</li>
+<li>System sends invite emails with one-time tokens</li>
+<li>Resident sets password on first visit; account auto-attached to their
+  community + unit</li>
+<li>Email verification required before first vehicle registration</li>
+</ul>
+<h3>Tokens</h3>
+<ul>
+<li>Access token: 1 hour</li>
+<li>Refresh token: 30 days, rotated on use</li>
+<li>Lambda authorizer validates community claim on every request</li>
+</ul>
+<h3>Edge unit identity</h3>
+<ul>
+<li>Per-edge-unit IAM role via Cognito Identity Pool (unauth → temp creds)</li>
+<li>Edge unit holds an installation secret stored in <code>/etc/gateops/secret</code></li>
+<li>All edge-unit API calls signed with AWS SigV4</li>
+</ul>
+<hr>
+<h2>10. Visitor Code Lifecycle</h2>
+<h3>Code format</h3>
+<ul>
+<li>6-character base32 (no I, O, 0, 1) - ~1 billion combinations</li>
+<li>Stored as HMAC-SHA256 hash, never plaintext in DDB</li>
+<li>Single-use OR multi-use bounded by window</li>
+</ul>
+<h3>Generation</h3>
+<pre><code>POST /visitor-codes
+{ window: &quot;single&quot; | &quot;today&quot; | &quot;range&quot;,
+  validFrom?, validUntil?, expectedPlate?, label? }
+</code></pre>
+<p>Lambda generates code, stores hash + metadata in DDB with TTL = validUntil +
+24h, returns plaintext code to caller (one-time response).</p>
+<h3>Delivery</h3>
+<ul>
+<li>App returns the code; user shares via the OS share sheet (SMS, WhatsApp,
+  email)</li>
+<li>Optional v1.1: app sends SMS via AWS End User Messaging (~$0.0075/msg)</li>
+</ul>
+<h3>Validation at the gate</h3>
+<ul>
+<li>Guest enters code on the intercom keypad</li>
+<li>Edge unit calls <code>POST /visitor-codes/validate</code> with the code</li>
+<li>Lambda hashes + looks up + checks window + marks used (if single-use)</li>
+<li>Response: <code>{ allow: true | false, reason? }</code></li>
+<li>Edge unit triggers relay if allowed</li>
+</ul>
+<h3>Bypass via plate</h3>
+<ul>
+<li>Guest can also send their plate to the host ahead of time</li>
+<li>Host enters it in the visitor code record</li>
+<li>Camera auto-recognizes that plate during the window → opens gate without code
+  entry</li>
+</ul>
+<hr>
+<h2>11. Airbnb Host Mode</h2>
+<h3>Host enrollment</h3>
+<ul>
+<li>Homeowner emails the board requesting host status, OR board enables it for
+  known short-term-rental owners</li>
+<li>Admin console toggles the <code>airbnb-host</code> group for the user</li>
+</ul>
+<h3>Stay model</h3>
+<pre><code>{ stayId, hostId, guestName, checkIn, checkOut,
+  codes: [ visitorCodeId ], plates: [ expectedPlate ] }
+</code></pre>
+<ul>
+<li>Host creates a Stay</li>
+<li>System auto-generates a visitor code valid for the stay window</li>
+<li>Host can add multiple codes (for guest's family) all bound to the stay</li>
+<li>All codes invalidate automatically at checkOut</li>
+</ul>
+<h3>Future hook: PMS integration</h3>
+<ul>
+<li>Webhook endpoints designed in for Airbnb / VRBO / Hostfully</li>
+<li>Not wired in v1; data model anticipates it</li>
+</ul>
+<hr>
+<h2>12. Payment-Status Gating</h2>
+<h3>Admin control</h3>
+<ul>
+<li>Each resident has a <code>paymentStatus</code>: <code>active</code> | <code>suspended</code> | <code>grace</code></li>
+<li>Default <code>active</code></li>
+<li>Admin sets via console; change logged with timestamp + admin id + optional
+  reason</li>
+</ul>
+<h3>Enforcement</h3>
+<ul>
+<li><code>suspended</code>: app shows banner; vehicle plates no longer auto-trigger relay;
+  visitor codes denied</li>
+<li><code>grace</code>: same access as <code>active</code> but app shows a payment-due banner</li>
+<li><code>active</code>: full access</li>
+</ul>
+<h3>Physical override</h3>
+<ul>
+<li>Suspended resident at the gate: call box still rings the board / security</li>
+<li>HOA decides escalation path (we do not lock people out of their homes by
+  default)</li>
+</ul>
+<h3>Reactivation</h3>
+<ul>
+<li>Admin toggles back to <code>active</code> → all access restored within ~5 seconds (DDB →
+  edge cache invalidation push)</li>
+</ul>
+<hr>
+<h2>13. Install Procedure</h2>
+<h3>Pre-deployment (off-site, ~1-2 weeks for first community)</h3>
+<ol>
+<li>Order hardware (lead time 5-10 days)</li>
+<li>Image edge unit: Ubuntu 24.04, CodeProject.AI, our <code>gateops</code> service,
+   Tailscale</li>
+<li>End-to-end smoke test on the bench (known test plates)</li>
+<li>Configure per-community settings: slug, branding, Cognito group, initial
+   roster</li>
+<li>Pack and ship</li>
+</ol>
+<blockquote>
+<p>For the <strong>first</strong> deployment (Caracol), this pre-deployment overlaps ~4 weeks
+of platform finalization work that does not repeat for later communities.</p>
+</blockquote>
+<h3>On-site install (1 day, 6-10 hours)</h3>
+<ol>
+<li><strong>Site survey:</strong> confirm camera mounting points, power, network access, gate
+   operator dry-contact input</li>
+<li><strong>Mount cameras:</strong> entry + exit, ~4-8 ft height, angled for 15 ft capture
+   distance</li>
+<li><strong>Run PoE cables</strong> from each camera to the switch</li>
+<li><strong>Connect switch → edge unit → cellular gateway (or wired internet)</strong></li>
+<li><strong>Wire gate relay</strong> to the existing gate operator's <code>open</code> input</li>
+<li><strong>Calibrate:</strong> drive a known plate through several times; verify capture,
+   classification, relay trigger</li>
+<li><strong>Board walkthrough</strong> of the admin console</li>
+<li><strong>Send resident invitation emails</strong></li>
+</ol>
+<h3>Post-install (2 weeks)</h3>
+<ul>
+<li>Daily uptime + accuracy check</li>
+<li>Tune ALPR confidence threshold</li>
+<li>Build initial known-service-vehicle list from observed traffic</li>
+<li>One-week and two-week board check-ins</li>
+</ul>
+<hr>
+<h2>14. Security Review Checklist</h2>
+<h3>Infrastructure</h3>
+<ul>
+<li>[ ] Edge unit OS hardened to CIS Level 1</li>
+<li>[ ] All default device passwords rotated and stored in 1Password</li>
+<li>[ ] No inbound ports on the edge unit</li>
+<li>[ ] Tailscale ACL restricts who can SSH the edge unit</li>
+<li>[ ] Cellular gateway firewalled; no port-forwarding</li>
+<li>[ ] AWS root account MFA + no programmatic keys</li>
+<li>[ ] IAM roles per service; no <code>*:*</code> policies</li>
+<li>[ ] All cloud traffic TLS 1.2+</li>
+<li>[ ] DynamoDB encryption at rest (default)</li>
+<li>[ ] S3 plate-image bucket private; served only via CloudFront signed URLs</li>
+<li>[ ] CloudFront origin access control restricts direct S3 access</li>
+<li>[ ] Secrets in AWS Secrets Manager; nothing in env vars</li>
+<li>[ ] CloudTrail logging enabled on all regions</li>
+</ul>
+<h3>Identity</h3>
+<ul>
+<li>[ ] Cognito MFA enforced on admin roles</li>
+<li>[ ] Password policy: 12+ chars + symbol + number + mixed case</li>
+<li>[ ] Refresh-token rotation on use</li>
+<li>[ ] Lambda authorizer validates community claim on every request</li>
+<li>[ ] No PII in CloudWatch logs (scrubbed in Lambda)</li>
+</ul>
+<h3>Application</h3>
+<ul>
+<li>[ ] Visitor codes generated with cryptographic RNG; stored as HMAC-SHA256</li>
+<li>[ ] Single-use codes flagged on first redemption (atomic conditional update)</li>
+<li>[ ] Rate limits on <code>/visitor-codes/validate</code> (5/sec/edge-unit)</li>
+<li>[ ] Input validation on every API endpoint (Zod schemas)</li>
+<li>[ ] CORS limited to known origins (admin console domain, mobile app bundle ID)</li>
+<li>[ ] CSP on admin console: <code>default-src 'self'</code></li>
+</ul>
+<h3>Data</h3>
+<ul>
+<li>[ ] 30-day retention default on plate images</li>
+<li>[ ] Right-to-delete honored per resident</li>
+<li>[ ] Data Processing Agreement signed with HOA (LFPDPPP / GDPR)</li>
+<li>[ ] Audit log immutable for 90 days (DynamoDB streams → S3 Object Lock)</li>
+<li>[ ] Annual penetration test once we exceed 5 deployments</li>
+</ul>
+<hr>
+<h2>15. Open Questions / Dependencies</h2>
+<ol>
+<li><strong>Gate intercom hardware:</strong> does Caracol's existing gate have a keypad for
+   visitor code entry, or do we need to add one? Add a Linear AK-11 ($150) if
+   missing.</li>
+<li><strong>Gate operator wiring:</strong> confirm the operator accepts a dry-contact "open"
+   input. If not, we need an interface module (~$50).</li>
+<li><strong>Internet at the gate:</strong> site survey to determine cellular vs fiber. Telcel
+   cellular coverage is likely; budget for a cellular gateway.</li>
+<li><strong>Mexico import logistics:</strong> confirm whether hardware ships into Mexico
+   cleanly via DHL, or whether we source locally in Hermosillo/Guaymas to avoid
+   customs delays.</li>
+<li><strong>AWS region final pick:</strong> confirm us-west-2 latency from Sonora; fall back
+   to us-east-1 if no material difference.</li>
+<li><strong>Plate Recognizer paid plan:</strong> budget for ~$50-100/mo as fallback for
+   low-confidence local reads.</li>
+<li><strong>Apple Developer Program enrollment:</strong> $99/yr, must be on Axion Deep Labs'
+   US bank account.</li>
+<li><strong>Spanish native review:</strong> identify reviewer for app UI strings.</li>
+<li><strong>Liability + insurance:</strong> confirm we have E&amp;O insurance covering a gate
+   access system before go-live.</li>
+</ol>
+<hr>
+<h2>16. Recommended First Steps for the Engineer</h2>
+<ol>
+<li>Review this document; flag architectural concerns</li>
+<li>Validate hardware choices for price, supply, and Mexico import</li>
+<li>Spin up dev AWS account; deploy CDK skeleton (Cognito + DDB + API Gateway +
+   Lambda placeholder)</li>
+<li>Get CodeProject.AI ALPR running on a Beelink in the lab; measure accuracy
+   against 50 known plates</li>
+<li>Prototype the end-to-end happy path: camera frame → ALPR → DDB write → Shelly
+   relay trigger</li>
+<li>Stand up a one-screen React Native app showing the last 10 events</li>
+<li>Site survey at Caracol (remote, via Elizabeth + Jose Quintana) to confirm
+   gate hardware</li>
+<li>Hardware order placed once survey is back</li>
+</ol>
+<hr>
+<h2>17. Contact</h2>
+<p><strong>Joshua R. Gutierrez</strong>
+Founder, Axion Deep Labs
+jgutierrez@axiondeep.com · (512) 761-5351
+axiondeep.com</p>
 
-    <img src="./axiondeep-logo-transparent.png"
-         alt="Axion Deep Labs" class="cover-logo">
-
-    <div class="cover-label">Mobile App Development Proposal</div>
-
-    <h1 class="cover-title">Resident Gate-Monitoring App</h1>
-
-    <p class="cover-subtitle">Caracol Peninsula Community &middot; San Carlos, Sonora</p>
-
-    <div class="cover-divider"></div>
-
-    <dl class="cover-meta">
-      <div>
-        <dt>Prepared</dt>
-        <dd>May 22, 2026</dd>
-      </div>
-      <div>
-        <dt>Prepared For</dt>
-        <dd>Elizabeth &amp; Jose Quintana</dd>
-      </div>
-      <div>
-        <dt>Proposal</dt>
-        <dd>ADL-2026-0001</dd>
-      </div>
-    </dl>
+  <div class="footer">
+    <strong>Axion Deep Labs Inc.</strong> &middot; New Mexico, USA &middot; jgutierrez@axiondeep.com
   </div>
 </div>
-
-
-<!-- ===== 01 / THE OPPORTUNITY ===== -->
-<div class="page">
-  <div class="section-label">01 / The Opportunity</div>
-  <div class="amber-line"></div>
-  <h2 class="section-title">A Complete Gate System, Built for Caracol Peninsula</h2>
-  <p class="section-intro">
-    Most LPR vendors quote a community an enterprise contract: tens of thousands for the
-    hardware, a recurring platform fee, and a dashboard the board can use. Homeowners get
-    nothing. We do the opposite. One package, under $3,000, gets you the cameras, the
-    software, the mobile app for every homeowner, and the admin console for the board.
-  </p>
-
-  <div class="findings">
-    <div class="finding-card good">
-      <h4>AI Cameras Included</h4>
-      <p>Purpose-built AI cameras read every plate at the gate. On-device AI recognizes
-      registered household vehicles and common service vehicles (police, trash, delivery)
-      and logs everything else. No keypads, no QR codes for residents to remember.</p>
-    </div>
-    <div class="finding-card good">
-      <h4>Every Homeowner, Private Account</h4>
-      <p>A single branded app on iOS and Android. Each homeowner logs into their own secure
-      account. The board owns the community and controls who has access.</p>
-    </div>
-    <div class="finding-card good">
-      <h4>Built for San Carlos</h4>
-      <p>Fully bilingual in English and Spanish, for a community of both expat and Mexican
-      owners. Runs on the iPhones and Android phones residents already carry.</p>
-    </div>
-    <div class="finding-card good">
-      <h4>Pay as You Grow</h4>
-      <p>Under $3,000 to set the whole system up. $1 per home per month after that. No flat
-      service contract, no per-feature add-ons, no surprises.</p>
-    </div>
-  </div>
-
-  <h3 class="block-title">What Every Homeowner Gets</h3>
-  <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.7;">
-    A live feed of gate activity with vehicle photo, plate, make/model/color, time, and
-    direction. Real-time push notifications. A "green list" for their household vehicles, so
-    family cars show as recognized. Secure one-time codes to grant guests gate access, valid
-    for a single visit or a date range. A separate Airbnb host mode for owners who rent
-    short-term, so renters get gate access only during their stay. All private to their
-    account, all on their phone.
-  </p>
-
-  <h3 class="block-title">What the HOA Gets</h3>
-  <p style="font-size:13px;color:var(--text-muted);line-height:1.7;">
-    A web console to manage every resident: add, remove, suspend for unpaid dues, and assign
-    to units. Broadcast community-wide alerts to every resident's phone. Service vehicles
-    (police, trash, USPS, UPS, FedEx, delivery) auto-tagged in the feed. Flag and resolve
-    suspicious vehicles. Pull activity reports any time. The board stays in control; the
-    system does the work.
-  </p>
-</div>
-
-
-<!-- ===== 02 / SCOPE OF WORK ===== -->
-<div class="page">
-  <div class="section-label">02 / What's Included</div>
-  <div class="amber-line"></div>
-  <h2 class="section-title">Everything in the Package</h2>
-  <p class="section-intro">
-    A single, complete build. No "Phase 2," no upgrades to buy later. The whole system, from
-    the cameras at the gate to the app in every homeowner's pocket.
-  </p>
-
-  <h3 class="block-title">Hardware on Site</h3>
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 33%">Component</th>
-        <th>What's Included</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="td-category">AI LPR Cameras (entry + exit)</td>
-        <td>Two purpose-built license-plate-recognition cameras mounted to capture every
-        vehicle passing through your gate. Capture distance 5 to 40 ft, 4K resolution, color
-        night vision, high plate-read accuracy.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Edge Processing Unit</td>
-        <td>An on-site mini computer that runs the ALPR engine, classifies vehicles
-        (resident, guest, service), and pushes events to the cloud in real time.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Gate Relay Interface</td>
-        <td>Hardware module that opens the gate barrier when a recognized plate or valid
-        guest code arrives. Connects to most existing gate operators.</td>
-      </tr>
-      <tr>
-        <td class="td-category">On-Site Installation</td>
-        <td>Camera mounting, cable runs, network configuration, gate operator integration,
-        and a full operational test before handoff.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 class="block-title">Software &amp; App</h3>
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 33%">Component</th>
-        <th>What's Included</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="td-category">Resident App (iOS + Android)</td>
-        <td>Live gate-activity feed with plate, vehicle photo, make/model/color, timestamp,
-        and entry/exit direction. Searchable history. Real-time push notifications. Fully
-        bilingual English/Spanish, branded for Caracol Peninsula.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Vehicle Green List</td>
-        <td>Every homeowner registers their household's vehicles in the app. Recognized
-        plates are auto-tagged on the feed so family cars do not look like strangers.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Service Vehicle Recognition</td>
-        <td>The system auto-identifies common service vehicles (police, trash, USPS, UPS,
-        FedEx, delivery) using make/model recognition, so residents and the board see at a
-        glance what is at the gate.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Secure Visitor Codes</td>
-        <td>Homeowners generate a secure one-time or date-bounded code from the app. The
-        guest enters it at the gate intercom, or the homeowner sends the guest's plate ahead.
-        Valid only during the window the homeowner sets.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Airbnb Host Mode</td>
-        <td>Owners who rent short-term get a separate host role to issue stay-bounded gate
-        access for renters. Codes expire automatically at check-out.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Flag &amp; Report</td>
-        <td>Residents flag a suspicious vehicle straight to HOA security from the feed. The
-        board sees flagged vehicles and a resolution workflow.</td>
-      </tr>
-      <tr>
-        <td class="td-category">HOA Admin Console</td>
-        <td>Web console for the board: manage residents, suspend accounts for unpaid dues,
-        assign units, broadcast community-wide alerts, pull activity reports, and review
-        flagged vehicles.</td>
-      </tr>
-      <tr>
-        <td class="td-category">Onboarding &amp; Training</td>
-        <td>Resident sign-up flow, board training call, and bilingual onboarding materials
-        for the community rollout.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-<!-- ===== 03 / INVESTMENT ===== -->
-<div class="page">
-  <div class="section-label">03 / Investment</div>
-  <div class="amber-line"></div>
-  <h2 class="section-title">Investment</h2>
-  <p class="section-intro">
-    The complete system, cameras through cloud, for what most communities pay just for the
-    cameras alone.
-  </p>
-
-  <div class="tiers">
-    <div class="tier">
-      <div class="tier-name">Typical LPR Vendor</div>
-      <div class="tier-price">
-        <span class="currency">$</span>30,000+
-      </div>
-      <div class="tier-range">setup + monthly platform fee</div>
-      <div class="tier-desc">Enterprise camera contract, custom integration, and a recurring platform license.</div>
-      <ul class="tier-includes">
-        <li>Enterprise hardware ($15-30k)</li>
-        <li>Monthly platform license ($300-1,000/mo)</li>
-        <li>Often no AI plate recognition</li>
-        <li>Resident app costs extra, if offered</li>
-        <li>Multi-year vendor contract</li>
-      </ul>
-    </div>
-
-    <div class="tier featured">
-      <div class="tier-badge">Recommended</div>
-      <div class="tier-name">Axion Deep Labs</div>
-      <div class="tier-price">
-        <span class="currency">$</span>2,999
-      </div>
-      <div class="tier-range">+ $1 per home per month</div>
-      <div class="tier-desc">Hardware, install, software, mobile app, and ongoing service. One package, no separate contracts.</div>
-      <ul class="tier-includes">
-        <li>Two LPR cameras + edge unit + relay</li>
-        <li>On-site install and operational test</li>
-        <li>iOS + Android resident app, bilingual</li>
-        <li>Vehicle green list + secure visitor codes</li>
-        <li>Airbnb host mode</li>
-        <li>HOA admin console with payment-status gating</li>
-        <li>Service-vehicle auto-recognition</li>
-        <li>Ongoing hosting, updates, and support</li>
-      </ul>
-    </div>
-  </div>
-
-  <h3 class="block-title">Pricing Summary</h3>
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 32%">Item</th>
-        <th>Description</th>
-        <th style="width: 20%">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="td-category">Complete System Setup
-          <div class="td-detail">One-time</div>
-        </td>
-        <td>All hardware (cameras, edge unit, relay), on-site installation, full software
-        build, mobile app launch on iOS and Android, HOA admin console, and resident/board
-        onboarding.</td>
-        <td>$2,999</td>
-      </tr>
-      <tr>
-        <td class="td-category">Managed Service &amp; Hosting
-          <div class="td-detail">Recurring &middot; begins at launch</div>
-        </td>
-        <td>Cloud hosting, system monitoring, app maintenance, updates, store-account
-        renewals, hardware warranty, and ongoing resident/board support. Scales with the
-        community.</td>
-        <td>$1 / home / mo</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="callout">
-    <h4>What the Monthly Service Covers</h4>
-    <ul>
-      <li>All cloud hosting and infrastructure</li>
-      <li>System monitoring and edge-unit uptime</li>
-      <li>App updates for new iOS / Android versions and security patches</li>
-      <li>Apple Developer and Google Play account management and renewals</li>
-      <li>Email and phone support for the HOA board and residents</li>
-      <li>Hardware warranty and replacement during the service term</li>
-    </ul>
-    <p style="margin-top:10px;">Pay only for the homes you have. No flat fee, no per-home padding.</p>
-  </div>
-
-  <div class="callout">
-    <h4>Why It Costs So Little</h4>
-    <p>
-      You are not paying us to write original software. The platform is ours: Axion Deep
-      Labs built it as an R&amp;D product. Caracol Peninsula pays for access to the platform
-      plus the hardware to deploy it on site. The development cost is recouped across many
-      communities, not your single one. That is how a $2,999 setup is real.
-    </p>
-  </div>
-</div>
-
-
-<!-- ===== 04 / TIMELINE & TERMS ===== -->
-<div class="page">
-  <div class="section-label">04 / Timeline &amp; Terms</div>
-  <div class="amber-line"></div>
-  <h2 class="section-title">How It Works</h2>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-week">Week 1</div>
-      <div class="timeline-title">Kickoff &amp; Site Survey</div>
-      <div class="timeline-desc">Kickoff call with the board. Site survey for camera mounting,
-      network, and gate integration. Brand assets and resident roster collected.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-week">Week 2-3</div>
-      <div class="timeline-title">Hardware Install &amp; Configuration</div>
-      <div class="timeline-desc">Cameras mounted at entry and exit, edge unit installed, gate
-      relay wired, network configured, and the system brought online and verified end to end.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-week">Week 4-5</div>
-      <div class="timeline-title">App Build &amp; Branding</div>
-      <div class="timeline-desc">Resident app build (iOS + Android), branded for Caracol
-      Peninsula, with English and Spanish localization. HOA admin console configured for the
-      board.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-week">Week 6</div>
-      <div class="timeline-title">QA, Launch &amp; Onboarding</div>
-      <div class="timeline-desc">Full system test, app store submission, resident sign-up
-      rollout, board training, and handoff. The community goes live.</div>
-    </div>
-  </div>
-
-  <h3 class="block-title">Assumptions &amp; What's Not Included</h3>
-  <div class="callout">
-    <p><strong>Not included:</strong></p>
-    <ul>
-      <li>Internet service at the gate. If the community does not already have one, we will
-      quote a cellular or fiber option separately.</li>
-      <li>The existing gate operator and barrier. We connect to what is already installed.</li>
-      <li>Hardware-based credentials (RFID cards, key fobs) require additional readers at the
-      gate and are not part of the standard package. Secure visitor codes through the app
-      handle the same use case without extra hardware.</li>
-    </ul>
-    <p style="margin-top:10px;"><strong>This quote assumes:</strong></p>
-    <ul>
-      <li>One entry/exit gate at the community's main entrance.</li>
-      <li>Power available at the camera locations (low voltage, supplied through PoE).</li>
-      <li>The HOA designates one board contact and provides the resident roster.</li>
-      <li>San Carlos, Sonora install with reasonable site access.</li>
-    </ul>
-  </div>
-
-  <h3 class="block-title">Terms</h3>
-  <div class="terms-grid">
-    <div class="terms-card">
-      <h4>Payment</h4>
-      <p>Setup: 50% at kickoff to order hardware, 50% at go-live. Monthly service billed in
-      advance starting at launch.</p>
-    </div>
-    <div class="terms-card">
-      <h4>Validity</h4>
-      <p>This proposal is valid for 30 days from the date above.</p>
-    </div>
-    <div class="terms-card">
-      <h4>Ownership</h4>
-      <p>The HOA owns the hardware on site, the resident accounts, and all community data.
-      The app is published under the community's brand.</p>
-    </div>
-    <div class="terms-card">
-      <h4>Hardware Warranty</h4>
-      <p>One year on the cameras and edge unit, covered by Axion Deep Labs. Replacement is
-      included in the monthly service for the life of the contract.</p>
-    </div>
-    <div class="terms-card">
-      <h4>Support</h4>
-      <p>Email and phone support included in the monthly service. The first 30 days
-      post-launch include hands-on assistance for any board or resident issue.</p>
-    </div>
-    <div class="terms-card">
-      <h4>Consultation</h4>
-      <p>Your first call is free, no commitment. We will walk the board through the system
-      and answer questions before you decide.</p>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <h3>Ready to give Caracol Peninsula the gate in every homeowner's pocket?</h3>
-    <p>Reply to this proposal or book a call to lock in your rate and start setup.</p>
-    <a href="mailto:jgutierrez@axiondeep.com?subject=Proposal%20ADL-2026-0001%20-%20Caracol%20Peninsula" class="cta-btn">Accept Proposal</a>
-    <div class="cta-contact">
-      <span>jgutierrez@axiondeep.com</span>
-      <span>(512) 761-5351</span>
-      <span>axiondeep.com</span>
-    </div>
-  </div>
-
-  <div class="signature-area">
-    <div class="sig-block">
-      <div class="sig-label">Axion Deep Labs</div>
-      <div class="sig-name">Joshua R. Gutierrez</div>
-      <div class="sig-title">CEO &amp; Founder</div>
-      <div class="sig-date">Date: _______________</div>
-    </div>
-    <div class="sig-block">
-      <div class="sig-label">Client</div>
-      <div class="sig-name">___________________________</div>
-      <div class="sig-title">Caracol Peninsula Community</div>
-      <div class="sig-date">Date: _______________</div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== DOCUMENT FOOTER ===== -->
-<div class="doc-footer">
-  <strong>Axion Deep Labs</strong> &middot; axiondeep.com &middot; labs@axiondeep.com &middot; (512) 761-5351<br>
-  5045 El Camino Real, Las Cruces, NM 88007
-</div>
-
 </body>
 </html>
