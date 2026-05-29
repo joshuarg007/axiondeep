@@ -221,45 +221,117 @@ other communities with minimal per-deployment engineering.</p>
 </ul>
 <hr>
 <h2>2. System Architecture</h2>
-<pre><code>ON SITE                                          AWS us-west-2
-─────────────────────────────────────            ─────────────────────────────
-
-  ┌──────────┐         ┌──────────┐               ┌──────────────────┐
-  │ Cam Entry│         │ Cam Exit │               │  API Gateway     │
-  │  IP/PoE  │         │  IP/PoE  │               │  (HTTP API)      │
-  └────┬─────┘         └────┬─────┘               └─────────┬────────┘
-       │  RTSP/ONVIF        │                               │
-       └─────┬──────────┬───┘                               │
-             ▼          ▼                                   ▼
-        ┌──────────────────┐                       ┌──────────────────┐
-        │ PoE+ Switch      │                       │  Lambda          │
-        └─────────┬────────┘                       │  (Node 20)       │
-                  │                                └─────────┬────────┘
-                  ▼                                          │
-        ┌──────────────────┐                                 ▼
-        │ Edge Unit        │   ── TLS / mTLS ──►   ┌──────────────────┐
-        │ Ubuntu Server    │                       │  DynamoDB        │
-        │ CodeProject.AI   │                       │  (single-table)  │
-        │ Gate controller  │                       └──────────────────┘
-        └─────────┬────────┘                       ┌──────────────────┐
-                  │ HTTP                           │  S3 (plate imgs) │
-                  ▼                                │  CloudFront      │
-        ┌──────────────────┐                       └──────────────────┘
-        │ Gate Relay       │                       ┌──────────────────┐
-        │ (Shelly Plus 1)  │                       │  Cognito         │
-        └─────────┬────────┘                       │  (users + roles) │
-                  │ dry contact                    └──────────────────┘
-                  ▼                                ┌──────────────────┐
-        ┌──────────────────┐                       │  SNS / Pinpoint  │
-        │ Existing gate    │                       │  (push notifs)   │
-        │ operator         │                       └──────────────────┘
-        └──────────────────┘                                  │
-                                                              ▼
-                                                  ┌──────────────────┐
-                                                  │ Mobile app       │
-                                                  │ Admin console    │
-                                                  └──────────────────┘
-</code></pre>
+<div style="margin:24px 0;overflow-x:auto;">
+<svg class="adg" viewBox="0 0 820 552" style="width:100%;min-width:700px;height:auto;display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="adg-t adg-d">
+<title id="adg-t">Caracol Peninsula gate access system architecture</title>
+<desc id="adg-d">On-site edge devices on an isolated private LAN connect over a single authenticated TLS link to a serverless AWS backend in us-west-2.</desc>
+<defs>
+<linearGradient id="adg-link" x1="0" y1="1" x2="1" y2="0">
+<stop offset="0" stop-color="#06B6D4"/><stop offset="1" stop-color="#8B5CF6"/>
+</linearGradient>
+<marker id="adg-ac" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#06B6D4"/></marker>
+<marker id="adg-av" markerWidth="9" markerHeight="9" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 Z" fill="#8B5CF6"/></marker>
+<style>
+.adg text{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
+.adg-bg{fill:#0c0c11;stroke:#27272a;}
+.adg-zc{fill:#06B6D4;opacity:.04;}.adg-zv{fill:#8B5CF6;opacity:.04;}
+.adg-zcs{fill:none;stroke:#06B6D4;opacity:.18;}.adg-zvs{fill:none;stroke:#8B5CF6;opacity:.18;}
+.adg-box{fill:#17171c;stroke:#2a2a31;}
+.adg-bc{fill:#17171c;stroke:#06B6D4;stroke-opacity:.45;}
+.adg-bv{fill:#17171c;stroke:#8B5CF6;stroke-opacity:.45;}
+.adg-edge{fill:#121218;stroke:#06B6D4;stroke-opacity:.75;stroke-width:1.4;}
+.adg-zh{fill:#fff;font-size:13px;font-weight:800;letter-spacing:2px;}
+.adg-zs{fill:#71717a;font-size:10px;font-family:'SF Mono',Menlo,monospace;}
+.adg-tt{fill:#f4f4f5;font-size:12.5px;font-weight:700;}
+.adg-st{fill:#a1a1aa;font-size:10.5px;}
+.adg-pr{fill:#8b8b93;font-size:9.5px;font-family:'SF Mono',Menlo,monospace;}
+.adg-fc{stroke:#06B6D4;stroke-opacity:.55;stroke-width:1.6;fill:none;}
+.adg-fv{stroke:#8B5CF6;stroke-opacity:.5;stroke-width:1.6;fill:none;}
+.adg-div{stroke:#3f3f46;stroke-width:1.3;stroke-dasharray:5 6;}
+.adg-dl{fill:#52525b;font-size:9px;font-weight:700;letter-spacing:3px;}
+.adg-ln{stroke:url(#adg-link);stroke-width:2.2;fill:none;}
+.adg-ll{fill:#e4e4e7;font-size:10.5px;font-weight:600;}
+.adg-ls{fill:#71717a;font-size:9px;}
+.adg-pill{fill:#0c0c11;stroke:#3f3f46;}
+</style>
+</defs>
+<rect class="adg-bg" x="0.5" y="0.5" width="819" height="551" rx="12"/>
+<rect class="adg-zc" x="28" y="46" width="372" height="486" rx="14"/><rect class="adg-zcs" x="28" y="46" width="372" height="486" rx="14"/>
+<rect class="adg-zv" x="440" y="46" width="352" height="486" rx="14"/><rect class="adg-zvs" x="440" y="46" width="352" height="486" rx="14"/>
+<text class="adg-zh" x="44" y="32">ON SITE</text><text class="adg-zs" x="118" y="32">private LAN &#183; 192.168.50.0/24</text>
+<text class="adg-zh" x="456" y="32">AWS CLOUD</text><text class="adg-zs" x="566" y="32">us-west-2 (Oregon)</text>
+<line class="adg-div" x1="416" y1="40" x2="416" y2="528"/>
+<text class="adg-dl" x="416" y="544" text-anchor="middle">TRUST BOUNDARY</text>
+<!-- on-site boxes -->
+<rect class="adg-bc" x="60" y="58" width="140" height="48" rx="8"/>
+<text class="adg-tt" x="130" y="80" text-anchor="middle">CAM &#183; ENTRY</text>
+<text class="adg-st" x="130" y="97" text-anchor="middle">AI LPR &#183; .11 &#183; PoE</text>
+<rect class="adg-bc" x="240" y="58" width="140" height="48" rx="8"/>
+<text class="adg-tt" x="310" y="80" text-anchor="middle">CAM &#183; EXIT</text>
+<text class="adg-st" x="310" y="97" text-anchor="middle">AI LPR &#183; .12 &#183; PoE</text>
+<rect class="adg-box" x="90" y="150" width="260" height="50" rx="8"/>
+<text class="adg-tt" x="220" y="174" text-anchor="middle">PoE+ SWITCH</text>
+<text class="adg-st" x="220" y="191" text-anchor="middle">powers cameras &#183; data hub</text>
+<rect class="adg-edge" x="60" y="230" width="320" height="108" rx="9"/>
+<text class="adg-tt" x="220" y="255" text-anchor="middle">EDGE UNIT &#183; 192.168.50.10</text>
+<text class="adg-st" x="220" y="277" text-anchor="middle">Ubuntu 24.04 mini-PC &#183; CodeProject.AI (local ALPR)</text>
+<text class="adg-st" x="220" y="296" text-anchor="middle">gateops controller + synced green-list cache</text>
+<text class="adg-st" x="220" y="315" text-anchor="middle">only device allowed to reach the internet</text>
+<rect class="adg-bc" x="90" y="398" width="260" height="52" rx="8"/>
+<text class="adg-tt" x="220" y="422" text-anchor="middle">GATE RELAY &#183; .13</text>
+<text class="adg-st" x="220" y="439" text-anchor="middle">Shelly Plus 1 &#183; LAN only</text>
+<rect class="adg-box" x="90" y="494" width="260" height="48" rx="8"/>
+<text class="adg-tt" x="220" y="517" text-anchor="middle">EXISTING GATE OPERATOR</text>
+<text class="adg-st" x="220" y="533" text-anchor="middle">HOA&#8217;s motor &#183; unchanged</text>
+<!-- on-site flows -->
+<path class="adg-fc" d="M130,106 L130,128 L220,128"/>
+<path class="adg-fc" d="M310,106 L310,128 L220,128"/>
+<path class="adg-fc" d="M220,128 L220,148" marker-end="url(#adg-ac)"/>
+<text class="adg-pr" x="232" y="124">RTSP / ONVIF (local)</text>
+<path class="adg-fc" d="M220,200 L220,228" marker-end="url(#adg-ac)"/>
+<path class="adg-fc" d="M220,338 L220,396" marker-end="url(#adg-ac)"/>
+<text class="adg-pr" x="230" y="372">local HTTP &#183; API key</text>
+<path class="adg-fc" d="M220,450 L220,492" marker-end="url(#adg-ac)"/>
+<text class="adg-pr" x="230" y="476">dry contact &#183; open pulse</text>
+<!-- cloud boxes -->
+<rect class="adg-bv" x="455" y="58" width="320" height="54" rx="8"/>
+<text class="adg-tt" x="615" y="82" text-anchor="middle">API GATEWAY</text>
+<text class="adg-st" x="615" y="100" text-anchor="middle">HTTP API &#183; single authenticated entry</text>
+<rect class="adg-bv" x="455" y="148" width="320" height="54" rx="8"/>
+<text class="adg-tt" x="615" y="172" text-anchor="middle">LAMBDA</text>
+<text class="adg-st" x="615" y="190" text-anchor="middle">Node 20 / ARM64 &#183; logic + tenant isolation</text>
+<rect class="adg-box" x="455" y="232" width="320" height="42" rx="8"/>
+<text class="adg-tt" x="615" y="252" text-anchor="middle">DynamoDB</text>
+<text class="adg-st" x="615" y="267" text-anchor="middle">single-table &#183; every community</text>
+<rect class="adg-box" x="455" y="288" width="320" height="42" rx="8"/>
+<text class="adg-tt" x="615" y="308" text-anchor="middle">S3 + CloudFront</text>
+<text class="adg-st" x="615" y="323" text-anchor="middle">plate images (signed URLs) &#183; admin SPA</text>
+<rect class="adg-box" x="455" y="344" width="320" height="42" rx="8"/>
+<text class="adg-tt" x="615" y="364" text-anchor="middle">Cognito</text>
+<text class="adg-st" x="615" y="379" text-anchor="middle">users &#183; roles &#183; edge identity</text>
+<rect class="adg-box" x="455" y="400" width="320" height="42" rx="8"/>
+<text class="adg-tt" x="615" y="420" text-anchor="middle">SNS / Pinpoint</text>
+<text class="adg-st" x="615" y="435" text-anchor="middle">push notifications &#8594; APNS / FCM</text>
+<rect class="adg-bv" x="455" y="484" width="320" height="48" rx="8"/>
+<text class="adg-tt" x="615" y="507" text-anchor="middle">MOBILE APP &#183; ADMIN CONSOLE</text>
+<text class="adg-st" x="615" y="523" text-anchor="middle">React Native (iOS/Android) &#183; React web</text>
+<!-- cloud flows -->
+<path class="adg-fv" d="M615,112 L615,146" marker-end="url(#adg-av)"/>
+<text class="adg-pr" x="624" y="132">invoke</text>
+<path class="adg-fv" d="M615,202 L615,230" marker-end="url(#adg-av)"/>
+<path class="adg-fv" d="M615,274 L615,286" marker-end="url(#adg-av)"/>
+<path class="adg-fv" d="M615,330 L615,342" marker-end="url(#adg-av)"/>
+<path class="adg-fv" d="M615,386 L615,398" marker-end="url(#adg-av)"/>
+<path class="adg-fv" d="M615,442 L615,482" marker-end="url(#adg-av)"/>
+<text class="adg-pr" x="624" y="466">push</text>
+<!-- cross-boundary link -->
+<path class="adg-ln" d="M380,284 C 414,284 414,85 451,85" marker-end="url(#adg-av)"/>
+<rect class="adg-pill" x="360" y="158" width="92" height="38" rx="9"/>
+<text class="adg-ll" x="406" y="174" text-anchor="middle">TLS &#183; mTLS</text>
+<text class="adg-ls" x="406" y="188" text-anchor="middle">SigV4 signed</text>
+</svg>
+</div>
+<p style="font-size:13px;color:var(--text-dim);margin-top:6px;">Edge-first: the recognize &#8594; decide &#8594; open loop runs entirely on-site and keeps working through internet outages. The cloud is the system of record and multi-tenant control plane, reached over one authenticated TLS link (the edge pushes events up, the cloud syncs state down). DynamoDB, S3, and Cognito are Lambda&#8217;s data plane (read/write), not a sequential chain.</p>
 <hr>
 <h2>3. Hardware Bill of Materials</h2>
 <table>
