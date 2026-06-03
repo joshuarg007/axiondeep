@@ -322,14 +322,6 @@ export default function RootLayout({
           data-widget-key="widget_1"
           strategy="lazyOnload"
         />
-        {/* Site2CRM Lead-Capture Popup — TEST: reusing the Axion Deep Digital
-            popup key (leads/branding route to the Digital org, not Labs).
-            Swap data-popup-key for a Labs-org popup before treating as permanent. */}
-        <Script
-          src="https://api.site2crm.io/api/public/popups/widget.js"
-          data-popup-key="0e6d559c3c579f32d98c"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );

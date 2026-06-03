@@ -49,13 +49,13 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <Image
               src="/images/logo.webp"
               alt="Axion Deep Labs"
               width={374}
               height={94}
-              className="h-[53px] w-auto"
+              className="h-[53px] w-auto shrink-0"
               priority
             />
           </Link>
