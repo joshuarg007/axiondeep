@@ -129,6 +129,24 @@ const jsonLd = {
         contactType: "research inquiries",
         email: "labs@axiondeep.com",
       },
+      subOrganization: [
+        {
+          "@type": "Organization",
+          "@id": "https://www.axiondeepdigital.com/#organization",
+          name: "Axion Deep Digital",
+          url: "https://www.axiondeepdigital.com",
+        },
+        {
+          "@type": "Organization",
+          name: "Made4Founders",
+          url: "https://made4founders.com",
+        },
+        {
+          "@type": "Organization",
+          name: "Site2CRM",
+          url: "https://site2crm.io",
+        },
+      ],
     },
     {
       "@type": "WebSite",
