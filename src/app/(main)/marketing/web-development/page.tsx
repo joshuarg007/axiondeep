@@ -118,7 +118,7 @@ export default function WebDevelopmentPage() {
           </span>
         </h1>
         <p className="relative text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          Custom-built with modern frameworks, optimized for speed, and designed to turn every visitor into a lead. No templates, no WordPress, no compromises.
+          Custom-built with modern frameworks, optimized for speed, and designed to turn every visitor into a lead. Hand-coded for performance you can measure and control you fully own.
         </p>
         <div className="relative flex flex-col sm:flex-row gap-4">
           <a href="#contact" className="shimmer-button px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 font-semibold text-white hover:opacity-90 transition-opacity text-lg">
@@ -220,8 +220,8 @@ export default function WebDevelopmentPage() {
               <p className="text-gray-400 text-sm leading-relaxed">
                 Structured data, Open Graph, canonical URLs, XML sitemap, and robots configuration
                 all ship with the site. Heading hierarchy and internal linking are planned during
-                discovery, so your pages are ready to rank the moment Google crawls them. No
-                plugins, no patches, no retrofits later.
+                discovery, so your pages are ready to rank the moment Google crawls them. It's all
+                built into the code from day one and maintained as your site grows.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
