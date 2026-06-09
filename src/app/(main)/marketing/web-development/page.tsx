@@ -220,8 +220,8 @@ export default function WebDevelopmentPage() {
               <p className="text-gray-400 text-sm leading-relaxed">
                 Structured data, Open Graph, canonical URLs, XML sitemap, and robots configuration
                 all ship with the site. Heading hierarchy and internal linking are planned during
-                discovery, so your pages are ready to rank the moment Google crawls them. It's all
-                built into the code from day one and maintained as your site grows.
+                discovery, so your pages are ready to rank the moment Google crawls them. Everything
+                ships in the code from day one and is maintained as your site grows.
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
