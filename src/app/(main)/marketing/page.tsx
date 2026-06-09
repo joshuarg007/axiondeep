@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import MarketingHero from "@/components/marketing/MarketingHero";
 import ServicesCards from "@/components/marketing/ServicesCards";
+import PlatformFixCards from "@/components/marketing/PlatformFixCards";
 import SEOAuditTool from "@/components/marketing/SEOAuditTool";
 import BeforeAfterSlider from "@/components/marketing/BeforeAfterSlider";
 import LeadFlowVisualization from "@/components/marketing/LeadFlowVisualization";
@@ -85,6 +86,9 @@ export default function MarketingPage() {
 
       {/* Services */}
       <ServicesCards />
+
+      {/* Platform fixes — "already have a site?" */}
+      <PlatformFixCards />
 
       {/* Portfolio, Site2CRM & Made4Founders */}
       <PortfolioShowcase />

@@ -128,6 +128,12 @@ export default function WebDevelopmentPage() {
             All Services
           </Link>
         </div>
+        <p className="relative mt-6 text-sm text-gray-500">
+          Already have a WordPress, Wix, Squarespace, or Shopify site?{" "}
+          <Link href="/marketing#platform-fixes" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4">
+            We fix those too.
+          </Link>
+        </p>
       </section>
 
       {/* Process */}
