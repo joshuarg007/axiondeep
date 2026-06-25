@@ -203,6 +203,22 @@ export default function Footer() {
           <p className="text-sm text-gray-600">
             © {new Date().getFullYear()} Axion Deep Labs. All rights reserved.
           </p>
+          <a
+            href="https://axiondeepdigital.com/?utm_source=axiondeep&utm_medium=footer_badge&utm_campaign=site_credit"
+            target="_blank"
+            rel="noopener"
+            aria-label="Site by Axion Deep Digital"
+            className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 opacity-70 hover:opacity-100 transition-opacity"
+          >
+            <span className="text-xs text-gray-500">Site by</span>
+            <Image
+              src="/images/axiondeepdigital-badge.webp"
+              alt="Axion Deep Digital"
+              width={68}
+              height={20}
+              className="h-5 w-auto"
+            />
+          </a>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
               Privacy Policy
