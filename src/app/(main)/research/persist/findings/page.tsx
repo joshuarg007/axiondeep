@@ -162,7 +162,7 @@ export default function FindingsPage() {
           </h1>
 
           <p className="text-sm text-gray-500 mb-6">
-            Axion Deep Labs &middot; February 2026 &middot; Phase 0 Proof-of-Concept (Small-Scale)
+            Axion Labs &middot; February 2026 &middot; Phase 0 Proof-of-Concept (Small-Scale)
           </p>
 
           {/* Status banner */}

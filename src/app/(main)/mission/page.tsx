@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Mission",
   description:
-    "Axion Deep Labs conducts original research in deep learning theory, catastrophic forgetting, loss landscape topology, and neural network generalization.",
+    "Axion Labs conducts original research in deep learning theory, catastrophic forgetting, loss landscape topology, and neural network generalization.",
   keywords: [
     "deep learning theory research",
     "catastrophic forgetting",
@@ -168,7 +168,7 @@ export default function MissionPage() {
           </h1>
 
           <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8">
-            Axion Deep Labs conducts original experimental research in deep learning theory.
+            Axion Labs conducts original experimental research in deep learning theory.
             We investigate the structural conditions that govern knowledge persistence, information
             capacity, and generalization in neural networks, with an emphasis on reproducibility,
             open methodology, and cross-disciplinary rigor.

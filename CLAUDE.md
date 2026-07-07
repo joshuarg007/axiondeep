@@ -5,13 +5,18 @@
 ---
 
 ## BRAND POSITIONING — CRITICAL
-**AxionDeep is a PURE R&D holding company. NO sales, NO services, NO client-facing language.**
-- Sales go through AAIT Technologies (separate entity)
+**Public brand is "Axion Labs"** (trade name of Axion Deep Labs, Inc.). This site is the PURE R&D
+face: NO sales, NO services, NO client-facing language.
+- Legal entity name stays **"Axion Deep Labs, Inc."** — use it in copyright, legal pages, and schema
+  `legalName` only. Everywhere else the visible brand is **"Axion Labs"**.
+- ALL sales/services go through the subsidiary **Axion Deep Digital** (axiondeepdigital.com). Do NOT
+  add services/marketing pages here — they belong on Digital.
 - Website language: "research," "investigate," "advance," "innovate"
 - NEVER: "hire us," "services," "pricing," "your project," "client"
-
-### Exception: `/marketing/*` Routes
-The `/marketing` section is "Axion Deep Marketing" — a services arm bundling web dev, SEO, and Site2CRM lead capture into done-for-you packages. These pages intentionally use commercial/services language ("build," "grow," "convert," pricing tiers, CTAs). This overrides the "pure R&D, no sales" rule for `/marketing/*` routes only.
+- The `/marketing/*` services section is being removed (2026-07-06) and 301'd to Digital; `/solutions`
+  301's to `/about`; commercial `/projects/*` (site2crm, made4founders, forma, vesper, quanta,
+  deepaudit) are `noindex`. Do NOT recreate or re-index them. Rationale + full plan:
+  `~/Corporate/AxionDeep/Marketing/axion-labs-rebrand-execution-plan.md`.
 
 ## SESSION STATE (Update before ending each session)
 **Last Updated:** 2026-02-17

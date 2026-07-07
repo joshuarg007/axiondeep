@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Food Bank Tech | Open-Source Tooling for Food Banks",
   description:
-    "Q3 2026 commitment from Axion Deep Labs: open-source operational tooling for food banks. Discovery first, then build what hurts most. Inventory, client intake, volunteer scheduling, route planning. No branding, no paywall, no strings.",
+    "Q3 2026 commitment from Axion Labs: open-source operational tooling for food banks. Discovery first, then build what hurts most. Inventory, client intake, volunteer scheduling, route planning. No branding, no paywall, no strings.",
   keywords: [
     "food bank software",
     "open source nonprofit",

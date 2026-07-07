@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "Bloch sphere visualization",
     "Qiskit education",
   ],
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/quanta" },
 };
 

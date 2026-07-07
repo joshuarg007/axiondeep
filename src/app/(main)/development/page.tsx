@@ -198,7 +198,7 @@ export default function DevelopmentPage() {
             <div>
               <h3 className="text-xl font-semibold text-white mb-3">Every finding ships</h3>
               <p className="text-gray-400 leading-relaxed">
-                Every major experiment at Axion Deep Labs concludes with a deliverable: a benchmark, a reference
+                Every major experiment at Axion Labs concludes with a deliverable: a benchmark, a reference
                 implementation, a trained model, or a deployed service. Results that cannot be exercised by another
                 engineer are treated as incomplete. This requirement forces our methodology to remain grounded in
                 real constraints rather than drifting into theory for its own sake.

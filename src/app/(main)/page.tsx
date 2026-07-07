@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   description:
-    "Axion Deep Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
+    "Axion Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
   alternates: {
     canonical: "/",
   },
@@ -19,7 +19,7 @@ export default function HomePage() {
         <div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             <span className="block text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              Axion Deep Labs
+              Axion Labs
             </span>
             {" "}
             <span className="block bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text" style={{ WebkitTextFillColor: 'transparent' }}>
@@ -30,7 +30,7 @@ export default function HomePage() {
             Pioneering <strong className="font-semibold text-gray-300">scientific research</strong> in AI, quantum computing, and computational neuroscience.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-4">
-            Axion Deep Labs is an <strong className="font-medium text-gray-400">independent research laboratory</strong> that conducts original scientific investigations in machine learning theory, quantum computing, and computational neuroscience. Our experimental research programs produce measurable results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
+            Axion Labs is an <strong className="font-medium text-gray-400">independent research laboratory</strong> that conducts original scientific investigations in machine learning theory, quantum computing, and computational neuroscience. Our experimental research programs produce measurable results that advance the foundational understanding of how intelligent systems learn, adapt, and scale.
           </p>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed mb-6">
             We bridge the gap between <strong className="font-medium text-gray-400">peer-reviewed research</strong> and production-grade software by building the autonomous AI systems, quantum algorithms, and cloud platforms that bring scientific discoveries into real-world applications. Every project is rooted in rigorous R&D methodology with reproducible experiments and published findings.
@@ -64,7 +64,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                Every project at Axion Deep Labs follows a <strong className="font-semibold">rigorous, research-driven methodology</strong> that begins with scientific investigation into the problem space and concludes with the delivery of production-grade software.
+                Every project at Axion Labs follows a <strong className="font-semibold">rigorous, research-driven methodology</strong> that begins with scientific investigation into the problem space and concludes with the delivery of production-grade software.
               </p>
               <p className="text-gray-400 leading-relaxed">
                 Our R&D process emphasizes rapid prototyping and early experimental validation before committing to final production architectures, ensuring that every milestone is backed by reproducible results and measurable progress toward clearly defined research objectives.
@@ -125,7 +125,7 @@ export default function HomePage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Research domains</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              From AI and machine learning research to cloud infrastructure, the scientific and engineering work at Axion Deep Labs spans every layer of modern computing, delivering solutions grounded in rigorous experimentation and peer-reviewed methodology.
+              From AI and machine learning research to cloud infrastructure, the scientific and engineering work at Axion Labs spans every layer of modern computing, delivering solutions grounded in rigorous experimentation and peer-reviewed methodology.
             </p>
           </div>
 
@@ -248,7 +248,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-white mb-3">Reproducibility first</h3>
               <p className="text-gray-400 leading-relaxed mb-3">
-                Every scientific claim from Axion Deep Labs ships with the code, the hyperparameters, the random seeds, and the exact datasets used to produce it. Our experimental protocols are versioned alongside our results so any reader can rerun the analysis and confirm the numbers on their own hardware.
+                Every scientific claim from Axion Labs ships with the code, the hyperparameters, the random seeds, and the exact datasets used to produce it. Our experimental protocols are versioned alongside our results so any reader can rerun the analysis and confirm the numbers on their own hardware.
               </p>
               <p className="text-gray-400 leading-relaxed">
                 We treat failed experiments with the same rigor as successful ones. Negative results, ablation studies, and null findings are published publicly because the field advances faster when the dead ends are documented.
@@ -260,7 +260,7 @@ export default function HomePage() {
                 Our research is never purely theoretical. Each program at the laboratory produces a working software artifact, a library, a benchmark, a training pipeline, or a deployed service, so the findings land in tools that other engineers and scientists can pick up and extend immediately.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                This research-to-production pipeline is what distinguishes Axion Deep Labs from a traditional academic lab. We publish peer-reviewable scientific papers, and we also ship the production code that puts those ideas into the hands of practitioners.
+                This research-to-production pipeline is what distinguishes Axion Labs from a traditional academic lab. We publish peer-reviewable scientific papers, and we also ship the production code that puts those ideas into the hands of practitioners.
               </p>
             </div>
           </div>
@@ -281,7 +281,7 @@ export default function HomePage() {
             </span>
             .
           </blockquote>
-          <p className="text-gray-500">The Axion Deep Labs Philosophy</p>
+          <p className="text-gray-500">The Axion Labs Philosophy</p>
         </div>
       </section>
 
@@ -297,7 +297,7 @@ export default function HomePage() {
                 Explore what we&apos;re building
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-4">
-                Whether you are exploring a <strong className="font-medium text-gray-300">scientific research collaboration</strong>, have a technical inquiry about our experimental work, or want to discuss a development partnership, the Axion Deep Labs team is ready to help you navigate the intersection of advanced R&D and practical software engineering.
+                Whether you are exploring a <strong className="font-medium text-gray-300">scientific research collaboration</strong>, have a technical inquiry about our experimental work, or want to discuss a development partnership, the Axion Labs team is ready to help you navigate the intersection of advanced R&D and practical software engineering.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
                 We respond to all research inquiries within one business day and welcome conversations about how our laboratory capabilities can support your organization&apos;s goals in AI research, quantum computing, or full-stack software engineering.

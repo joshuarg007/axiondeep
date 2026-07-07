@@ -149,7 +149,8 @@ export default async function BlogPostPage({ params }: Props) {
     author: { "@type": "Person", name: post.author },
     publisher: {
       "@type": "Organization",
-      name: "Axion Deep Labs",
+      name: "Axion Labs",
+      legalName: "Axion Deep Labs, Inc.",
       url: "https://www.axiondeep.com",
     },
     keywords: post.tags.join(", "),
@@ -223,7 +224,7 @@ export default async function BlogPostPage({ params }: Props) {
             Want to learn more?
           </h3>
           <p className="text-gray-400 text-sm mb-6">
-            Get in touch with the Axion Deep Labs team to discuss your project.
+            Get in touch with the Axion Labs team to discuss your project.
           </p>
           <Link
             href="/contact"

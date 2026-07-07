@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "component library",
     "Next.js export",
   ],
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/forma" },
 };
 
@@ -39,7 +40,7 @@ export default function FormaPage() {
             with a schema-driven modeler, and let AI generate complete layouts from natural
             language prompts. When you&apos;re done, export everything as a clean Next.js project
             that you own and can deploy anywhere. Over 100 pre-built components follow a
-            consistent design system used across all Axion Deep Labs products.
+            consistent design system used across all Axion Labs products.
           </p>
         </div>
 

@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Projects & Roadmap | Axion Deep Labs",
+  title: "Projects & Roadmap | Axion Labs",
   description:
-    "What Axion Deep Labs is shipping in 2026. Live products, research programs, and roadmap commitments including DeepAudit AI, PERSIST, Vesper, Forma, QUANTA, and Project DRIFT.",
+    "What Axion Labs is shipping in 2026. Live products, research programs, and roadmap commitments including DeepAudit AI, PERSIST, Vesper, Forma, QUANTA, and Project DRIFT.",
   keywords: [
-    "Axion Deep Labs roadmap",
+    "Axion Labs roadmap",
     "research portfolio",
     "DeepAudit AI",
     "PERSIST",
@@ -360,7 +360,7 @@ export default function ProjectsIndexPage() {
             </span>
           </h1>
           <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
-            A live snapshot of Axion Deep Labs. What&apos;s in production today, what&apos;s
+            A live snapshot of Axion Labs. What&apos;s in production today, what&apos;s
             rolling out across 2026, and the research programs feeding the next wave.
           </p>
         </div>

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "security research",
     "AI security platform",
   ],
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/vesper" },
 };
 

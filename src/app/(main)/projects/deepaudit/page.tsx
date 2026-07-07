@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Core Web Vitals audit",
     "JavaScript SEO",
   ],
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/deepaudit" },
 };
 
@@ -195,7 +196,7 @@ export default function DeepAuditPage() {
             </p>
             <p className="text-gray-400 leading-relaxed">
               The dataset behind the study also feeds the predictive models we&apos;re building
-              at Axion Deep Labs to forecast which technical SEO failures correlate most
+              at Axion Labs to forecast which technical SEO failures correlate most
               tightly with traffic and conversion outcomes. The audit tool is the data
               collector, the research is what comes next.
             </p>

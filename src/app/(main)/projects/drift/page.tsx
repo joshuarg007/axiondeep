@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Project DRIFT | Degradation Regimes in Iterated Field Transformations",
   description:
-    "Project DRIFT is a long-horizon pure-research program at Axion Deep Labs studying quantum state evolution, operator ordering, and stability thresholds under repeated field transformations. Governed under a 33-document dual-use framework.",
+    "Project DRIFT is a long-horizon pure-research program at Axion Labs studying quantum state evolution, operator ordering, and stability thresholds under repeated field transformations. Governed under a 33-document dual-use framework.",
   keywords: [
     "quantum field transformations",
     "operator ordering",
@@ -96,7 +96,7 @@ export default function DriftPage() {
           <h2 className="text-2xl font-bold text-white mb-6">Research instruments</h2>
           <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-500/[0.08] to-cyan-500/[0.04] border border-white/[0.08]">
             <p className="text-gray-400 leading-relaxed mb-4">
-              QUANTA, the quantum-computing education platform built at Axion Deep Labs, is
+              QUANTA, the quantum-computing education platform built at Axion Labs, is
               also an instrument for DRIFT. QUANTA simulates circuits up to 16 qubits with
               a drag-and-drop builder and real-time Bloch-sphere visualization. The same
               simulator that students use to learn Grover&apos;s algorithm doubles as a

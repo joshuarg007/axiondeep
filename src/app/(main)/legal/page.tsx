@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy & Terms of Service",
   description:
     "Privacy policy and terms of service. How we collect, use, and protect your information when using our services.",
-  keywords: ["privacy policy", "terms of service", "data protection", "Axion Deep Labs terms"],
+  keywords: ["privacy policy", "terms of service", "data protection", "Axion Labs terms"],
   alternates: { canonical: "/legal" },
 };
 
@@ -13,7 +13,7 @@ export default function LegalPage() {
   return (
     <div className="no-snap relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 pb-20">
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-white">Privacy Policy &amp; Terms of Service for Axion Deep Labs</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-white">Privacy Policy &amp; Terms of Service for Axion Labs</h1>
         <p className="text-gray-400 mb-12">Last updated: January 2026</p>
 
         {/* Privacy Policy */}
@@ -87,12 +87,12 @@ export default function LegalPage() {
             <h3 className="text-lg font-medium text-white">Intellectual Property</h3>
             <p>
               All content on this website, including text, graphics, logos, and software, is the
-              property of Axion Deep Labs and is protected by applicable intellectual property laws.
+              property of Axion Deep Labs, Inc. and is protected by applicable intellectual property laws.
             </p>
 
             <h3 className="text-lg font-medium text-white">Limitation of Liability</h3>
             <p>
-              Axion Deep Labs provides this website &quot;as is&quot; without warranties of any kind.
+              Axion Deep Labs, Inc. provides this website &quot;as is&quot; without warranties of any kind.
               We shall not be liable for any damages arising from the use of this website.
             </p>
 

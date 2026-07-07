@@ -52,7 +52,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group shrink-0">
             <Image
               src="/images/logo.webp"
-              alt="Axion Deep Labs"
+              alt="Axion Labs"
               width={374}
               height={94}
               className="h-[53px] w-auto shrink-0"

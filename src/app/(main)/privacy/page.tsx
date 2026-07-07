@@ -4,11 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy policy for Axion Deep Labs and its products including Made4Founders, Site2CRM, QUANTA, and Vesper. How we collect, use, and protect your data.",
+    "Privacy policy for Axion Labs and its products including Made4Founders, Site2CRM, QUANTA, and Vesper. How we collect, use, and protect your data.",
   keywords: [
     "privacy policy",
     "data protection",
-    "Axion Deep Labs privacy",
+    "Axion Labs privacy",
     "Made4Founders privacy",
     "GDPR",
     "CCPA",
@@ -21,17 +21,17 @@ export default function PrivacyPolicyPage() {
     <div className="no-snap relative z-10 text-gray-300 space-y-16 max-w-4xl mx-auto px-6 md:px-8 lg:px-12 pt-32 pb-20">
       <div>
         <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white">
-          Privacy Policy for Axion Deep Labs Products &amp; Services
+          Privacy Policy for Axion Labs Products &amp; Services
         </h1>
         <p className="text-gray-400 mb-12">
-          Last updated: February 2026 &middot; Axion Deep Labs
+          Last updated: February 2026 &middot; Axion Labs
         </p>
 
         <div className="space-y-10 text-gray-300 leading-relaxed">
           {/* Introduction */}
           <section className="space-y-4">
             <p>
-              Axion Deep Labs (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
+              Axion Labs (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;)
               operates axiondeep.com and its product platforms including
               Made4Founders (made4founders.com), Site2CRM (site2crm.io), and
               QUANTA. This Privacy Policy explains how we collect, use, disclose,

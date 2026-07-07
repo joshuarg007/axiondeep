@@ -5,7 +5,7 @@ import { jobs } from "@/data/jobs";
 export const metadata: Metadata = {
   title: "Join Our Team",
   description:
-    "Join Axion Deep Labs. We assemble researchers, engineers, and experimentalists working on AI, quantum computing, and distributed systems.",
+    "Join Axion Labs. We assemble researchers, engineers, and experimentalists working on AI, quantum computing, and distributed systems.",
   keywords: [
     "AI research careers",
     "AI research engineer",

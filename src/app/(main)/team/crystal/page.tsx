@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   keywords: [
     "Crystal Gutierrez",
     "Crystal A. Gutierrez",
-    "Axion Deep Labs President",
-    "Axion Deep Labs COO",
+    "Axion Labs President",
+    "Axion Labs COO",
     "Adjunct Professor NMSU",
     "AWS cloud engineer",
     "Site2CRM cloud engineer",
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/team/crystal" },
   openGraph: {
-    title: "Crystal A. Gutierrez | Axion Deep Labs",
+    title: "Crystal A. Gutierrez | Axion Labs",
     description:
-      "Co-founder, Chairperson, President & COO of Axion Deep Labs. Adjunct Professor at NMSU and Senior Personnel on the PERSIST research program.",
+      "Co-founder, Chairperson, President & COO of Axion Labs. Adjunct Professor at NMSU and Senior Personnel on the PERSIST research program.",
     url: "/team/crystal",
     images: [
       {
         url: "/images/team/crystal.jpg",
         width: 1200,
         height: 1200,
-        alt: "Crystal A. Gutierrez, Chairperson, President & COO of Axion Deep Labs",
+        alt: "Crystal A. Gutierrez, Chairperson, President & COO of Axion Labs",
       },
     ],
   },
@@ -116,7 +116,7 @@ export default function CrystalPage() {
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/[0.08] ring-1 ring-violet-400/20">
               <Image
                 src="/images/team/crystal.jpg"
-                alt="Crystal A. Gutierrez, Chairperson, President & COO of Axion Deep Labs"
+                alt="Crystal A. Gutierrez, Chairperson, President & COO of Axion Labs"
                 fill
                 sizes="(max-width: 768px) 100vw, 280px"
                 className="object-cover object-top"
@@ -145,7 +145,7 @@ export default function CrystalPage() {
                 University College of Engineering, where she teaches Java
                 Programming and Information Security Principles, and as a
                 long-tenured Cloud Engineer on the Site2CRM platform. Her dual
-                appointment in academia and industry gives Axion Deep Labs direct
+                appointment in academia and industry gives Axion Labs direct
                 institutional access to one of the Mountain West&apos;s most active
                 university research-computing environments.
               </p>
@@ -162,7 +162,7 @@ export default function CrystalPage() {
                 President of the Board, she sets governance policy for the
                 corporation, oversees the laboratory&apos;s operating cadence, and
                 serves as the executive sponsor of every research program and
-                commercial product line under the Axion Deep Labs umbrella.
+                commercial product line under the Axion Labs umbrella.
               </p>
               <p>
                 As Senior Personnel on the NSF SBIR-track PERSIST research
@@ -171,7 +171,7 @@ export default function CrystalPage() {
                 including reproducibility, infrastructure hygiene, and statistical
                 review of experimental results. She is also the relationship
                 owner for the laboratory&apos;s university partnerships, including the
-                arrangement that gives Axion Deep Labs sustained access to the
+                arrangement that gives Axion Labs sustained access to the
                 NMSU Discovery high-performance computing cluster — the core
                 compute resource powering the PERSIST experimental program.
               </p>
@@ -215,7 +215,7 @@ export default function CrystalPage() {
                 <p className="text-gray-400 text-sm leading-relaxed">
                   Operating leader of a research-driven C-corporation. Oversees
                   corporate governance, research infrastructure, institutional
-                  partnerships, and operational strategy across all Axion Deep
+                  partnerships, and operational strategy across all Axion
                   Labs initiatives, including PERSIST, EXP-04, the QUANTA
                   education platform, Site2CRM, Made4Founders, Forma, Vesper, and
                   Axion Deep Digital.

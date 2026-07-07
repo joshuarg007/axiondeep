@@ -6,7 +6,7 @@ const TARGET = "/projects";
 
 export const metadata: Metadata = {
   title: "Redirecting to Projects",
-  description: "This page has moved. The Axion Deep Labs portfolio now lives at /projects.",
+  description: "This page has moved. The Axion Labs portfolio now lives at /projects.",
   alternates: { canonical: TARGET },
   robots: { index: false, follow: true },
   other: {

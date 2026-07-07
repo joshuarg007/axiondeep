@@ -12,14 +12,14 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-4">
               <Image
                 src="/images/logo.webp"
-                alt="Axion Deep Labs home"
+                alt="Axion Labs home"
                 width={374}
                 height={94}
                 className="h-10 w-auto"
               />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience.
+              Independent research organization conducting original research in deep learning theory, quantum computing, and computational neuroscience.
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
@@ -27,7 +27,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/111213915"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Axion Deep Labs on LinkedIn"
+                aria-label="Follow Axion Labs on LinkedIn"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="https://x.com/axiondeeplabs"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Axion Deep Labs on X"
+                aria-label="Follow Axion Labs on X"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <span className="sr-only">X (Twitter)</span>
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="https://www.facebook.com/people/Axion-Deep-Labs/61587313467089/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Axion Deep Labs on Facebook"
+                aria-label="Follow Axion Labs on Facebook"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <span className="sr-only">Facebook</span>
@@ -63,7 +63,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@AxionDeepLabs"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Subscribe to Axion Deep Labs on YouTube"
+                aria-label="Subscribe to Axion Labs on YouTube"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <span className="sr-only">YouTube</span>
@@ -75,7 +75,7 @@ export default function Footer() {
                 href="https://www.instagram.com/axion_deep_labs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Axion Deep Labs on Instagram"
+                aria-label="Follow Axion Labs on Instagram"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-all"
               >
                 <span className="sr-only">Instagram</span>
@@ -145,54 +145,31 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products Column */}
+          {/* Corporate Column */}
           <div>
-            <p className="text-white font-semibold text-sm mb-4">Products</p>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://site2crm.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-500 hover:text-cyan-400 transition-colors"
-                >
-                  Site2CRM
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://made4founders.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-500 hover:text-violet-400 transition-colors"
-                >
-                  Made4Founders
-                </a>
-              </li>
-              <li>
-                <Link
-                  href="/projects/quanta"
-                  className="text-sm text-gray-500 hover:text-fuchsia-400 transition-colors"
-                >
-                  QUANTA
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects/vesper"
-                  className="text-sm text-gray-500 hover:text-emerald-400 transition-colors"
-                >
-                  Vesper AI
-                </Link>
-              </li>
-            </ul>
+            <p className="text-white font-semibold text-sm mb-4">Corporate</p>
+            <p className="text-sm text-gray-500 leading-relaxed mb-3">
+              Axion Labs is the trade name of Axion Deep Labs, Inc., the R&amp;D parent company of{" "}
+              <a
+                href="https://www.axiondeepdigital.com"
+                target="_blank"
+                rel="noopener"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                Axion Deep Digital
+              </a>{" "}
+              and a portfolio of software ventures.
+            </p>
+            <Link href="/about" className="text-sm text-gray-500 hover:text-white transition-colors">
+              About &amp; Ventures →
+            </Link>
           </div>
         </div>
 
         {/* Contact / NAP strip */}
         <div className="pt-8 border-t border-white/[0.06] mb-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <address className="not-italic flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span className="font-semibold text-gray-300">Axion Deep Labs</span>
+            <span className="font-semibold text-gray-300">Axion Labs</span>
             <a href="tel:+15127615351" className="hover:text-white transition-colors">(512) 761-5351</a>
             <a href="mailto:labs@axiondeep.com" className="hover:text-white transition-colors">labs@axiondeep.com</a>
           </address>
@@ -201,7 +178,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Axion Deep Labs. All rights reserved.
+            © {new Date().getFullYear()} Axion Deep Labs, Inc. All rights reserved.
           </p>
           <a
             href="https://axiondeepdigital.com/?utm_source=axiondeep&utm_medium=footer_badge&utm_campaign=site_credit"

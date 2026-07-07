@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "HubSpot integration",
     "Salesforce integration",
   ],
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/site2crm" },
 };
 

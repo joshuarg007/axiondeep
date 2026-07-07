@@ -4,7 +4,7 @@ import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Axion Deep Labs for research collaborations, academic partnerships, and technical discussions. We respond within 24 hours.",
+  description: "Contact Axion Labs for research collaborations, academic partnerships, and technical discussions. We respond within 24 hours.",
   alternates: { canonical: "/contact" },
 };
 

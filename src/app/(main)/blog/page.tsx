@@ -5,7 +5,7 @@ import { BLOG_POSTS } from "@/data/blogPosts";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Insights on web development, SEO, AI integration, lead capture, CRM automation, and startup management from the Axion Deep Labs team.",
+    "Insights on web development, SEO, AI integration, lead capture, CRM automation, and startup management from the Axion Labs team.",
   alternates: { canonical: "/blog" },
 };
 
@@ -13,7 +13,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   "site2crm": "Site2CRM",
   "axion-deep-digital": "Axion Deep Digital",
   "made4founders": "Made4Founders",
-  "labs": "Axion Deep Labs",
+  "labs": "Axion Labs",
 };
 
 const CATEGORY_COLORS: Record<string, string> = {

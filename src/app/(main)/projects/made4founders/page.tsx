@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Made4Founders - Startup Command Center",
   description: "Made4Founders is the all-in-one command center for solo founders. AI daily briefs, encrypted document vault, compliance tracking, investor CRM, and more.",
+  robots: { index: false, follow: true },
   alternates: { canonical: "/projects/made4founders" },
 };
 

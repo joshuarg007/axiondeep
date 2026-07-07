@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "The founders of Axion Deep Labs, Inc. A two-person C-corp conducting original research in deep learning theory and shipping commercial AI products from New Mexico.",
   keywords: [
-    "Axion Deep Labs team",
+    "Axion Labs team",
     "Joshua Gutierrez CEO",
     "Crystal Gutierrez President",
     "deep learning research team",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/team" },
   openGraph: {
-    title: "Team | Axion Deep Labs",
+    title: "Team | Axion Labs",
     description:
-      "Meet the founders of Axion Deep Labs. A research-led, founder-owned C-corp building original deep learning theory and commercial AI products.",
+      "Meet the founders of Axion Labs. A research-led, founder-owned C-corp building original deep learning theory and commercial AI products.",
     url: "/team",
   },
 };
@@ -32,7 +32,7 @@ const team = [
     accent: "violet",
     profile: "/team/crystal",
     bio: [
-      "Co-founder, majority shareholder, and operating leader of Axion Deep Labs. Crystal directs corporate governance, research infrastructure, and institutional partnerships across the entire portfolio of products and research programs.",
+      "Co-founder, majority shareholder, and operating leader of Axion Labs. Crystal directs corporate governance, research infrastructure, and institutional partnerships across the entire portfolio of products and research programs.",
       "Adjunct Professor in the NMSU Engineering Department, she provides the laboratory with institutional access to the NMSU Discovery high-performance computing cluster, a strategic resource powering the PERSIST research program and future experimental work.",
       "Serves as Senior Personnel on the NSF SBIR-track PERSIST program, responsible for machine learning pipeline operations and data analysis oversight.",
     ],
@@ -59,7 +59,7 @@ const team = [
     accent: "cyan",
     profile: "/team/joshua",
     bio: [
-      "Co-founder and Principal Investigator at Axion Deep Labs. Joshua leads research direction, full-stack product engineering, and grant strategy across the laboratory's commercial and research programs.",
+      "Co-founder and Principal Investigator at Axion Labs. Joshua leads research direction, full-stack product engineering, and grant strategy across the laboratory's commercial and research programs.",
       "Principal Investigator on PERSIST, an NSF SBIR-track research program investigating whether the topology of a neural network's loss landscape predicts catastrophic forgetting. Phase I-A results submitted to CoLLAs 2026.",
       "Ships production software across six product lines spanning SaaS, AI tooling, cybersecurity, and quantum computing education. Hands-on with PyTorch, FastAPI, Next.js, and distributed training on university HPC clusters.",
     ],
@@ -151,7 +151,7 @@ export default function TeamPage() {
             </span>
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Axion Deep Labs is a founder-owned C-corporation. No outside capital,
+            Axion Labs is a founder-owned C-corporation. No outside capital,
             no account managers, no middle layers. Every research decision,
             product direction, and engineering commit runs through the two people on this page.
           </p>
@@ -175,7 +175,7 @@ export default function TeamPage() {
                 <div className="relative w-full h-96 shrink-0">
                   <Image
                     src={member.image}
-                    alt={`${member.name}, ${member.role} at Axion Deep Labs`}
+                    alt={`${member.name}, ${member.role} at Axion Labs`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-top"

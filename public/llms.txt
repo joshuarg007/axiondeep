@@ -1,8 +1,8 @@
-# Axion Deep Labs
+# Axion Labs
 
 > Independent R&D laboratory conducting original research in machine learning theory, quantum computing, and computational neuroscience. Active experiments with preliminary results targeting peer-reviewed publication.
 
-Axion Deep Labs is an independent research organization. We design, execute, and publish original research investigating fundamental questions in machine learning, quantum system behavior, and information theory. Our research methodology emphasizes reproducibility, open-source tooling, and cross-disciplinary rigor.
+Axion Labs is the trade name of Axion Deep Labs, Inc., an independent research organization. We design, execute, and publish original research investigating fundamental questions in machine learning, quantum system behavior, and information theory. Our research methodology emphasizes reproducibility, open-source tooling, and cross-disciplinary rigor.
 
 ## Research Programs
 
@@ -86,12 +86,9 @@ Testing whether neural network information capacity follows an area law (proport
 - Information Theory
 - Deep Learning Theory
 
-## Ventures (Research-Derived)
+## Corporate Structure
 
-- Site2CRM (https://site2crm.io): AI-powered lead capture with real-time CRM sync
-- Made4Founders (https://made4founders.com): Startup command center for solo founders
-- QUANTA (https://axiondeep.com/projects/quanta): Quantum computing education platform
-- Vesper AI (https://axiondeep.com/projects/vesper): Autonomous penetration testing platform
+Axion Labs is the trade name of Axion Deep Labs, Inc., a New Mexico research and development company. It is the parent company of Axion Deep Digital (https://www.axiondeepdigital.com), its web and SEO services subsidiary, and holds a portfolio of software ventures. See https://www.axiondeep.com/about for the corporate overview.
 
 ## Contact
 

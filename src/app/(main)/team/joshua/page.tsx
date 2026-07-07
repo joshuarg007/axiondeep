@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   keywords: [
     "Joshua Gutierrez",
     "Joshua R. Gutierrez",
-    "Axion Deep Labs CEO",
-    "Axion Deep Labs founder",
+    "Axion Labs CEO",
+    "Axion Labs founder",
     "PERSIST research",
     "topological deep learning",
     "loss landscape topology",
@@ -24,16 +24,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/team/joshua" },
   openGraph: {
-    title: "Joshua R. Gutierrez | Axion Deep Labs",
+    title: "Joshua R. Gutierrez | Axion Labs",
     description:
-      "Co-founder, CEO & Principal Investigator at Axion Deep Labs. AI researcher in topological deep learning and full-stack engineer behind six production AI products.",
+      "Co-founder, CEO & Principal Investigator at Axion Labs. AI researcher in topological deep learning and full-stack engineer behind six production AI products.",
     url: "/team/joshua",
     images: [
       {
         url: "/images/team/joshua.jpg",
         width: 1200,
         height: 1200,
-        alt: "Joshua R. Gutierrez, CEO and Principal Investigator at Axion Deep Labs",
+        alt: "Joshua R. Gutierrez, CEO and Principal Investigator at Axion Labs",
       },
     ],
   },
@@ -115,7 +115,7 @@ export default function JoshuaPage() {
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/[0.08] ring-1 ring-cyan-400/20">
               <Image
                 src="/images/team/joshua.jpg"
-                alt="Joshua R. Gutierrez, CEO and Principal Investigator at Axion Deep Labs"
+                alt="Joshua R. Gutierrez, CEO and Principal Investigator at Axion Labs"
                 fill
                 sizes="(max-width: 768px) 100vw, 280px"
                 className="object-cover object-top"
@@ -156,7 +156,7 @@ export default function JoshuaPage() {
             <h2 className={sectionHeading}>Profile</h2>
             <div className="space-y-5 text-gray-300 leading-relaxed text-[15px]">
               <p>
-                Joshua leads Axion Deep Labs as a research-first
+                Joshua leads Axion Labs as a research-first
                 C-corporation: every commercial product is, by design, an
                 applied counterpart to an open research question, and every
                 research program is built to a standard of operational rigor
@@ -231,7 +231,7 @@ export default function JoshuaPage() {
                 code, the production code, the grant prose, and the marketing
                 copy, and is open to research-scientist, applied-research, and
                 technical AI-leadership conversations alongside his work at
-                Axion Deep Labs.
+                Axion Labs.
               </p>
             </div>
           </section>
@@ -412,7 +412,7 @@ export default function JoshuaPage() {
                   needs assessment, and relationship-driven follow-up — the
                   same customer-discovery instincts that now anchor product
                   positioning, grant narrative, and sales conversations across
-                  the Axion Deep Labs portfolio.
+                  the Axion Labs portfolio.
                 </p>
               </li>
             </ol>
@@ -559,7 +559,7 @@ export default function JoshuaPage() {
                 href="/research"
                 className="px-5 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm text-gray-200 hover:bg-white/[0.08] hover:text-white transition-colors"
               >
-                Research at Axion Deep Labs
+                Research at Axion Labs
               </Link>
             </div>
           </section>

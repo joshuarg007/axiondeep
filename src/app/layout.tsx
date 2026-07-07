@@ -15,11 +15,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
   title: {
-    default: "Axion Deep Labs, AI Research & Quantum Computing",
-    template: "Axion Deep, %s",
+    default: "Axion Labs, Deep Learning & Quantum Computing Research",
+    template: "Axion Labs, %s",
   },
   description:
-    "Axion Deep Labs is an independent R&D organization building AI systems, quantum algorithms, and production software through original research.",
+    "Axion Labs is an independent research organization advancing deep learning theory and quantum computing through original, reproducible research. The research division of Axion Deep Labs, Inc.",
   keywords: [
     "AI research laboratory",
     "quantum computing research",
@@ -37,23 +37,23 @@ export const metadata: Metadata = {
     "foundational AI research",
     "peer-reviewed research",
   ],
-  authors: [{ name: "Axion Deep Labs" }],
-  creator: "Axion Deep Labs",
-  publisher: "Axion Deep Labs",
+  authors: [{ name: "Axion Labs" }],
+  creator: "Axion Labs",
+  publisher: "Axion Labs",
   formatDetection: {
     telephone: false,
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Axion Deep Labs",
+    title: "Axion Labs",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.axiondeep.com",
-    siteName: "Axion Deep Labs",
-    title: "Axion Deep Labs | Original Research in ML Theory, Quantum Computing & Computational Neuroscience",
+    siteName: "Axion Labs",
+    title: "Axion Labs, Deep Learning & Quantum Computing Research",
     description:
       "Independent research organization with active experiments and preliminary results in topological data analysis, integrated information theory, and information capacity scaling laws. Peer-reviewed publication targets.",
     images: [
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Axion Deep Labs, Independent research organization in machine learning theory, quantum computing, and computational neuroscience",
+        alt: "Axion Labs, independent research organization in deep learning theory, quantum computing, and computational neuroscience",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axion Deep Labs | Original Research in ML Theory & Quantum Computing",
+    title: "Axion Labs, Deep Learning & Quantum Computing Research",
     description:
       "Independent research organization with active experiments in topological data analysis, integrated information theory, and information capacity scaling laws. Preliminary results and peer-reviewed publication targets.",
     images: ["/og-image.png"],
@@ -111,7 +111,9 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": "https://www.axiondeep.com/#organization",
-      name: "Axion Deep Labs",
+      name: "Axion Labs",
+      legalName: "Axion Deep Labs, Inc.",
+      alternateName: "Axion Deep Labs",
       url: "https://www.axiondeep.com",
       logo: {
         "@type": "ImageObject",
@@ -152,15 +154,15 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.axiondeep.com/#website",
       url: "https://www.axiondeep.com",
-      name: "Axion Deep Labs",
+      name: "Axion Labs",
       publisher: { "@id": "https://www.axiondeep.com/#organization" },
     },
     {
       "@type": "ResearchOrganization",
       "@id": "https://www.axiondeep.com/#research",
-      name: "Axion Deep Labs",
+      name: "Axion Labs",
       description:
-        "Independent research organization conducting original research in machine learning theory, quantum computing, and computational neuroscience. Active experiments with preliminary results targeting peer-reviewed publication.",
+        "Independent research organization conducting original research in deep learning theory, quantum computing, and computational neuroscience. Active experiments with preliminary results targeting peer-reviewed publication.",
       url: "https://www.axiondeep.com",
       areaServed: "Worldwide",
       knowsAbout: [
