@@ -41,13 +41,9 @@
 .site .nav-cta:hover{border-color:var(--cyan); color:var(--cyan);}
 .site /* HERO */
 .hero{position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; isolation:isolate;}
-.site .aurora{position:absolute; inset:-20% -10%; z-index:-2;
-  background:
-    radial-gradient(46% 40% at 22% 20%, rgba(139,124,246,.42), transparent 62%),
-    radial-gradient(42% 38% at 74% 26%, rgba(70,214,230,.34), transparent 62%),
-    radial-gradient(50% 46% at 60% 82%, rgba(224,97,196,.30), transparent 64%),
-    radial-gradient(38% 34% at 92% 66%, rgba(70,214,230,.20), transparent 60%);
-  filter:blur(20px) saturate(115%); animation:drift 26s ease-in-out infinite alternate;}
+.site .aurora{position:absolute; inset:-8% -6%; z-index:-2;
+  background:#06070a url('/images/hero-aurora.webp') right center / cover no-repeat;
+  animation:drift 30s ease-in-out infinite alternate;}
 @keyframes drift{ 0%{transform:translate3d(0,0,0) scale(1);} 100%{transform:translate3d(-3%,2%,0) scale(1.08);} }
 .site .grain{position:absolute; inset:0; z-index:-1; opacity:.5; mix-blend-mode:overlay; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");}
