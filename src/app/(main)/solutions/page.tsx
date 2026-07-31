@@ -21,25 +21,35 @@ export default function SolutionsRedirectPage() {
       <noscript>
         <meta httpEquiv="refresh" content={`0;url=${TARGET}`} />
       </noscript>
-      <div className="min-h-screen flex items-center justify-center px-6 text-center">
-        <div className="max-w-md">
-          <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">Page moved</p>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            This page is now{" "}
-            <Link
-              href={TARGET}
-              className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent"
-            >
-              Projects
-            </Link>
-          </h1>
-          <p className="text-gray-400 mb-8">
-            Redirecting automatically. If your browser doesn&apos;t move,{" "}
-            <Link href={TARGET} className="text-cyan-300 underline-offset-4 hover:underline">
-              click here
-            </Link>
-            .
-          </p>
+
+      <div className="obs-page">
+        <div className="obs-container">
+          <div className="obs-narrow" style={{ textAlign: "center" }}>
+            <span className="obs-eyebrow line" style={{ justifyContent: "center" }}>
+              Page moved
+            </span>
+            <h1 className="obs-h1">
+              This page is now <span className="g">Projects</span>
+            </h1>
+            <p className="obs-lead" style={{ marginLeft: "auto", marginRight: "auto" }}>
+              Redirecting automatically. If your browser does not move,{" "}
+              <Link
+                href={TARGET}
+                style={{
+                  color: "var(--cyan)",
+                  borderBottom: "1px solid rgba(70,214,230,.35)",
+                }}
+              >
+                click here
+              </Link>
+              .
+            </p>
+            <div style={{ marginTop: 32 }}>
+              <Link className="obs-btn obs-btn-p" href={TARGET}>
+                Go to Projects &rarr;
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>

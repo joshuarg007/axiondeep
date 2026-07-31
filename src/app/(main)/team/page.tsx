@@ -50,7 +50,7 @@ const team = [
       "ML Pipelines",
       "Institutional Partnerships",
     ],
-    links: {},
+    links: {} as { linkedin?: string; github?: string },
   },
   {
     name: "Joshua R. Gutierrez",
@@ -79,7 +79,7 @@ const team = [
     links: {
       linkedin: "https://www.linkedin.com/in/joshua-gutierrez-b198117a",
       github: "https://github.com/Axion-Deep-Labs",
-    },
+    } as { linkedin?: string; github?: string },
   },
 ];
 
@@ -107,223 +107,282 @@ const jsonLd = {
   ],
 };
 
-function accentClasses(accent: string) {
-  if (accent === "violet") {
-    return {
-      role: "text-violet-300",
-      bullet: "bg-violet-400",
-      chipBorder: "border-violet-400/20",
-      chipBg: "bg-violet-500/5",
-      chipText: "text-violet-200",
-      glow: "from-violet-500/20 via-fuchsia-500/10 to-transparent",
-      ring: "ring-violet-400/20",
-    };
-  }
-  return {
-    role: "text-cyan-300",
-    bullet: "bg-cyan-400",
-    chipBorder: "border-cyan-400/20",
-    chipBg: "bg-cyan-500/5",
-    chipText: "text-cyan-200",
-    glow: "from-cyan-500/20 via-blue-500/10 to-transparent",
-    ring: "ring-cyan-400/20",
-  };
-}
-
 export default function TeamPage() {
   return (
-    <>
+    <div className="obs-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen px-6 py-24 sm:py-32 relative overflow-hidden">
+      <div className="obs-container">
         {/* Hero */}
-        <div className="max-w-4xl mx-auto text-center mb-20 relative z-10">
-          <p className="text-xs font-medium tracking-[0.2em] uppercase mb-4 bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+        <div className="obs-narrow" style={{ textAlign: "center" }}>
+          <span className="obs-eyebrow line" style={{ justifyContent: "center" }}>
             The Team
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-            Two founders.{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-              One laboratory.
-            </span>
+          </span>
+          <h1 className="obs-h1">
+            Two founders. <span className="g">One laboratory.</span>
           </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Axion Labs is a founder-owned C-corporation. No outside capital,
-            no account managers, no middle layers. Every research decision,
-            product direction, and engineering commit runs through the two people on this page.
+          <p className="obs-lead" style={{ marginLeft: "auto", marginRight: "auto" }}>
+            Axion Labs is a founder-owned C-corporation. No outside capital, no account managers,
+            no middle layers. Every research decision, product direction, and engineering commit
+            runs through the two people on this page.
           </p>
         </div>
 
         {/* Team cards */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
-          {team.map((member) => {
-            const a = accentClasses(member.accent);
-            return (
-              <article
-                key={member.name}
-                className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.015] overflow-hidden backdrop-blur-sm flex flex-col"
-              >
-                {/* Background glow accent */}
-                <div
-                  className={`pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-radial ${a.glow} blur-3xl opacity-60`}
-                />
-
-                {/* Photo */}
-                <div className="relative w-full h-96 shrink-0">
-                  <Image
-                    src={member.image}
-                    alt={`${member.name}, ${member.role} at Axion Labs`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-top"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                  <div className="absolute bottom-6 left-8 right-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight mb-1">
-                      {member.name}
-                    </h2>
-                    <p className={`${a.role} text-sm font-medium tracking-wide`}>
-                      {member.role}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8 flex-1 flex flex-col relative">
-                  {member.bio.map((paragraph, i) => (
-                    <p key={i} className="text-gray-400 leading-relaxed mb-4 text-sm">
-                      {paragraph}
-                    </p>
-                  ))}
-
-                  {/* Credentials */}
-                  <div className="mt-4 mb-6">
-                    <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.15em] mb-3">
-                      Credentials
-                    </h3>
-                    <ul className="space-y-2">
-                      {member.credentials.map((cred) => (
-                        <li
-                          key={cred}
-                          className="flex items-start gap-3 text-sm text-gray-300"
-                        >
-                          <span className={`w-1.5 h-1.5 rounded-full ${a.bullet} mt-1.5 shrink-0`} />
-                          <span>{cred}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Focus areas */}
-                  <div className="mb-6">
-                    <h3 className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.15em] mb-3">
-                      Focus
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {member.focus.map((tag) => (
-                        <span
-                          key={tag}
-                          className={`px-3 py-1 rounded-full ${a.chipBg} border ${a.chipBorder} text-xs ${a.chipText}`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+        <section className="obs-section">
+          <div className="obs-grid obs-grid-2">
+            {team.map((member) => {
+              const accentColor =
+                member.accent === "violet" ? "var(--violet)" : "var(--cyan)";
+              return (
+                <article
+                  key={member.name}
+                  className="obs-card"
+                  style={{ padding: 0, display: "flex", flexDirection: "column" }}
+                >
+                  {/* Photo */}
+                  <div style={{ position: "relative", width: "100%", height: 384 }}>
+                    <Image
+                      src={member.image}
+                      alt={`${member.name}, ${member.role} at Axion Labs`}
+                      fill
+                      sizes="(max-width: 820px) 100vw, 50vw"
+                      style={{ objectFit: "cover", objectPosition: "top" }}
+                      priority
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background:
+                          "linear-gradient(to top, var(--void) 0%, rgba(6,7,10,.5) 50%, transparent 100%)",
+                      }}
+                    />
+                    <div style={{ position: "absolute", bottom: 24, left: 26, right: 26 }}>
+                      <h2 className="obs-h3" style={{ marginBottom: 4 }}>
+                        {member.name}
+                      </h2>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-mono)",
+                          textTransform: "uppercase",
+                          letterSpacing: ".08em",
+                          fontSize: 12,
+                          color: accentColor,
+                          margin: 0,
+                        }}
+                      >
+                        {member.role}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Links */}
-                  <div className="flex gap-5 mt-auto pt-4 border-t border-white/[0.05] items-center">
-                    <Link
-                      href={member.profile}
-                      className={`text-xs font-medium tracking-wide uppercase ${a.chipText} hover:text-white transition-colors`}
+                  {/* Content */}
+                  <div
+                    style={{
+                      padding: "28px 26px",
+                      flex: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    {member.bio.map((paragraph, i) => (
+                      <p
+                        key={i}
+                        style={{
+                          color: "var(--muted)",
+                          fontSize: 14.5,
+                          lineHeight: 1.65,
+                          margin: "0 0 14px",
+                        }}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+
+                    {/* Credentials */}
+                    <div style={{ marginTop: 10, marginBottom: 24 }}>
+                      <h3
+                        className="obs-eyebrow"
+                        style={{ color: "var(--faint)", marginBottom: 14 }}
+                      >
+                        Credentials
+                      </h3>
+                      <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gap: 9 }}>
+                        {member.credentials.map((cred) => (
+                          <li
+                            key={cred}
+                            style={{
+                              display: "flex",
+                              alignItems: "flex-start",
+                              gap: 12,
+                              fontSize: 14,
+                              color: "var(--ink-dim)",
+                            }}
+                          >
+                            <span
+                              style={{
+                                width: 6,
+                                height: 6,
+                                borderRadius: "50%",
+                                background: accentColor,
+                                marginTop: 7,
+                                flexShrink: 0,
+                              }}
+                            />
+                            <span>{cred}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Focus areas */}
+                    <div style={{ marginBottom: 24 }}>
+                      <h3
+                        className="obs-eyebrow"
+                        style={{ color: "var(--faint)", marginBottom: 14 }}
+                      >
+                        Focus
+                      </h3>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                        {member.focus.map((tag) => (
+                          <span key={tag} className="obs-chip">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Links */}
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: 20,
+                        marginTop: "auto",
+                        paddingTop: 18,
+                        borderTop: "1px solid var(--line)",
+                        alignItems: "center",
+                      }}
                     >
-                      Read full bio &rarr;
-                    </Link>
-                    {member.links.linkedin && (
-                      <a
-                        href={member.links.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
+                      <Link
+                        href={member.profile}
+                        style={{
+                          fontFamily: "var(--font-mono)",
+                          textTransform: "uppercase",
+                          letterSpacing: ".1em",
+                          fontSize: 11,
+                          color: accentColor,
+                          textDecoration: "none",
+                        }}
                       >
-                        LinkedIn
-                      </a>
-                    )}
-                    {member.links.github && (
-                      <a
-                        href={member.links.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs font-medium tracking-wide uppercase text-gray-500 hover:text-white transition-colors"
-                      >
-                        GitHub
-                      </a>
-                    )}
+                        Read full bio &rarr;
+                      </Link>
+                      {member.links.linkedin && (
+                        <a
+                          href={member.links.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontFamily: "var(--font-mono)",
+                            textTransform: "uppercase",
+                            letterSpacing: ".1em",
+                            fontSize: 11,
+                            color: "var(--muted)",
+                            textDecoration: "none",
+                          }}
+                        >
+                          LinkedIn
+                        </a>
+                      )}
+                      {member.links.github && (
+                        <a
+                          href={member.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            fontFamily: "var(--font-mono)",
+                            textTransform: "uppercase",
+                            letterSpacing: ".1em",
+                            fontSize: 11,
+                            color: "var(--muted)",
+                            textDecoration: "none",
+                          }}
+                        >
+                          GitHub
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
 
         {/* Corporate footer block */}
-        <div className="max-w-4xl mx-auto mt-24 relative z-10">
-          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10 backdrop-blur-sm">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div>
-                <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.15em] mb-2">
-                  Entity
-                </p>
-                <p className="text-sm text-gray-200">Axion Deep Labs, Inc.</p>
-                <p className="text-xs text-gray-500 mt-1">C-Corporation, New Mexico</p>
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.15em] mb-2">
-                  Founded
-                </p>
-                <p className="text-sm text-gray-200">February 3, 2026</p>
-                <p className="text-xs text-gray-500 mt-1">Las Cruces, New Mexico</p>
-              </div>
-              <div>
-                <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-[0.15em] mb-2">
-                  Funding
-                </p>
-                <p className="text-sm text-gray-200">Founder-owned</p>
-                <p className="text-xs text-gray-500 mt-1">No outside capital</p>
-              </div>
+        <section className="obs-section">
+          <div className="obs-grid obs-grid-3">
+            <div className="obs-card">
+              <span className="obs-eyebrow" style={{ color: "var(--faint)" }}>
+                Entity
+              </span>
+              <h3 style={{ marginTop: 12 }}>Axion Deep Labs, Inc.</h3>
+              <p>C-Corporation, New Mexico</p>
+            </div>
+            <div className="obs-card">
+              <span className="obs-eyebrow" style={{ color: "var(--faint)" }}>
+                Founded
+              </span>
+              <h3 style={{ marginTop: 12 }}>February 3, 2026</h3>
+              <p>Las Cruces, New Mexico</p>
+            </div>
+            <div className="obs-card">
+              <span className="obs-eyebrow" style={{ color: "var(--faint)" }}>
+                Funding
+              </span>
+              <h3 style={{ marginTop: 12 }}>Founder-owned</h3>
+              <p>No outside capital</p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* CTA */}
-        <div className="max-w-3xl mx-auto text-center mt-20 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-            Work with the research team directly.
-          </h2>
-          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Whether you are exploring a research partnership, a product collaboration,
-            or an investment conversation, you will hear back from a founder.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="shimmer-button px-8 py-4 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] text-white font-medium text-base transition-all border border-white/[0.08]"
+        <section className="obs-section">
+          <div className="obs-narrow" style={{ textAlign: "center" }}>
+            <span className="obs-eyebrow line" style={{ justifyContent: "center" }}>
+              Get in touch
+            </span>
+            <h2 className="obs-h2" style={{ marginTop: 16 }}>
+              Work with the research team <span className="g">directly.</span>
+            </h2>
+            <p
+              className="obs-lead"
+              style={{ marginLeft: "auto", marginRight: "auto", marginBottom: 32 }}
             >
-              Get in Touch
-            </Link>
-            <Link
-              href="/research"
-              className="px-8 py-4 rounded-xl border border-white/[0.08] text-gray-300 font-medium hover:bg-white/[0.04] hover:text-white transition-colors text-base"
+              Whether you are exploring a research partnership, a product collaboration, or an
+              investment conversation, you will hear back from a founder.
+            </p>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 16,
+                justifyContent: "center",
+              }}
             >
-              Explore the Research
-            </Link>
+              <Link href="/contact" className="obs-btn obs-btn-p">
+                Get in Touch
+              </Link>
+              <Link href="/research" className="obs-btn obs-btn-g">
+                Explore the Research
+              </Link>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
-    </>
+    </div>
   );
 }
