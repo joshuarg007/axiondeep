@@ -1,31 +1,40 @@
 User-agent: *
 Allow: /careers$
 Disallow: /careers/
+Disallow: /axion-gate-systems
 
-# Block AI/LLM crawlers from all careers pages
+# Block AI/LLM crawlers from careers and the gate-systems page
 User-agent: GPTBot
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: ChatGPT-User
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: CCBot
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: anthropic-ai
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: Claude-Web
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: Google-Extended
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: Bytespider
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 User-agent: ClaudeBot
 Disallow: /careers
+Disallow: /axion-gate-systems
 
 Sitemap: https://www.axiondeep.com/sitemap.xml
 
