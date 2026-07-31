@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./home.css";
 import Reveal from "./Reveal";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Axion Deep Labs | Independent R&D Laboratory",
@@ -13,23 +15,7 @@ export default function HomePage() {
   return (
     <div className="site">
       <Reveal />
-
-      <nav className="nav">
-        <div className="wrap">
-          <a className="logo" href="/">
-            <b>AXION</b> <span>DEEP</span>
-          </a>
-          <div className="nav-links">
-            <a href="#research">Research</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#ethos">Ethos</a>
-            <a href="/about">About</a>
-            <a className="nav-cta" href="/contact">
-              Work with us
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <header className="hero">
         <div className="aurora" />
@@ -255,76 +241,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="foot">
-        <div className="wrap">
-          <div className="foot-top">
-            <div>
-              <div className="logo">
-                <b>AXION</b> <span style={{ color: "var(--violet)" }}>DEEP</span>
-              </div>
-              <p className="desc">
-                An independent R&amp;D company. We research at the edge and ship what works.
-              </p>
-            </div>
-            <div>
-              <h5>Research</h5>
-              <ul>
-                <li>
-                  <a href="/projects/persist">PERSIST</a>
-                </li>
-                <li>
-                  <a href="/projects/grokking">Grokking</a>
-                </li>
-                <li>
-                  <a href="/projects/sdi">SDI</a>
-                </li>
-                <li>
-                  <a href="/research">Publications</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5>Portfolio</h5>
-              <ul>
-                <li>
-                  <a href="/projects/made4founders">Made4Founders</a>
-                </li>
-                <li>
-                  <a href="/projects/site2crm">Site2CRM</a>
-                </li>
-                <li>
-                  <a href="/projects/vesper">Vesper</a>
-                </li>
-                <li>
-                  <a href="/projects/quanta">QUANTA</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h5>Company</h5>
-              <ul>
-                <li>
-                  <a href="/about">About</a>
-                </li>
-                <li>
-                  <a href="/mission">Ethos</a>
-                </li>
-                <li>
-                  <a href="/careers">Careers</a>
-                </li>
-                <li>
-                  <a href="/contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="foot-bot">
-            <span>Axion Deep Labs, Inc. &middot; C-Corp, New Mexico &middot; Las Cruces</span>
-            <span>hello@axiondeep.com &middot; Bootstrapped</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

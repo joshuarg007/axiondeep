@@ -1,16 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import "./observatory.css";
 import GradientBackground from "@/components/GradientBackground";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const GTM_ID = "GTM-W5RSDFR6";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.axiondeep.com"),
@@ -306,7 +301,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className="antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

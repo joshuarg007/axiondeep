@@ -1,0 +1,64 @@
+/* Observatory design system — global (tokens, fonts, base type, shared nav + footer).
+   Imported after globals.css in the root layout so the new type/color apply site-wide. */
+
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/Bricolage-600.woff2') format('woff2');}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/Bricolage-700.woff2') format('woff2');}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/Bricolage-800.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/Archivo-400.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/Archivo-500.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/Archivo-600.woff2') format('woff2');}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/Archivo-700.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/JetBrainsMono-400.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/JetBrainsMono-500.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/JetBrainsMono-700.woff2') format('woff2');}
+
+:root{
+  --void:#06070a; --panel:#0d1017; --ink:#eef1f7; --ink-dim:#c4cad7; --muted:#828b9e; --faint:#57607a;
+  --line:rgba(140,160,220,.10); --line2:rgba(140,160,220,.18);
+  --cyan:#46d6e6; --violet:#8b7cf6; --fuchsia:#e061c4;
+  --font-disp:'Bricolage Grotesque','Archivo',sans-serif;
+  --font-body:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'JetBrains Mono','SFMono-Regular',ui-monospace,monospace;
+}
+
+/* Base typography, site-wide */
+body{ font-family:var(--font-body); background:var(--void); color:var(--ink); }
+h1,h2,h3,h4{ font-family:var(--font-disp); letter-spacing:-.02em; }
+
+/* ============ SHARED NAV ============ */
+.obs-nav{ position:fixed; top:0; left:0; right:0; z-index:50;
+  background:linear-gradient(to bottom, rgba(6,7,10,.72) 0%, rgba(6,7,10,.35) 55%, transparent 100%);
+  backdrop-filter:blur(9px); -webkit-backdrop-filter:blur(9px); }
+.obs-nav .in{ max-width:1220px; margin:0 auto; padding:0 32px; height:74px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.obs-logo{ font-family:var(--font-disp); font-weight:800; font-size:19px; letter-spacing:-.01em; color:#fff; text-decoration:none; }
+.obs-logo span{ color:var(--violet); }
+.obs-links{ display:flex; gap:28px; align-items:center; }
+.obs-links a{ font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.14em; font-size:11.5px; color:var(--muted); text-decoration:none; transition:color .2s; }
+.obs-links a:hover, .obs-links a.on{ color:var(--ink); }
+.obs-cta{ font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.12em; font-size:11px; color:var(--ink);
+  border:1px solid var(--line2); padding:9px 16px; border-radius:100px; text-decoration:none; transition:.2s; white-space:nowrap; }
+.obs-cta:hover{ border-color:var(--cyan); color:var(--cyan); }
+.obs-burger{ display:none; background:none; border:0; color:var(--muted); padding:6px; cursor:pointer; }
+.obs-burger:hover{ color:var(--ink); }
+.obs-mobile{ display:none; background:rgba(6,7,10,.94); border-top:1px solid var(--line); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+.obs-mobile a{ display:block; padding:13px 32px; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--muted); text-decoration:none; }
+.obs-mobile a:hover{ color:var(--ink); background:rgba(255,255,255,.03); }
+@media (max-width:900px){ .obs-links, .obs-nav .obs-cta{ display:none; } .obs-burger{ display:inline-flex; } }
+
+/* ============ SHARED FOOTER ============ */
+.obs-foot{ position:relative; z-index:10; border-top:1px solid var(--line); background:rgba(6,7,10,.55); padding:70px 0 40px; }
+.obs-foot .in{ max-width:1220px; margin:0 auto; padding:0 32px; }
+.obs-foot-top{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:30px; padding-bottom:44px; }
+.obs-foot-brand .obs-logo{ font-size:22px; display:inline-block; margin-bottom:14px; }
+.obs-foot-desc{ color:var(--muted); font-size:14px; max-width:34ch; margin:0 0 18px; }
+.obs-social{ display:flex; gap:10px; }
+.obs-social a{ width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,.05); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--muted); transition:.2s; }
+.obs-social a:hover{ color:var(--ink); border-color:var(--line2); background:rgba(255,255,255,.08); }
+.obs-social svg{ width:16px; height:16px; fill:currentColor; }
+.obs-foot h5{ font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.14em; font-size:10.5px; color:var(--faint); margin:0 0 16px; }
+.obs-foot ul{ list-style:none; margin:0; padding:0; display:grid; gap:11px; }
+.obs-foot ul a{ color:var(--muted); font-size:14px; text-decoration:none; }
+.obs-foot ul a:hover{ color:var(--ink); }
+.obs-foot-bot{ display:flex; justify-content:space-between; padding-top:26px; border-top:1px solid var(--line); flex-wrap:wrap; gap:12px; }
+.obs-foot-bot span{ font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.1em; font-size:10.5px; color:var(--faint); }
+@media (max-width:900px){ .obs-foot-top{ grid-template-columns:1fr 1fr; } }
