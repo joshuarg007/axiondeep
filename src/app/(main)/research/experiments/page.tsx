@@ -264,9 +264,12 @@ export default function ExperimentsPage() {
                 voids &mdash; that survive across multiple scales of analysis.
               </p>
               <p className="text-emerald-300/80">
-                No published work has connected these two fields. This experiment
-                tests whether the topological depth of learned representations
-                predicts their survivability during continual learning.
+                Prior work has used topology inside continual learning methods
+                and loss landscape geometry to explain forgetting. This
+                experiment asks a different question: whether topological
+                structure measured before retraining can prospectively predict
+                forgetting and identify which mitigation strategy fits a given
+                model and task regime.
               </p>
             </div>
           </div>
