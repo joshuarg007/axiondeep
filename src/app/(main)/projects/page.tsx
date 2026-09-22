@@ -35,91 +35,14 @@ interface Project {
   detail?: string;
 }
 
-const accentMap: Record<Accent, {
-  ring: string;
-  border: string;
-  borderHover: string;
-  gradient: string;
-  text: string;
-  tagBg: string;
-  tagText: string;
-  tagBorder: string;
-  iconBg: string;
-}> = {
-  cyan: {
-    ring: "shadow-cyan-500/20",
-    border: "border-cyan-500/20",
-    borderHover: "hover:border-cyan-500/50",
-    gradient: "from-cyan-500/15 via-cyan-500/5 to-transparent",
-    text: "text-cyan-300",
-    tagBg: "bg-cyan-500/10",
-    tagText: "text-cyan-200",
-    tagBorder: "border-cyan-500/20",
-    iconBg: "bg-cyan-500/20",
-  },
-  violet: {
-    ring: "shadow-violet-500/20",
-    border: "border-violet-500/20",
-    borderHover: "hover:border-violet-500/50",
-    gradient: "from-violet-500/15 via-violet-500/5 to-transparent",
-    text: "text-violet-300",
-    tagBg: "bg-violet-500/10",
-    tagText: "text-violet-200",
-    tagBorder: "border-violet-500/20",
-    iconBg: "bg-violet-500/20",
-  },
-  fuchsia: {
-    ring: "shadow-fuchsia-500/20",
-    border: "border-fuchsia-500/20",
-    borderHover: "hover:border-fuchsia-500/50",
-    gradient: "from-fuchsia-500/15 via-fuchsia-500/5 to-transparent",
-    text: "text-fuchsia-300",
-    tagBg: "bg-fuchsia-500/10",
-    tagText: "text-fuchsia-200",
-    tagBorder: "border-fuchsia-500/20",
-    iconBg: "bg-fuchsia-500/20",
-  },
-  blue: {
-    ring: "shadow-blue-500/20",
-    border: "border-blue-500/20",
-    borderHover: "hover:border-blue-500/50",
-    gradient: "from-blue-500/15 via-blue-500/5 to-transparent",
-    text: "text-blue-300",
-    tagBg: "bg-blue-500/10",
-    tagText: "text-blue-200",
-    tagBorder: "border-blue-500/20",
-    iconBg: "bg-blue-500/20",
-  },
-  emerald: {
-    ring: "shadow-emerald-500/20",
-    border: "border-emerald-500/20",
-    borderHover: "hover:border-emerald-500/50",
-    gradient: "from-emerald-500/15 via-emerald-500/5 to-transparent",
-    text: "text-emerald-300",
-    tagBg: "bg-emerald-500/10",
-    tagText: "text-emerald-200",
-    tagBorder: "border-emerald-500/20",
-    iconBg: "bg-emerald-500/20",
-  },
-  amber: {
-    ring: "shadow-amber-500/20",
-    border: "border-amber-500/20",
-    borderHover: "hover:border-amber-500/50",
-    gradient: "from-amber-500/15 via-amber-500/5 to-transparent",
-    text: "text-amber-300",
-    tagBg: "bg-amber-500/10",
-    tagText: "text-amber-200",
-    tagBorder: "border-amber-500/20",
-    iconBg: "bg-amber-500/20",
-  },
-};
-
-const badgeStyles: Record<Badge, string> = {
-  "Live": "bg-emerald-500/20 text-emerald-200 border-emerald-400/30",
-  "Beta": "bg-amber-500/20 text-amber-200 border-amber-400/30",
-  "Active R&D": "bg-violet-500/20 text-violet-200 border-violet-400/30",
-  "Research": "bg-blue-500/20 text-blue-200 border-blue-400/30",
-  "Open Source": "bg-cyan-500/20 text-cyan-200 border-cyan-400/30",
+// Map each accent to a concrete color token for the Observatory palette.
+const accentColor: Record<Accent, string> = {
+  cyan: "var(--cyan)",
+  violet: "var(--violet)",
+  fuchsia: "var(--fuchsia)",
+  blue: "#5aa2f0",
+  emerald: "#46e6a5",
+  amber: "#e6b846",
 };
 
 const projects: Project[] = [
@@ -252,87 +175,131 @@ const projects: Project[] = [
 ];
 
 function ProjectCard({ p }: { p: Project }) {
-  const a = accentMap[p.accent];
+  const color = accentColor[p.accent];
   return (
-    <div
-      className={`group relative flex flex-col rounded-2xl bg-gradient-to-br ${a.gradient} border ${a.border} ${a.borderHover} transition-all duration-200 hover:scale-[1.01] hover:shadow-2xl ${a.ring}`}
-    >
-      <div className="p-7 pb-0 flex-1 flex flex-col">
-        <div className="flex items-center gap-3 mb-4">
-          <div
-            className={`w-11 h-11 rounded-xl ${a.iconBg} flex items-center justify-center text-lg font-bold ${a.text}`}
-          >
-            {p.name.charAt(0)}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2">
-              <h3 className="text-xl font-bold text-white truncate">{p.name}</h3>
-              <span
-                className={`text-[10px] font-semibold px-2 py-0.5 rounded border shrink-0 ${badgeStyles[p.badge]}`}
-              >
-                {p.badge}
-              </span>
-            </div>
-            <p className={`${a.text} text-sm font-medium`}>{p.tagline}</p>
-          </div>
+    <div className="obs-card" style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+        <div
+          aria-hidden
+          style={{
+            width: 42,
+            height: 42,
+            borderRadius: 11,
+            flexShrink: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "var(--font-disp)",
+            fontWeight: 800,
+            fontSize: 18,
+            color,
+            background: "rgba(255,255,255,.04)",
+            border: "1px solid var(--line2)",
+          }}
+        >
+          {p.name.charAt(0)}
         </div>
-
-        <p className="text-gray-400 text-sm leading-relaxed mb-5">
-          {p.description}
-        </p>
-
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {p.tags.map((tag) => (
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <h3 style={{ margin: 0 }}>{p.name}</h3>
             <span
-              key={tag}
-              className={`text-[11px] px-2.5 py-1 rounded-full ${a.tagBg} ${a.tagText} border ${a.tagBorder}`}
+              className={p.badge === "Live" ? "obs-chip live" : "obs-chip"}
+              style={{ flexShrink: 0 }}
             >
-              {tag}
+              {p.badge}
             </span>
-          ))}
+          </div>
+          <p
+            style={{
+              margin: "2px 0 0",
+              fontSize: 13,
+              fontWeight: 500,
+              color,
+              lineHeight: 1.4,
+            }}
+          >
+            {p.tagline}
+          </p>
         </div>
-
-        <div className="flex-1" />
       </div>
 
-      <div className="px-7 py-4 border-t border-white/5 flex items-center justify-between gap-3">
+      <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.65, margin: "0 0 16px" }}>
+        {p.description}
+      </p>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 7, marginBottom: 18 }}>
+        {p.tags.map((tag) => (
+          <span key={tag} className="obs-chip">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div
+        style={{
+          marginTop: "auto",
+          paddingTop: 16,
+          borderTop: "1px solid var(--line)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+        }}
+      >
         {p.href ? (
           <Link
             href={p.href}
-            className={`text-sm font-medium ${a.text} hover:translate-x-1 transition-transform`}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              letterSpacing: ".04em",
+              color,
+              textDecoration: "none",
+            }}
           >
-            Explore {p.name} →
+            Explore {p.name} &rarr;
           </Link>
         ) : (
-          <span className="text-sm text-gray-500">In active research</span>
+          <span style={{ fontSize: 13, color: "var(--faint)" }}>In active research</span>
         )}
         {p.external && (
           <a
             href={p.external}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-1 truncate"
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 11,
+              color: "var(--faint)",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 5,
+              minWidth: 0,
+            }}
           >
-            {p.external.replace("https://", "").replace("github.com/", "")}
-            <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            <span
+              style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+            >
+              {p.external.replace("https://", "").replace("github.com/", "")}
+            </span>
+            <svg
+              width="12"
+              height="12"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              style={{ flexShrink: 0 }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
             </svg>
           </a>
         )}
-      </div>
-    </div>
-  );
-}
-
-function StageHeader({ label, count, sublabel }: { label: string; count: number; sublabel: string }) {
-  return (
-    <div className="flex items-end justify-between mb-6 pb-3 border-b border-white/10">
-      <div>
-        <div className="flex items-center gap-3 mb-1">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">{label}</h2>
-          <span className="text-sm text-gray-500 font-mono">[{count}]</span>
-        </div>
-        <p className="text-sm text-gray-500">{sublabel}</p>
       </div>
     </div>
   );
@@ -344,120 +311,133 @@ export default function ProjectsIndexPage() {
   const roadmap = projects.filter((p) => p.stage === "roadmap");
 
   return (
-    <div className="no-snap relative text-gray-300">
-      {/* Hero */}
-      <section className="min-h-[40vh] flex items-center justify-center px-6 pt-28 pb-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="font-bold tracking-widest uppercase text-sm md:text-base mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            PROJECTS · 2026
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            <span className="text-white" style={{ textShadow: "0 0 40px rgba(255,255,255,0.4)" }}>
-              What we&apos;re actually{" "}
-            </span>
-            <span className="bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-              shipping
-            </span>
+    <div className="obs-page">
+      <div className="obs-container">
+        {/* Hero */}
+        <header>
+          <span className="obs-eyebrow line">Projects &middot; 2026</span>
+          <h1 className="obs-h1">
+            What we&apos;re actually <span className="g">shipping</span>
           </h1>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="obs-lead">
             A live snapshot of Axion Labs. What&apos;s in production today, what&apos;s
             rolling out across 2026, and the research programs feeding the next wave.
           </p>
-        </div>
-      </section>
+        </header>
 
-      {/* Shipped */}
-      <section className="px-6 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <StageHeader
-            label="Shipped"
-            count={shipped.length}
-            sublabel="Live in production. Customers and visitors using them today."
-          />
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* Shipped */}
+        <section className="obs-section obs-divider-top">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">
+              Shipped &middot; [{shipped.length}]
+            </span>
+            <h2 className="obs-h2">Live in production</h2>
+            <p>Live in production. Customers and visitors using them today.</p>
+          </div>
+          <div className="obs-grid obs-grid-3">
             {shipped.map((p) => (
               <ProjectCard key={p.name} p={p} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Rolling Out 2026 */}
-      <section className="px-6 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <StageHeader
-            label="Rolling Out · 2026"
-            count={rolling2026.length}
-            sublabel="In active development or active research with a 2026 release or grant milestone."
-          />
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* Rolling Out 2026 */}
+        <section className="obs-section">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">
+              Rolling Out &middot; 2026 &middot; [{rolling2026.length}]
+            </span>
+            <h2 className="obs-h2">In active build</h2>
+            <p>
+              In active development or active research with a 2026 release or grant
+              milestone.
+            </p>
+          </div>
+          <div className="obs-grid obs-grid-3">
             {rolling2026.map((p) => (
               <ProjectCard key={p.name} p={p} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Roadmap */}
-      <section className="px-6 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <StageHeader
-            label="Roadmap & Research"
-            count={roadmap.length}
-            sublabel="Long-horizon research programs and committed open-source releases."
-          />
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* Roadmap */}
+        <section className="obs-section">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">
+              Roadmap &amp; Research &middot; [{roadmap.length}]
+            </span>
+            <h2 className="obs-h2">Long horizon</h2>
+            <p>Long-horizon research programs and committed open-source releases.</p>
+          </div>
+          <div className="obs-grid obs-grid-3">
             {roadmap.map((p) => (
               <ProjectCard key={p.name} p={p} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Research-to-product framing */}
-      <section className="px-6 pb-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">From research to product</h2>
-          <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-violet-500/[0.08] to-cyan-500/[0.04] border border-white/[0.08]">
-            <p className="text-gray-400 leading-relaxed mb-4">
+        {/* Research-to-product framing */}
+        <section className="obs-section">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">The pipeline</span>
+            <h2 className="obs-h2">From research to product</h2>
+          </div>
+          <div className="obs-prose obs-narrow" style={{ marginLeft: 0 }}>
+            <p>
               Every product on this page traces back to research we did first. Site2CRM and
               Made4Founders apply the AI-agent and integration patterns that came out of our
               applied work. QUANTA is both an education platform and a research instrument
               for Project DRIFT. Vesper is the dual-agent architecture we developed for
               autonomous security testing. PERSIST and SDI are research programs themselves,
-              targeting the diagnostic tooling layer we think the next decade of AI deployment
-              will need.
+              targeting the diagnostic tooling layer we think the next decade of AI
+              deployment will need.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p>
               The pipeline is intentional. Research produces insight, insight produces
               instruments, instruments become products, and products produce the data that
               feeds the next research question. We do not build features in search of a
               problem.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Closing */}
-      <section className="px-6 pb-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative p-10 md:p-14 rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] text-center">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
-              Want to compare notes?
+        {/* Closing */}
+        <section className="obs-section">
+          <div
+            className="obs-narrow"
+            style={{
+              textAlign: "center",
+              background: "var(--panel)",
+              border: "1px solid var(--line)",
+              borderRadius: 24,
+              padding: "56px 40px",
+            }}
+          >
+            <span className="obs-eyebrow" style={{ justifyContent: "center" }}>
+              Open door
+            </span>
+            <h2 className="obs-h2" style={{ marginTop: 16 }}>
+              Want to <span className="g">compare notes?</span>
             </h2>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-              Investors, collaborators, and prospective partners. We keep the door open. Same
-              door whether you want to talk research, licensing, or shipping product together.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 via-violet-500 to-fuchsia-500 text-white font-semibold hover:opacity-90 transition shadow-lg shadow-violet-500/30"
+            <p
+              style={{
+                color: "var(--muted)",
+                fontSize: 17,
+                lineHeight: 1.6,
+                margin: "16px auto 28px",
+                maxWidth: "44ch",
+              }}
             >
-              Get in touch
+              Investors, collaborators, and prospective partners. We keep the door open. Same
+              door whether you want to talk research, licensing, or shipping product
+              together.
+            </p>
+            <Link href="/contact" className="obs-btn obs-btn-p">
+              Get in touch &rarr;
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

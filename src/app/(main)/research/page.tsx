@@ -31,121 +31,117 @@ export const metadata: Metadata = {
   alternates: { canonical: "/research" },
 };
 
+const programPills = [
+  { label: "PERSIST", href: "#persist", status: "Preliminary Complete" },
+  { label: "DRIFT", href: "#drift", status: "Active" },
+  { label: "PHI", href: "#phi", status: "Protocol Defined" },
+  { label: "GENESIS", href: "#genesis", status: "Protocol Defined" },
+];
+
 export default function ResearchPage() {
   return (
-    <div className="no-snap relative text-gray-300">
-      {/* Hero */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">
-            RESEARCH PROGRAMS
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Investigating Fundamental Obstacles to Continual Learning in Neural
-            Networks
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl leading-relaxed">
-            Four research programs investigating fundamental obstacles to continual learning.
-            Our flagship experiment (EXP-01 PERSIST) has completed preliminary
-            proof-of-concept across 19 architectures and 3 datasets, demonstrating
-            that loss landscape topology predicts mitigation benefit at small scale.
-            Phase I will test whether these signals survive at production scale
-            (100M-7B+ parameters), requiring supercomputer resources and novel
-            distributed persistent homology algorithms.
-          </p>
+    <div className="obs-page">
+      <div className="obs-container">
+        {/* Hero */}
+        <span className="obs-eyebrow line">Research Programs</span>
+        <h1 className="obs-h1">
+          Investigating Fundamental Obstacles to{" "}
+          <span className="g">Continual Learning</span> in Neural Networks
+        </h1>
+        <p className="obs-lead">
+          Four research programs investigating fundamental obstacles to continual
+          learning. Our flagship experiment (EXP-01 PERSIST) has completed
+          preliminary proof-of-concept across 19 architectures and 3 datasets,
+          demonstrating that loss landscape topology predicts mitigation benefit at
+          small scale. Phase I will test whether these signals survive at production
+          scale (100M-7B+ parameters), requiring supercomputer resources and novel
+          distributed persistent homology algorithms.
+        </p>
 
-          <div className="flex flex-wrap gap-3 mt-8">
-            {[
-              {
-                label: "PERSIST",
-                href: "#persist",
-                color:
-                  "from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-300",
-                status: "Preliminary Complete",
-              },
-              {
-                label: "DRIFT",
-                href: "#drift",
-                color:
-                  "from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-300",
-                status: "Active",
-              },
-              {
-                label: "PHI",
-                href: "#phi",
-                color:
-                  "from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-300",
-                status: "Protocol Defined",
-              },
-              {
-                label: "GENESIS",
-                href: "#genesis",
-                color:
-                  "from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-300",
-                status: "Protocol Defined",
-              },
-            ].map((p) => (
-              <a
-                key={p.label}
-                href={p.href}
-                className={`px-4 py-2 rounded-full bg-gradient-to-r ${p.color} border text-sm font-semibold tracking-wider hover:opacity-80 transition`}
-              >
-                {p.label}
-                <span className="ml-2 text-xs opacity-60">{p.status}</span>
-              </a>
-            ))}
-          </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+            marginTop: 32,
+          }}
+        >
+          {programPills.map((p) => (
+            <a
+              key={p.label}
+              href={p.href}
+              className="obs-btn obs-btn-g"
+              style={{ gap: 12 }}
+            >
+              {p.label}
+              <span style={{ color: "var(--faint)", letterSpacing: ".08em" }}>
+                {p.status}
+              </span>
+            </a>
+          ))}
         </div>
-      </section>
 
-      {/* Research Programs (client component, handles modal interaction) */}
-      <ResearchPrograms />
+        {/* Research Programs (client component, handles modal interaction) */}
+        <section className="obs-section">
+          <ResearchPrograms />
+        </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* Open Research                                             */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-6">
-            Open Research
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3 text-sm">Code</h3>
-              <p className="text-sm text-gray-400 mb-3">
-                Experiment source code, model definitions, and analysis
-                pipelines.
+        {/* Open Research */}
+        <section className="obs-section">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">Open Science</span>
+            <h2 className="obs-h2">Open Research</h2>
+          </div>
+          <div className="obs-grid obs-grid-3">
+            <div className="obs-card">
+              <h3>Code</h3>
+              <p>
+                Experiment source code, model definitions, and analysis pipelines.
               </p>
               <a
                 href="https://github.com/Axion-Deep-Labs/persist-topological-forgetting"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-emerald-300 hover:text-emerald-200 transition underline underline-offset-4"
+                style={{
+                  display: "inline-block",
+                  marginTop: 14,
+                  color: "var(--cyan)",
+                  fontSize: 14,
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(70,214,230,.35)",
+                }}
               >
-                GitHub Repository →
+                GitHub Repository &rarr;
               </a>
             </div>
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3 text-sm">
-                Reproducibility
-              </h3>
-              <ul className="space-y-1 text-sm text-gray-400">
+            <div className="obs-card">
+              <h3>Reproducibility</h3>
+              <ul
+                style={{
+                  margin: 0,
+                  paddingLeft: "1.1em",
+                  color: "var(--muted)",
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                }}
+              >
                 <li>Deterministic seeding (seed = 42)</li>
                 <li>Version-controlled YAML configs</li>
                 <li>Full dependency pinning</li>
                 <li>PyTorch 2.x, Ripser, scikit-tda</li>
               </ul>
             </div>
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-3 text-sm">
-                Infrastructure
-              </h3>
-              <ul className="space-y-1 text-sm text-gray-400">
+            <div className="obs-card">
+              <h3>Infrastructure</h3>
+              <ul
+                style={{
+                  margin: 0,
+                  paddingLeft: "1.1em",
+                  color: "var(--muted)",
+                  fontSize: 14,
+                  lineHeight: 1.7,
+                }}
+              >
                 <li>Preliminary: Local GPU (NVIDIA RTX 4090)</li>
                 <li>Phase I: Supercomputer (planned)</li>
                 <li>Automated experiment dashboard</li>
@@ -153,95 +149,110 @@ export default function ResearchPage() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* ═══════════════════════════════════════════════════════════ */}
-      {/* Research Team                                             */}
-      {/* ═══════════════════════════════════════════════════════════ */}
-      <section className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-6">
-            Research Team
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-1">
-                Crystal A. Gutierrez, MS
-              </h3>
-              <p className="text-sm text-emerald-300 mb-3">
+        {/* Research Team */}
+        <section className="obs-section">
+          <div className="obs-sec-head">
+            <span className="obs-eyebrow">The People</span>
+            <h2 className="obs-h2">Research Team</h2>
+          </div>
+          <div className="obs-grid obs-grid-2">
+            <div className="obs-card">
+              <h3>Crystal A. Gutierrez, MS</h3>
+              <p
+                style={{
+                  color: "var(--cyan)",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 12,
+                  textTransform: "uppercase",
+                  letterSpacing: ".1em",
+                  margin: "0 0 14px",
+                }}
+              >
                 Principal Investigator &amp; Co-Founder
               </p>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p>
                 MS in Information Technology. BS in Information Communication
-                Technology. Adjunct Professor, New Mexico State University.
-                Research experience in AI-driven predictive modeling through the
-                Purdue University Data Mine, developing weather forecasting
-                models in collaboration with Bayer. Oversees research strategy,
-                institutional partnerships, and experimental design review.
+                Technology. Adjunct Professor, New Mexico State University. Research
+                experience in AI-driven predictive modeling through the Purdue
+                University Data Mine, developing weather forecasting models in
+                collaboration with Bayer. Oversees research strategy, institutional
+                partnerships, and experimental design review.
               </p>
             </div>
-            <div className="rounded-2xl bg-white/[0.03] border border-white/[0.06] p-6">
-              <h3 className="font-semibold text-white mb-1">
-                Joshua R. Gutierrez, MS
-              </h3>
-              <p className="text-sm text-emerald-300 mb-3">
+            <div className="obs-card">
+              <h3>Joshua R. Gutierrez, MS</h3>
+              <p
+                style={{
+                  color: "var(--cyan)",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 12,
+                  textTransform: "uppercase",
+                  letterSpacing: ".1em",
+                  margin: "0 0 14px",
+                }}
+              >
                 Co-Principal Investigator &amp; Co-Founder
               </p>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                MS in Artificial Intelligence &amp; Data Science. BS in
-                Computer Science. Designed and built the lab&apos;s experimental
-                infrastructure, model architectures, topological analysis
-                pipeline, loss landscape sampling, and reproducibility
-                framework. Leads day-to-day experiment execution, computational
-                methodology, and software engineering across all research
-                programs.
+              <p>
+                MS in Artificial Intelligence &amp; Data Science. BS in Computer
+                Science. Designed and built the lab&apos;s experimental
+                infrastructure, model architectures, topological analysis pipeline,
+                loss landscape sampling, and reproducibility framework. Leads
+                day-to-day experiment execution, computational methodology, and
+                software engineering across all research programs.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="rounded-3xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+        {/* CTA */}
+        <section className="obs-section">
+          <div
+            className="obs-card"
+            style={{ padding: "56px 32px", textAlign: "center" }}
+          >
+            <span className="obs-eyebrow line" style={{ justifyContent: "center" }}>
+              Get In Touch
+            </span>
+            <h2 className="obs-h2" style={{ marginTop: 16 }}>
               Research Collaboration
             </h2>
-            <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              We welcome inquiries from academic institutions, funding agencies,
-              and researchers working on continual learning, topological data
-              analysis, or deep learning theory.
+            <p
+              style={{
+                color: "var(--muted)",
+                maxWidth: "42ch",
+                margin: "18px auto 32px",
+                fontSize: 16,
+                lineHeight: 1.6,
+              }}
+            >
+              We welcome inquiries from academic institutions, funding agencies, and
+              researchers working on continual learning, topological data analysis,
+              or deep learning theory.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/research/persist/findings"
-                className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold hover:opacity-90 transition"
-              >
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 14,
+                justifyContent: "center",
+              }}
+            >
+              <Link href="/research/persist/findings" className="obs-btn obs-btn-p">
                 Research Findings
               </Link>
-              <Link
-                href="/research/experiments"
-                className="inline-block px-8 py-3 rounded-full bg-white/[0.06] border border-white/[0.1] text-white font-semibold hover:bg-white/[0.1] transition"
-              >
+              <Link href="/research/experiments" className="obs-btn obs-btn-g">
                 Experimental Protocols
               </Link>
-              <Link
-                href="/contact"
-                className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-600 text-white font-semibold hover:opacity-90 transition"
-              >
+              <Link href="/contact" className="obs-btn obs-btn-g">
                 Contact Research Team
               </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
