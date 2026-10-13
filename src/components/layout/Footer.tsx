@@ -91,6 +91,13 @@ export default function Footer() {
         </div>
 
         <div className="obs-foot-bot">
+          <span>
+            Axion Deep Digital is the commercial practice of Axion Deep Labs, Inc.{" "}
+            <a href="https://www.axiondeepdigital.com">axiondeepdigital.com</a>
+          </span>
+        </div>
+
+        <div className="obs-foot-bot">
           <span>Axion Deep Labs, Inc. &middot; C-Corp, New Mexico &middot; Las Cruces</span>
           <span>hello@axiondeep.com &middot; Bootstrapped</span>
         </div>
