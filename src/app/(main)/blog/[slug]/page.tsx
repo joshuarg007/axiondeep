@@ -1,16 +1,33 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, getPostBySlug } from "@/data/blogPosts";
+import { BLOG_POSTS, MOVED_POSTS, getPostBySlug } from "@/data/blogPosts";
+import ExternalRedirectClient from "./ExternalRedirectClient";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+  return [
+    ...BLOG_POSTS.map((post) => ({ slug: post.slug })),
+    // Keep a page at every moved slug so the old URL redirects instead of 404ing.
+    ...Object.keys(MOVED_POSTS).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+
+  const movedTo = MOVED_POSTS[slug];
+  if (movedTo) {
+    return {
+      title: "This post has moved",
+      description: `This post now lives at ${movedTo}.`,
+      alternates: { canonical: movedTo },
+      robots: { index: false, follow: true },
+      other: { refresh: `0;url=${movedTo}` },
+    };
+  }
+
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
@@ -137,6 +154,49 @@ function renderMarkdown(content: string) {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
+  const movedTo = MOVED_POSTS[slug];
+  if (movedTo) {
+    return (
+      <>
+        <ExternalRedirectClient target={movedTo} />
+        <noscript>
+          <meta httpEquiv="refresh" content={`0;url=${movedTo}`} />
+        </noscript>
+
+        <div className="obs-page">
+          <div className="obs-container">
+            <div className="obs-narrow" style={{ textAlign: "center" }}>
+              <span className="obs-eyebrow line" style={{ justifyContent: "center" }}>
+                Post moved
+              </span>
+              <h1 className="obs-h1">
+                This post now lives with the <span className="g">product it is about</span>
+              </h1>
+              <p className="obs-lead" style={{ marginLeft: "auto", marginRight: "auto" }}>
+                Redirecting automatically. If your browser does not move,{" "}
+                <a
+                  href={movedTo}
+                  style={{
+                    color: "var(--cyan)",
+                    borderBottom: "1px solid rgba(70,214,230,.35)",
+                  }}
+                >
+                  click here
+                </a>
+                .
+              </p>
+              <div style={{ marginTop: 32 }}>
+                <Link className="obs-btn obs-btn-p" href="/research">
+                  Labs research &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
